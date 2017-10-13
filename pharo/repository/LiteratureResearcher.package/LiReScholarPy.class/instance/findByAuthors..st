@@ -3,9 +3,10 @@ findByAuthors: aCollection
 	| result |
 	result := subprocess
 		execute:
-			{'--csv-header'.
+			{'--csv'.
 			'--no-citations'.
 			'--title-only'.
 			'--author'.
-			(', ' join: aCollection)}.
-	^ self readCsv: result out
+			(LiReSubprocess escape: (', ' join: aCollection))}
+		wait: 30 seconds.
+	^ self parseCsv: result out

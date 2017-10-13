@@ -12,11 +12,12 @@ baseline: spec
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://mc.stfx.eu/Neo' ];
-				configuration: 'OSSubprocess'
+				configuration: 'OSProcess'
 					with: [ spec
 						versionString: #stable;
-						repository: 'github://marianopeck/OSSubprocess/repository' ];
-				package: 'LiteratureResearcher' with: [ spec requires: #('XPath' 'NeoCSV' 'OSSubprocess') ].
-			spec
-				group: 'default' with: #('Core');
-				group: 'Core' with: #('LiteratureResearcher') ]
+						repository: 'http://www.squeaksource.com/MetacelloRepository' ];
+				configuration: 'Citezen'
+					with: [ spec
+						versionString: #stable;
+						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ].
+			spec group: 'default' with: #('XPath' 'NeoCSV' 'OSProcess' 'Citezen') ]

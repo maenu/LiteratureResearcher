@@ -6,10 +6,15 @@ processPdf: anId with: aFileReference keys: anOrderedCollection
 		ifTrue: [ ^ result ].
 	subprocess
 		execute:
-			{anId.
-			aFileReference pathString.
-			result pathString.
-			(String streamContents: [ :stream | (NeoCSVWriter on: stream) nextPutAll: anOrderedCollection ])}.
+			{(LiReSubprocess escape: anId).
+			(LiReSubprocess escape: aFileReference pathString).
+			(LiReSubprocess escape: result pathString).
+			(LiReSubprocess
+				escape:
+					(String
+						streamContents: [ :stream | (NeoCSVWriter on: stream) nextPutAll: anOrderedCollection ]))}
+		wait: 10 seconds.
 	result exists
-		ifTrue: [ ^ result ].
-	LiRePdfLinkerProcessError signal: 'Expected "' , result pathString , '" to exist, but it does not'
+		ifFalse: [ LiRePdfLinkerProcessError
+				signal: 'Expected "' , result pathString , '" to exist, but it does not' ].
+	^ result

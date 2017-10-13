@@ -3,9 +3,10 @@ findByTitle: aString
 	| result |
 	result := subprocess
 		execute:
-			{'--csv-header'.
+			{'--csv'.
 			'--no-citations'.
 			'--title-only'.
 			'--all'.
-			aString}.
-	^ (self readCsv: result out) at: 1 ifAbsent: [ LiReScholarPyProcessError signal: 'No entry found' ]
+			(LiReSubprocess escape: aString)}
+		wait: 30 seconds.
+	^ self parseCsv: result out

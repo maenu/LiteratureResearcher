@@ -6,6 +6,6 @@ getBibtex: anId
 			{'--citation'.
 			'bt'.
 			'--cluster-id'.
-			anId}.
-	"no parsing yet"
-	^ ((Character lf asString , Character lf asString split: result out) at: 1 ifAbsent: [ LiReScholarPyProcessError signal: 'No entry found' ]) trimmed
+			(LiReSubprocess escape: anId)}
+		wait: 30 seconds.
+	^ CZBibParser parse: result out

@@ -10,9 +10,10 @@ processPdf: anId with: aFileReference
 		execute:
 			{'pl.edu.icm.cermine.ContentExtractor'.
 			'-path'.
-			subDirectory pathString.
+			(LiReSubprocess escape: subDirectory pathString).
 			'-outputs'.
-			(',' join: outputs).
+			(LiReSubprocess escape: (',' join: outputs)).
 			'-exts'.
-			(',' join: outputs)}.
+			(LiReSubprocess escape: (',' join: outputs))}
+		wait: 10 seconds.
 	^ self processResultIn: subDirectory

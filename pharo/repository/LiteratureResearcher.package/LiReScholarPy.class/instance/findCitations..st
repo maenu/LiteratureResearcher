@@ -3,9 +3,10 @@ findCitations: anId
 	| result |
 	result := subprocess
 		execute:
-			{'--csv-header'.
+			{'--csv'.
 			'--no-citations'.	"a bit confusing, but this field is not needed"
 			'--citations-only'.
 			'--cluster-id'.
-			anId}.
-	^ self readCsv: result out
+			(LiReSubprocess escape: anId)}
+		wait: 30 seconds.
+	^ self parseCsv: result out
