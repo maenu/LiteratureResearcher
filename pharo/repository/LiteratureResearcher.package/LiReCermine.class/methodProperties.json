@@ -1,0 +1,16 @@
+{
+	"instance" : {
+		"subprocess" : "ManuelLeuenberger 10/12/2017 17:16",
+		"workingDirectory" : "ManuelLeuenberger 10/12/2017 17:49",
+		"processResultIn:" : "ManuelLeuenberger 10/12/2017 22:51",
+		"outputs:" : "ManuelLeuenberger 10/12/2017 14:05",
+		"workingDirectory:" : "ManuelLeuenberger 10/12/2017 17:49",
+		"processPdf:with:" : "ManuelLeuenberger 10/12/2017 23:10",
+		"subprocess:" : "ManuelLeuenberger 10/12/2017 17:16",
+		"outputs" : "ManuelLeuenberger 10/12/2017 14:05"
+	},
+	"class" : {
+		"initialize" : "ManuelLeuenberger 10/12/2017 22:46",
+		"subprocess:workingDirectory:outputs:" : "ManuelLeuenberger 10/12/2017 17:48"
+	}
+}

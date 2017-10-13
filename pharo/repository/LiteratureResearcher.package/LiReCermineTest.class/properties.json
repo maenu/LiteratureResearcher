@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "LiteratureResearcher-Cermine-Test",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"workingDirectory",
+		"outputs",
+		"cermine",
+		"pdf",
+		"id"
+	],
+	"name" : "LiReCermineTest",
+	"type" : "normal"
+}

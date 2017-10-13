@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "LiteratureResearcher-ModelConverter-Test",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"jats",
+		"extractor"
+	],
+	"name" : "LiReJatsMetadataExtractorTest",
+	"type" : "normal"
+}

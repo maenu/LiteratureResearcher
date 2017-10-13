@@ -1,0 +1,14 @@
+{
+	"instance" : {
+		"subprocess" : "ManuelLeuenberger 10/12/2017 19:12",
+		"findByAuthors:" : "ManuelLeuenberger 10/12/2017 20:04",
+		"findCitations:" : "ManuelLeuenberger 10/12/2017 23:12",
+		"readCsv:" : "ManuelLeuenberger 10/12/2017 20:09",
+		"findByTitle:" : "ManuelLeuenberger 10/12/2017 21:18",
+		"getBibtex:" : "ManuelLeuenberger 10/12/2017 23:51",
+		"subprocess:" : "ManuelLeuenberger 10/12/2017 19:12"
+	},
+	"class" : {
+		"subprocess:" : "ManuelLeuenberger 10/12/2017 19:40"
+	}
+}

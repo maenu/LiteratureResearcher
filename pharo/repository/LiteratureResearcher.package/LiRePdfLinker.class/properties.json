@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-PdfLinker",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"workingDirectory",
+		"subprocess"
+	],
+	"name" : "LiRePdfLinker",
+	"type" : "normal"
+}

@@ -1,0 +1,12 @@
+SystemOrganization addCategory: #LiteratureResearcher!
+SystemOrganization addCategory: 'LiteratureResearcher-Cermine'!
+SystemOrganization addCategory: 'LiteratureResearcher-Cermine-Test'!
+SystemOrganization addCategory: 'LiteratureResearcher-ModelConverter'!
+SystemOrganization addCategory: 'LiteratureResearcher-ModelConverter-Test'!
+SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker'!
+SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker-Test'!
+SystemOrganization addCategory: 'LiteratureResearcher-Pdfscrap'!
+SystemOrganization addCategory: 'LiteratureResearcher-Pdfscrap-Test'!
+SystemOrganization addCategory: 'LiteratureResearcher-ScholarPy'!
+SystemOrganization addCategory: 'LiteratureResearcher-ScholarPy-Test'!
+SystemOrganization addCategory: 'LiteratureResearcher-Subprocess'!

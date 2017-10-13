@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "LiteratureResearcher-PdfLinker-Test",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"workingDirectory",
+		"pdfLinker",
+		"pdf",
+		"id",
+		"keys"
+	],
+	"name" : "LiRePdfLinkerTest",
+	"type" : "normal"
+}
