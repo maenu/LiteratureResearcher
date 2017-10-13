@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BibPhraseLibrary",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReBibPhraseLibrary",
+	"type" : "normal"
+}

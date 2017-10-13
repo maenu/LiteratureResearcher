@@ -8,7 +8,11 @@ processBibtex: anId with: aBibtexEntry
 	subDirectory := workingDirectory ensureSubDirectoryNamed: anId.
 	out := subprocess
 		execute:
-			{(LiReSubprocess escape: bibtexEntry).
+			{(LiReSubprocess
+				escape:
+					(LiReBibBibRenderer new
+						render: bibtexEntry;
+						contents)).
 			(LiReSubprocess escape: subDirectory pathString)}
 		wait: 30 seconds.
 	^ self processResult: anId in: subDirectory

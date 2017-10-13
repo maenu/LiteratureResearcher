@@ -1,6 +1,7 @@
 SystemOrganization addCategory: #LiteratureResearcher!
 SystemOrganization addCategory: 'LiteratureResearcher-Cermine'!
 SystemOrganization addCategory: 'LiteratureResearcher-Cermine-Test'!
+SystemOrganization addCategory: 'LiteratureResearcher-Model'!
 SystemOrganization addCategory: 'LiteratureResearcher-ModelConverter'!
 SystemOrganization addCategory: 'LiteratureResearcher-ModelConverter-Test'!
 SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker'!
