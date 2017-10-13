@@ -1,3 +1,5 @@
 phrases-entries
 book
-	^ super book addBlockWithField: #url
+	^ super book
+		addBlockWithField: #url;
+		addBlockWithField: #clusterId

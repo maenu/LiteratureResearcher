@@ -1,3 +1,5 @@
 phrases-entries
 url
-	^ super url
+	^ super
+		url;
+		addBlockWithField: #clusterId

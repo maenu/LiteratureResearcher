@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "PharoUriSchemeUriHandler",
+	"category" : "LiteratureResearcher-PdfLinker",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiRePdfLinkerUriHandler",
+	"type" : "normal"
+}

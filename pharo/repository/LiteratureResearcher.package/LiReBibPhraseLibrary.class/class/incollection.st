@@ -1,3 +1,5 @@
 phrases-entries
 incollection
-	^ super incollection addBlockWithField: #url
+	^ super incollection
+		addBlockWithField: #url;
+		addBlockWithField: #clusterId

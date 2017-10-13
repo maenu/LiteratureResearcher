@@ -1,3 +1,5 @@
 phrases-entries
 unpublished
-	^ super unpublished addBlockWithField: #url
+	^ super unpublished
+		addBlockWithField: #url;
+		addBlockWithField: #clusterId

@@ -1,3 +1,5 @@
 phrases-entries
 techreport
-	^ super techreport addBlockWithField: #url
+	^ super techreport
+		addBlockWithField: #url;
+		addBlockWithField: #clusterId

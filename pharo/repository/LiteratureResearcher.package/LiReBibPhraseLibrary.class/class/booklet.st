@@ -1,3 +1,5 @@
 phrases-entries
 booklet
-	^ super booklet addBlockWithField: #url
+	^ super booklet
+		addBlockWithField: #url;
+		addBlockWithField: #clusterId

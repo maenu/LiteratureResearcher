@@ -1,3 +1,5 @@
 phrases-entries
 phdthesis
-	^ super phdthesis addBlockWithField: #url
+	^ super phdthesis
+		addBlockWithField: #url;
+		addBlockWithField: #clusterId
