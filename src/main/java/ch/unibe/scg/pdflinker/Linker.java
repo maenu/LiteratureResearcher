@@ -61,7 +61,9 @@ public class Linker {
 	}
 
 	private String asUri(String id, Reference reference) throws UnsupportedEncodingException {
-		return String.format("pharo://click?id=%s&key=%s&text=%s", URLEncoder.encode(id, StandardCharsets.UTF_8.name()),
+		return String.format(
+				"pharo://LiRePdfLinkerUriHandler/clusterId.referenceKey.referenceText.?args=%s&args=%s&args=%s",
+				URLEncoder.encode(id, StandardCharsets.UTF_8.name()),
 				URLEncoder.encode(reference.getKey(), StandardCharsets.UTF_8.name()),
 				URLEncoder.encode(reference.getParagraph().getText().substring(reference.getKey().length()).trim(),
 						StandardCharsets.UTF_8.name()));
