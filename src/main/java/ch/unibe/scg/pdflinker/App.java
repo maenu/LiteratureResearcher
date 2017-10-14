@@ -22,7 +22,8 @@ public class App {
 						return new ProcessedReference((String) map.get("key"), (String) map.get("id"), new Color(
 								parts.get(0).intValue(), parts.get(1).intValue(), parts.get(2).intValue(), 31));
 					} else {
-						return new UnprocessedReference((String) map.get("key"), (String) map.get("text"));
+						return new UnprocessedReference((String) map.get("key"), (String) map.get("text"),
+								(String) map.get("bibtex"));
 					}
 				}).collect(Collectors.toList()));
 	}
