@@ -1,4 +1,4 @@
-package ch.unibe.scg.pdflinker;
+package ch.unibe.scg.pdflinker.clickable;
 
 import java.awt.Color;
 import java.io.UnsupportedEncodingException;
@@ -7,13 +7,21 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class AbstractReference {
+import ch.unibe.scg.pdflinker.Paragraph;
 
-	protected Paragraph paragraph;
+public abstract class AbstractClickable {
+
+	protected String id;
 	protected String key;
+	protected Paragraph paragraph;
 
-	public AbstractReference(String key) {
+	public AbstractClickable(String id, String key) {
+		this.id = id;
 		this.key = key;
+	}
+
+	public String getId() {
+		return this.id;
 	}
 
 	public String getKey() {
@@ -28,28 +36,30 @@ public abstract class AbstractReference {
 		this.paragraph = paragraph;
 	}
 
-	public abstract Color getColor();
+	public Color getColor() {
+		return Color.LIGHT_GRAY;
+	}
 
-	public String asUri(String id) {
-		return String.format("pharo://LiRePdfLinkerUriHandler/%s?%s", this.getUriPath(), this.getUriQuery(id));
+	public String asUri() {
+		return String.format("pharo://LiRePdfLinkerUriHandler/%s?%s", this.getUriPath(), this.getUriQuery());
 	}
 
 	protected String getUriPath() {
 		return this.getSelector().replace(":", ".");
 	}
 
-	protected String getUriQuery(String id) {
-		return String.join("&", this.getUriQueryParameters(id));
+	protected String getUriQuery() {
+		return String.join("&", this.getUriQueryParameters());
 	}
 
 	protected abstract String getSelector();
 
-	protected List<String> getUriQueryParameters(String id) {
-		return this.getUriQueryParameterValues(id).stream().map(value -> "args=" + this.asUrlComponent(value))
+	protected List<String> getUriQueryParameters() {
+		return this.getUriQueryParameterValues().stream().map(value -> "args=" + this.asUrlComponent(value))
 				.collect(Collectors.toList());
 	}
 
-	protected abstract List<String> getUriQueryParameterValues(String id);
+	protected abstract List<String> getUriQueryParameterValues();
 
 	protected String asUrlComponent(String s) {
 		if (s == null) {

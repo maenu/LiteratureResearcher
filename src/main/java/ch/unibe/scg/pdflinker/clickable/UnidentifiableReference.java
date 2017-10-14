@@ -1,16 +1,15 @@
-package ch.unibe.scg.pdflinker;
+package ch.unibe.scg.pdflinker.clickable;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnprocessedReference extends AbstractReference {
+public class UnidentifiableReference extends AbstractReference {
 
 	protected String text;
 	protected String bibtex;
 
-	public UnprocessedReference(String key, String text, String bibtex) {
-		super(key);
+	public UnidentifiableReference(String id, String key, String text, String bibtex) {
+		super(id, key);
 		this.text = text;
 		this.bibtex = bibtex;
 	}
@@ -24,19 +23,14 @@ public class UnprocessedReference extends AbstractReference {
 	}
 
 	@Override
-	public Color getColor() {
-		return Color.LIGHT_GRAY;
-	}
-
-	@Override
 	protected String getSelector() {
-		return "id:key:text:paragraph:bibtex:";
+		return "clickReferenceInId:key:text:paragraph:bibtex:";
 	}
 
 	@Override
-	protected List<String> getUriQueryParameterValues(String id) {
+	protected List<String> getUriQueryParameterValues() {
 		List<String> values = new ArrayList<>();
-		values.add(id);
+		values.add(this.id);
 		values.add(this.key);
 		values.add(this.text);
 		values.add(this.paragraph.getText().trim().substring(this.key.length()).trim());

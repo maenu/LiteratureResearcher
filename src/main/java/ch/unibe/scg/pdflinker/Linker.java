@@ -23,6 +23,12 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 
+import ch.unibe.scg.pdflinker.clickable.AbstractClickable;
+import ch.unibe.scg.pdflinker.clickable.AbstractReference;
+import ch.unibe.scg.pdflinker.clickable.Affiliation;
+import ch.unibe.scg.pdflinker.clickable.Author;
+import ch.unibe.scg.pdflinker.clickable.Title;
+
 public class Linker {
 
 	private static final byte[] START = { 66, 84, 10, 47, 70, 53, 32, 48, 32, 84, 102, 10, 40, 60, 112, 100, 102, 45,
@@ -31,11 +37,11 @@ public class Linker {
 			108, 105, 110, 107, 101, 114, 62, 41, 32, 84, 106, 10, 69, 84, 10 };
 	private static final String CONTENTS = "pdf-linker";
 
-	public void link(String id, File in, File out, List<AbstractReference> references)
-			throws InvalidPasswordException, IOException {
+	public void link(File in, File out, Title title, List<Author> authors, List<Affiliation> affiliations,
+			List<AbstractReference> references) throws InvalidPasswordException, IOException {
 		try (PDDocument document = PDDocument.load(in)) {
 			this.removeHyperLinks(document);
-			this.addHyperLinks(id, document, references);
+			this.addHyperLinks(document, title, authors, affiliations, references);
 			document.save(out);
 		}
 	}
@@ -64,34 +70,44 @@ public class Linker {
 		}
 	}
 
-	private void addHyperLinks(String id, PDDocument document, List<AbstractReference> references) throws IOException {
-		(new ParagraphStripper()).getParagraphs(document).stream()
-				.map(paragraph -> this.findReference(paragraph, references)).filter(Optional::isPresent)
-				.map(Optional::get).forEach(reference -> this.addHyperLink(id, document, reference));
+	private void addHyperLinks(PDDocument document, Title title, List<Author> authors, List<Affiliation> affiliations,
+			List<AbstractReference> references) throws IOException {
+		List<AbstractClickable> clickables = new ArrayList<>();
+		clickables.add(title);
+		clickables.addAll(authors);
+		clickables.addAll(affiliations);
+		clickables.addAll(references);
+		this.addHyperLinks(document, clickables);
 	}
 
-	private Optional<AbstractReference> findReference(Paragraph paragraph, List<AbstractReference> references) {
-		String text = paragraph.getText();
-		Optional<AbstractReference> candidate = references.stream()
-				.filter(reference -> text.startsWith(reference.getKey())).findFirst();
-		candidate.ifPresent(reference -> reference.setParagraph(paragraph));
+	private void addHyperLinks(PDDocument document, List<AbstractClickable> clickables) throws IOException {
+		(new ParagraphStripper()).getParagraphs(document).stream()
+				.map(paragraph -> this.findClickable(paragraph, clickables)).filter(Optional::isPresent)
+				.map(Optional::get).forEach(clickable -> this.addHyperLink(document, clickable));
+	}
+
+	private Optional<AbstractClickable> findClickable(Paragraph paragraph, List<AbstractClickable> clickables) {
+		String text = paragraph.getText().trim().toLowerCase();
+		Optional<AbstractClickable> candidate = clickables.stream()
+				.filter(clickable -> text.startsWith(clickable.getKey().trim().toLowerCase())).findFirst();
+		candidate.ifPresent(clickable -> clickable.setParagraph(paragraph));
 		return candidate;
 	}
 
-	private void addHyperLink(String id, PDDocument document, AbstractReference reference) {
-		Paragraph paragraph = reference.getParagraph();
+	private void addHyperLink(PDDocument document, AbstractClickable clickable) {
+		Paragraph paragraph = clickable.getParagraph();
 		try (PDPageContentStream content = new PDPageContentStream(document, paragraph.getPage(), AppendMode.PREPEND,
 				true)) {
 			PDRectangle rectangle = paragraph.getRectangle();
 			PDExtendedGraphicsState graphicsState = new PDExtendedGraphicsState();
-			graphicsState.setNonStrokingAlphaConstant(0.2f);
+			graphicsState.setNonStrokingAlphaConstant(0.4f);
 			content.beginText();
 			content.setFont(PDType1Font.TIMES_ROMAN, 0);
 			content.showText("<pdf-linker>");
 			content.endText();
 			content.saveGraphicsState();
 			content.setGraphicsStateParameters(graphicsState);
-			content.setNonStrokingColor(reference.getColor());
+			content.setNonStrokingColor(clickable.getColor());
 			content.addRect(rectangle.getLowerLeftX(), rectangle.getLowerLeftY(), rectangle.getWidth(),
 					rectangle.getHeight());
 			content.fill();
@@ -108,7 +124,7 @@ public class Linker {
 			PDBorderStyleDictionary borderStyle = new PDBorderStyleDictionary();
 			borderStyle.setWidth(0);
 			PDActionURI action = new PDActionURI();
-			action.setURI(reference.asUri(id));
+			action.setURI(clickable.asUri());
 			PDAnnotationLink link = new PDAnnotationLink();
 			link.setContents(CONTENTS);
 			link.setBorderStyle(borderStyle);
