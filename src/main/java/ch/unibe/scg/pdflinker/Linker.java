@@ -1,11 +1,7 @@
 package ch.unibe.scg.pdflinker;
 
-import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,43 +10,56 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.PDPageContentStream.AppendMode;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
+import org.apache.pdfbox.pdmodel.graphics.state.PDExtendedGraphicsState;
 import org.apache.pdfbox.pdmodel.interactive.action.PDActionURI;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 
 public class Linker {
 
-	public void link(String id, File in, File out, List<String> keys) throws InvalidPasswordException, IOException {
+	public void link(String id, File in, File out, List<AbstractReference> list)
+			throws InvalidPasswordException, IOException {
 		try (PDDocument document = PDDocument.load(in)) {
 			(new ParagraphStripper()).getParagraphs(document).stream()
-					.map(paragraph -> this.asReference(paragraph, keys)).filter(Optional::isPresent).map(Optional::get)
-					.forEach(reference -> this.addHyperLink(id, document, reference));
+					.map(paragraph -> this.findReference(paragraph, list)).filter(Optional::isPresent)
+					.map(Optional::get).forEach(reference -> this.addHyperLink(id, document, reference));
 			document.save(out);
 		}
 	}
 
-	private Optional<Reference> asReference(Paragraph paragraph, List<String> keys) {
+	private Optional<AbstractReference> findReference(Paragraph paragraph, List<AbstractReference> references) {
 		String text = paragraph.getText();
-		Optional<String> key = keys.stream().filter(text::startsWith).findFirst();
-		return key.map(instance -> new Reference(paragraph, instance));
+		Optional<AbstractReference> candidate = references.stream()
+				.filter(reference -> text.startsWith(reference.getKey())).findFirst();
+		candidate.ifPresent(reference -> reference.setParagraph(paragraph));
+		return candidate;
 	}
 
-	private void addHyperLink(String id, PDDocument document, Reference reference) {
+	private void addHyperLink(String id, PDDocument document, AbstractReference reference) {
 		Paragraph paragraph = reference.getParagraph();
 		try (PDPageContentStream content = new PDPageContentStream(document, paragraph.getPage(), AppendMode.PREPEND,
 				true)) {
+			PDExtendedGraphicsState graphicsState = new PDExtendedGraphicsState();
+			graphicsState.setNonStrokingAlphaConstant(0.2f);
+			content.saveGraphicsState();
 			PDRectangle rectangle = paragraph.getRectangle();
-			content.setNonStrokingColor(Color.LIGHT_GRAY);
+			content.setGraphicsStateParameters(graphicsState);
+			content.setNonStrokingColor(reference.getColor());
 			content.addRect(rectangle.getLowerLeftX(), rectangle.getLowerLeftY(), rectangle.getWidth(),
 					rectangle.getHeight());
 			content.fill();
+			content.restoreGraphicsState();
 		} catch (IOException exception) {
 			// TODO Auto-generated catch block
 			exception.printStackTrace();
 		}
 		try {
+			PDBorderStyleDictionary borderStyle = new PDBorderStyleDictionary();
+			borderStyle.setWidth(0);
 			PDActionURI action = new PDActionURI();
-			action.setURI(this.asUri(id, reference));
+			action.setURI(reference.asUri(id));
 			PDAnnotationLink link = new PDAnnotationLink();
+			link.setBorderStyle(borderStyle);
 			link.setAction(action);
 			link.setRectangle(paragraph.getRectangle());
 			paragraph.getPage().getAnnotations().add(0, link);
@@ -58,15 +67,6 @@ public class Linker {
 			// TODO Auto-generated catch block
 			exception.printStackTrace();
 		}
-	}
-
-	private String asUri(String id, Reference reference) throws UnsupportedEncodingException {
-		return String.format(
-				"pharo://LiRePdfLinkerUriHandler/clusterId.referenceKey.referenceText.?args=%s&args=%s&args=%s",
-				URLEncoder.encode(id, StandardCharsets.UTF_8.name()),
-				URLEncoder.encode(reference.getKey(), StandardCharsets.UTF_8.name()),
-				URLEncoder.encode(reference.getParagraph().getText().substring(reference.getKey().length()).trim(),
-						StandardCharsets.UTF_8.name()));
 	}
 
 }

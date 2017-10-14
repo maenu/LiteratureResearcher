@@ -30,7 +30,13 @@ public class Paragraph {
 	}
 
 	public PDRectangle getRectangle() {
-		return this.textPositions.stream().map(this::asRectangle).reduce((a, b) -> this.union(a, b)).get();
+		return this.textPositions.stream().map(this::asRectangle).reduce((a, b) -> this.union(a, b)).map(rectangle -> {
+			rectangle.setLowerLeftX(rectangle.getLowerLeftX() - 5);
+			rectangle.setLowerLeftY(rectangle.getLowerLeftY() - 5);
+			rectangle.setUpperRightX(rectangle.getUpperRightX() + 5);
+			rectangle.setUpperRightY(rectangle.getUpperRightY() + 5);
+			return rectangle;
+		}).get();
 	}
 
 	public int getPageIndex() {
