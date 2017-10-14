@@ -2,29 +2,72 @@ package ch.unibe.scg.pdflinker;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.PDPageContentStream.AppendMode;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.common.PDStream;
 import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.state.PDExtendedGraphicsState;
 import org.apache.pdfbox.pdmodel.interactive.action.PDActionURI;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 
 public class Linker {
 
-	public void link(String id, File in, File out, List<AbstractReference> list)
+	private static final byte[] START = { 66, 84, 10, 47, 70, 53, 32, 48, 32, 84, 102, 10, 40, 60, 112, 100, 102, 45,
+			108, 105, 110, 107, 101, 114, 62, 41, 32, 84, 106, 10, 69, 84, 10 };
+	private static final byte[] END = { 66, 84, 10, 47, 70, 53, 32, 48, 32, 84, 102, 10, 40, 60, 47, 112, 100, 102, 45,
+			108, 105, 110, 107, 101, 114, 62, 41, 32, 84, 106, 10, 69, 84, 10 };
+	private static final String CONTENTS = "pdf-linker";
+
+	public void link(String id, File in, File out, List<AbstractReference> references)
 			throws InvalidPasswordException, IOException {
 		try (PDDocument document = PDDocument.load(in)) {
-			(new ParagraphStripper()).getParagraphs(document).stream()
-					.map(paragraph -> this.findReference(paragraph, list)).filter(Optional::isPresent)
-					.map(Optional::get).forEach(reference -> this.addHyperLink(id, document, reference));
+			this.removeHyperLinks(document);
+			this.addHyperLinks(id, document, references);
 			document.save(out);
 		}
+	}
+
+	private void removeHyperLinks(PDDocument document) throws IOException {
+		for (int i = 0; i < document.getNumberOfPages(); i = i + 1) {
+			PDPage page = document.getPage(i);
+			List<PDStream> contents = new ArrayList<>();
+			Iterator<PDStream> iterator = page.getContentStreams();
+			while (iterator.hasNext()) {
+				PDStream stream = iterator.next();
+				byte[] bytes = stream.toByteArray();
+				boolean started = Arrays.equals(START,
+						Arrays.copyOfRange(bytes, 0, Math.min(START.length, bytes.length)));
+				boolean ended = Arrays.equals(END,
+						Arrays.copyOfRange(bytes, Math.max(0, bytes.length - END.length), bytes.length));
+				if (!(started && ended)) {
+					contents.add(stream);
+				}
+			}
+			page.setContents(contents);
+			List<PDAnnotation> annotations = page.getAnnotations();
+			annotations.stream().filter(a -> a instanceof PDAnnotationLink).map(a -> (PDAnnotationLink) a)
+					.filter(l -> l.getContents() != null && l.getContents().equals(CONTENTS))
+					.collect(Collectors.toList()).stream().forEach(l -> annotations.remove(l));
+		}
+	}
+
+	private void addHyperLinks(String id, PDDocument document, List<AbstractReference> references) throws IOException {
+		(new ParagraphStripper()).getParagraphs(document).stream()
+				.map(paragraph -> this.findReference(paragraph, references)).filter(Optional::isPresent)
+				.map(Optional::get).forEach(reference -> this.addHyperLink(id, document, reference));
 	}
 
 	private Optional<AbstractReference> findReference(Paragraph paragraph, List<AbstractReference> references) {
@@ -39,16 +82,24 @@ public class Linker {
 		Paragraph paragraph = reference.getParagraph();
 		try (PDPageContentStream content = new PDPageContentStream(document, paragraph.getPage(), AppendMode.PREPEND,
 				true)) {
+			PDRectangle rectangle = paragraph.getRectangle();
 			PDExtendedGraphicsState graphicsState = new PDExtendedGraphicsState();
 			graphicsState.setNonStrokingAlphaConstant(0.2f);
+			content.beginText();
+			content.setFont(PDType1Font.TIMES_ROMAN, 0);
+			content.showText("<pdf-linker>");
+			content.endText();
 			content.saveGraphicsState();
-			PDRectangle rectangle = paragraph.getRectangle();
 			content.setGraphicsStateParameters(graphicsState);
 			content.setNonStrokingColor(reference.getColor());
 			content.addRect(rectangle.getLowerLeftX(), rectangle.getLowerLeftY(), rectangle.getWidth(),
 					rectangle.getHeight());
 			content.fill();
 			content.restoreGraphicsState();
+			content.beginText();
+			content.setFont(PDType1Font.TIMES_ROMAN, 0);
+			content.showText("</pdf-linker>");
+			content.endText();
 		} catch (IOException exception) {
 			// TODO Auto-generated catch block
 			exception.printStackTrace();
@@ -59,6 +110,7 @@ public class Linker {
 			PDActionURI action = new PDActionURI();
 			action.setURI(reference.asUri(id));
 			PDAnnotationLink link = new PDAnnotationLink();
+			link.setContents(CONTENTS);
 			link.setBorderStyle(borderStyle);
 			link.setAction(action);
 			link.setRectangle(paragraph.getRectangle());
