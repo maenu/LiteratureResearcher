@@ -14,7 +14,7 @@ public abstract class AbstractIndexedClickable extends AbstractClickable {
 
 	@Override
 	protected String getSelector() {
-		return "click" + this.getClass().getSimpleName() + "In:index:";
+		return "click" + this.getClass().getSimpleName() + "InId:index:";
 	}
 
 	@Override

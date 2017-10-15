@@ -17,7 +17,7 @@ public class Title extends AbstractClickable {
 
 	@Override
 	protected String getSelector() {
-		return "clickTitleIn:";
+		return "clickTitleInId:";
 	}
 
 	@Override
