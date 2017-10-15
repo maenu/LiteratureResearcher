@@ -1,16 +1,18 @@
 {
 	"instance" : {
-		"subprocess" : "ManuelLeuenberger 10/12/2017 17:16",
-		"workingDirectory" : "ManuelLeuenberger 10/12/2017 17:49",
-		"processResultIn:" : "ManuelLeuenberger 10/12/2017 22:51",
-		"outputs:" : "ManuelLeuenberger 10/12/2017 14:05",
-		"workingDirectory:" : "ManuelLeuenberger 10/12/2017 17:49",
-		"processPdf:with:" : "ManuelLeuenberger 10/13/2017 15:38",
 		"subprocess:" : "ManuelLeuenberger 10/12/2017 17:16",
-		"outputs" : "ManuelLeuenberger 10/12/2017 14:05"
+		"processPdf:with:outputs:" : "ManuelLeuenberger 10/14/2017 17:22",
+		"processResultIn:outputs:" : "ManuelLeuenberger 10/15/2017 20:15",
+		"subprocess" : "ManuelLeuenberger 10/12/2017 17:16"
 	},
 	"class" : {
-		"initialize" : "ManuelLeuenberger 10/12/2017 22:46",
-		"subprocess:workingDirectory:outputs:" : "ManuelLeuenberger 10/12/2017 17:48"
+		"outputImages" : "ManuelLeuenberger 10/14/2017 12:42",
+		"initialize" : "ManuelLeuenberger 10/14/2017 12:39",
+		"outputBibtex" : "ManuelLeuenberger 10/14/2017 12:41",
+		"outputJats" : "ManuelLeuenberger 10/14/2017 12:42",
+		"outputText" : "ManuelLeuenberger 10/14/2017 12:42",
+		"outputTrueviz" : "ManuelLeuenberger 10/14/2017 12:42",
+		"outputZones" : "ManuelLeuenberger 10/14/2017 12:43",
+		"subprocess:" : "ManuelLeuenberger 10/14/2017 17:21"
 	}
 }

@@ -8,7 +8,7 @@ baseline: spec
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/PharoExtras/XPath/main' ];
-				configuration: 'NeoCSV'
+				configuration: 'NeoJson'
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://mc.stfx.eu/Neo' ];
@@ -20,4 +20,4 @@ baseline: spec
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ].
-			spec group: 'default' with: #('XPath' 'NeoCSV' 'OSProcess' 'Citezen') ]
+			spec group: 'default' with: #('XPath' 'NeoJson' 'OSProcess' 'Citezen') ]

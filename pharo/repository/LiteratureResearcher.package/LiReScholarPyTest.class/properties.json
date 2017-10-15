@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "TestCase",
-	"category" : "LiteratureResearcher-ScholarPy-Test",
+	"category" : "LiteratureResearcher-ScholarPy-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

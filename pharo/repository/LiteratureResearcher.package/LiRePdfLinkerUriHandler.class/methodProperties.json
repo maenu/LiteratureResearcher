@@ -1,6 +1,15 @@
 {
 	"instance" : {
-		"clusterId:referenceKey:referenceText:" : "ManuelLeuenberger 10/14/2017 00:31"
+		"clickAuthorWithId:in:" : "ManuelLeuenberger 10/15/2017 19:17",
+		"queue:" : "ManuelLeuenberger 10/15/2017 16:23",
+		"clickTitleWithId:in:" : "ManuelLeuenberger 10/15/2017 19:17",
+		"clickAffiliationWithId:in:" : "ManuelLeuenberger 10/15/2017 19:16",
+		"queue" : "ManuelLeuenberger 10/15/2017 16:23",
+		"clickReferenceWithId:in:" : "ManuelLeuenberger 10/15/2017 18:42"
 	},
-	"class" : { }
+	"class" : {
+		"instance" : "ManuelLeuenberger 10/15/2017 16:12",
+		"instance:" : "ManuelLeuenberger 10/15/2017 16:19",
+		"queue:" : "ManuelLeuenberger 10/15/2017 16:22"
+	}
 }

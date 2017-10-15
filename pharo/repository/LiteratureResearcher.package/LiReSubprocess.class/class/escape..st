@@ -1,5 +1,4 @@
 nonediting/nontyping keys
 escape: aString
-	"TODO this is not entirely safe"
-
-	^ '''' , (((aString replaceAll: '''' with: '\\\\''') replaceAll: '\n' with: '\\n') replaceAll: '\r' with: '\\r') , ''''
+	self flag: 'make this safe'.
+	^ '''' , ((aString replaceAll: '\\' with: '\\\\') replaceAll: '''' with: '\\\\''') , ''''

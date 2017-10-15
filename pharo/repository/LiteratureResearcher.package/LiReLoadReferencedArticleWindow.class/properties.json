@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"article",
+		"text",
+		"bibtex"
+	],
+	"name" : "LiReLoadReferencedArticleWindow",
+	"type" : "normal"
+}

@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"workingDirectory",
 		"subprocess"
 	],
 	"name" : "LiRePdfscrap",

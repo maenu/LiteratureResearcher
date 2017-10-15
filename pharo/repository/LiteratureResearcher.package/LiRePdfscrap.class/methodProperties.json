@@ -1,14 +1,10 @@
 {
 	"instance" : {
+		"subprocess:" : "ManuelLeuenberger 10/12/2017 21:52",
 		"subprocess" : "ManuelLeuenberger 10/12/2017 21:52",
-		"workingDirectory" : "ManuelLeuenberger 10/12/2017 21:52",
-		"workingDirectory:" : "ManuelLeuenberger 10/12/2017 21:52",
-		"processResult:in:" : "ManuelLeuenberger 10/12/2017 23:30",
-		"processBibtex:with:" : "ManuelLeuenberger 10/13/2017 22:57",
-		"prepareBibtex:with:" : "ManuelLeuenberger 10/13/2017 21:22",
-		"subprocess:" : "ManuelLeuenberger 10/12/2017 21:52"
+		"processBibtex:" : "ManuelLeuenberger 10/14/2017 21:21"
 	},
 	"class" : {
-		"subprocess:workingDirectory:" : "ManuelLeuenberger 10/12/2017 21:52"
+		"subprocess:" : "ManuelLeuenberger 10/14/2017 17:18"
 	}
 }

@@ -1,8 +1,7 @@
 {
 	"instance" : {
-		"tearDown" : "ManuelLeuenberger 10/12/2017 23:32",
-		"testProcessBibtexWith" : "ManuelLeuenberger 10/12/2017 23:36",
-		"setUp" : "ManuelLeuenberger 10/13/2017 21:25"
+		"testProcessBibtexWith" : "ManuelLeuenberger 10/14/2017 21:21",
+		"setUp" : "ManuelLeuenberger 10/14/2017 21:21"
 	},
 	"class" : { }
 }

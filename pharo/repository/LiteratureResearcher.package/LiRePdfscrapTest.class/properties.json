@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "TestCase",
-	"category" : "LiteratureResearcher-Pdfscrap-Test",
+	"category" : "LiteratureResearcher-Pdfscrap-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

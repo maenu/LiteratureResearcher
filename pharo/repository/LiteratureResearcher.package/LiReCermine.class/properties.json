@@ -5,11 +5,15 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
+		"OutputBibtex",
+		"OutputImages",
+		"OutputJats",
+		"OutputText",
+		"OutputTrueviz",
+		"OutputZones",
 		"Subject"
 	],
 	"instvars" : [
-		"workingDirectory",
-		"outputs",
 		"subprocess"
 	],
 	"name" : "LiReCermine",

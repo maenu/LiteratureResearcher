@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"title",
+		"authors",
+		"abstract",
+		"keywords",
+		"bibtex",
+		"references"
+	],
+	"name" : "LiReArticle",
+	"type" : "normal"
+}

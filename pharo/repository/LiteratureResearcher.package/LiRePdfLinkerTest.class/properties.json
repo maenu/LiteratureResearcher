@@ -1,16 +1,18 @@
 {
 	"commentStamp" : "",
 	"super" : "TestCase",
-	"category" : "LiteratureResearcher-PdfLinker-Test",
+	"category" : "LiteratureResearcher-PdfLinker-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"workingDirectory",
 		"pdfLinker",
 		"pdf",
 		"id",
-		"keys"
+		"references",
+		"title",
+		"authors",
+		"affiliations"
 	],
 	"name" : "LiRePdfLinkerTest",
 	"type" : "normal"

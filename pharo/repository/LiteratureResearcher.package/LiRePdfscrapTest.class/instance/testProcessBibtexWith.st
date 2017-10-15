@@ -1,5 +1,5 @@
 tests
 testProcessBibtexWith
 	| out |
-	out := pdfscrap processBibtex: id with: bibtex.
+	out := pdfscrap processBibtex: bibtex.
 	self assert: out exists
