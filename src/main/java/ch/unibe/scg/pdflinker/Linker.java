@@ -2,6 +2,9 @@ package ch.unibe.scg.pdflinker;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -24,21 +27,27 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 
 import ch.unibe.scg.pdflinker.clickable.AbstractClickable;
-import ch.unibe.scg.pdflinker.clickable.AbstractReference;
 import ch.unibe.scg.pdflinker.clickable.Affiliation;
 import ch.unibe.scg.pdflinker.clickable.Author;
+import ch.unibe.scg.pdflinker.clickable.Reference;
 import ch.unibe.scg.pdflinker.clickable.Title;
 
 public class Linker {
 
+	private static final float COLOR_ALPHA = 0.4f;
 	private static final byte[] START = { 66, 84, 10, 47, 70, 53, 32, 48, 32, 84, 102, 10, 40, 60, 112, 100, 102, 45,
 			108, 105, 110, 107, 101, 114, 62, 41, 32, 84, 106, 10, 69, 84, 10 };
 	private static final byte[] END = { 66, 84, 10, 47, 70, 53, 32, 48, 32, 84, 102, 10, 40, 60, 47, 112, 100, 102, 45,
 			108, 105, 110, 107, 101, 114, 62, 41, 32, 84, 106, 10, 69, 84, 10 };
 	private static final String CONTENTS = "pdf-linker";
+	private String id;
+
+	public Linker(String id) {
+		this.id = id;
+	}
 
 	public void link(File in, File out, Title title, List<Author> authors, List<Affiliation> affiliations,
-			List<AbstractReference> references) throws InvalidPasswordException, IOException {
+			List<Reference> references) throws InvalidPasswordException, IOException {
 		try (PDDocument document = PDDocument.load(in)) {
 			this.removeHyperLinks(document);
 			this.addHyperLinks(document, title, authors, affiliations, references);
@@ -71,7 +80,7 @@ public class Linker {
 	}
 
 	private void addHyperLinks(PDDocument document, Title title, List<Author> authors, List<Affiliation> affiliations,
-			List<AbstractReference> references) throws IOException {
+			List<Reference> references) throws IOException {
 		List<AbstractClickable> clickables = new ArrayList<>();
 		clickables.add(title);
 		clickables.addAll(authors);
@@ -100,7 +109,7 @@ public class Linker {
 				true)) {
 			PDRectangle rectangle = paragraph.getRectangle();
 			PDExtendedGraphicsState graphicsState = new PDExtendedGraphicsState();
-			graphicsState.setNonStrokingAlphaConstant(0.4f);
+			graphicsState.setNonStrokingAlphaConstant(COLOR_ALPHA);
 			content.beginText();
 			content.setFont(PDType1Font.TIMES_ROMAN, 0);
 			content.showText("<pdf-linker>");
@@ -124,7 +133,7 @@ public class Linker {
 			PDBorderStyleDictionary borderStyle = new PDBorderStyleDictionary();
 			borderStyle.setWidth(0);
 			PDActionURI action = new PDActionURI();
-			action.setURI(clickable.asUri());
+			action.setURI(this.asUri(clickable));
 			PDAnnotationLink link = new PDAnnotationLink();
 			link.setContents(CONTENTS);
 			link.setBorderStyle(borderStyle);
@@ -134,6 +143,23 @@ public class Linker {
 		} catch (IOException exception) {
 			// TODO Auto-generated catch block
 			exception.printStackTrace();
+		}
+	}
+
+	private String asUri(AbstractClickable clickable) {
+		return String.format("pharo://LiRePdfLinkerUriHandler/click%sWithId.in.s?args=%sargs=%s",
+				clickable.getClass().getSimpleName(), this.asUrlComponent(this.id),
+				this.asUrlComponent(clickable.getId()));
+	}
+
+	private String asUrlComponent(String s) {
+		if (s == null) {
+			return "";
+		}
+		try {
+			return URLEncoder.encode(s, StandardCharsets.UTF_8.name());
+		} catch (UnsupportedEncodingException exception) {
+			throw new RuntimeException(exception);
 		}
 	}
 

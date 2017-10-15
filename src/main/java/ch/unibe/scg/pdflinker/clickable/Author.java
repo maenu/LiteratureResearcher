@@ -1,9 +1,11 @@
 package ch.unibe.scg.pdflinker.clickable;
 
-public class Author extends AbstractIndexedClickable {
+import java.awt.Color;
 
-	public Author(String id, String key, int index) {
-		super(id, key, index);
+public class Author extends AbstractClickable {
+
+	public Author(String id, String key, Color color) {
+		super(id, key, color);
 	}
 
 }

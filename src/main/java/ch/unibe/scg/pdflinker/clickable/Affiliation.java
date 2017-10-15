@@ -1,9 +1,11 @@
 package ch.unibe.scg.pdflinker.clickable;
 
-public class Affiliation extends AbstractIndexedClickable {
+import java.awt.Color;
 
-	public Affiliation(String id, String key, int index) {
-		super(id, key, index);
+public class Affiliation extends AbstractClickable {
+
+	public Affiliation(String id, String key, Color color) {
+		super(id, key, color);
 	}
 
 }

@@ -3,7 +3,9 @@ package ch.unibe.scg.pdflinker;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -12,54 +14,44 @@ import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 
 import com.google.gson.Gson;
 
-import ch.unibe.scg.pdflinker.clickable.AbstractReference;
 import ch.unibe.scg.pdflinker.clickable.Affiliation;
 import ch.unibe.scg.pdflinker.clickable.Author;
-import ch.unibe.scg.pdflinker.clickable.IdentifiableReference;
+import ch.unibe.scg.pdflinker.clickable.Reference;
 import ch.unibe.scg.pdflinker.clickable.Title;
-import ch.unibe.scg.pdflinker.clickable.UnidentifiableReference;
 
 public class App {
 
 	public static void main(String[] args) throws InvalidPasswordException, IOException {
 		String id = args[0];
-		(new Linker()).link(new File(args[1]), new File(args[2]), asTitle(id, args[3]), asAuthors(id, args[4]),
-				asAffiliations(id, args[5]), asReferences(id, args[6]));
+		(new Linker(id)).link(new File(args[1]), new File(args[2]), parse(Title.class, args[3]),
+				parseAll(Author.class, args[4]), parseAll(Affiliation.class, args[5]),
+				parseAll(Reference.class, args[6]));
 	}
 
-	private static Title asTitle(String id, String s) {
-		return new Title(id, s);
+	private static <E> E parse(Class<E> cls, String s) {
+		Map<String, Object> simplification = ((new Gson()).fromJson(s, HashMap.class));
+		return asInstance(cls, simplification);
 	}
 
-	private static List<Author> asAuthors(String id, String s) {
-		List<String> objects = ((new Gson()).fromJson(s, ArrayList.class));
-		List<Author> authors = new ArrayList<>();
-		for (int i = 0; i < objects.size(); i = i + 1) {
-			authors.add(new Author(id, objects.get(i), i));
+	private static <E> List<E> parseAll(Class<E> cls, String s) {
+		List<Map<String, Object>> simplifications = ((new Gson()).fromJson(s, ArrayList.class));
+		simplifications.stream().map(simplification -> asInstance(cls, simplification)).collect(Collectors.toList());
+		List<E> objects = new ArrayList<>();
+		for (int i = 0; i < simplifications.size(); i = i + 1) {
+			objects.add(asInstance(cls, simplifications.get(i)));
 		}
-		return authors;
+		return objects;
 	}
 
-	private static List<Affiliation> asAffiliations(String id, String s) {
-		List<String> objects = ((new Gson()).fromJson(s, ArrayList.class));
-		List<Affiliation> affiliations = new ArrayList<>();
-		for (int i = 0; i < objects.size(); i = i + 1) {
-			affiliations.add(new Affiliation(id, objects.get(i), i));
+	private static <E> E asInstance(Class<E> cls, Map<String, Object> simplification) {
+		try {
+			List<Double> color = (List<Double>) simplification.get("color");
+			return (E) cls.getConstructors()[0].newInstance(simplification.get("id"), simplification.get("key"),
+					new Color(color.get(0).intValue(), color.get(1).intValue(), color.get(2).intValue()));
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| SecurityException exception) {
+			throw new RuntimeException(exception);
 		}
-		return affiliations;
-	}
-
-	private static List<AbstractReference> asReferences(String id, String s) {
-		return ((List<Map<String, Object>>) (new Gson()).fromJson(s, ArrayList.class)).stream().map(map -> {
-			if (map.containsKey("referencedId")) {
-				List<Double> parts = (List<Double>) map.get("color");
-				return new IdentifiableReference(id, (String) map.get("key"), (String) map.get("referencedId"),
-						new Color(parts.get(0).intValue(), parts.get(1).intValue(), parts.get(2).intValue(), 31));
-			} else {
-				return new UnidentifiableReference(id, (String) map.get("key"), (String) map.get("text"),
-						(String) map.get("bibtex"));
-			}
-		}).collect(Collectors.toList());
 	}
 
 }
