@@ -1,0 +1,17 @@
+{
+	"instance" : {
+		"graph" : "ManuelLeuenberger 10/16/2017 13:38",
+		"newReferences" : "ManuelLeuenberger 10/16/2017 17:10",
+		"newAuthors" : "ManuelLeuenberger 10/16/2017 17:11",
+		"graph:article:" : "ManuelLeuenberger 10/16/2017 16:55",
+		"article" : "ManuelLeuenberger 10/16/2017 11:30",
+		"initializePresenter" : "ManuelLeuenberger 10/16/2017 17:09",
+		"initializeWidgets" : "ManuelLeuenberger 10/16/2017 16:52",
+		"tabManager:" : "ManuelLeuenberger 10/16/2017 11:20",
+		"newBibtex" : "ManuelLeuenberger 10/16/2017 11:48",
+		"tabManager" : "ManuelLeuenberger 10/16/2017 11:20"
+	},
+	"class" : {
+		"defaultSpec" : "ManuelLeuenberger 10/16/2017 11:20"
+	}
+}

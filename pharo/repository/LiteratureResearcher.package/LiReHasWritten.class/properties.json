@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReEdge",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReHasWritten",
+	"type" : "normal"
+}

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"text",
+		"button"
+	],
+	"name" : "LiReSpecSearchBar",
+	"type" : "normal"
+}

@@ -1,6 +1,6 @@
 target resize
 executeIn: aModel
-	| pdf cermineResult metadata xxx bibtex |
+	| pdf cermineResult metadata xxx bibtex specModel |
 	pdf := (article bibtex hasField: #pdf)
 		ifTrue: [ (article bibtex at: #pdf) rawValueObject asFileReference ]
 		ifFalse: [ (article bibtex hasField: #url)
@@ -10,8 +10,10 @@ executeIn: aModel
 	cermineResult := cermine processPdf: article bibtex key with: pdf outputs: {(LiReCermine outputJats , LiReCermine outputBibtex)}.
 	metadata := LiReArticleMetadata fromJatsFile: (cermineResult at: LiReCermine outputJats).
 	bibtex := (CZBibParser parse: (cermineResult at: LiReCermine outputBibtex) contents) entries.
-	self flag: 'open pdf, metadata for article'.
-	self flag: 'open bibtex for references'.
+	specModel := LiReArticleLoader article: article metadata: metadata bibtex: bibtex.
+	specModel openWithSpec.
+	specModel window modalRelativeTo: World.
+	self flag: 'open pdf'.
 	pdf := pdfLinker
 		processPdf: article bibtex key
 		with: pdf

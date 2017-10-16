@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"key",
+		"source",
+		"target",
+		"sourceClass",
+		"targetClass"
+	],
+	"name" : "LiReEdge",
+	"type" : "normal"
+}

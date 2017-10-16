@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"nodes",
+		"edges"
+	],
+	"name" : "LiReGraph",
+	"type" : "normal"
+}

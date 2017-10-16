@@ -1,11 +1,15 @@
 {
 	"instance" : {
+		"asCompactWidget" : "ManuelLeuenberger 10/16/2017 16:44",
 		"name:" : "ManuelLeuenberger 10/14/2017 11:53",
+		"asWidget" : "ManuelLeuenberger 10/16/2017 16:01",
 		"email" : "ManuelLeuenberger 10/14/2017 11:53",
 		"email:" : "ManuelLeuenberger 10/14/2017 11:53",
 		"name" : "ManuelLeuenberger 10/14/2017 11:55",
 		"affiliation" : "ManuelLeuenberger 10/14/2017 11:53",
 		"affiliation:" : "ManuelLeuenberger 10/14/2017 11:53"
 	},
-	"class" : { }
+	"class" : {
+		"name:email:" : "ManuelLeuenberger 10/16/2017 15:42"
+	}
 }
