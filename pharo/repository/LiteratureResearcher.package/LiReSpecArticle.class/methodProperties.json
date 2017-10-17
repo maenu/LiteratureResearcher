@@ -1,17 +1,8 @@
 {
 	"instance" : {
-		"graph" : "ManuelLeuenberger 10/16/2017 13:38",
-		"newReferences" : "ManuelLeuenberger 10/17/2017 17:21",
-		"newAuthors" : "ManuelLeuenberger 10/17/2017 17:20",
-		"graph:article:" : "ManuelLeuenberger 10/17/2017 15:32",
-		"article" : "ManuelLeuenberger 10/16/2017 11:30",
-		"initializePresenter" : "ManuelLeuenberger 10/17/2017 18:23",
-		"initializeWidgets" : "ManuelLeuenberger 10/16/2017 16:52",
-		"tabManager:" : "ManuelLeuenberger 10/16/2017 11:20",
-		"newBibtex" : "ManuelLeuenberger 10/17/2017 17:21",
-		"tabManager" : "ManuelLeuenberger 10/16/2017 11:20"
+		"node:" : "ManuelLeuenberger 10/17/2017 20:36",
+		"newTabNode" : "ManuelLeuenberger 10/17/2017 20:47",
+		"initializePresenter" : "ManuelLeuenberger 10/17/2017 20:36"
 	},
-	"class" : {
-		"defaultSpec" : "ManuelLeuenberger 10/17/2017 18:22"
-	}
+	"class" : { }
 }

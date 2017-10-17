@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReSpecNode",
+	"category" : "LiteratureResearcher-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReSpecInstitution",
+	"type" : "normal"
+}

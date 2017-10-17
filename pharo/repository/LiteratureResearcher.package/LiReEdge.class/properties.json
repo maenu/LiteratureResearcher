@@ -6,11 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"graph",
 		"key",
 		"source",
-		"target",
-		"sourceClass",
-		"targetClass"
+		"target"
 	],
 	"name" : "LiReEdge",
 	"type" : "normal"

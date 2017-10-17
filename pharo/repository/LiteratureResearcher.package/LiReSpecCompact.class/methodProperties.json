@@ -5,7 +5,7 @@
 		"buttonUpdate:" : "ManuelLeuenberger 10/17/2017 16:17",
 		"buttonRead:" : "ManuelLeuenberger 10/17/2017 16:17",
 		"buttonDelete:" : "ManuelLeuenberger 10/17/2017 16:17",
-		"initializePresenter" : "ManuelLeuenberger 10/17/2017 16:18",
+		"initializePresenter" : "ManuelLeuenberger 10/17/2017 18:28",
 		"initializeWidgets" : "ManuelLeuenberger 10/17/2017 17:30",
 		"label:" : "ManuelLeuenberger 10/17/2017 16:18",
 		"buttonDelete" : "ManuelLeuenberger 10/17/2017 16:17",
@@ -14,7 +14,6 @@
 		"entity:" : "ManuelLeuenberger 10/17/2017 16:17"
 	},
 	"class" : {
-		"defaultSpec" : "ManuelLeuenberger 10/17/2017 18:22",
-		"isAbstract" : "ManuelLeuenberger 10/16/2017 17:42"
+		"defaultSpec" : "ManuelLeuenberger 10/17/2017 18:22"
 	}
 }

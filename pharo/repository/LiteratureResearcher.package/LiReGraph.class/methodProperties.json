@@ -1,10 +1,14 @@
 {
 	"instance" : {
+		"outgoingEdges:class:" : "ManuelLeuenberger 10/17/2017 21:29",
+		"outgoingEdges:" : "ManuelLeuenberger 10/17/2017 20:40",
 		"initialize" : "ManuelLeuenberger 10/16/2017 16:01",
 		"nodes" : "ManuelLeuenberger 10/16/2017 15:22",
 		"nodes:" : "ManuelLeuenberger 10/16/2017 15:22",
 		"edges" : "ManuelLeuenberger 10/16/2017 15:22",
-		"edges:" : "ManuelLeuenberger 10/16/2017 15:22"
+		"edges:" : "ManuelLeuenberger 10/16/2017 15:22",
+		"incomingEdges:class:" : "ManuelLeuenberger 10/17/2017 21:26",
+		"incomingEdges:" : "ManuelLeuenberger 10/17/2017 20:40"
 	},
 	"class" : {
 		"example" : "ManuelLeuenberger 10/17/2017 15:35"

@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"graph"
+	],
 	"name" : "LiReNode",
 	"type" : "normal"
 }

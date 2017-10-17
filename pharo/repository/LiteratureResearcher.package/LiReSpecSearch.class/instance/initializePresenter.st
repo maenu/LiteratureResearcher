@@ -4,9 +4,9 @@ initializePresenter
 		action: [ results
 				items:
 					((search value: searchBar text text)
-						collect: [ :item | 
+						collect: [ :n | 
 							| result |
-							result := LiReSpecSearchResult result: item.
-							result buttonCreate action: [ resultCreate value: item ].
+							result := LiReSpecSearchResult result: n asCompactWidget.
+							result buttonCreate action: [ resultCreate value: n ].
 							result ]) ].
 	results displayBlock: [ :model | model buildWithSpec ]
