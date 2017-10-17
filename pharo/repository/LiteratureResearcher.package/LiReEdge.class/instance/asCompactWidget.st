@@ -1,5 +1,5 @@
 converting
 asCompactWidget
-	^ LabelModel new
-		label: key;
+	^ LiReSpecEdgeCompact new
+		entity: self;
 		yourself

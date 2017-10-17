@@ -1,5 +1,5 @@
 converting
 asCompactWidget
-	^ LabelModel new
-		label: bibtex key;
+	^ LiReSpecArticleCompact new
+		entity: self;
 		yourself

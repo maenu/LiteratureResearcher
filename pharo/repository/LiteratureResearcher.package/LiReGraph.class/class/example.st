@@ -1,14 +1,17 @@
 example
 example
-	| article1 article2 references graph |
+	| article1 article2 references1 references2 graph references3 references4 |
 	article1 := LiReArticle
 		bibtex:
 			(CZBibParser
 				parse:
 					(Character lf asString
 						join:
-							{'@inproceedings{nguyen2010recurring,' . '  title={Recurring bug fixes in object-oriented programs},' . '  author={Nguyen, Tung Thanh and Nguyen, Hoan Anh and Pham, Nam H and Al-Kofahi, Jafar and Nguyen, Tien N},'.
-							'  booktitle={Proceedings of the 32Nd ACM/IEEE International Conference on Software Engineering-Volume 1},' . '  pages={315--324},' . '  year={2010},' . '  organization={ACM},' . '  url={http://dl.acm.org/citation.cfm?id=1806847}'.
+							{'@inproceedings{nguyen2010recurring,' . '  title={Recurring bug fixes in object-oriented programs},'.
+							'  author={Nguyen, Tung Thanh and Nguyen, Hoan Anh and Pham, Nam H and Al-Kofahi, Jafar and Nguyen, Tien N},'.
+							'  booktitle={Proceedings of the 32Nd ACM/IEEE International Conference on Software Engineering-Volume 1},'.
+							'  pages={315--324},' . '  year={2010},' . '  organization={ACM},'.
+							'  url={http://dl.acm.org/citation.cfm?id=1806847}'.
 							'}'})) entries first.
 	article2 := LiReArticle
 		bibtex:
@@ -16,12 +19,21 @@ example
 				parse:
 					(Character lf asString
 						join:
-							{'@inproceedings{nguyen2011recurring,' . '  title={Recurring bug fixes in object-oriented programs},' . '  author={Nguyen, Tung Thanh and Nguyen, Hoan Anh and Pham, Nam H and Al-Kofahi, Jafar and Nguyen, Tien N},'.
-							'  booktitle={Proceedings of the 32Nd ACM/IEEE International Conference on Software Engineering-Volume 1},' . '  pages={315--324},' . '  year={2010},' . '  organization={ACM},' . '  url={http://dl.acm.org/citation.cfm?id=1806847}'.
+							{'@inproceedings{nguyen2011recurring,' . '  title={Recurring bug fixes in object-oriented programs},'.
+							'  author={Nguyen, Tung Thanh and Nguyen, Hoan Anh and Pham, Nam H and Al-Kofahi, Jafar and Nguyen, Tien N},'.
+							'  booktitle={Proceedings of the 32Nd ACM/IEEE International Conference on Software Engineering-Volume 1},'.
+							'  pages={315--324},' . '  year={2010},' . '  organization={ACM},'.
+							'  url={http://dl.acm.org/citation.cfm?id=1806847}'.
 							'}'})) entries first.
-	references := LiReReferences key: '[2]' source: article2 target: article1.
+	references1 := LiReReferences key: '[2]' source: article2 target: article1.
+	references2 := LiReReferences key: '[3]' source: article2 target: article1.
+	references3 := LiReReferences key: '[4]' source: article2 target: article1.
+	references4 := LiReReferences key: '[1]' source: article1 target: article2.
 	graph := LiReGraph new.
 	graph nodes add: article1.
 	graph nodes add: article2.
-	graph edges add: references.
+	graph edges add: references1.
+	graph edges add: references2.
+	graph edges add: references3.
+	graph edges add: references4.
 	^ graph

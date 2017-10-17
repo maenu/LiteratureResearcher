@@ -1,7 +1,11 @@
 initialization
 initializeWidgets
 	text := self newTextInput.
-	button := self newButton
+	buttonSearch := self newButton
 		help: 'Search';
-		icon: (self iconNamed: #glamorousSearch);
+		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);
+		yourself.
+	buttonCreate := self newButton
+		help: 'Create';
+		icon: (Smalltalk ui icons iconNamed: #add);
 		yourself

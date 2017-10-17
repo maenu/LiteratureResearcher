@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReNode",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name",
+		"country"
+	],
+	"name" : "LiReInstitution",
+	"type" : "normal"
+}

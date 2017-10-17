@@ -7,7 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"text",
-		"button"
+		"buttonSearch",
+		"buttonCreate",
+		"create"
 	],
 	"name" : "LiReSpecSearchBar",
 	"type" : "normal"

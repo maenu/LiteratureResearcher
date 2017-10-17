@@ -4,5 +4,6 @@ defaultSpec
 		newRow: [ :row | 
 			row
 				newColumn: #text;
-				newColumn: #button width: self toolbarHeight ];
+				newColumn: #buttonSearch width: self toolbarHeight;
+				newColumn: #buttonCreate width: self toolbarHeight ];
 		yourself

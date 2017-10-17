@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"entity",
+		"label",
+		"buttonRead",
+		"buttonUpdate",
+		"buttonDelete"
+	],
+	"name" : "LiReSpecCompact",
+	"type" : "normal"
+}

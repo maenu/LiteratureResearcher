@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"pointer",
+		"edge",
+		"node"
+	],
+	"name" : "LiReSpecEdgeNodeCompact",
+	"type" : "normal"
+}

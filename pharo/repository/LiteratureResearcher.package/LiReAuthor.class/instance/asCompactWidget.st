@@ -1,5 +1,5 @@
 converting
 asCompactWidget
-	^ LabelModel new
-		label: name;
+	^ LiReSpecAuthorCompact new
+		entity: self;
 		yourself

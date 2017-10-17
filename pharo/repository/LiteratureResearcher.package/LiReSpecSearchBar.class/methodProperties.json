@@ -1,12 +1,17 @@
 {
 	"instance" : {
-		"button" : "ManuelLeuenberger 10/16/2017 14:58",
+		"buttonCreate:" : "ManuelLeuenberger 10/17/2017 18:20",
+		"text" : "ManuelLeuenberger 10/16/2017 14:58",
+		"create:" : "ManuelLeuenberger 10/17/2017 18:20",
+		"buttonCreate" : "ManuelLeuenberger 10/17/2017 18:20",
+		"buttonSearch:" : "ManuelLeuenberger 10/17/2017 17:14",
+		"initializePresenter" : "ManuelLeuenberger 10/17/2017 18:20",
 		"text:" : "ManuelLeuenberger 10/16/2017 14:58",
-		"button:" : "ManuelLeuenberger 10/16/2017 14:58",
-		"initializeWidgets" : "ManuelLeuenberger 10/16/2017 15:02",
-		"text" : "ManuelLeuenberger 10/16/2017 14:58"
+		"create" : "ManuelLeuenberger 10/17/2017 18:20",
+		"initializeWidgets" : "ManuelLeuenberger 10/17/2017 18:20",
+		"buttonSearch" : "ManuelLeuenberger 10/17/2017 17:14"
 	},
 	"class" : {
-		"defaultSpec" : "ManuelLeuenberger 10/16/2017 14:56"
+		"defaultSpec" : "ManuelLeuenberger 10/17/2017 18:19"
 	}
 }
