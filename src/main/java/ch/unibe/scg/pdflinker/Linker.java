@@ -147,9 +147,9 @@ public class Linker {
 	}
 
 	private String asUri(AbstractClickable clickable) {
-		return String.format("pharo://LiRePdfLinkerUriHandler/click%sWithId.in.s?args=%sargs=%s",
-				clickable.getClass().getSimpleName(), this.asUrlComponent(this.id),
-				this.asUrlComponent(clickable.getId()));
+		return String.format("pharo://LiRePdfLinkerUriHandler/click%sWithId.in.?args=%s&args=%s",
+				clickable.getClass().getSimpleName(), clickable.getId(),
+				this.asUrlComponent(this.asUrlComponent(this.id)));
 	}
 
 	private String asUrlComponent(String s) {
