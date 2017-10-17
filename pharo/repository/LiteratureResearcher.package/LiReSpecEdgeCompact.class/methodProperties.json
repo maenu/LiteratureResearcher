@@ -1,6 +1,7 @@
 {
 	"instance" : {
-		"entity:" : "ManuelLeuenberger 10/17/2017 16:24"
+		"onDelete" : "ManuelLeuenberger 10/17/2017 21:58",
+		"onRead" : "ManuelLeuenberger 10/17/2017 21:59"
 	},
 	"class" : { }
 }

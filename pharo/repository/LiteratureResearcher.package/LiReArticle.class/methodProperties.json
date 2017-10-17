@@ -1,12 +1,14 @@
 {
 	"instance" : {
 		"bibtex:" : "ManuelLeuenberger 10/14/2017 11:52",
-		"asWidget" : "ManuelLeuenberger 10/16/2017 16:01",
 		"bibtex" : "ManuelLeuenberger 10/14/2017 11:52",
+		"asDetailsWidget" : "ManuelLeuenberger 10/17/2017 22:52",
 		"matches:" : "ManuelLeuenberger 10/17/2017 20:59",
-		"asCompactWidget" : "ManuelLeuenberger 10/17/2017 16:27"
+		"label" : "ManuelLeuenberger 10/17/2017 22:36"
 	},
 	"class" : {
-		"graph:bibtex:" : "ManuelLeuenberger 10/17/2017 21:47"
+		"graph:bibtex:" : "ManuelLeuenberger 10/17/2017 21:47",
+		"label" : "ManuelLeuenberger 10/17/2017 23:33",
+		"fromText:graph:" : "ManuelLeuenberger 10/17/2017 22:23"
 	}
 }

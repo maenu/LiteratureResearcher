@@ -1,7 +1,6 @@
 as yet unclassified
 graph: aGraph key: aString source: aNode target: anotherNode
-	^ self new
-		graph: aGraph;
+	^ (self graph: aGraph)
 		key: aString;
 		source: aNode;
 		target: anotherNode;

@@ -1,5 +1,5 @@
 initialization
 initializePresenter
-	buttonRead action: [ self flag: 'TODO' ].
+	buttonRead action: [ self onRead ].
 	buttonUpdate action: [ entity asWidget openWithSpec ].
-	buttonDelete action: [ self flag: 'TODO' ]
+	buttonDelete action: [ self onDelete ]

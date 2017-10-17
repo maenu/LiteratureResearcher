@@ -1,5 +1,5 @@
 converting
 asWidget
-	^ LabelModel new
-		text: key;
+	^ LiReSpecEdge new
+		entity: self;
 		yourself

@@ -1,0 +1,3 @@
+converting
+asDetailsWidget
+	self subclassResponsibility

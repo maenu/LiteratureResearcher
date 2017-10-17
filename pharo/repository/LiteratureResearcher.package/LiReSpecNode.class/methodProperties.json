@@ -1,14 +1,10 @@
 {
 	"instance" : {
-		"newTabEdges:with:widget:icon:expecting:" : "ManuelLeuenberger 10/17/2017 21:51",
-		"tabManager:" : "ManuelLeuenberger 10/17/2017 18:58",
-		"node" : "ManuelLeuenberger 10/17/2017 19:46",
-		"node:" : "ManuelLeuenberger 10/17/2017 21:50",
-		"newTabNode" : "ManuelLeuenberger 10/17/2017 19:55",
-		"tabManager" : "ManuelLeuenberger 10/17/2017 18:58",
-		"initializeWidgets" : "ManuelLeuenberger 10/17/2017 19:57",
-		"newTabIncomingEdges:with:" : "ManuelLeuenberger 10/17/2017 21:10",
-		"newTabOutgoingEdges:with:" : "ManuelLeuenberger 10/17/2017 21:10"
+		"entity:" : "ManuelLeuenberger 10/17/2017 23:14",
+		"createOutgoingEdge:to:" : "ManuelLeuenberger 10/17/2017 23:17",
+		"createIncomingEdge:from:" : "ManuelLeuenberger 10/17/2017 23:17",
+		"newTabIncomingEdges:with:" : "ManuelLeuenberger 10/17/2017 23:17",
+		"newTabOutgoingEdges:with:" : "ManuelLeuenberger 10/17/2017 23:17"
 	},
 	"class" : {
 		"defaultSpec" : "ManuelLeuenberger 10/17/2017 18:58"

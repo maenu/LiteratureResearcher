@@ -1,14 +1,16 @@
 {
 	"instance" : {
-		"name:" : "ManuelLeuenberger 10/16/2017 18:08",
-		"asWidget" : "ManuelLeuenberger 10/16/2017 18:07",
 		"country" : "ManuelLeuenberger 10/16/2017 15:42",
+		"asDetailsWidget" : "ManuelLeuenberger 10/17/2017 23:34",
 		"country:" : "ManuelLeuenberger 10/16/2017 15:42",
 		"matches:" : "ManuelLeuenberger 10/17/2017 21:00",
 		"name" : "ManuelLeuenberger 10/16/2017 18:08",
-		"asCompactWidget" : "ManuelLeuenberger 10/17/2017 16:27"
+		"label" : "ManuelLeuenberger 10/17/2017 22:37",
+		"name:" : "ManuelLeuenberger 10/16/2017 18:08"
 	},
 	"class" : {
-		"graph:name:country:" : "ManuelLeuenberger 10/17/2017 21:48"
+		"graph:name:country:" : "ManuelLeuenberger 10/17/2017 21:48",
+		"label" : "ManuelLeuenberger 10/17/2017 23:33",
+		"fromText:graph:" : "ManuelLeuenberger 10/17/2017 22:16"
 	}
 }
