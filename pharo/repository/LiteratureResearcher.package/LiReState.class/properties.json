@@ -1,0 +1,22 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Default",
+		"Irrelevant",
+		"Processed",
+		"Processing",
+		"Relevant",
+		"Skimmed"
+	],
+	"instvars" : [
+		"name",
+		"color",
+		"index"
+	],
+	"name" : "LiReState",
+	"type" : "normal"
+}

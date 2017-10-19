@@ -7,9 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"pdfscrap",
-		"cermine",
-		"pdfLinker",
-		"article"
+		"cermine"
 	],
 	"name" : "LiReLoadPdf",
 	"type" : "normal"

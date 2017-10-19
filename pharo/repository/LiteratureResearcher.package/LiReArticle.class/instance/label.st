@@ -1,3 +1,3 @@
 accessing
 label
-	^ bibtex key
+	^ bibtex key asString

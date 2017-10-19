@@ -7,17 +7,21 @@ baseline: spec
 				configuration: 'XPath'
 					with: [ spec
 						versionString: #stable;
-						repository: 'http://www.smalltalkhub.com/mc/PharoExtras/XPath/main' ];
+						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
 				configuration: 'NeoJson'
 					with: [ spec
 						versionString: #stable;
-						repository: 'http://mc.stfx.eu/Neo' ];
+						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
 				configuration: 'OSProcess'
 					with: [ spec
 						versionString: #stable;
-						repository: 'http://www.squeaksource.com/MetacelloRepository' ];
+						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
 				configuration: 'Citezen'
 					with: [ spec
 						versionString: #stable;
+						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
+				configuration: 'Roassal2'
+					with: [ spec
+						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ].
-			spec group: 'default' with: #('XPath' 'NeoJson' 'OSProcess' 'Citezen') ]
+			spec group: 'default' with: #('XPath' 'NeoJson' 'OSProcess' 'Citezen' 'Roassal2') ]

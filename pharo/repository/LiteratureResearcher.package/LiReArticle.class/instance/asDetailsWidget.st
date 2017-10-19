@@ -1,13 +1,18 @@
 converting
 asDetailsWidget
-	| model |
+	| superModel model |
+	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
-	model instantiateModels: #(bibtex TextModel).
+	model instantiateModels: #(superModel DynamicComposableModel bibtex TextModel).
 	model
 		layout:
 			(SpecLayout composed
-				newColumn: [ :column | column add: #bibtex ];
+				newColumn: [ :c | 
+					c
+						add: #superModel height: model class toolbarHeight;
+						add: #bibtex ];
 				yourself).
+	model assign: superModel to: #superModel.
 	model bibtex
 		text:
 			(LiReBibBibRenderer new
