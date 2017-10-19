@@ -3,7 +3,8 @@ asDetailsWidget
 	| superModel model |
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
-	model instantiateModels: #(superModel DynamicComposableModel nameLabel LabelModel name_ TextInputFieldModel countryLabel LabelModel country TextInputFieldModel).
+	model
+		instantiateModels: #(superModel DynamicComposableModel nameLabel LabelModel name_ TextInputFieldModel countryLabel LabelModel country TextInputFieldModel).
 	model nameLabel label: 'Name'.
 	model countryLabel label: 'Country'.
 	model
@@ -23,7 +24,7 @@ asDetailsWidget
 				yourself).
 	model name_ text: name.
 	model country text: country.
-	model name_ acceptBlock: [ :s | name := s ].
-	model country acceptBlock: [ :s | country := s ].
+	model name_ acceptBlock: [ :s | self name: s ].
+	model country acceptBlock: [ :s | self country: s ].
 	model assign: superModel to: #superModel.
 	^ model

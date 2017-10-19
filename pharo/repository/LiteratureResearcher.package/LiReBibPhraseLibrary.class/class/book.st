@@ -1,6 +1,6 @@
 phrases-entries
 book
 	^ super book
-		addBlockWithField: #url;
+		addBlockWithField: #clusterId;
 		addBlockWithField: #pdf;
-		addBlockWithField: #clusterId
+		addBlockWithField: #url

@@ -1,4 +1,13 @@
 accessing
 target: anObject
-	self assert: (self class canBecomeTarget: anObject).
-	target := anObject
+	| oldValue |
+	oldValue := target.
+	target := anObject.
+	oldValue == target
+		ifFalse: [ announcer
+				announce:
+					(LiRePropertyChanged
+						instance: self
+						property: #target
+						oldValue: oldValue
+						newValue: target) ]

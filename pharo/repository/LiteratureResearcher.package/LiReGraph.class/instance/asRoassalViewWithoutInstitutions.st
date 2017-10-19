@@ -2,8 +2,9 @@ converting
 asRoassalViewWithoutInstitutions
 	| view legendBuilder |
 	view := RTView new.
-	(nodes reject: [ :n | n class = LiReInstitution ]) collect: [ :n | n addRoassalElementTo: view ].
-	(edges reject: [ :e | e class sourceClass = LiReInstitution or: [ e class targetClass = LiReInstitution ] ]) collect: [ :e | e addRoassalElementTo: view ].
+	(nodes reject: [ :n | n class == LiReInstitution ]) collect: [ :n | n addRoassalElementTo: view ].
+	(edges reject: [ :e | e class sourceClass == LiReInstitution or: [ e class targetClass == LiReInstitution ] ])
+		collect: [ :e | e addRoassalElementTo: view ].
 	RTOptimizedForceBasedLayout new
 		charge: -1000;
 		on: view elements.
@@ -18,4 +19,8 @@ asRoassalViewWithoutInstitutions
 	view @ RTSelectableView.
 	view @ RTZoomableView.
 	view @ RTDraggableView.
+	self whenEdgeAddedDo: [ view signalUpdate ].
+	self whenEdgeRemovedDo: [ view signalUpdate ].
+	self whenNodeAddedDo: [ view signalUpdate ].
+	self whenNodeRemovedDo: [ view signalUpdate ].
 	^ view

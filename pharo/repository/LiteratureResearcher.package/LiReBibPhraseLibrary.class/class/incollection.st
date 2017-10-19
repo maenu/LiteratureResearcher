@@ -1,6 +1,6 @@
 phrases-entries
 incollection
 	^ super incollection
-		addBlockWithField: #url;
+		addBlockWithField: #clusterId;
 		addBlockWithField: #pdf;
-		addBlockWithField: #clusterId
+		addBlockWithField: #url

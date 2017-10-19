@@ -1,3 +1,3 @@
 testing
 canBecomeSource: aNode
-	^ aNode class = self sourceClass or: [ aNode class inheritsFrom: self sourceClass ]
+	^ aNode class == self sourceClass or: [ aNode class inheritsFrom: self sourceClass ]

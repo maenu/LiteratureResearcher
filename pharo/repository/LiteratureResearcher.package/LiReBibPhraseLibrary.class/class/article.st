@@ -1,6 +1,6 @@
 phrases-entries
 article
 	^ super article
-		addBlockWithField: #url;
+		addBlockWithField: #clusterId;
 		addBlockWithField: #pdf;
-		addBlockWithField: #clusterId
+		addBlockWithField: #url

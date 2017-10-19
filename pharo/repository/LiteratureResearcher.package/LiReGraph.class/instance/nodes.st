@@ -1,3 +1,3 @@
 accessing
 nodes
-	^ nodes
+	^ nodes value

@@ -6,7 +6,7 @@ visitFieldRef: aFieldRef
 		text: aFieldRef fieldName;
 		text: ' = '.
 	aFieldRef fieldName = 'year'
-		ifFalse: [ aFieldRef fieldName = 'clusterId'
+		ifFalse: [ aFieldRef fieldName = 'url'
 				ifFalse: [ self
 						text: '{';
 						text: (currentEntry at: aFieldRef fieldName) rawValue;

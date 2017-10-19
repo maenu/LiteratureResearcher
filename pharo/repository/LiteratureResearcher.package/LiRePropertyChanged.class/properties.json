@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReAnnouncement",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"instance",
+		"property",
+		"oldValue",
+		"newValue"
+	],
+	"name" : "LiRePropertyChanged",
+	"type" : "normal"
+}

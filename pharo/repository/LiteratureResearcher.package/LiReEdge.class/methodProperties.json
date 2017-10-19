@@ -2,24 +2,24 @@
 	"instance" : {
 		"label" : "ManuelLeuenberger 10/17/2017 22:35",
 		"asCompactSourceWidget" : "ManuelLeuenberger 10/17/2017 15:06",
-		"target:" : "ManuelLeuenberger 10/17/2017 21:23",
+		"target:" : "ManuelLeuenberger 10/19/2017 21:15",
 		"asWidget" : "ManuelLeuenberger 10/17/2017 23:19",
-		"source:" : "ManuelLeuenberger 10/17/2017 21:23",
-		"key:" : "ManuelLeuenberger 10/16/2017 15:25",
+		"source:" : "ManuelLeuenberger 10/19/2017 21:15",
+		"key:" : "ManuelLeuenberger 10/19/2017 21:15",
 		"lineStyleSelector" : "ManuelLeuenberger 10/18/2017 19:19",
-		"addRoassalElementTo:" : "ManuelLeuenberger 10/18/2017 19:51",
+		"addRoassalElementTo:" : "ManuelLeuenberger 10/19/2017 22:31",
 		"key" : "ManuelLeuenberger 10/16/2017 15:25",
 		"asCompactWidget" : "ManuelLeuenberger 10/17/2017 16:26",
 		"target" : "ManuelLeuenberger 10/16/2017 15:25",
-		"asDetailsWidget" : "ManuelLeuenberger 10/17/2017 23:29",
+		"asDetailsWidget" : "ManuelLeuenberger 10/19/2017 21:11",
 		"asCompactTargetWidget" : "ManuelLeuenberger 10/17/2017 15:07",
 		"source" : "ManuelLeuenberger 10/16/2017 15:25"
 	},
 	"class" : {
 		"graph:key:source:target:" : "ManuelLeuenberger 10/17/2017 22:58",
-		"canBecomeSource:" : "ManuelLeuenberger 10/17/2017 21:22",
+		"canBecomeSource:" : "ManuelLeuenberger 10/19/2017 21:23",
 		"sourceClass" : "ManuelLeuenberger 10/17/2017 21:03",
 		"targetClass" : "ManuelLeuenberger 10/17/2017 21:02",
-		"canBecomeTarget:" : "ManuelLeuenberger 10/17/2017 21:22"
+		"canBecomeTarget:" : "ManuelLeuenberger 10/19/2017 21:23"
 	}
 }

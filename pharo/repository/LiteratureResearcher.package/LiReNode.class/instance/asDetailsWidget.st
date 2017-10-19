@@ -8,7 +8,7 @@ asDetailsWidget
 	model state setSelectedItem: state.
 	model state iconHolder: [ :s | s icon ].
 	model state displayBlock: [ :s | s label ].
-	model state whenSelectedItemChanged: [ :s | state := s ].
+	model state whenSelectedItemChanged: [ :s | self state: s ].
 	model
 		layout:
 			(SpecLayout composed

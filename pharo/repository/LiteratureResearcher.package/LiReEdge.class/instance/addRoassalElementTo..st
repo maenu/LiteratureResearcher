@@ -1,9 +1,9 @@
 converting
 addRoassalElementTo: aView
 	| element sourceElement targetElement |
-	sourceElement := aView elements detect: [ :e | e model = source ].
-	targetElement := aView elements detect: [ :e | e model = target ].
-	element := RTEdge on: self from: sourceElement to: (aView elements detect: [ :e | e model = target ]).
+	sourceElement := aView elements detect: [ :e | e model == source ].
+	targetElement := aView elements detect: [ :e | e model == target ].
+	element := RTEdge on: self from: sourceElement to: targetElement.
 	element
 		+
 			(RTStyledMultiLine new
@@ -11,4 +11,7 @@ addRoassalElementTo: aView
 				withBorderAttachPoint;
 				perform: self lineStyleSelector;
 				yourself).
-	aView add: element
+	aView add: element.
+	self
+		whenPropertyChangedDo: [ element update.
+			aView signalUpdate ]

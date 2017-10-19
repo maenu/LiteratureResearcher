@@ -17,6 +17,6 @@ asDetailsWidget
 		text:
 			(LiReBibBibRenderer new
 				render: bibtex;
-				contents).
-	model bibtex acceptBlock: [ :s | bibtex := CZBibParser parse: s ].
+				contents) trimmed.
+	model bibtex acceptBlock: [ :s | self bibtex: (CZBibParser parse: s) entries first ].
 	^ model

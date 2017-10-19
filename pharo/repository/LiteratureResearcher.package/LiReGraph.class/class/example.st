@@ -14,7 +14,7 @@ example
 							'}'})) entries first.
 	author := LiReAuthor graph: graph name: 'author' email: 'author@uni.com'.
 	institution := LiReInstitution graph: graph name: 'uni' country: 'Switzerland'.
-	articles := (1 to: 32) collect: [ :i | article copy ].
+	articles := (1 to: 1) collect: [ :i | article copy ].
 	authors := (1 to: 32) collect: [ :i | author copy ].
 	institutions := (1 to: 16) collect: [ :i | institution copy ].
 	graph nodes addAll: articles.

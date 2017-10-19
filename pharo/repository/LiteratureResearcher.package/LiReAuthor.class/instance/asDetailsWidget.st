@@ -3,7 +3,8 @@ asDetailsWidget
 	| superModel model |
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
-	model instantiateModels: #(superModel DynamicComposableModel nameLabel LabelModel name_ TextInputFieldModel emailLabel LabelModel email TextInputFieldModel).
+	model
+		instantiateModels: #(superModel DynamicComposableModel nameLabel LabelModel name_ TextInputFieldModel emailLabel LabelModel email TextInputFieldModel).
 	model nameLabel label: 'Name'.
 	model emailLabel label: 'Email'.
 	model
@@ -24,6 +25,6 @@ asDetailsWidget
 	model assign: superModel to: #superModel.
 	model name_ text: name.
 	model email text: email.
-	model name_ acceptBlock: [ :s | name := s ].
-	model email acceptBlock: [ :s | email := s ].
+	model name_ acceptBlock: [ :s | self name: s ].
+	model email acceptBlock: [ :s | self email: s ].
 	^ model

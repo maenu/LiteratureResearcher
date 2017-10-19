@@ -1,18 +1,20 @@
 {
 	"instance" : {
-		"nodes:" : "ManuelLeuenberger 10/16/2017 15:22",
-		"edges" : "ManuelLeuenberger 10/16/2017 15:22",
-		"edges:" : "ManuelLeuenberger 10/16/2017 15:22",
-		"incomingEdges:" : "ManuelLeuenberger 10/17/2017 20:40",
-		"initialize" : "ManuelLeuenberger 10/16/2017 16:01",
-		"outgoingEdges:" : "ManuelLeuenberger 10/17/2017 20:40",
-		"asRoassalView" : "ManuelLeuenberger 10/19/2017 16:52",
-		"asRoassalViewWithoutInstitutions" : "ManuelLeuenberger 10/19/2017 16:55",
-		"incomingEdges:class:" : "ManuelLeuenberger 10/17/2017 21:26",
-		"nodes" : "ManuelLeuenberger 10/16/2017 15:22",
-		"outgoingEdges:class:" : "ManuelLeuenberger 10/17/2017 21:29"
+		"edges" : "ManuelLeuenberger 10/19/2017 20:42",
+		"whenNodeAddedDo:" : "ManuelLeuenberger 10/19/2017 21:01",
+		"incomingEdges:" : "ManuelLeuenberger 10/19/2017 21:22",
+		"whenEdgeAddedDo:" : "ManuelLeuenberger 10/19/2017 21:01",
+		"initialize" : "ManuelLeuenberger 10/19/2017 20:53",
+		"outgoingEdges:" : "ManuelLeuenberger 10/19/2017 21:22",
+		"whenEdgeRemovedDo:" : "ManuelLeuenberger 10/19/2017 21:01",
+		"asRoassalView" : "ManuelLeuenberger 10/19/2017 18:07",
+		"whenNodeRemovedDo:" : "ManuelLeuenberger 10/19/2017 21:01",
+		"asRoassalViewWithoutInstitutions" : "ManuelLeuenberger 10/19/2017 21:40",
+		"outgoingEdges:class:" : "ManuelLeuenberger 10/19/2017 21:22",
+		"nodes" : "ManuelLeuenberger 10/19/2017 20:42",
+		"incomingEdges:class:" : "ManuelLeuenberger 10/19/2017 21:22"
 	},
 	"class" : {
-		"example" : "ManuelLeuenberger 10/18/2017 19:06"
+		"example" : "ManuelLeuenberger 10/19/2017 21:29"
 	}
 }

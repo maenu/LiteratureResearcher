@@ -7,5 +7,9 @@ addRoassalElementTo: aView
 	element
 		@
 			(RTLabeled new
-				text: self label;
-				yourself)
+				text: [ self label ];
+				yourself).
+	self
+		whenPropertyChangedDo: [ (element attributes at: #RTLabelledLabel) text: self label.
+			element update.
+			aView signalUpdate ]

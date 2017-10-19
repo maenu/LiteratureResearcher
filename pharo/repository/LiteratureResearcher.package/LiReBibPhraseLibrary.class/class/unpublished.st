@@ -1,6 +1,6 @@
 phrases-entries
 unpublished
 	^ super unpublished
-		addBlockWithField: #url;
+		addBlockWithField: #clusterId;
 		addBlockWithField: #pdf;
-		addBlockWithField: #clusterId
+		addBlockWithField: #url

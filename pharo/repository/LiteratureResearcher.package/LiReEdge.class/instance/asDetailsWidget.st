@@ -13,5 +13,5 @@ asDetailsWidget
 						add: #key ];
 				yourself).
 	model key text: key.
-	model key acceptBlock: [ :s | key := s ].
+	model key acceptBlock: [ :s | self key: s ].
 	^ model
