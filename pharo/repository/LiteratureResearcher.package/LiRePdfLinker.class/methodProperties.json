@@ -1,8 +1,9 @@
 {
 	"instance" : {
-		"subprocess:" : "ManuelLeuenberger 10/12/2017 17:25",
+		"processPdf:with:title:authors:references:" : "ManuelLeuenberger 10/20/2017 14:29",
 		"processPdf:with:title:authors:affiliations:references:" : "ManuelLeuenberger 10/16/2017 16:04",
-		"subprocess" : "ManuelLeuenberger 10/12/2017 17:25"
+		"subprocess" : "ManuelLeuenberger 10/12/2017 17:25",
+		"subprocess:" : "ManuelLeuenberger 10/12/2017 17:25"
 	},
 	"class" : {
 		"subprocess:" : "ManuelLeuenberger 10/14/2017 17:16"

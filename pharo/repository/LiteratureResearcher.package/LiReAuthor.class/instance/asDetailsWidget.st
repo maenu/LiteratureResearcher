@@ -3,10 +3,8 @@ asDetailsWidget
 	| superModel model |
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
-	model
-		instantiateModels: #(superModel DynamicComposableModel nameLabel LabelModel name_ TextInputFieldModel emailLabel LabelModel email TextInputFieldModel).
+	model instantiateModels: #(superModel DynamicComposableModel nameLabel LabelModel name_ TextInputFieldModel).
 	model nameLabel label: 'Name'.
-	model emailLabel label: 'Email'.
 	model
 		layout:
 			(SpecLayout composed
@@ -16,15 +14,9 @@ asDetailsWidget
 						newRow: [ :row | 
 							row
 								add: #nameLabel;
-								add: #name_ ];
-						newRow: [ :row | 
-							row
-								add: #emailLabel;
-								add: #email ] ];
+								add: #name_ ] ];
 				yourself).
 	model assign: superModel to: #superModel.
 	model name_ text: name.
-	model email text: email.
 	model name_ acceptBlock: [ :s | self name: s ].
-	model email acceptBlock: [ :s | self email: s ].
 	^ model

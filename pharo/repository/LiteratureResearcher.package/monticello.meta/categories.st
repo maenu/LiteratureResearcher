@@ -5,6 +5,7 @@ SystemOrganization addCategory: 'LiteratureResearcher-Cermine-Tests'!
 SystemOrganization addCategory: 'LiteratureResearcher-Model'!
 SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker'!
 SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker-Tests'!
+SystemOrganization addCategory: 'LiteratureResearcher-PdfOpen'!
 SystemOrganization addCategory: 'LiteratureResearcher-Pdfscrap'!
 SystemOrganization addCategory: 'LiteratureResearcher-Pdfscrap-Tests'!
 SystemOrganization addCategory: 'LiteratureResearcher-ScholarPy'!

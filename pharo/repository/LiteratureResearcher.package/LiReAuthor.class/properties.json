@@ -6,8 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"name",
-		"email"
+		"name"
 	],
 	"name" : "LiReAuthor",
 	"type" : "normal"

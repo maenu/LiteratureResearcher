@@ -7,14 +7,13 @@
 		"initialize" : "ManuelLeuenberger 10/19/2017 20:53",
 		"outgoingEdges:" : "ManuelLeuenberger 10/19/2017 21:22",
 		"whenEdgeRemovedDo:" : "ManuelLeuenberger 10/19/2017 21:01",
-		"asRoassalView" : "ManuelLeuenberger 10/19/2017 18:07",
+		"asRoassalView" : "ManuelLeuenberger 10/20/2017 14:18",
 		"whenNodeRemovedDo:" : "ManuelLeuenberger 10/19/2017 21:01",
-		"asRoassalViewWithoutInstitutions" : "ManuelLeuenberger 10/19/2017 21:40",
 		"outgoingEdges:class:" : "ManuelLeuenberger 10/19/2017 21:22",
 		"nodes" : "ManuelLeuenberger 10/19/2017 20:42",
 		"incomingEdges:class:" : "ManuelLeuenberger 10/19/2017 21:22"
 	},
 	"class" : {
-		"example" : "ManuelLeuenberger 10/19/2017 21:29"
+		"example" : "ManuelLeuenberger 10/20/2017 14:24"
 	}
 }

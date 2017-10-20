@@ -5,7 +5,11 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"email",
+		"institution",
+		"country"
+	],
 	"name" : "LiReHasWritten",
 	"type" : "normal"
 }

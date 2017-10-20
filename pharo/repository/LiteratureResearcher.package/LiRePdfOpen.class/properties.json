@@ -1,13 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "LiRePdfAction",
-	"category" : "LiteratureResearcher-Actions",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-PdfOpen",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"pdfLinker"
+		"subprocess"
 	],
-	"name" : "LiReLinkPdf",
+	"name" : "LiRePdfOpen",
 	"type" : "normal"
 }

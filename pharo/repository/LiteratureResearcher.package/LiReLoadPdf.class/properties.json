@@ -1,13 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReAction",
+	"super" : "LiRePdfAction",
 	"category" : "LiteratureResearcher-Actions",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
 		"pdfscrap",
-		"cermine"
+		"cermine",
+		"pdfOpen"
 	],
 	"name" : "LiReLoadPdf",
 	"type" : "normal"

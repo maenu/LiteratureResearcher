@@ -1,13 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "LiRePdfAction",
+	"super" : "LiReAction",
 	"category" : "LiteratureResearcher-Actions",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"pdfLinker"
+		"repository"
 	],
-	"name" : "LiReLinkPdf",
+	"name" : "LiRePdfAction",
 	"type" : "normal"
 }

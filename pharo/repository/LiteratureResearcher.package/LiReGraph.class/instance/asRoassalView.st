@@ -18,4 +18,8 @@ asRoassalView
 	view @ RTSelectableView.
 	view @ RTZoomableView.
 	view @ RTDraggableView.
+	self whenEdgeAddedDo: [ view signalUpdate ].
+	self whenEdgeRemovedDo: [ view signalUpdate ].
+	self whenNodeAddedDo: [ view signalUpdate ].
+	self whenNodeRemovedDo: [ view signalUpdate ].
 	^ view

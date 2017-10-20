@@ -1,4 +1,14 @@
 {
-	"instance" : { },
-	"class" : { }
+	"instance" : {
+		"article:" : "ManuelLeuenberger 10/19/2017 23:46",
+		"bibtex:" : "ManuelLeuenberger 10/19/2017 23:46",
+		"bibtex" : "ManuelLeuenberger 10/19/2017 23:46",
+		"metadata" : "ManuelLeuenberger 10/19/2017 23:46",
+		"metadata:" : "ManuelLeuenberger 10/19/2017 23:46",
+		"initializeWidgets" : "ManuelLeuenberger 10/19/2017 23:48",
+		"article" : "ManuelLeuenberger 10/19/2017 23:46"
+	},
+	"class" : {
+		"article:metadata:bibtex:" : "ManuelLeuenberger 10/19/2017 23:46"
+	}
 }
