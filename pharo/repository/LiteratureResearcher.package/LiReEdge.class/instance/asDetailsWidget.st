@@ -1,5 +1,6 @@
 converting
 asDetailsWidget
+	<liReWidget: 1>
 	| model |
 	model := DynamicComposableModel new.
 	model instantiateModels: #(keyLabel LabelModel key TextInputFieldModel).

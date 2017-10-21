@@ -1,13 +1,16 @@
 {
 	"instance" : {
-		"executeIn:" : "ManuelLeuenberger 10/20/2017 19:28",
-		"pdfOpen" : "ManuelLeuenberger 10/19/2017 23:17",
-		"generateArticle:" : "ManuelLeuenberger 10/20/2017 19:42",
-		"cermine:" : "ManuelLeuenberger 10/15/2017 19:53",
-		"pdfOpen:" : "ManuelLeuenberger 10/19/2017 23:17",
 		"pdfscrap" : "ManuelLeuenberger 10/14/2017 21:15",
 		"cermine" : "ManuelLeuenberger 10/15/2017 19:53",
-		"pdfscrap:" : "ManuelLeuenberger 10/14/2017 21:15"
+		"executeIn:" : "ManuelLeuenberger 10/22/2017 00:02",
+		"pdfOpen" : "ManuelLeuenberger 10/19/2017 23:17",
+		"mergeBibtex:bibtex:metadata:" : "ManuelLeuenberger 10/21/2017 23:34",
+		"cermine:" : "ManuelLeuenberger 10/15/2017 19:53",
+		"generateBibtex:" : "ManuelLeuenberger 10/21/2017 23:18",
+		"pdfscrap:" : "ManuelLeuenberger 10/14/2017 21:15",
+		"pdfOpen:" : "ManuelLeuenberger 10/19/2017 23:17",
+		"mergeAuthors:metadata:" : "ManuelLeuenberger 10/22/2017 00:17",
+		"mergeReferences:bibtex:metadata:" : "ManuelLeuenberger 10/22/2017 00:16"
 	},
 	"class" : {
 		"repository:pdfscrap:cermine:pdfOpen:" : "ManuelLeuenberger 10/20/2017 15:44",

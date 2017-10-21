@@ -1,8 +1,10 @@
 converting
 asDetailsWidget
+	<liReWidget: 1>
 	| superModel model |
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
+	model title: 'Details'.
 	model instantiateModels: #(superModel DynamicComposableModel bibtex TextModel).
 	model assign: superModel to: #superModel.
 	model bibtex

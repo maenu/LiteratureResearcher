@@ -1,6 +1,8 @@
-target resize
+as yet unclassified
 executeIn: anArticle
-	| pdf cermineResult metadata bibtex specModel generatedArticle |
+	| pdf cermineResult metadata bibtex generatedBibtex |
+	"adapt article"
+	"find or create authors"
 	pdf := (anArticle bibtex hasField: #pdf)
 		ifTrue: [ (anArticle bibtex at: #pdf) value asFileReference ]
 		ifFalse: [ (anArticle bibtex hasField: #url)
@@ -17,12 +19,7 @@ executeIn: anArticle
 			LiReCermine outputBibtex}.
 	metadata := LiReCermineMetadata fromJatsFile: (cermineResult at: LiReCermine outputJats).
 	bibtex := LiReBibParser parse: (cermineResult at: LiReCermine outputBibtex) contents.
-	generatedArticle := self generateArticle: metadata.
-	pdfOpen processPdf: pdf asFileReference.
-	specModel := LiReArticleImporter
-		article: anArticle
-		generatedArticle: generatedArticle
-		metadata: metadata
-		bibtex: bibtex.
-	specModel openWithSpec.
-	specModel window modalRelativeTo: World
+	generatedBibtex := self generateBibtex: metadata.
+	self mergeBibtex: anArticle bibtex: generatedBibtex metadata: metadata.
+	self mergeAuthors: anArticle metadata: metadata.
+	self mergeReferences: anArticle bibtex: bibtex metadata: metadata

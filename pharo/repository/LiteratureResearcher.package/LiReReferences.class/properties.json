@@ -5,7 +5,10 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"bibtex",
+		"text"
+	],
 	"name" : "LiReReferences",
 	"type" : "normal"
 }

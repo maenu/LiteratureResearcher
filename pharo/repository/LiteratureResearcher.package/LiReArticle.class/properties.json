@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"bibtex"
+		"bibtex",
+		"metadata"
 	],
 	"name" : "LiReArticle",
 	"type" : "normal"

@@ -1,8 +1,10 @@
 converting
 asDetailsWidget
+	<liReWidget: 1>
 	| superModel model |
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
+	model title: 'Details'.
 	model
 		instantiateModels:
 			#(superModel DynamicComposableModel emailLabel LabelModel email TextInputFieldModel institutionLabel LabelModel institution TextInputFieldModel countryLabel LabelModel country TextInputFieldModel).

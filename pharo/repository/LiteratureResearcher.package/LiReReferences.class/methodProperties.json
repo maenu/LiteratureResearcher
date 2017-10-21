@@ -1,8 +1,14 @@
 {
 	"instance" : {
-		"lineStyleSelector" : "ManuelLeuenberger 10/18/2017 19:20"
+		"lineStyleSelector" : "ManuelLeuenberger 10/18/2017 19:20",
+		"bibtex:" : "ManuelLeuenberger 10/21/2017 22:20",
+		"bibtex" : "ManuelLeuenberger 10/21/2017 22:20",
+		"asDetailsWidget" : "ManuelLeuenberger 10/21/2017 22:58",
+		"text:" : "ManuelLeuenberger 10/21/2017 22:20",
+		"text" : "ManuelLeuenberger 10/21/2017 22:20"
 	},
 	"class" : {
+		"graph:source:target:key:bibtex:text:" : "ManuelLeuenberger 10/21/2017 22:21",
 		"sourceClass" : "ManuelLeuenberger 10/17/2017 21:07",
 		"label" : "ManuelLeuenberger 10/17/2017 20:31",
 		"targetClass" : "ManuelLeuenberger 10/17/2017 21:07"
