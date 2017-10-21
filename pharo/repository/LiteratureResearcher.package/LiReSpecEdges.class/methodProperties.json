@@ -9,7 +9,7 @@
 		"edgeDisplayBlock" : "ManuelLeuenberger 10/21/2017 20:01",
 		"search:" : "ManuelLeuenberger 10/21/2017 20:01",
 		"edgesSelector" : "ManuelLeuenberger 10/21/2017 20:13",
-		"initializePresenter" : "ManuelLeuenberger 10/21/2017 20:27",
+		"initializePresenter" : "ManuelLeuenberger 10/21/2017 20:38",
 		"createEdgeBlock:" : "ManuelLeuenberger 10/21/2017 20:01",
 		"initializeWidgets" : "ManuelLeuenberger 10/21/2017 20:04",
 		"edgeEndClassSelector:" : "ManuelLeuenberger 10/21/2017 20:01",
@@ -20,7 +20,7 @@
 		"edgesSelector:" : "ManuelLeuenberger 10/21/2017 20:13"
 	},
 	"class" : {
-		"node:edgeClass:edgesSelector:edgeDisplayBlock:edgeEndClassSelector:createEdgeBlock:" : "ManuelLeuenberger 10/21/2017 20:14",
+		"node:edgeClass:edgesSelector:edgeDisplayBlock:edgeEndClassSelector:createEdgeBlock:" : "ManuelLeuenberger 10/21/2017 20:37",
 		"defaultSpec" : "ManuelLeuenberger 10/21/2017 19:55"
 	}
 }

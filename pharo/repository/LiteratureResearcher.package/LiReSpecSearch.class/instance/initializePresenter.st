@@ -19,7 +19,11 @@ initializePresenter
 								addItem: [ :item | 
 									item
 										name: 'Read';
-										action: [ readFromResultBlock value: resultList selectedItem ] ] ].
+										action: [ readFromResultBlock value: resultList selectedItem ] ] ;
+								addItem: [ :item | 
+									item
+										name: 'Update';
+										action: [ updateFromResultBlock value: resultList selectedItem ] ] ].
 					m
 						addAllMorphs: (menu buildWithSpec: #popup) items;
 						yourself ] ]

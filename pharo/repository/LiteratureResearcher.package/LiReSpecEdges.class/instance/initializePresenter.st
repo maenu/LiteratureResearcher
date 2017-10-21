@@ -14,6 +14,10 @@ initializePresenter
 								addItem: [ :item | 
 									item
 										name: 'Read';
+										action: [ self flag: 'TODO open in graph' ] ];
+								addItem: [ :item | 
+									item
+										name: 'Update';
 										action: [ list selectedItem asWidget openWithSpec ] ];
 								addItem: [ :item | 
 									item
@@ -26,7 +30,8 @@ initializePresenter
 		resultListDisplayBock: [ :n | n label ];
 		searchBlock: [ :t | node graph nodes select: [ :n | n class = (edgeClass perform: edgeEndClassSelector) and: [ n matches: t ] ] ];
 		createFromResultBlock: [ :n | createEdgeBlock cull: n cull: edgeClass ];
-		readFromResultBlock: [ :n | n asWidget openWithSpec ];
+		readFromResultBlock: [ :n | self flag: 'TODO open in graph' ];
+		updateFromResultBlock: [ :n | n asWidget openWithSpec ];
 		createFromSearchTextBlock: [ :s | 
 			| n |
 			n := (edgeClass perform: edgeEndClassSelector) fromText: s graph: node graph.
