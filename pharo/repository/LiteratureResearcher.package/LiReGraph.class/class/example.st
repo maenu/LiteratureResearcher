@@ -5,7 +5,7 @@ example
 	article := LiReArticle
 		graph: graph
 		bibtex:
-			(CZBibParser
+			(LiReBibParser
 				parse:
 					(Character lf asString
 						join:

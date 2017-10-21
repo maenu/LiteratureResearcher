@@ -4,6 +4,10 @@ asDetailsWidget
 	model := DynamicComposableModel new.
 	model instantiateModels: #(keyLabel LabelModel key TextInputFieldModel).
 	model keyLabel label: 'Key'.
+	model key
+		text: key;
+		acceptBlock: [ :s | self key: s ].
+	self whenPropertyChangedDo: [ model key text: key ].
 	model
 		layout:
 			(SpecLayout composed
@@ -12,6 +16,4 @@ asDetailsWidget
 						add: #keyLabel;
 						add: #key ];
 				yourself).
-	model key text: key.
-	model key acceptBlock: [ :s | self key: s ].
 	^ model

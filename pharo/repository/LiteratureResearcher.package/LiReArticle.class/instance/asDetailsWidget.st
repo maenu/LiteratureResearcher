@@ -4,6 +4,19 @@ asDetailsWidget
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
 	model instantiateModels: #(superModel DynamicComposableModel bibtex TextModel).
+	model assign: superModel to: #superModel.
+	model bibtex
+		text:
+			(LiReBibRenderer new
+				render: bibtex;
+				contents) trimmed;
+		acceptBlock: [ :s | self bibtex: (LiReBibParser parse: s) entries first ].
+	self
+		whenPropertyChangedDo: [ model bibtex
+				text:
+					(LiReBibRenderer new
+						render: bibtex;
+						contents) trimmed ].
 	model
 		layout:
 			(SpecLayout composed
@@ -12,11 +25,4 @@ asDetailsWidget
 						add: #superModel height: model class toolbarHeight;
 						add: #bibtex ];
 				yourself).
-	model assign: superModel to: #superModel.
-	model bibtex
-		text:
-			(LiReBibBibRenderer new
-				render: bibtex;
-				contents) trimmed.
-	model bibtex acceptBlock: [ :s | self bibtex: (CZBibParser parse: s) entries first ].
 	^ model

@@ -3,10 +3,26 @@ asDetailsWidget
 	| superModel model |
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
-	model instantiateModels: #(superModel DynamicComposableModel emailLabel LabelModel email TextInputFieldModel institutionLabel LabelModel institution TextInputFieldModel countryLabel LabelModel country TextInputFieldModel).
+	model
+		instantiateModels:
+			#(superModel DynamicComposableModel emailLabel LabelModel email TextInputFieldModel institutionLabel LabelModel institution TextInputFieldModel countryLabel LabelModel country TextInputFieldModel).
 	model emailLabel label: 'Email'.
 	model institutionLabel label: 'Institution'.
 	model countryLabel label: 'Country'.
+	model email
+		text: email;
+		acceptBlock: [ :s | self email: s ].
+	model institution
+		text: institution;
+		acceptBlock: [ :s | self institution: s ].
+	model country
+		text: country;
+		acceptBlock: [ :s | self country: s ].
+	model assign: superModel to: #superModel.
+	self
+		whenPropertyChangedDo: [ model email text: email.
+			model institution text: institution.
+			model country text: country ].
 	model
 		layout:
 			(SpecLayout composed
@@ -26,11 +42,4 @@ asDetailsWidget
 								add: #countryLabel;
 								add: #country ] ];
 				yourself).
-	model email text: email.
-	model institution text: institution.
-	model country text: country.
-	model email acceptBlock: [ :s | self email: s ].
-	model institution acceptBlock: [ :s | self institution: s ].
-	model country acceptBlock: [ :s | self country: s ].
-	model assign: superModel to: #superModel.
 	^ model

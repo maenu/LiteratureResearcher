@@ -1,3 +1,3 @@
 enumerating
 whenPropertyChangedDo: aBlock
-	announcer when: LiRePropertyChanged do: [ :a | aBlock cull: a ]
+	^ announcer when: LiRePropertyChanged do: [ :a | aBlock cull: a ]

@@ -6,10 +6,15 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"searchBar",
-		"results",
-		"search",
-		"resultCreate"
+		"searchText",
+		"searchButton",
+		"createButton",
+		"resultList",
+		"searchBlock",
+		"createFromSearchTextBlock",
+		"createFromResultBlock",
+		"readFromResultBlock",
+		"resultListDisplayBock"
 	],
 	"name" : "LiReSpecSearch",
 	"type" : "normal"

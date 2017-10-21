@@ -1,0 +1,16 @@
+{
+	"instance" : {
+		"executeIn:" : "ManuelLeuenberger 10/20/2017 19:28",
+		"pdfOpen" : "ManuelLeuenberger 10/19/2017 23:17",
+		"generateArticle:" : "ManuelLeuenberger 10/20/2017 19:42",
+		"cermine:" : "ManuelLeuenberger 10/15/2017 19:53",
+		"pdfOpen:" : "ManuelLeuenberger 10/19/2017 23:17",
+		"pdfscrap" : "ManuelLeuenberger 10/14/2017 21:15",
+		"cermine" : "ManuelLeuenberger 10/15/2017 19:53",
+		"pdfscrap:" : "ManuelLeuenberger 10/14/2017 21:15"
+	},
+	"class" : {
+		"repository:pdfscrap:cermine:pdfOpen:" : "ManuelLeuenberger 10/20/2017 15:44",
+		"example" : "ManuelLeuenberger 10/21/2017 12:05"
+	}
+}

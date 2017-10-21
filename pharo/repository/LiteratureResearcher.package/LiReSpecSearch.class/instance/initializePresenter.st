@@ -1,12 +1,25 @@
 initialization
 initializePresenter
-	searchBar buttonSearch
-		action: [ results
-				items:
-					((search value: searchBar text text)
-						collect: [ :n | 
-							| result |
-							result := LiReSpecSearchResult result: n asCompactWidget.
-							result buttonCreate action: [ resultCreate value: n ].
-							result ]) ].
-	results displayBlock: [ :model | model buildWithSpec ]
+	searchButton action: [ resultList items: (searchBlock value: searchText text) ].
+	createButton action: [ createFromSearchTextBlock value: searchText text ].
+	resultList displayBlock: [ :e | resultListDisplayBock cull: e ].
+	resultList
+		menu: [ :m | 
+			resultList selectedItem
+				ifNil: [ m ]
+				ifNotNil: [ | menu |
+					menu := MenuModel new.
+					menu
+						addGroup: [ :group | 
+							group
+								addItem: [ :item | 
+									item
+										name: 'Create';
+										action: [ createFromResultBlock value: resultList selectedItem ] ];
+								addItem: [ :item | 
+									item
+										name: 'Read';
+										action: [ readFromResultBlock value: resultList selectedItem ] ] ].
+					m
+						addAllMorphs: (menu buildWithSpec: #popup) items;
+						yourself ] ]

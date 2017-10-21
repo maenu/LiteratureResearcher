@@ -1,4 +1,4 @@
 initialization
 initializeWidgets
-	list := self newList.
+	list := self instantiate: FastTableModel.
 	search := self instantiate: LiReSpecSearch

@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"article",
+		"generatedArticle",
+		"metadata",
+		"bibtex",
+		"tabManager"
+	],
+	"name" : "LiReArticleImporter",
+	"type" : "normal"
+}

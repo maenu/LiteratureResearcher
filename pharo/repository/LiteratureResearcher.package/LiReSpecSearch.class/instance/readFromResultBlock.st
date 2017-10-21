@@ -1,0 +1,3 @@
+accessing
+readFromResultBlock
+	^ readFromResultBlock

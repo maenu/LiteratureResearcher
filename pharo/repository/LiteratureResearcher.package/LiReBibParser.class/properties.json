@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CZBibParser",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReBibParser",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BibBibRenderer",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReBibRenderer",
+	"type" : "normal"
+}

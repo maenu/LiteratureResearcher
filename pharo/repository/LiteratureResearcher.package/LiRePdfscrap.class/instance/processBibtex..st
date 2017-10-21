@@ -7,7 +7,7 @@ processBibtex: aBibtexEntry
 		execute:
 			{(LiReSubprocess
 				escape:
-					(LiReBibBibRenderer new
+					(LiReBibRenderer new
 						render: aBibtexEntry;
 						contents)).
 			(LiReSubprocess escape: directory pathString)}

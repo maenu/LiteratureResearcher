@@ -1,3 +1,0 @@
-accessing
-resultCreate
-	^ resultCreate

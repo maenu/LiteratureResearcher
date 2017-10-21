@@ -1,6 +1,6 @@
 initialization
 setUp
-	bibtex := (CZBibParser
+	bibtex := (LiReBibParser
 		parse:
 			(Character lf asString
 				join:

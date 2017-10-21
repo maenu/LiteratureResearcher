@@ -7,7 +7,13 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"list",
-		"search"
+		"search",
+		"node",
+		"edgeClass",
+		"edgeDisplayBlock",
+		"edgeEndClassSelector",
+		"createEdgeBlock",
+		"edgesSelector"
 	],
 	"name" : "LiReSpecEdges",
 	"type" : "normal"

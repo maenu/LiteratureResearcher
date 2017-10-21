@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "LiRePdfAction",
+	"category" : "LiteratureResearcher-Actions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"pdfscrap",
+		"cermine",
+		"pdfOpen"
+	],
+	"name" : "LiReImportPdf",
+	"type" : "normal"
+}

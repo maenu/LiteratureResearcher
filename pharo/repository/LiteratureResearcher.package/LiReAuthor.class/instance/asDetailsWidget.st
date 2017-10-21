@@ -4,7 +4,12 @@ asDetailsWidget
 	superModel := super asDetailsWidget.
 	model := DynamicComposableModel new.
 	model instantiateModels: #(superModel DynamicComposableModel nameLabel LabelModel name_ TextInputFieldModel).
+	model assign: superModel to: #superModel.
 	model nameLabel label: 'Name'.
+	model name_
+		text: name;
+		acceptBlock: [ :s | self name: s ].
+	self whenPropertyChangedDo: [ model name_ text: name ].
 	model
 		layout:
 			(SpecLayout composed
@@ -16,7 +21,4 @@ asDetailsWidget
 								add: #nameLabel;
 								add: #name_ ] ];
 				yourself).
-	model assign: superModel to: #superModel.
-	model name_ text: name.
-	model name_ acceptBlock: [ :s | self name: s ].
 	^ model

@@ -8,4 +8,4 @@ getBibtex: anId
 			'--cluster-id'.
 			(LiReSubprocess escape: anId)}
 		wait: 30 seconds.
-	^ CZBibParser parse: result out
+	^ LiReBibParser parse: result out

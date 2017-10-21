@@ -6,7 +6,8 @@
 		"graph:" : "ManuelLeuenberger 10/19/2017 21:15",
 		"asDetailsWidget" : "ManuelLeuenberger 10/17/2017 23:05",
 		"initialize" : "ManuelLeuenberger 10/19/2017 20:27",
-		"whenPropertyChangedDo:" : "ManuelLeuenberger 10/19/2017 21:01",
+		"propertyChanged:" : "ManuelLeuenberger 10/21/2017 11:11",
+		"whenPropertyChangedDo:" : "ManuelLeuenberger 10/21/2017 11:09",
 		"label" : "ManuelLeuenberger 10/17/2017 23:01"
 	},
 	"class" : {

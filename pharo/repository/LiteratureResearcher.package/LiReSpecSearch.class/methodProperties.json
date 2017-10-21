@@ -1,17 +1,27 @@
 {
 	"instance" : {
-		"results" : "ManuelLeuenberger 10/16/2017 14:33",
-		"resultCreate" : "ManuelLeuenberger 10/17/2017 18:21",
-		"resultCreate:" : "ManuelLeuenberger 10/17/2017 18:21",
-		"search" : "ManuelLeuenberger 10/16/2017 15:08",
-		"results:" : "ManuelLeuenberger 10/16/2017 14:33",
-		"searchBar" : "ManuelLeuenberger 10/16/2017 14:58",
-		"search:" : "ManuelLeuenberger 10/16/2017 15:08",
-		"initializePresenter" : "ManuelLeuenberger 10/17/2017 20:20",
-		"initializeWidgets" : "ManuelLeuenberger 10/16/2017 16:24",
-		"searchBar:" : "ManuelLeuenberger 10/16/2017 14:59"
+		"searchButton:" : "ManuelLeuenberger 10/21/2017 15:49",
+		"createFromResultBlock:" : "ManuelLeuenberger 10/21/2017 15:59",
+		"searchText:" : "ManuelLeuenberger 10/21/2017 15:49",
+		"createFromResultBlock" : "ManuelLeuenberger 10/21/2017 15:59",
+		"resultListDisplayBock" : "ManuelLeuenberger 10/21/2017 19:45",
+		"createButton" : "ManuelLeuenberger 10/21/2017 15:49",
+		"resultList:" : "ManuelLeuenberger 10/21/2017 15:49",
+		"readFromResultBlock" : "ManuelLeuenberger 10/21/2017 18:53",
+		"searchBlock:" : "ManuelLeuenberger 10/21/2017 15:49",
+		"createButton:" : "ManuelLeuenberger 10/21/2017 15:49",
+		"searchText" : "ManuelLeuenberger 10/21/2017 15:49",
+		"searchBlock" : "ManuelLeuenberger 10/21/2017 15:49",
+		"resultList" : "ManuelLeuenberger 10/21/2017 15:49",
+		"createFromSearchTextBlock" : "ManuelLeuenberger 10/21/2017 15:59",
+		"initializePresenter" : "ManuelLeuenberger 10/21/2017 20:25",
+		"searchButton" : "ManuelLeuenberger 10/21/2017 15:49",
+		"createFromSearchTextBlock:" : "ManuelLeuenberger 10/21/2017 15:59",
+		"readFromResultBlock:" : "ManuelLeuenberger 10/21/2017 18:53",
+		"resultListDisplayBock:" : "ManuelLeuenberger 10/21/2017 19:45",
+		"initializeWidgets" : "ManuelLeuenberger 10/21/2017 15:38"
 	},
 	"class" : {
-		"defaultSpec" : "ManuelLeuenberger 10/16/2017 14:59"
+		"defaultSpec" : "ManuelLeuenberger 10/21/2017 16:09"
 	}
 }

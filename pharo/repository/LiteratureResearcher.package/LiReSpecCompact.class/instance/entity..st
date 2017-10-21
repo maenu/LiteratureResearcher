@@ -1,6 +1,5 @@
 accessing
 entity: anObject
-	entity ifNotNil: [ entity removeDependent: self ].
 	entity := anObject.
-	entity addDependent: self.
-	label label: entity label
+	label label: entity label.
+	entity whenPropertyChangedDo: [ label label: entity label ]

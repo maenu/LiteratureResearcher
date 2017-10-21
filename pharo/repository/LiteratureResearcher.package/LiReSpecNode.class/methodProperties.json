@@ -1,10 +1,10 @@
 {
 	"instance" : {
-		"entity:" : "ManuelLeuenberger 10/17/2017 23:14",
+		"entity:" : "ManuelLeuenberger 10/21/2017 20:16",
 		"createOutgoingEdge:to:" : "ManuelLeuenberger 10/17/2017 23:17",
+		"newTabIncomingEdges:" : "ManuelLeuenberger 10/21/2017 20:16",
 		"createIncomingEdge:from:" : "ManuelLeuenberger 10/17/2017 23:17",
-		"newTabIncomingEdges:with:" : "ManuelLeuenberger 10/17/2017 23:17",
-		"newTabOutgoingEdges:with:" : "ManuelLeuenberger 10/17/2017 23:17"
+		"newTabOutgoingEdges:" : "ManuelLeuenberger 10/21/2017 20:16"
 	},
 	"class" : {
 		"defaultSpec" : "ManuelLeuenberger 10/17/2017 18:58"

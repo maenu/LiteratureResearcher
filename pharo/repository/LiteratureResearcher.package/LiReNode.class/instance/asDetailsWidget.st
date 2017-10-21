@@ -4,11 +4,13 @@ asDetailsWidget
 	model := DynamicComposableModel new.
 	model instantiateModels: #(stateLabel LabelModel state DropListModel).
 	model stateLabel label: 'State'.
-	model state items: LiReState states.
-	model state setSelectedItem: state.
-	model state iconHolder: [ :s | s icon ].
-	model state displayBlock: [ :s | s label ].
-	model state whenSelectedItemChanged: [ :s | self state: s ].
+	model state
+		items: LiReState states;
+		setSelectedItem: state;
+		iconHolder: [ :s | s icon ];
+		displayBlock: [ :s | s label ];
+		whenSelectedItemChanged: [ :s | self state: s ].
+	self whenPropertyChangedDo: [ model state setSelectedItem: state ].
 	model
 		layout:
 			(SpecLayout composed
