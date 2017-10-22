@@ -1,0 +1,18 @@
+{
+	"instance" : {
+		"loadFromTitle:" : "ManuelLeuenberger 10/22/2017 12:24",
+		"pdfscrap" : "ManuelLeuenberger 10/22/2017 11:37",
+		"loadFromDragNDrop:" : "ManuelLeuenberger 10/22/2017 18:17",
+		"executeIn:" : "ManuelLeuenberger 10/22/2017 12:41",
+		"loadFromPdf:" : "ManuelLeuenberger 10/22/2017 12:18",
+		"loadFromUrl:" : "ManuelLeuenberger 10/22/2017 12:32",
+		"scholarPy" : "ManuelLeuenberger 10/22/2017 11:40",
+		"pdfscrap:" : "ManuelLeuenberger 10/22/2017 11:37",
+		"scholarPy:" : "ManuelLeuenberger 10/22/2017 11:40",
+		"loadFrom:" : "ManuelLeuenberger 10/22/2017 12:40"
+	},
+	"class" : {
+		"repository:pdfscrap:scholarPy:" : "ManuelLeuenberger 10/22/2017 11:39",
+		"example" : "ManuelLeuenberger 10/22/2017 18:16"
+	}
+}

@@ -10,5 +10,4 @@ executeIn: anArticle
 		title: (self asTitleLink: anArticle)
 		authors: (self asAuthorLinks: anArticle)
 		references: (self asReferenceLinks: anArticle).
-	pdf := self copyPdf: pdf toRepositoryFor: anArticle.
-	anArticle bibtex at: #pdf put: pdf pathString
+	pdf := self copyPdf: pdf toRepositoryFor: anArticle

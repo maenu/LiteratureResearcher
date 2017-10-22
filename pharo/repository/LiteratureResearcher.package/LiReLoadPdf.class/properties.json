@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "LiRePdfAction",
+	"category" : "LiteratureResearcher-Actions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"pdfscrap",
+		"scholarPy"
+	],
+	"name" : "LiReLoadPdf",
+	"type" : "normal"
+}

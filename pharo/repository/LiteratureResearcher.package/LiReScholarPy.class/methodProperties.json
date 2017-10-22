@@ -1,13 +1,13 @@
 {
 	"instance" : {
-		"parseCsv:" : "ManuelLeuenberger 10/13/2017 21:11",
+		"parseCsv:" : "ManuelLeuenberger 10/22/2017 12:08",
 		"findByAuthors:" : "ManuelLeuenberger 10/13/2017 21:12",
+		"parseStringOrNil:" : "ManuelLeuenberger 10/22/2017 12:08",
 		"subprocess" : "ManuelLeuenberger 10/12/2017 19:12",
-		"subprocess:" : "ManuelLeuenberger 10/12/2017 19:12",
 		"findCitations:" : "ManuelLeuenberger 10/13/2017 21:12",
 		"findByTitle:" : "ManuelLeuenberger 10/13/2017 21:12",
 		"getBibtex:" : "ManuelLeuenberger 10/20/2017 16:13",
-		"parseUrl:" : "ManuelLeuenberger 10/13/2017 21:12"
+		"subprocess:" : "ManuelLeuenberger 10/12/2017 19:12"
 	},
 	"class" : {
 		"subprocess:" : "ManuelLeuenberger 10/12/2017 19:40"

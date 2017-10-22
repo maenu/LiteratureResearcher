@@ -3,14 +3,13 @@ mergeReferences: anArticle bibtex: aBibtexList metadata: aMetadata
 	| graph references existingEdges missingReferences |
 	self assert: aBibtexList entries size = aMetadata references size.
 	graph := anArticle graph.
-	references := (1 to: aBibtexList entries size)
-		collect: [ :i | (aBibtexList entries at: i) -> (aMetadata references at: i) ].
+	references := (1 to: aBibtexList entries size) collect: [ :i | (aBibtexList entries at: i) -> (aMetadata references at: i) ].
 	existingEdges := anArticle incomingEdgesOfClass: LiReHasWritten.
 	missingReferences := references reject: [ :r | existingEdges contains: [ :e | e matches: r key key ] ].
 	missingReferences
 		do: [ :r | 
 			| key node edge |
-			key := r key key.
+			key := r value at: #key.
 			node := (graph nodesOfClass: LiReArticle)
 				detect: [ :n | n matches: key ]
 				ifNone: [ | newNode |
@@ -22,5 +21,5 @@ mergeReferences: anArticle bibtex: aBibtexList metadata: aMetadata
 				target: node
 				key: key
 				bibtex: r key
-				text: r value.
+				text: (r value at: #text).
 			graph edges add: edge ]
