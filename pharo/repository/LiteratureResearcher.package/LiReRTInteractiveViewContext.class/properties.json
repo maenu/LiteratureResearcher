@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "RTInteractiveViewContext",
+	"category" : "LiteratureResearcher-Glamour",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReRTInteractiveViewContext",
+	"type" : "normal"
+}

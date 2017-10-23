@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "GLMInteractiveContextAction",
+	"category" : "LiteratureResearcher-Glamour",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReGLMInteractiveContextAction",
+	"type" : "normal"
+}

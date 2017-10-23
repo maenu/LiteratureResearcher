@@ -2,6 +2,7 @@ SystemOrganization addCategory: #LiteratureResearcher!
 SystemOrganization addCategory: 'LiteratureResearcher-Actions'!
 SystemOrganization addCategory: 'LiteratureResearcher-Cermine'!
 SystemOrganization addCategory: 'LiteratureResearcher-Cermine-Tests'!
+SystemOrganization addCategory: 'LiteratureResearcher-Glamour'!
 SystemOrganization addCategory: 'LiteratureResearcher-Model'!
 SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker'!
 SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker-Tests'!

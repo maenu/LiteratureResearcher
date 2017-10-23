@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"pdfscrap",
 		"cermine"
 	],
 	"name" : "LiReImportPdf",

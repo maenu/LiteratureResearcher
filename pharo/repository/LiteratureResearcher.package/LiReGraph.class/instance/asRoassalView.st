@@ -2,8 +2,9 @@ converting
 asRoassalView
 	| view legendBuilder |
 	view := RTView new.
-	nodes collect: [ :n | n addRoassalElementTo: view ].
-	edges collect: [ :e | e addRoassalElementTo: view ].
+	view attributeAt: #GlamourContext put: LiReRTInteractiveViewContext new.
+	nodes do: [ :n | n addRoassalElementTo: view ].
+	edges do: [ :e | e addRoassalElementTo: view ].
 	RTOptimizedForceBasedLayout new
 		charge: -1000;
 		on: view elements.
@@ -15,9 +16,13 @@ asRoassalView
 	LiReState states do: [ :s | legendBuilder addColor: s color text: s label ].
 	legendBuilder build.
 	view edges do: #pushBack.
-	view @ RTSelectableView.
 	view @ RTZoomableView.
 	view @ RTDraggableView.
+	view elements , view edges
+		do: [ :e | 
+			e
+				@ RTHighlightable;
+				@ RTShowLabel ].
 	self whenEdgeAddedDo: [ view signalUpdate ].
 	self whenEdgeRemovedDo: [ view signalUpdate ].
 	self whenNodeAddedDo: [ view signalUpdate ].

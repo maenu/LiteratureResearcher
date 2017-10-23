@@ -4,8 +4,12 @@ initializePresenter
 		action: [ searchButton
 				label: 'Searching...';
 				disable.
+			list disable.
 			[ [ list items: searchBlock value ]
-				ensure: [ searchButton label: 'Search' ] ] fork ].
+				ensure: [ searchButton
+						label: 'Search';
+						enable.
+					list enable ] ] fork ].
 	list
 		displayBlock: [ :i | i at: #title ];
 		icons: [ :i | 
@@ -15,7 +19,8 @@ initializePresenter
 		whenSelectedItemChanged: [ :i | 
 			item := i ifNil: [ itemPlaceholder ] ifNotNil: [ LiReSpecScholarPyItem item: i ].
 			self needRebuild: false.
-			self buildWithSpec ];
+			self buildWithSpec.
+			list setSelectedItem: i ];
 		menu: [ :m | 
 			list selectedItem
 				ifNil: [ m ]

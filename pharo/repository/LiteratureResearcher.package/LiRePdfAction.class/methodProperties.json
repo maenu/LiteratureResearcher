@@ -1,10 +1,4 @@
 {
-	"instance" : {
-		"repository" : "ManuelLeuenberger 10/19/2017 23:29",
-		"repository:" : "ManuelLeuenberger 10/19/2017 23:29",
-		"copyPdf:toRepositoryFor:" : "ManuelLeuenberger 10/22/2017 12:34"
-	},
-	"class" : {
-		"repository:" : "ManuelLeuenberger 10/19/2017 23:30"
-	}
+	"instance" : { },
+	"class" : { }
 }

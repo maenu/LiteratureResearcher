@@ -7,17 +7,17 @@ defaultSpec
 					r
 						add: #titleLabel;
 						add: #titleModel ]
-					height: self toolbarHeight;
+					height: 2 * self toolbarHeight;
 				newRow: [ :r | 
 					r
 						add: #yearLabel;
 						add: #yearModel ]
-					height: self toolbarHeight;
+					height: 2 * self toolbarHeight;
 				newRow: [ :r | 
 					r
 						add: #citationsLabel;
 						add: #citationsModel ]
-					height: self toolbarHeight;
-				newRow: [ :r | r add: #excerptLabel ] height: self toolbarHeight;
+					height: 2 * self toolbarHeight;
+				newRow: [ :r | r add: #excerptLabel ] height: 2 * self toolbarHeight;
 				newRow: [ :r | r add: #excerptModel ] ];
 		yourself

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "LiRePdfAction",
+	"super" : "LiRePdfRepositoryAction",
 	"category" : "LiteratureResearcher-Actions",
 	"classinstvars" : [ ],
 	"pools" : [ ],
