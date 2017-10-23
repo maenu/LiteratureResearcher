@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "RTAbstractHighlightable",
+	"category" : "LiteratureResearcher-Roassal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labelledInteraction",
+		"color",
+		"fromColor",
+		"toColor"
+	],
+	"name" : "LiReRTHilightable",
+	"type" : "normal"
+}

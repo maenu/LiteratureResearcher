@@ -18,11 +18,7 @@ asRoassalView
 	view edges do: #pushBack.
 	view @ RTZoomableView.
 	view @ RTDraggableView.
-	view elements , view edges
-		do: [ :e | 
-			e
-				@ RTHighlightable;
-				@ RTShowLabel ].
+	view elements , view edges do: [ :e | e @ LiReRTHilightable ].
 	self whenEdgeAddedDo: [ view signalUpdate ].
 	self whenEdgeRemovedDo: [ view signalUpdate ].
 	self whenNodeAddedDo: [ view signalUpdate ].

@@ -1,14 +1,15 @@
 {
 	"instance" : {
-		"graph" : "ManuelLeuenberger 10/17/2017 22:58",
 		"gtInspectorEntityIn:" : "ManuelLeuenberger 10/19/2017 20:50",
-		"addRoassalElementTo:" : "ManuelLeuenberger 10/18/2017 13:26",
-		"graph:" : "ManuelLeuenberger 10/19/2017 21:15",
-		"initialize" : "ManuelLeuenberger 10/19/2017 20:27",
+		"label" : "ManuelLeuenberger 10/17/2017 23:01",
 		"matches:" : "ManuelLeuenberger 10/21/2017 23:37",
-		"propertyChanged:" : "ManuelLeuenberger 10/21/2017 11:11",
+		"graph" : "ManuelLeuenberger 10/17/2017 22:58",
 		"whenPropertyChangedDo:" : "ManuelLeuenberger 10/21/2017 11:09",
-		"label" : "ManuelLeuenberger 10/17/2017 23:01"
+		"addRoassalElementTo:" : "ManuelLeuenberger 10/18/2017 13:26",
+		"initialize" : "ManuelLeuenberger 10/19/2017 20:27",
+		"graph:" : "ManuelLeuenberger 10/19/2017 21:15",
+		"propertyChanged:" : "ManuelLeuenberger 10/21/2017 11:11",
+		"asString" : "ManuelLeuenberger 10/23/2017 14:41"
 	},
 	"class" : {
 		"graph:" : "ManuelLeuenberger 10/17/2017 22:57",

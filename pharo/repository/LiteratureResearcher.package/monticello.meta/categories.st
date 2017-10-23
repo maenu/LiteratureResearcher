@@ -9,6 +9,7 @@ SystemOrganization addCategory: 'LiteratureResearcher-PdfLinker-Tests'!
 SystemOrganization addCategory: 'LiteratureResearcher-PdfOpen'!
 SystemOrganization addCategory: 'LiteratureResearcher-Pdfscrap'!
 SystemOrganization addCategory: 'LiteratureResearcher-Pdfscrap-Tests'!
+SystemOrganization addCategory: 'LiteratureResearcher-Roassal'!
 SystemOrganization addCategory: 'LiteratureResearcher-ScholarPy'!
 SystemOrganization addCategory: 'LiteratureResearcher-ScholarPy-Tests'!
 SystemOrganization addCategory: 'LiteratureResearcher-Spec'!
