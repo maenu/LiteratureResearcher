@@ -1,7 +1,7 @@
 as yet unclassified
 executeIn: anArticle
 	| pdf cermineResult metadata bibtex generatedBibtex |
-	pdf := (anArticle bibtex at: #pdf) value.
+	pdf := (anArticle bibtex at: #pdf) value asFileReference.
 	cermineResult := cermine
 		processPdf: anArticle bibtex key
 		with: pdf

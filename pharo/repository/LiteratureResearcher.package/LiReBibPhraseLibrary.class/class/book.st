@@ -3,6 +3,6 @@ book
 	^ super book
 		addBlockWithField: #keywords;
 		addBlockWithField: #abstract;
-		addBlockWithField: #clusterId;
+		addBlockWithField: #clusterid;
 		addBlockWithField: #pdf;
 		addBlockWithField: #url

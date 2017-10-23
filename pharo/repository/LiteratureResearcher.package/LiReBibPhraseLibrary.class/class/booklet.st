@@ -3,6 +3,6 @@ booklet
 	^ super booklet
 		addBlockWithField: #keywords;
 		addBlockWithField: #abstract;
-		addBlockWithField: #clusterId;
+		addBlockWithField: #clusterid;
 		addBlockWithField: #pdf;
 		addBlockWithField: #url

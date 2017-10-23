@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"list",
+		"item",
+		"graph",
+		"itemPlaceholder",
+		"searchButton",
+		"searchBlock"
+	],
+	"name" : "LiReSpecScholarPy",
+	"type" : "normal"
+}

@@ -1,7 +1,7 @@
 {
 	"instance" : {
 		"mergeAuthors:metadata:" : "ManuelLeuenberger 10/22/2017 00:17",
-		"executeIn:" : "ManuelLeuenberger 10/22/2017 12:32",
+		"executeIn:" : "ManuelLeuenberger 10/22/2017 22:42",
 		"generateBibtex:" : "ManuelLeuenberger 10/21/2017 23:18",
 		"mergeBibtex:bibtex:metadata:" : "ManuelLeuenberger 10/21/2017 23:34",
 		"cermine:" : "ManuelLeuenberger 10/15/2017 19:53",
@@ -12,6 +12,6 @@
 	},
 	"class" : {
 		"repository:pdfscrap:cermine:" : "ManuelLeuenberger 10/22/2017 00:22",
-		"example" : "ManuelLeuenberger 10/22/2017 00:23"
+		"example" : "ManuelLeuenberger 10/22/2017 22:41"
 	}
 }
