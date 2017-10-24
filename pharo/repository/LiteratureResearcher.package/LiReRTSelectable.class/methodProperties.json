@@ -1,12 +1,12 @@
 {
 	"instance" : {
 		"unselectAllIn:" : "ManuelLeuenberger 10/24/2017 14:28",
-		"initializeElement:" : "ManuelLeuenberger 10/24/2017 14:25",
+		"initializeElement:" : "ManuelLeuenberger 10/24/2017 16:31",
 		"initialize" : "ManuelLeuenberger 10/24/2017 12:06",
 		"isSelected:" : "ManuelLeuenberger 10/24/2017 14:26",
 		"clickOn:" : "ManuelLeuenberger 10/24/2017 14:25",
 		"unselect:" : "ManuelLeuenberger 10/24/2017 15:16",
-		"select:" : "ManuelLeuenberger 10/24/2017 15:16"
+		"select:" : "ManuelLeuenberger 10/24/2017 16:29"
 	},
 	"class" : { }
 }

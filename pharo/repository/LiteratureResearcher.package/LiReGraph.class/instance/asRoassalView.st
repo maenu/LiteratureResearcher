@@ -3,7 +3,6 @@ asRoassalView
 	| view legendBuilder |
 	view := RTView new.
 	view attributeAt: #GlamourContext put: LiReRTInteractiveViewContext new.
-	view attributeAt: #preparedForDeselection put: true.
 	nodes do: [ :n | n addRoassalElementTo: view ].
 	edges do: [ :e | e addRoassalElementTo: view ].
 	RTOptimizedForceBasedLayout new
