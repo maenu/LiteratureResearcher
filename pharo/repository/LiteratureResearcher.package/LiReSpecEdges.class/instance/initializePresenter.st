@@ -34,6 +34,6 @@ initializePresenter
 		updateFromResultBlock: [ :n | n asWidget openWithSpec ];
 		createFromSearchTextBlock: [ :s | 
 			| n |
-			n := (edgeClass perform: edgeEndClassSelector) fromText: s graph: node graph.
+			n := (edgeClass perform: edgeOtherEndClassSelector) fromText: s graph: node graph.
 			node graph nodes add: n.
 			createEdgeBlock cull: n cull: edgeClass ]

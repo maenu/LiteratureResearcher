@@ -10,9 +10,10 @@ asDetailsWidget
 	model textLabel label: 'Text'.
 	model bibtex
 		text:
-			(LiReBibRenderer new
-				render: bibtex;
-				contents) trimmed;
+			(bibtex
+				ifNotNil: [ (LiReBibRenderer new
+						render: bibtex;
+						contents) trimmed ]);
 		acceptBlock: [ :s | self bibtex: (LiReBibParser parse: s) entries first ].
 	model text
 		text: text;

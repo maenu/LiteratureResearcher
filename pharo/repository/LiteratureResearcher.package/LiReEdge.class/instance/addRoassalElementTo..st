@@ -10,7 +10,9 @@ addRoassalElementTo: aView
 				arrowHead;
 				withBorderAttachPoint;
 				perform: self lineStyleSelector;
-				yourself).
+				yourself);
+		@ LiReRTHighlightable;
+		@ LiReRTSelectable.
 	aView add: element.
 	self
 		whenPropertyChangedDo: [ element update.

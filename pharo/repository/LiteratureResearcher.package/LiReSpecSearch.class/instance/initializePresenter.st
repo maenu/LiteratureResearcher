@@ -1,7 +1,8 @@
 initialization
 initializePresenter
 	searchButton action: [ resultList items: (searchBlock value: searchText text) ].
-	createButton action: [ createFromSearchTextBlock value: searchText text ].
+	createButton
+		action: [ createFromSearchTextBlock value: searchText pendingText asString ].
 	resultList displayBlock: [ :e | resultListDisplayBock cull: e ].
 	resultList
 		menu: [ :m | 
@@ -19,7 +20,7 @@ initializePresenter
 								addItem: [ :item | 
 									item
 										name: 'Read';
-										action: [ readFromResultBlock value: resultList selectedItem ] ] ;
+										action: [ readFromResultBlock value: resultList selectedItem ] ];
 								addItem: [ :item | 
 									item
 										name: 'Update';

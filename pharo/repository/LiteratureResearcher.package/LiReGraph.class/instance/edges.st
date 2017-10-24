@@ -1,3 +1,3 @@
 accessing
 edges
-	^ edges value
+	^ edges

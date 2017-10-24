@@ -1,3 +1,3 @@
 enumerating
 whenEdgeRemovedDo: aBlock
-	announcer when: LiReEdgeRemoved do: [ :a | aBlock cull: a ]
+	^ announcer when: LiReEdgeRemoved do: [ :a | aBlock cull: a ]

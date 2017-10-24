@@ -1,0 +1,17 @@
+{
+	"instance" : {
+		"initializeElement:" : "ManuelLeuenberger 10/24/2017 09:49",
+		"doUnhighlightElement:" : "ManuelLeuenberger 10/23/2017 15:19",
+		"doHighlightElement:" : "ManuelLeuenberger 10/23/2017 15:21",
+		"doHighlightElementNonRecursive:color:" : "ManuelLeuenberger 10/24/2017 15:16",
+		"initialize" : "ManuelLeuenberger 10/24/2017 13:32",
+		"recordElement:" : "ManuelLeuenberger 10/24/2017 12:09",
+		"isSelected:" : "ManuelLeuenberger 10/24/2017 14:30",
+		"doUnhighlightElementElement:" : "ManuelLeuenberger 10/23/2017 15:31",
+		"doUnhighlightElementEdge:" : "ManuelLeuenberger 10/23/2017 15:20",
+		"doHighlightElementElement:" : "ManuelLeuenberger 10/23/2017 16:30",
+		"doHighlightElementEdge:" : "ManuelLeuenberger 10/24/2017 15:15",
+		"doUnhighlightElementNonRecursive:" : "ManuelLeuenberger 10/24/2017 15:16"
+	},
+	"class" : { }
+}

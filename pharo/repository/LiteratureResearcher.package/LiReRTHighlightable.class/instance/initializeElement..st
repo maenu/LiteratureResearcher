@@ -1,0 +1,3 @@
+initialization
+initializeElement: anElement
+	super initializeElement: anElement

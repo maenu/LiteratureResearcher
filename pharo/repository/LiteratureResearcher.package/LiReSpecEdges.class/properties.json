@@ -12,6 +12,7 @@
 		"edgeClass",
 		"edgeDisplayBlock",
 		"edgeEndClassSelector",
+		"edgeOtherEndClassSelector",
 		"createEdgeBlock",
 		"edgesSelector"
 	],

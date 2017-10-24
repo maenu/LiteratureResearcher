@@ -8,6 +8,7 @@ newTabIncomingEdges: anEdgeClass
 				edgesSelector: #incomingEdgesOfClass:
 				edgeDisplayBlock: [ :e | e sourceLabel ]
 				edgeEndClassSelector: #targetClass
+				edgeOtherEndClassSelector: #sourceClass
 				createEdgeBlock: [ :n | self createIncomingEdge: anEdgeClass from: n ]);
 		icon: (Smalltalk ui icons iconNamed: #back);
 		label: anEdgeClass label;
