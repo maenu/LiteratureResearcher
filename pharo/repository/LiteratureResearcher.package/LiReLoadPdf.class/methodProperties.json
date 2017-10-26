@@ -1,6 +1,6 @@
 {
 	"instance" : {
-		"loadFromTitle:" : "ManuelLeuenberger 10/22/2017 12:24",
+		"loadFromTitle:" : "ManuelLeuenberger 10/26/2017 16:19",
 		"pdfscrap" : "ManuelLeuenberger 10/22/2017 11:37",
 		"loadFromDragNDrop:" : "ManuelLeuenberger 10/22/2017 18:17",
 		"executeIn:" : "ManuelLeuenberger 10/22/2017 12:41",
@@ -9,10 +9,9 @@
 		"scholarPy" : "ManuelLeuenberger 10/22/2017 11:40",
 		"pdfscrap:" : "ManuelLeuenberger 10/22/2017 11:37",
 		"scholarPy:" : "ManuelLeuenberger 10/22/2017 11:40",
-		"loadFrom:" : "ManuelLeuenberger 10/22/2017 12:40"
+		"loadFrom:" : "ManuelLeuenberger 10/26/2017 16:17"
 	},
 	"class" : {
-		"repository:pdfscrap:scholarPy:" : "ManuelLeuenberger 10/22/2017 11:39",
-		"example" : "ManuelLeuenberger 10/22/2017 18:16"
+		"repository:pdfscrap:scholarPy:" : "ManuelLeuenberger 10/22/2017 11:39"
 	}
 }

@@ -1,6 +1,6 @@
 converting
 asScholarPyWidget
-	<liReWidget: 3>
+	<liReWidget: 2>
 	^ LiReSpecScholarPy new
 		title: 'Citing papers';
 		graph: graph;

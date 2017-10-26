@@ -1,14 +1,12 @@
 {
 	"instance" : {
-		"clickAuthorWithId:in:" : "ManuelLeuenberger 10/15/2017 19:17",
-		"queue:" : "ManuelLeuenberger 10/15/2017 16:23",
-		"clickTitleWithId:in:" : "ManuelLeuenberger 10/15/2017 19:17",
-		"queue" : "ManuelLeuenberger 10/15/2017 16:23",
-		"clickReferenceWithId:in:" : "ManuelLeuenberger 10/23/2017 11:48"
+		"clickAuthorWithId:in:" : "ManuelLeuenberger 10/24/2017 20:43",
+		"clickTitleWithId:in:" : "ManuelLeuenberger 10/24/2017 20:43",
+		"controller" : "ManuelLeuenberger 10/24/2017 17:49",
+		"clickReferenceWithId:in:" : "ManuelLeuenberger 10/24/2017 20:43",
+		"controller:" : "ManuelLeuenberger 10/24/2017 17:49"
 	},
 	"class" : {
-		"instance" : "ManuelLeuenberger 10/15/2017 16:12",
-		"instance:" : "ManuelLeuenberger 10/15/2017 16:19",
-		"queue:" : "ManuelLeuenberger 10/15/2017 16:22"
+		"controller:" : "ManuelLeuenberger 10/24/2017 17:49"
 	}
 }

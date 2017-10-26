@@ -1,6 +1,6 @@
 as yet unclassified
-repository: aFileReference pdfOpen: aPdfOpen
+repository: aFileReference pdfLinker: aPdfLinker
 	^ (self repository: aFileReference)
 		repository: aFileReference;
-		pdfOpen: aPdfOpen;
+		pdfLinker: aPdfLinker;
 		yourself

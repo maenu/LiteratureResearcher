@@ -1,6 +1,6 @@
 {
 	"instance" : {
-		"mergeAuthors:metadata:" : "ManuelLeuenberger 10/22/2017 00:17",
+		"mergeAuthors:metadata:" : "ManuelLeuenberger 10/26/2017 14:37",
 		"executeIn:" : "ManuelLeuenberger 10/22/2017 22:42",
 		"generateBibtex:" : "ManuelLeuenberger 10/21/2017 23:18",
 		"mergeBibtex:bibtex:metadata:" : "ManuelLeuenberger 10/21/2017 23:34",
@@ -9,7 +9,6 @@
 		"cermine" : "ManuelLeuenberger 10/15/2017 19:53"
 	},
 	"class" : {
-		"cermine:" : "ManuelLeuenberger 10/23/2017 11:58",
-		"example" : "ManuelLeuenberger 10/23/2017 16:58"
+		"cermine:" : "ManuelLeuenberger 10/23/2017 11:58"
 	}
 }

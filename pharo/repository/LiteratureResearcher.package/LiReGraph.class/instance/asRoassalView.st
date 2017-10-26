@@ -18,26 +18,30 @@ asRoassalView
 	view edges do: #pushBack.
 	view @ RTZoomableView.
 	view @ RTDraggableView.
-	self
-		whenEdgeAddedDo: [ :e | 
+	announcer
+		when: LiReEdgeAdded
+		do: [ :e | 
 			e edge addRoassalElementTo: view.
 			RTOptimizedForceBasedLayout new
 				charge: -1000;
 				on: view elements ].
-	self
-		whenEdgeRemovedDo: [ :e | 
+	announcer
+		when: LiReEdgeRemoved
+		do: [ :e | 
 			view removeEdge: (view edgeFromModel: e edge).
 			RTOptimizedForceBasedLayout new
 				charge: -1000;
 				on: view elements ].
-	self
-		whenNodeAddedDo: [ :e | 
+	announcer
+		when: LiReNodeAdded
+		do: [ :e | 
 			e node addRoassalElementTo: view.
 			RTOptimizedForceBasedLayout new
 				charge: -1000;
 				on: view elements ].
-	self
-		whenNodeRemovedDo: [ :e | 
+	announcer
+		when: LiReNodeRemoved
+		do: [ :e | 
 			view removeElement: (view elementFromModel: e node).
 			RTOptimizedForceBasedLayout new
 				charge: -1000;

@@ -1,6 +1,6 @@
 {
 	"instance" : {
-		"gtInspectorEntityIn:" : "ManuelLeuenberger 10/19/2017 20:50",
+		"gtInspectorEntityIn:" : "ManuelLeuenberger 10/26/2017 13:56",
 		"label" : "ManuelLeuenberger 10/17/2017 23:01",
 		"matches:" : "ManuelLeuenberger 10/21/2017 23:37",
 		"graph" : "ManuelLeuenberger 10/17/2017 22:58",
@@ -9,6 +9,7 @@
 		"initialize" : "ManuelLeuenberger 10/19/2017 20:27",
 		"graph:" : "ManuelLeuenberger 10/19/2017 21:15",
 		"propertyChanged:" : "ManuelLeuenberger 10/21/2017 11:11",
+		"announcer" : "ManuelLeuenberger 10/24/2017 20:18",
 		"asString" : "ManuelLeuenberger 10/23/2017 14:41"
 	},
 	"class" : {
