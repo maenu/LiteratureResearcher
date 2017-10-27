@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "LiteratureResearcher-Pdfdpscrap-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"workingDirectory",
+		"id",
+		"bibtex",
+		"pdfdbscrap"
+	],
+	"name" : "LiRePdfdbscrapTest",
+	"type" : "normal"
+}

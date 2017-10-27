@@ -11,13 +11,14 @@
 		"repository",
 		"pdfLinker",
 		"cermine",
-		"pdfscrap",
 		"scholarPy",
 		"pdfOpen",
 		"actionImportPdf",
 		"actionLinkPdf",
 		"actionLoadPdf",
-		"actionOpenPdf"
+		"actionOpenPdf",
+		"scheduledLayout",
+		"pdfdbscrap"
 	],
 	"name" : "LiReController",
 	"type" : "normal"

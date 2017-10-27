@@ -6,8 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"pdfscrap",
-		"scholarPy"
+		"scholarPy",
+		"pdfdbscrap"
 	],
 	"name" : "LiReLoadPdf",
 	"type" : "normal"

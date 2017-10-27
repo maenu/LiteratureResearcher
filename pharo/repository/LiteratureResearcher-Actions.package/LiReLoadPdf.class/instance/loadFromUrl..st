@@ -1,7 +1,7 @@
 as yet unclassified
 loadFromUrl: anArticle
-	[ ^ pdfscrap processBibtex: anArticle bibtex ]
-		on: LiRePdfscrapProcessError
+	[ ^ pdfdbscrap processBibtex: anArticle bibtex ]
+		on: LiRePdfdbscrapProcessError
 		do: [ :e | 
 			Transcript
 				show: e;

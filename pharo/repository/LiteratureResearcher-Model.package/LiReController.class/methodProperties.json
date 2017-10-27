@@ -1,11 +1,14 @@
 {
 	"instance" : {
+		"registerCallbacksFor:" : "ManuelLeuenberger 10/27/2017 17:28",
 		"graph" : "ManuelLeuenberger 10/27/2017 14:01",
 		"view:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"graph:" : "ManuelLeuenberger 10/27/2017 15:49",
-		"initialize" : "ManuelLeuenberger 10/27/2017 15:36",
-		"view" : "ManuelLeuenberger 10/27/2017 15:36",
+		"scheduleLayout" : "ManuelLeuenberger 10/27/2017 19:57",
 		"selectEdge:" : "ManuelLeuenberger 10/27/2017 14:02",
+		"initialize" : "ManuelLeuenberger 10/27/2017 20:04",
+		"graph:" : "ManuelLeuenberger 10/27/2017 18:58",
+		"view" : "ManuelLeuenberger 10/27/2017 15:36",
+		"schedule:title:" : "ManuelLeuenberger 10/27/2017 17:27",
 		"selectNode:" : "ManuelLeuenberger 10/27/2017 15:37"
 	},
 	"class" : {

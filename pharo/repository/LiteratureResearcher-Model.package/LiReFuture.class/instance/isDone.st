@@ -1,0 +1,3 @@
+testing
+isDone
+    ^ lock isSignaled

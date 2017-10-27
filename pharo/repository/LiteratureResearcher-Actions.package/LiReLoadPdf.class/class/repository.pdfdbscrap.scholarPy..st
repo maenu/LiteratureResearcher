@@ -1,7 +1,7 @@
 as yet unclassified
-repository: aFileReference pdfscrap: aPdfscrap scholarPy: aScholarPy
+repository: aFileReference pdfdbscrap: aPdfdbscrap scholarPy: aScholarPy
 	^ (self repository: aFileReference)
 		repository: aFileReference;
-		pdfscrap: aPdfscrap;
+		pdfdbscrap: aPdfdbscrap;
 		scholarPy: aScholarPy;
 		yourself
