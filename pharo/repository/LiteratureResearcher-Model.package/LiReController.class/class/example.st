@@ -1,6 +1,6 @@
 example
 example
-	| article graph controller |
+	| article graph controller server |
 	graph := LiReGraph new.
 	article := LiReArticle
 		graph: graph
@@ -15,4 +15,7 @@ example
 		metadata: nil.
 	controller := LiReController graph: graph.
 	graph nodes add: article.
+	server := LiRePdfLinkerUriSchemeServer controller: controller.
+	LiRePdfLinkerUriSchemeServer adoptAsDefault: server.
+	server start.
 	^ controller

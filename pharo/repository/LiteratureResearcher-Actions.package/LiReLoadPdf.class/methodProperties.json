@@ -1,18 +1,17 @@
 {
 	"instance" : {
-		"loadFromTitle:" : "ManuelLeuenberger 10/27/2017 14:04",
+		"loadFromTitle:" : "ManuelLeuenberger 10/27/2017 15:30",
 		"pdfscrap" : "ManuelLeuenberger 10/27/2017 14:01",
 		"loadFromDragNDrop:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"executeIn:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"executeIn:" : "ManuelLeuenberger 10/27/2017 15:48",
 		"loadFromPdf:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"loadFromUrl:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"loadFromUrl:" : "ManuelLeuenberger 10/27/2017 15:30",
 		"scholarPy" : "ManuelLeuenberger 10/27/2017 14:01",
 		"pdfscrap:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"scholarPy:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"loadFrom:" : "ManuelLeuenberger 10/27/2017 14:04"
+		"loadFrom:" : "ManuelLeuenberger 10/27/2017 15:30"
 	},
 	"class" : {
-		"repository:pdfscrap:scholarPy:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"example" : "ManuelLeuenberger 10/27/2017 14:01"
+		"repository:pdfscrap:scholarPy:" : "ManuelLeuenberger 10/27/2017 14:01"
 	}
 }

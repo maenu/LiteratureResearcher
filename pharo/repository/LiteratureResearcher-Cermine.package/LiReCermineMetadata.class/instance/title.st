@@ -1,3 +1,3 @@
 accessing
 title
-	^ ((XPath for: '//title-group') in: document) ifNotNil: [ :s | s first contentString trimmed ]
+	^ ((XPath for: '//title-group') in: document) first ifNotNil: [ :s | s contentString trimmed ]

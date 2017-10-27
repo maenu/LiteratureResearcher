@@ -2,14 +2,14 @@
 	"instance" : {
 		"graph" : "ManuelLeuenberger 10/27/2017 14:01",
 		"view:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"graph:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"initialize" : "ManuelLeuenberger 10/27/2017 14:02",
-		"view" : "ManuelLeuenberger 10/27/2017 14:01",
+		"graph:" : "ManuelLeuenberger 10/27/2017 15:49",
+		"initialize" : "ManuelLeuenberger 10/27/2017 15:36",
+		"view" : "ManuelLeuenberger 10/27/2017 15:36",
 		"selectEdge:" : "ManuelLeuenberger 10/27/2017 14:02",
-		"selectNode:" : "ManuelLeuenberger 10/27/2017 14:01"
+		"selectNode:" : "ManuelLeuenberger 10/27/2017 15:37"
 	},
 	"class" : {
 		"graph:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"example" : "ManuelLeuenberger 10/27/2017 14:07"
+		"example" : "ManuelLeuenberger 10/27/2017 15:24"
 	}
 }

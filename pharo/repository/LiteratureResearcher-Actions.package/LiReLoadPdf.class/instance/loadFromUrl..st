@@ -3,5 +3,7 @@ loadFromUrl: anArticle
 	[ ^ pdfscrap processBibtex: anArticle bibtex ]
 		on: LiRePdfscrapProcessError
 		do: [ :e | 
-			self flag: 'log?'.
+			Transcript
+				show: e;
+				cr.
 			^ nil ]

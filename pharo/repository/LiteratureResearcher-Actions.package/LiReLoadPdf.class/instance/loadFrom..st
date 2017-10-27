@@ -1,6 +1,5 @@
 private
 loadFrom: anArticle
-Halt now.
 	(anArticle bibtex hasField: #pdf)
 		ifTrue: [ (self loadFromPdf: anArticle) ifNotNil: [ :pdf | ^ pdf ] ].
 	(anArticle bibtex hasField: #url)

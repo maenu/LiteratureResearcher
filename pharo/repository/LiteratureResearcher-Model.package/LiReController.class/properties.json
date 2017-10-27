@@ -7,7 +7,17 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"graph",
-		"view"
+		"view",
+		"repository",
+		"pdfLinker",
+		"cermine",
+		"pdfscrap",
+		"scholarPy",
+		"pdfOpen",
+		"actionImportPdf",
+		"actionLinkPdf",
+		"actionLoadPdf",
+		"actionOpenPdf"
 	],
 	"name" : "LiReController",
 	"type" : "normal"

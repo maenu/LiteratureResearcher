@@ -1,3 +1,3 @@
-as yet unclassified
-executeIn: aModel
+target resize
+executeIn: anObject
 	self subclassResponsibility
