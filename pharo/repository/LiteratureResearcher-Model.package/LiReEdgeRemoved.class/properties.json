@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"graph",
 		"edge"
 	],
 	"name" : "LiReEdgeRemoved",

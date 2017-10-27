@@ -9,7 +9,7 @@ newMenu: anItem
 						addItem: [ :mi | 
 							mi
 								name: 'Read';
-								action: [ self flag: 'TODO open in graph' ] ];
+								action: [ Halt once. self flag: 'TODO open in graph' ] ];
 						addItem: [ :mi | 
 							mi
 								name: 'Update';
@@ -20,5 +20,5 @@ newMenu: anItem
 						addItem: [ :mi | 
 							mi
 								name: 'Load';
-								action: [ self flag: 'TODO open in graph' ] ] ] ].
+								action: [ Halt once. self flag: 'TODO open in graph' ] ] ] ].
 	^ menu

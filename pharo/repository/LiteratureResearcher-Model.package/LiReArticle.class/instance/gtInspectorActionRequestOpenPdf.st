@@ -4,4 +4,4 @@ gtInspectorActionRequestOpenPdf
 	^ GLMGenericAction new
 		enabledCondition: [ bibtex hasField: #pdf ];
 		title: 'Open PDF';
-		action: [ :p | announcer announce: (LiReRequestOpenPdf presentation: p article: self) ]
+		action: [ :p | announcer announce: (LiReRequestOpenPdf article: self) ]

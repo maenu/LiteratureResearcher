@@ -2,7 +2,6 @@ converting
 asWidget
 	| model |
 	model := DynamicComposableModel new.
-	model title: 'Details'.
 	model instantiateModels: #(stateLabel LabelModel state DropListModel).
 	model stateLabel label: 'State'.
 	model state

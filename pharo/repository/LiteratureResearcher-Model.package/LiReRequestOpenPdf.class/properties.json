@@ -1,14 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReAnnouncement",
+	"super" : "LiReRequestPdf",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"presentation",
-		"article"
-	],
+	"instvars" : [ ],
 	"name" : "LiReRequestOpenPdf",
 	"type" : "normal"
 }

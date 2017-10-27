@@ -1,22 +1,20 @@
 {
 	"instance" : {
-		"gtInspectorActionRequestImportPdf" : "ManuelLeuenberger 10/27/2017 14:02",
+		"gtInspectorActionRequestImportPdf" : "ManuelLeuenberger 10/27/2017 14:36",
 		"bibtex:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"gtInspectorPresentationReferences:" : "ManuelLeuenberger 10/27/2017 14:04",
 		"gtInspectorPresentationReferencedByRemote:" : "ManuelLeuenberger 10/27/2017 14:04",
-		"gtInspectorActionRequestLoadPdf" : "ManuelLeuenberger 10/27/2017 14:02",
+		"gtInspectorActionRequestLoadPdf" : "ManuelLeuenberger 10/27/2017 14:37",
 		"label" : "ManuelLeuenberger 10/27/2017 14:01",
 		"matches:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"asWidget" : "ManuelLeuenberger 10/27/2017 14:04",
-		"gtInspectorActionOpenPdf" : "ManuelLeuenberger 10/27/2017 14:02",
-		"asRoassalElement" : "ManuelLeuenberger 10/27/2017 14:10",
-		"gtInspectorActionRequestOpenPdf" : "ManuelLeuenberger 10/27/2017 14:02",
-		"gtInspectorActionRequestLinkPdf" : "ManuelLeuenberger 10/27/2017 14:02",
 		"metadata" : "ManuelLeuenberger 10/27/2017 14:01",
+		"asRoassalElement" : "ManuelLeuenberger 10/27/2017 14:10",
+		"gtInspectorActionRequestOpenPdf" : "ManuelLeuenberger 10/27/2017 14:36",
+		"gtInspectorActionRequestLinkPdf" : "ManuelLeuenberger 10/27/2017 14:36",
 		"gtInspectorPresentationWrittenBy:" : "ManuelLeuenberger 10/27/2017 14:04",
 		"bibtex" : "ManuelLeuenberger 10/27/2017 14:01",
 		"metadata:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"gtInspectorActionReturnValue" : "ManuelLeuenberger 10/27/2017 14:02",
 		"gtInspectorPresentationReferencedBy:" : "ManuelLeuenberger 10/27/2017 14:17"
 	},
 	"class" : {

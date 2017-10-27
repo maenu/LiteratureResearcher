@@ -8,7 +8,11 @@ baseline: spec
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
-				configuration: 'NeoJson'
+				configuration: 'NeoJSON'
+					with: [ spec
+						versionString: #stable;
+						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
+				configuration: 'NeoCSV'
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
@@ -24,4 +28,4 @@ baseline: spec
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ].
-			spec group: 'default' with: #('XPath' 'NeoJson' 'OSProcess' 'Citezen' 'Roassal2') ]
+			spec group: 'default' with: #('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2') ]

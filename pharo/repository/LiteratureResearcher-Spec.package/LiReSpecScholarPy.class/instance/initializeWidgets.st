@@ -5,7 +5,4 @@ initializeWidgets
 		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);
 		yourself.
 	list := self instantiate: FastTableModel.
-	itemPlaceholder := self newLabel
-		label: 'Select item in list';
-		yourself.
-	item := itemPlaceholder
+	item := LiReSpecScholarPyItem item: Dictionary new

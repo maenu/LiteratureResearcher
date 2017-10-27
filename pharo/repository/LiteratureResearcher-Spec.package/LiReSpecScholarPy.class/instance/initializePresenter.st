@@ -16,11 +16,7 @@ initializePresenter
 			(self isInGraph: i)
 				ifTrue: [ Smalltalk ui icons iconNamed: #testGreen ]
 				ifFalse: [ Smalltalk ui icons iconNamed: #testNotRun ] ];
-		whenSelectedItemChanged: [ :i | 
-			item := i ifNil: [ itemPlaceholder ] ifNotNil: [ LiReSpecScholarPyItem item: i ].
-			self needRebuild: false.
-			self buildWithSpec.
-			list setSelectedItem: i ];
+		whenSelectedItemChanged: [ :i | i ifNotNil: [ item item: i ] ];
 		menu: [ :m | 
 			list selectedItem
 				ifNil: [ m ]

@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"graph",
 		"node"
 	],
 	"name" : "LiReNodeAdded",
