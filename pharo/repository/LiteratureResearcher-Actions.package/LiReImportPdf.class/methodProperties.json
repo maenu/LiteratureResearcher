@@ -1,0 +1,15 @@
+{
+	"instance" : {
+		"mergeAuthors:metadata:" : "ManuelLeuenberger 10/27/2017 14:04",
+		"executeIn:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"generateBibtex:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"mergeBibtex:bibtex:metadata:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"cermine:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"mergeReferences:bibtex:metadata:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"cermine" : "ManuelLeuenberger 10/27/2017 14:01"
+	},
+	"class" : {
+		"cermine:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"example" : "ManuelLeuenberger 10/27/2017 14:01"
+	}
+}

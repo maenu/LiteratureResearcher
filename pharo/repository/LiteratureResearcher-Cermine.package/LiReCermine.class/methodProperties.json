@@ -1,0 +1,18 @@
+{
+	"instance" : {
+		"subprocess:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"processPdf:with:outputs:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"processResultIn:outputs:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"subprocess" : "ManuelLeuenberger 10/27/2017 14:01"
+	},
+	"class" : {
+		"outputImages" : "ManuelLeuenberger 10/27/2017 14:01",
+		"initialize" : "ManuelLeuenberger 10/27/2017 14:01",
+		"outputBibtex" : "ManuelLeuenberger 10/27/2017 14:01",
+		"outputJats" : "ManuelLeuenberger 10/27/2017 14:01",
+		"outputText" : "ManuelLeuenberger 10/27/2017 14:01",
+		"outputTrueviz" : "ManuelLeuenberger 10/27/2017 14:01",
+		"outputZones" : "ManuelLeuenberger 10/27/2017 14:01",
+		"subprocess:" : "ManuelLeuenberger 10/27/2017 14:01"
+	}
+}

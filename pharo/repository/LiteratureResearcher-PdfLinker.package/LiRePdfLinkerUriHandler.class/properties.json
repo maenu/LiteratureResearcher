@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-PdfLinker",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Instance"
+	],
+	"instvars" : [
+		"queue"
+	],
+	"name" : "LiRePdfLinkerUriHandler",
+	"type" : "normal"
+}
