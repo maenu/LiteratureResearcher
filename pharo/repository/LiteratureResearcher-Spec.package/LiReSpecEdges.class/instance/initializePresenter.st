@@ -1,7 +1,7 @@
 initialization
 initializePresenter
 	list
-		items: (node perform: edgesSelector with: edgeClass);
+		items: ((node perform: edgesSelector with: edgeClass) sorted: [ :a :b | a order < b order ]);
 		displayBlock: edgeDisplayBlock;
 		menu: [ :m | 
 			list selectedItem

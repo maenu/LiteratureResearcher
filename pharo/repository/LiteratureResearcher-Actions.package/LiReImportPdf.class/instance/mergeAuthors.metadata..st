@@ -6,11 +6,12 @@ mergeAuthors: anArticle metadata: metadata
 	affiliations := metadata affiliations.
 	authors do: [ :a | affiliations detect: [ :aff | (aff at: #id) = (a at: #xrefAffRid) ] ifFound: [ :aff | a addAll: aff ] ].
 	existingEdges := anArticle incomingEdgesOfClass: LiReHasWritten.
-	missingAuthors := authors reject: [ :a | existingEdges contains: [ :e | e matches: (a at: #stringName) ] ].
+	missingAuthors := (authors withIndexCollect: [ :e :i | i -> e ])
+		reject: [ :r | existingEdges contains: [ :e | e matches: (r value at: #stringName) ] ].
 	missingAuthors
-		do: [ :a | 
+		do: [ :r | 
 			| key node edge |
-			key := a at: #stringName.
+			key := r value at: #stringName.
 			node := (graph nodesOfClass: LiReAuthor)
 				detect: [ :n | n matches: key ]
 				ifNone: [ | newNode |
@@ -21,7 +22,8 @@ mergeAuthors: anArticle metadata: metadata
 				source: node
 				target: anArticle
 				key: key
-				email: (a at: #email)
-				institution: (a at: #institution)
-				country: (a at: #country).
+				order: r key
+				email: (r value at: #email)
+				institution: (r value at: #institution)
+				country: (r value at: #country).
 			graph edges add: edge ]

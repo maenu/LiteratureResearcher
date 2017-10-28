@@ -5,17 +5,20 @@ gtInspectorPresentationReferencedBy: aComposite
 	model := LiReSpecEdges
 		node: self
 		edgeClass: LiReReferences
-		edgesSelector: #outgoingEdgesOfClass:
+		edgesSelector: #incomingEdgesOfClass:
 		edgeDisplayBlock: [ :e | e targetLabel ]
-		edgeEndClassSelector: #sourceClass
-		edgeOtherEndClassSelector: #targetClass
+		edgeEndClassSelector: #targetClass
+		edgeOtherEndClassSelector: #sourceClass
 		createEdgeBlock: [ :n | 
-			| edge |
+			| order existingEdges edge |
+			existingEdges := (self incomingEdgesOfClass: LiReReferences) collect: #order.
+			order := existingEdges ifEmpty: [ 1 ] ifNotEmpty: [ existingEdges max ].
 			edge := LiReReferences
 				graph: graph
-				source: self
-				target: n
-				key: 'GENERATED'.
+				source: n
+				target: self
+				key: 'GENERATED'
+				order: order.
 			graph edges add: edge ].
 	aComposite spec
 		title: [ 'Referenced by' ];

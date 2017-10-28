@@ -10,12 +10,15 @@ gtInspectorPresentationReferences: aComposite
 		edgeEndClassSelector: #sourceClass
 		edgeOtherEndClassSelector: #targetClass
 		createEdgeBlock: [ :n | 
-			| edge |
+			| order existingEdges edge |
+			existingEdges := (self outgoingEdgesOfClass: LiReReferences) collect: #order.
+			order := existingEdges ifEmpty: [ 1 ] ifNotEmpty: [ existingEdges max ].
 			edge := LiReReferences
 				graph: graph
 				source: self
 				target: n
-				key: 'GENERATED'.
+				key: 'GENERATED'
+				order: order.
 			graph edges add: edge ].
 	aComposite spec
 		title: [ 'References' ];

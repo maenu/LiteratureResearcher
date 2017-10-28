@@ -6,9 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"key",
 		"source",
-		"target"
+		"target",
+		"key",
+		"order"
 	],
 	"name" : "LiReEdge",
 	"type" : "normal"

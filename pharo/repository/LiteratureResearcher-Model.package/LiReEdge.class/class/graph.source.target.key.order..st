@@ -1,7 +1,8 @@
 as yet unclassified
-graph: aGraph source: aNode target: anotherNode key: aString
+graph: aGraph source: aNode target: anotherNode key: aString order: anInteger
 	^ (self graph: aGraph)
 		source: aNode;
 		target: anotherNode;
 		key: aString;
+		order: anInteger;
 		yourself
