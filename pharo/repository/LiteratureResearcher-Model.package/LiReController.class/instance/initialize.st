@@ -11,4 +11,6 @@ initialize
 	actionImportPdf := LiReImportPdf cermine: cermine.
 	actionLinkPdf := LiReLinkPdf repository: repository pdfLinker: pdfLinker.
 	actionLoadPdf := LiReLoadPdf repository: repository pdfdbscrap: pdfdbscrap scholarPy: scholarPy.
-	actionOpenPdf := LiReOpenPdf pdfOpen: pdfOpen
+	actionOpenPdf := LiReOpenPdf pdfOpen: pdfOpen.
+	actionLoadReferencedByFromCsv := LiReLoadReferencedByFromCsv scholarPy: scholarPy.
+	actionLoadWrittenByFromCsv := LiReLoadWrittenByFromCsv scholarPy: scholarPy

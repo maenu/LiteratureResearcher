@@ -1,7 +1,7 @@
 as yet unclassified
 gtInspectorPresentationReferences: aComposite
 	<gtInspectorPresentationOrder: 2>
-	| model |
+	| presentation model |
 	model := LiReSpecEdges
 		node: self
 		edgeClass: LiReReferences
@@ -19,9 +19,12 @@ gtInspectorPresentationReferences: aComposite
 				target: n
 				key: 'GENERATED'
 				order: order.
-			graph edges add: edge ].
-	aComposite spec
+			graph edges add: edge ]
+		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ].
+	presentation := aComposite spec
 		title: [ 'References' ];
 		display: [ model
 				buildWithSpec;
-				yourself ]
+				yourself ];
+		yourself.
+	model list whenSelectedItemChanged: [ :r | presentation selection: r ]

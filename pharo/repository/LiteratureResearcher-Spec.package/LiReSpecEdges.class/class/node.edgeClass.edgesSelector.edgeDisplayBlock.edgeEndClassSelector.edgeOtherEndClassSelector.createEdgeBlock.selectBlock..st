@@ -1,5 +1,5 @@
 as yet unclassified
-node: aNode edgeClass: aClass edgesSelector: aSymbol edgeDisplayBlock: aBlock edgeEndClassSelector: anotherSymbol edgeOtherEndClassSelector: yetAnotherSymbol createEdgeBlock: anotherBlock
+node: aNode edgeClass: aClass edgesSelector: aSymbol edgeDisplayBlock: aBlock edgeEndClassSelector: anotherSymbol edgeOtherEndClassSelector: yetAnotherSymbol createEdgeBlock: anotherBlock selectBlock: yetAnotherBlock
 	^ self basicNew
 		node: aNode;
 		edgesSelector: aSymbol;
@@ -8,5 +8,6 @@ node: aNode edgeClass: aClass edgesSelector: aSymbol edgeDisplayBlock: aBlock ed
 		edgeEndClassSelector: anotherSymbol;
 		edgeOtherEndClassSelector: yetAnotherSymbol;
 		createEdgeBlock: anotherBlock;
+		selectBlock: yetAnotherBlock;
 		initialize;
 		yourself

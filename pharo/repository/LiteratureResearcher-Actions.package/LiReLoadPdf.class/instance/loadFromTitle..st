@@ -9,6 +9,5 @@ loadFromTitle: anArticle
 				cr.
 			^ nil ].
 	rowWithUrl := rows detect: [ :r | (r at: #urlPdf) isNotNil or: [ (r at: #url) isNotNil ] ] ifNone: [ ^ nil ].
-	anArticle bibtex at: #url put: ((rowWithUrl at: #urlPdf) ifNil: [ rowWithUrl at: #url ]).
-	anArticle propertyChanged: #bibtex.
+	anArticle mergeBibtexWithCsv: rowWithUrl.
 	^ self loadFromUrl: anArticle

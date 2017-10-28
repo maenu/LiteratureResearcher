@@ -5,6 +5,8 @@ getBibtex: anId
 		execute:
 			{'--citation'.
 			'bt'.
+			'--count'.
+			'1'.
 			'--cluster-id'.
 			(LiReSubprocess escape: anId)}
 		wait: 30 seconds.

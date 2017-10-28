@@ -2,8 +2,9 @@ converting
 gtInspectorPresentationReferencedByRemote: aComposite
 	<gtInspectorPresentationOrder: 5>
 	| model |
-	model := LiReSpecScholarPy new
-		graph: graph;
+	model := (LiReSpecScholarPy node: self)
+		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ];
+		loadBlock: [ :d | announcer announce: (LiReRequestLoadReferencedByFromCsv csv: d) ];
 		searchBlock: [ | value lock |
 			lock := Semaphore new.
 			announcer

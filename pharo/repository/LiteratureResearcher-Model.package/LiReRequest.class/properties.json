@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReAnnouncement",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReRequest",
+	"type" : "normal"
+}

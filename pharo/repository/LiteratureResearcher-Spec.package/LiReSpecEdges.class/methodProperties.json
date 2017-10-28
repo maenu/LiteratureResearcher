@@ -9,21 +9,23 @@
 		"edgeClass:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"createEdgeBlock:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgeEndClassSelector" : "ManuelLeuenberger 10/27/2017 14:01",
+		"selectBlock" : "ManuelLeuenberger 10/29/2017 01:09",
 		"edgesSelector:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgeOtherEndClassSelector" : "ManuelLeuenberger 10/27/2017 14:01",
+		"newMenu:" : "ManuelLeuenberger 10/29/2017 01:09",
 		"createEdgeBlock" : "ManuelLeuenberger 10/27/2017 14:01",
 		"node" : "ManuelLeuenberger 10/27/2017 14:01",
-		"initializePresenter" : "ManuelLeuenberger 10/28/2017 10:35",
+		"initializePresenter" : "ManuelLeuenberger 10/29/2017 01:10",
 		"node:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgesSelector" : "ManuelLeuenberger 10/27/2017 14:01",
+		"selectBlock:" : "ManuelLeuenberger 10/29/2017 01:09",
 		"edgeDisplayBlock:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"search" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgeOtherEndClassSelector:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"initializeWidgets" : "ManuelLeuenberger 10/27/2017 14:01"
 	},
 	"class" : {
-		"node:edgeClass:edgesSelector:edgeDisplayBlock:edgeEndClassSelector:createEdgeBlock:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"node:edgeClass:edgesSelector:edgeDisplayBlock:edgeEndClassSelector:edgeOtherEndClassSelector:createEdgeBlock:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"defaultSpec" : "ManuelLeuenberger 10/27/2017 14:01"
+		"defaultSpec" : "ManuelLeuenberger 10/27/2017 14:01",
+		"node:edgeClass:edgesSelector:edgeDisplayBlock:edgeEndClassSelector:edgeOtherEndClassSelector:createEdgeBlock:selectBlock:" : "ManuelLeuenberger 10/29/2017 01:14"
 	}
 }

@@ -2,14 +2,16 @@
 	"instance" : {
 		"lineStyleSelector" : "ManuelLeuenberger 10/27/2017 14:01",
 		"bibtex:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"asWidget" : "ManuelLeuenberger 10/27/2017 14:04",
+		"asWidget" : "ManuelLeuenberger 10/28/2017 21:39",
 		"bibtex" : "ManuelLeuenberger 10/27/2017 14:01",
+		"csv" : "ManuelLeuenberger 10/28/2017 21:38",
+		"text" : "ManuelLeuenberger 10/27/2017 14:01",
 		"text:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"text" : "ManuelLeuenberger 10/27/2017 14:01"
+		"csv:" : "ManuelLeuenberger 10/28/2017 21:38"
 	},
 	"class" : {
-		"graph:source:target:key:order:bibtex:text:" : "ManuelLeuenberger 10/28/2017 10:03",
 		"sourceClass" : "ManuelLeuenberger 10/27/2017 14:01",
+		"graph:source:target:key:order:bibtex:text:csv:" : "ManuelLeuenberger 10/28/2017 21:37",
 		"label" : "ManuelLeuenberger 10/27/2017 14:01",
 		"targetClass" : "ManuelLeuenberger 10/27/2017 14:01"
 	}

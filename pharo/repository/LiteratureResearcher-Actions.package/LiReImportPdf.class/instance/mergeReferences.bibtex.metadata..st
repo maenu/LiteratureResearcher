@@ -5,7 +5,7 @@ mergeReferences: anArticle bibtex: aBibtexList metadata: aMetadata
 	graph := anArticle graph.
 	references := (1 to: aBibtexList entries size) collect: [ :i | i -> ((aBibtexList entries at: i) -> (aMetadata references at: i)) ].
 	existingEdges := anArticle outgoingEdgesOfClass: LiReReferences.
-	missingReferences := references reject: [ :r | existingEdges contains: [ :e | e matches: r value key key ] ].
+	missingReferences := references reject: [ :r | existingEdges contains: [ :e | e target bibtex key = r value key key ] ].
 	missingReferences
 		do: [ :r | 
 			| key node edge |
@@ -22,5 +22,6 @@ mergeReferences: anArticle bibtex: aBibtexList metadata: aMetadata
 				key: key
 				order: r key
 				bibtex: r value key
-				text: (r value value at: #text).
+				text: (r value value at: #text)
+				csv: Dictionary new.
 			graph edges add: edge ]

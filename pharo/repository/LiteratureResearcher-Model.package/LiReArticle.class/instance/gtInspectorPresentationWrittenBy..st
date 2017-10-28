@@ -1,7 +1,7 @@
 as yet unclassified
 gtInspectorPresentationWrittenBy: aComposite
 	<gtInspectorPresentationOrder: 4>
-	| model |
+	| presentation model |
 	model := LiReSpecEdges
 		node: self
 		edgeClass: LiReHasWritten
@@ -19,9 +19,12 @@ gtInspectorPresentationWrittenBy: aComposite
 				target: self
 				key: 'GENERATED'
 				order: order.
-			graph edges add: edge ].
-	aComposite spec
+			graph edges add: edge ]
+		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ].
+	presentation := aComposite spec
 		title: [ 'Written by' ];
 		display: [ model
 				buildWithSpec;
-				yourself ]
+				yourself ];
+		yourself.
+	model list whenSelectedItemChanged: [ :r | presentation selection: r ]

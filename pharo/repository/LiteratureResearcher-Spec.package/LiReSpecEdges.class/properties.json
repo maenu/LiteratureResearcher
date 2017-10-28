@@ -14,7 +14,8 @@
 		"edgeEndClassSelector",
 		"edgeOtherEndClassSelector",
 		"createEdgeBlock",
-		"edgesSelector"
+		"edgesSelector",
+		"selectBlock"
 	],
 	"name" : "LiReSpecEdges",
 	"type" : "normal"

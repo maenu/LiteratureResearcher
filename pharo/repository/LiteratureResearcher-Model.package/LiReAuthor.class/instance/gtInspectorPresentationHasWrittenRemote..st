@@ -2,8 +2,9 @@ as yet unclassified
 gtInspectorPresentationHasWrittenRemote: aComposite
 	<gtInspectorPresentationOrder: 3>
 	| model |
-	model := LiReSpecScholarPy new
-		graph: graph;
+	model := (LiReSpecScholarPy node: self)
+		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ];
+		loadBlock: [ :d | announcer announce: (LiReRequestLoadWrittenByFromCsv csv: d) ];
 		searchBlock: [ | value lock |
 			lock := Semaphore new.
 			announcer

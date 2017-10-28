@@ -7,7 +7,7 @@ mergeAuthors: anArticle metadata: metadata
 	authors do: [ :a | affiliations detect: [ :aff | (aff at: #id) = (a at: #xrefAffRid) ] ifFound: [ :aff | a addAll: aff ] ].
 	existingEdges := anArticle incomingEdgesOfClass: LiReHasWritten.
 	missingAuthors := (authors withIndexCollect: [ :e :i | i -> e ])
-		reject: [ :r | existingEdges contains: [ :e | e matches: (r value at: #stringName) ] ].
+		reject: [ :r | existingEdges contains: [ :e | e target bibtex key = anArticle bibtex key ] ].
 	missingAuthors
 		do: [ :r | 
 			| key node edge |

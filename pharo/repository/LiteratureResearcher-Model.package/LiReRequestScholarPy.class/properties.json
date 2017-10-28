@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReAnnouncement",
+	"super" : "LiReRequest",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],

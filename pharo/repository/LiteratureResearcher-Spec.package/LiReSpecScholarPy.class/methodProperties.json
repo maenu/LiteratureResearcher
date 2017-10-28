@@ -1,21 +1,26 @@
 {
 	"instance" : {
 		"list" : "ManuelLeuenberger 10/27/2017 14:01",
-		"graph" : "ManuelLeuenberger 10/27/2017 14:01",
+		"selectBlock" : "ManuelLeuenberger 10/28/2017 22:12",
 		"searchBlock:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"selectBlock:" : "ManuelLeuenberger 10/28/2017 22:12",
 		"item:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"isInGraph:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"searchButton:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"initializePresenter" : "ManuelLeuenberger 10/27/2017 14:59",
-		"graph:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"initializePresenter" : "ManuelLeuenberger 10/28/2017 20:51",
+		"node" : "ManuelLeuenberger 10/28/2017 21:59",
 		"initializeWidgets" : "ManuelLeuenberger 10/27/2017 14:50",
 		"searchBlock" : "ManuelLeuenberger 10/27/2017 14:01",
 		"item" : "ManuelLeuenberger 10/27/2017 14:01",
-		"newMenu:" : "ManuelLeuenberger 10/27/2017 16:43",
+		"newMenu:" : "ManuelLeuenberger 10/28/2017 22:12",
 		"list:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"findInGraph:" : "ManuelLeuenberger 10/28/2017 21:59",
+		"loadBlock:" : "ManuelLeuenberger 10/28/2017 22:07",
+		"loadBlock" : "ManuelLeuenberger 10/28/2017 22:07",
+		"node:" : "ManuelLeuenberger 10/28/2017 21:59",
 		"searchButton" : "ManuelLeuenberger 10/27/2017 14:01"
 	},
 	"class" : {
+		"node:" : "ManuelLeuenberger 10/28/2017 21:59",
 		"defaultSpec" : "ManuelLeuenberger 10/27/2017 14:01"
 	}
 }

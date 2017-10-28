@@ -2,23 +2,20 @@ initialization
 newMenu: anItem
 	| menu |
 	menu := MenuModel new.
-	(self isInGraph: anItem)
-		ifTrue: [ menu
-				addGroup: [ :group | 
-					group
-						addItem: [ :mi | 
-							mi
-								name: 'Read';
-								action: [ self flag: 'TODO open in graph' ] ];
-						addItem: [ :mi | 
-							mi
-								name: 'Update';
-								action: [ anItem asWidget openWithSpec ] ] ] ]
-		ifFalse: [ menu
+	(self findInGraph: anItem)
+		ifNil: [ menu
 				addGroup: [ :group | 
 					group
 						addItem: [ :mi | 
 							mi
 								name: 'Load';
-								action: [ self flag: 'TODO open in graph' ] ] ] ].
+								action: [ loadBlock cull: anItem ] ] ] ]
+		ifNotNil: [ :n | 
+			menu
+				addGroup: [ :group | 
+					group
+						addItem: [ :mi | 
+							mi
+								name: 'Select in graph';
+								action: [ selectBlock cull: n ] ] ] ].
 	^ menu

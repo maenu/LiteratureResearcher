@@ -1,3 +1,3 @@
 converting
 asString
-	^ self label
+	^ self label ifNil: [ '' ]

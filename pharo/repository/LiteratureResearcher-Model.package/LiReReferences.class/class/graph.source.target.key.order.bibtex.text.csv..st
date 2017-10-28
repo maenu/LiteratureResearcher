@@ -1,5 +1,5 @@
 as yet unclassified
-graph: aGraph source: aNode target: anotherNode key: aString order: anInteger bibtex: aBibtex text: anotherString
+graph: aGraph source: aNode target: anotherNode key: aString order: anInteger bibtex: aBibtex text: anotherString csv: aDictionary
 	^ (self
 		graph: aGraph
 		source: aNode
@@ -8,4 +8,5 @@ graph: aGraph source: aNode target: anotherNode key: aString order: anInteger bi
 		order: anInteger)
 		bibtex: aBibtex;
 		text: anotherString;
+		csv: aDictionary;
 		yourself

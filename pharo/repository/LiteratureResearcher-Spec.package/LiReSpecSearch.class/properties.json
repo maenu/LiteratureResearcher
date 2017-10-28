@@ -13,9 +13,8 @@
 		"searchBlock",
 		"createFromSearchTextBlock",
 		"createFromResultBlock",
-		"readFromResultBlock",
-		"updateFromResultBlock",
-		"resultListDisplayBock"
+		"resultListDisplayBlock",
+		"resultListSelectBlock"
 	],
 	"name" : "LiReSpecSearch",
 	"type" : "normal"

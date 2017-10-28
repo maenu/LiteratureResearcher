@@ -13,9 +13,9 @@ initializePresenter
 	list
 		displayBlock: [ :i | i at: #title ];
 		icons: [ :i | 
-			(self isInGraph: i)
-				ifTrue: [ Smalltalk ui icons iconNamed: #testGreen ]
-				ifFalse: [ Smalltalk ui icons iconNamed: #testNotRun ] ];
+			(self findInGraph: i)
+				ifNil: [ Smalltalk ui icons iconNamed: #testNotRun ]
+				ifNotNil: [ Smalltalk ui icons iconNamed: #testGreen ] ];
 		whenSelectedItemChanged: [ :i | i ifNotNil: [ item item: i ] ];
 		menu: [ :m | 
 			list selectedItem

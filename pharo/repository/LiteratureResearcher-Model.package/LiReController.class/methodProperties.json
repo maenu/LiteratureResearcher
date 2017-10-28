@@ -1,15 +1,18 @@
 {
 	"instance" : {
-		"registerCallbacksFor:" : "ManuelLeuenberger 10/27/2017 17:28",
+		"selectNode:" : "ManuelLeuenberger 10/27/2017 15:37",
 		"graph" : "ManuelLeuenberger 10/27/2017 14:01",
-		"view:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"registerCallbacksForNode:" : "ManuelLeuenberger 10/29/2017 01:20",
 		"scheduleLayout" : "ManuelLeuenberger 10/28/2017 10:28",
+		"registerCallbacksForAuthor:" : "ManuelLeuenberger 10/29/2017 01:20",
+		"view:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"selectEdge:" : "ManuelLeuenberger 10/27/2017 14:02",
-		"initialize" : "ManuelLeuenberger 10/27/2017 20:04",
-		"graph:" : "ManuelLeuenberger 10/27/2017 18:58",
-		"view" : "ManuelLeuenberger 10/27/2017 15:36",
+		"initialize" : "ManuelLeuenberger 10/28/2017 22:20",
+		"graph:" : "ManuelLeuenberger 10/28/2017 23:40",
+		"registerCallbacksForEdge:" : "ManuelLeuenberger 10/29/2017 01:20",
 		"schedule:title:" : "ManuelLeuenberger 10/27/2017 17:27",
-		"selectNode:" : "ManuelLeuenberger 10/27/2017 15:37"
+		"view" : "ManuelLeuenberger 10/27/2017 15:36",
+		"registerCallbacksForArticle:" : "ManuelLeuenberger 10/29/2017 01:20"
 	},
 	"class" : {
 		"graph:" : "ManuelLeuenberger 10/27/2017 14:01",
