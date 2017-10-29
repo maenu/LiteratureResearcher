@@ -21,7 +21,8 @@
 		"pdfdbscrap",
 		"actionLoadReferencedByFromCsv",
 		"actionLoadWrittenByFromCsv",
-		"actionLoadImportLinkOpenPdf"
+		"actionLoadImportLinkOpenPdf",
+		"actionMovePdf"
 	],
 	"name" : "LiReController",
 	"type" : "normal"

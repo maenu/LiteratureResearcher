@@ -4,7 +4,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 	| model |
 	model := (LiReSpecScholarPy node: self)
 		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ];
-		loadBlock: [ :d | announcer announce: (LiReRequestLoadWrittenByFromCsv csv: d) ];
+		loadBlock: [ :d | announcer announce: (LiReRequestLoadWrittenByFromCsv node: self csv: d) ];
 		searchBlock: [ | value lock |
 			lock := Semaphore new.
 			announcer

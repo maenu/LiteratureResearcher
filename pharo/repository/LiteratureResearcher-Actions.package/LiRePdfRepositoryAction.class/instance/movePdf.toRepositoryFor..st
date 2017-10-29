@@ -1,10 +1,11 @@
 copying
-copyPdf: aFileReference toRepositoryFor: anArticle
+movePdf: aFileReference toRepositoryFor: anArticle
 	| target |
 	target := repository / (anArticle bibtex key , '.pdf').
-	anArticle bibtex at: #pdf put: target pathString.
 	target absolutePath = aFileReference absolutePath
 		ifTrue: [ ^ aFileReference ].
+	anArticle bibtex at: #pdf put: target pathString.
+	anArticle propertyChanged: #bibtex.
 	target ensureDelete.
-	aFileReference copyTo: target.
+	aFileReference moveTo: target.
 	^ target

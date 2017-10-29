@@ -8,8 +8,8 @@ mergeReferences: anArticle bibtex: aBibtexList metadata: aMetadata
 	missingReferences := references
 		reject: [ :r | 
 			existingEdges
-				contains: [ :e | 
-					e target bibtex key = anArticle bibtex key
+				anySatisfy: [ :e | 
+					(e target matches: (r value key at: #title) value)
 						ifTrue: [ e mergeMetadata: r.
 							true ]
 						ifFalse: [ false ] ] ].

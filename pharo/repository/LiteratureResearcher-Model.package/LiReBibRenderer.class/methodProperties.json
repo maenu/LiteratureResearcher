@@ -1,7 +1,10 @@
 {
 	"instance" : {
+		"contents" : "ManuelLeuenberger 10/29/2017 21:04",
 		"library" : "ManuelLeuenberger 10/27/2017 14:02",
-		"visitFieldRef:" : "ManuelLeuenberger 10/27/2017 14:02"
+		"visitFieldRef:" : "ManuelLeuenberger 10/29/2017 21:05"
 	},
-	"class" : { }
+	"class" : {
+		"sanitize:" : "ManuelLeuenberger 10/29/2017 21:04"
+	}
 }

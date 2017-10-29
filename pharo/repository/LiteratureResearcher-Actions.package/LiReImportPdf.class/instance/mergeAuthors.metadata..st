@@ -9,8 +9,8 @@ mergeAuthors: anArticle metadata: metadata
 	missingAuthors := (authors withIndexCollect: [ :e :i | i -> e ])
 		reject: [ :r | 
 			existingEdges
-				contains: [ :e | 
-					e target bibtex key = anArticle bibtex key
+				anySatisfy: [ :e | 
+					(e source matches: (r value at: #stringName))
 						ifTrue: [ e mergeMetadata: r.
 							true ]
 						ifFalse: [ false ] ] ].

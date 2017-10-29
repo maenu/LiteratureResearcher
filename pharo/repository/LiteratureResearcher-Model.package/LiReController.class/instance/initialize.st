@@ -12,6 +12,7 @@ initialize
 	actionImportPdf := LiReImportPdf cermine: cermine.
 	actionLinkPdf := LiReLinkPdf repository: repository pdfLinker: pdfLinker.
 	actionOpenPdf := LiReOpenPdf pdfOpen: pdfOpen.
+	actionMovePdf := LiReMovePdf repository: repository.
 	actionLoadImportLinkOpenPdf := LiReLoadImportLinkOpenPdf
 		load: actionLoadPdf
 		import: actionImportPdf

@@ -1,18 +1,22 @@
 {
 	"instance" : {
-		"selectNode:" : "ManuelLeuenberger 10/27/2017 15:37",
+		"parseKeyCount:" : "ManuelLeuenberger 10/29/2017 20:43",
+		"addedArticle:" : "ManuelLeuenberger 10/29/2017 19:03",
 		"graph" : "ManuelLeuenberger 10/27/2017 14:01",
-		"registerCallbacksForNode:" : "ManuelLeuenberger 10/29/2017 01:20",
+		"normalizeArticle:" : "ManuelLeuenberger 10/29/2017 20:51",
 		"scheduleLayout" : "ManuelLeuenberger 10/28/2017 10:28",
-		"registerCallbacksForAuthor:" : "ManuelLeuenberger 10/29/2017 01:20",
+		"addedEdge:" : "ManuelLeuenberger 10/29/2017 18:52",
 		"view:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"selectEdge:" : "ManuelLeuenberger 10/27/2017 14:02",
-		"initialize" : "ManuelLeuenberger 10/29/2017 10:35",
-		"graph:" : "ManuelLeuenberger 10/28/2017 23:40",
-		"registerCallbacksForEdge:" : "ManuelLeuenberger 10/29/2017 01:20",
+		"initialize" : "ManuelLeuenberger 10/29/2017 19:58",
+		"graph:" : "ManuelLeuenberger 10/29/2017 18:52",
+		"nextKeyCount:" : "ManuelLeuenberger 10/29/2017 20:27",
+		"addedAuthor:" : "ManuelLeuenberger 10/29/2017 19:01",
+		"renderKeyCount:" : "ManuelLeuenberger 10/29/2017 20:48",
 		"schedule:title:" : "ManuelLeuenberger 10/27/2017 17:27",
 		"view" : "ManuelLeuenberger 10/27/2017 15:36",
-		"registerCallbacksForArticle:" : "ManuelLeuenberger 10/29/2017 10:33"
+		"addedNode:" : "ManuelLeuenberger 10/29/2017 18:53",
+		"selectNode:" : "ManuelLeuenberger 10/27/2017 15:37"
 	},
 	"class" : {
 		"graph:" : "ManuelLeuenberger 10/27/2017 14:01",
