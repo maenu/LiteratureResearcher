@@ -1,27 +1,28 @@
 {
 	"instance" : {
-		"gtInspectorActionRequestImportPdf" : "ManuelLeuenberger 10/27/2017 14:36",
-		"bibtex:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"gtInspectorPresentationReferences:" : "ManuelLeuenberger 10/29/2017 01:17",
-		"gtInspectorPresentationReferencedByRemote:" : "ManuelLeuenberger 10/28/2017 22:12",
-		"gtInspectorActionRequestLoadPdf" : "ManuelLeuenberger 10/27/2017 14:37",
-		"label" : "ManuelLeuenberger 10/27/2017 14:01",
+		"gtInspectorActionRequestLoadImportLinkOpenPdf" : "ManuelLeuenberger 10/29/2017 10:39",
 		"matches:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"document:" : "ManuelLeuenberger 10/29/2017 10:23",
 		"asWidget" : "ManuelLeuenberger 10/27/2017 14:04",
-		"metadata" : "ManuelLeuenberger 10/27/2017 14:01",
-		"asRoassalElement" : "ManuelLeuenberger 10/27/2017 15:22",
-		"gtInspectorActionRequestOpenPdf" : "ManuelLeuenberger 10/27/2017 14:36",
-		"gtInspectorActionRequestLinkPdf" : "ManuelLeuenberger 10/27/2017 15:54",
-		"mergeBibtex:" : "ManuelLeuenberger 10/28/2017 23:31",
+		"gtInspectorActionRequestImportPdf" : "ManuelLeuenberger 10/29/2017 01:28",
 		"gtInspectorPresentationWrittenBy:" : "ManuelLeuenberger 10/29/2017 01:17",
-		"bibtex" : "ManuelLeuenberger 10/27/2017 14:01",
-		"metadata:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"gtInspectorPresentationReferencedByRemote:" : "ManuelLeuenberger 10/28/2017 22:12",
+		"bibtex:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"gtInspectorPresentationReferencedBy:" : "ManuelLeuenberger 10/29/2017 01:17",
+		"gtInspectorActionRequestLoadPdf" : "ManuelLeuenberger 10/29/2017 01:28",
+		"asRoassalElement" : "ManuelLeuenberger 10/27/2017 15:22",
+		"gtInspectorPresentationReferences:" : "ManuelLeuenberger 10/29/2017 01:17",
+		"document" : "ManuelLeuenberger 10/29/2017 10:23",
 		"mergeBibtexWithCsv:" : "ManuelLeuenberger 10/28/2017 23:51",
-		"gtInspectorPresentationReferencedBy:" : "ManuelLeuenberger 10/29/2017 01:17"
+		"gtInspectorActionRequestLinkPdf" : "ManuelLeuenberger 10/29/2017 01:28",
+		"label" : "ManuelLeuenberger 10/27/2017 14:01",
+		"bibtex" : "ManuelLeuenberger 10/27/2017 14:01",
+		"mergeBibtex:" : "ManuelLeuenberger 10/28/2017 23:31",
+		"gtInspectorActionRequestOpenPdf" : "ManuelLeuenberger 10/29/2017 01:29"
 	},
 	"class" : {
-		"graph:bibtex:metadata:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"graph:bibtex:document:" : "ManuelLeuenberger 10/29/2017 10:20",
 		"label" : "ManuelLeuenberger 10/27/2017 14:01",
-		"fromText:graph:" : "ManuelLeuenberger 10/27/2017 14:01"
+		"fromText:graph:" : "ManuelLeuenberger 10/29/2017 10:20"
 	}
 }

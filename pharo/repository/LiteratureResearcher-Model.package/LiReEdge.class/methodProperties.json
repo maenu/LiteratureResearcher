@@ -14,6 +14,7 @@
 		"key:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"targetLabel" : "ManuelLeuenberger 10/27/2017 14:01",
 		"order" : "ManuelLeuenberger 10/28/2017 10:03",
+		"mergeMetadata:" : "ManuelLeuenberger 10/29/2017 10:12",
 		"target" : "ManuelLeuenberger 10/27/2017 14:01",
 		"gtInspectorPresentationTarget:" : "ManuelLeuenberger 10/27/2017 14:04",
 		"source" : "ManuelLeuenberger 10/27/2017 14:01"
@@ -21,6 +22,7 @@
 	"class" : {
 		"graph:source:target:key:order:" : "ManuelLeuenberger 10/28/2017 10:02",
 		"canBecomeSource:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"graph:source:target:metadata:" : "ManuelLeuenberger 10/29/2017 10:16",
 		"sourceClass" : "ManuelLeuenberger 10/27/2017 14:01",
 		"targetClass" : "ManuelLeuenberger 10/27/2017 14:01",
 		"canBecomeTarget:" : "ManuelLeuenberger 10/27/2017 14:01"

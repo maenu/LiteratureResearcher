@@ -2,6 +2,7 @@ as yet unclassified
 gtInspectorActionRequestImportPdf
 	<gtInspectorAction>
 	^ GLMGenericAction new
-		enabledCondition: [ bibtex hasField: #pdf ];
 		title: 'Import PDF';
+		position: 2;
+		enabledCondition: [ bibtex hasField: #pdf ];
 		action: [ :p | announcer announce: (LiReRequestImportPdf article: self) ]

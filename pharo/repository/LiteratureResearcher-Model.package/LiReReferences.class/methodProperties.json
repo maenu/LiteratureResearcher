@@ -1,13 +1,15 @@
 {
 	"instance" : {
-		"lineStyleSelector" : "ManuelLeuenberger 10/27/2017 14:01",
-		"bibtex:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"asWidget" : "ManuelLeuenberger 10/28/2017 21:39",
-		"bibtex" : "ManuelLeuenberger 10/27/2017 14:01",
-		"csv" : "ManuelLeuenberger 10/28/2017 21:38",
 		"text" : "ManuelLeuenberger 10/27/2017 14:01",
+		"bibtex:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"csv:" : "ManuelLeuenberger 10/28/2017 21:38",
+		"asWidget" : "ManuelLeuenberger 10/28/2017 21:39",
+		"csv" : "ManuelLeuenberger 10/28/2017 21:38",
+		"lineStyleSelector" : "ManuelLeuenberger 10/27/2017 14:01",
+		"initialize" : "ManuelLeuenberger 10/29/2017 10:17",
 		"text:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"csv:" : "ManuelLeuenberger 10/28/2017 21:38"
+		"bibtex" : "ManuelLeuenberger 10/27/2017 14:01",
+		"mergeMetadata:" : "ManuelLeuenberger 10/29/2017 10:16"
 	},
 	"class" : {
 		"sourceClass" : "ManuelLeuenberger 10/27/2017 14:01",

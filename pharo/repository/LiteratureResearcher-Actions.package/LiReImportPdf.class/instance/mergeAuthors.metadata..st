@@ -7,7 +7,13 @@ mergeAuthors: anArticle metadata: metadata
 	authors do: [ :a | affiliations detect: [ :aff | (aff at: #id) = (a at: #xrefAffRid) ] ifFound: [ :aff | a addAll: aff ] ].
 	existingEdges := anArticle incomingEdgesOfClass: LiReHasWritten.
 	missingAuthors := (authors withIndexCollect: [ :e :i | i -> e ])
-		reject: [ :r | existingEdges contains: [ :e | e target bibtex key = anArticle bibtex key ] ].
+		reject: [ :r | 
+			existingEdges
+				contains: [ :e | 
+					e target bibtex key = anArticle bibtex key
+						ifTrue: [ e mergeMetadata: r.
+							true ]
+						ifFalse: [ false ] ] ].
 	missingAuthors
 		do: [ :r | 
 			| key node edge |
@@ -21,9 +27,5 @@ mergeAuthors: anArticle metadata: metadata
 				graph: graph
 				source: node
 				target: anArticle
-				key: key
-				order: r key
-				email: (r value at: #email)
-				institution: (r value at: #institution)
-				country: (r value at: #country).
+				metadata: r.
 			graph edges add: edge ]

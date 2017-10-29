@@ -7,15 +7,15 @@
 		"registerCallbacksForAuthor:" : "ManuelLeuenberger 10/29/2017 01:20",
 		"view:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"selectEdge:" : "ManuelLeuenberger 10/27/2017 14:02",
-		"initialize" : "ManuelLeuenberger 10/28/2017 22:20",
+		"initialize" : "ManuelLeuenberger 10/29/2017 10:35",
 		"graph:" : "ManuelLeuenberger 10/28/2017 23:40",
 		"registerCallbacksForEdge:" : "ManuelLeuenberger 10/29/2017 01:20",
 		"schedule:title:" : "ManuelLeuenberger 10/27/2017 17:27",
 		"view" : "ManuelLeuenberger 10/27/2017 15:36",
-		"registerCallbacksForArticle:" : "ManuelLeuenberger 10/29/2017 01:20"
+		"registerCallbacksForArticle:" : "ManuelLeuenberger 10/29/2017 10:33"
 	},
 	"class" : {
 		"graph:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"example" : "ManuelLeuenberger 10/27/2017 15:24"
+		"example" : "ManuelLeuenberger 10/29/2017 10:20"
 	}
 }

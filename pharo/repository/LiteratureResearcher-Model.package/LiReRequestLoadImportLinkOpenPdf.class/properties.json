@@ -1,14 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReNode",
+	"super" : "LiReRequestPdf",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"bibtex",
-		"document"
-	],
-	"name" : "LiReArticle",
+	"instvars" : [ ],
+	"name" : "LiReRequestLoadImportLinkOpenPdf",
 	"type" : "normal"
 }

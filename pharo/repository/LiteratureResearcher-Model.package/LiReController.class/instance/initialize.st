@@ -8,9 +8,14 @@ initialize
 	pdfdbscrap := LiRePdfdbscrap subprocess: (LiReSubprocess command: '../pdfdbscrap.sh').
 	scholarPy := LiReScholarPy subprocess: (LiReSubprocess command: '../scholar.sh').
 	pdfOpen := LiRePdfOpen subprocess: (LiReSubprocess command: '../pdf-open.sh').
+	actionLoadPdf := LiReLoadPdf repository: repository pdfdbscrap: pdfdbscrap scholarPy: scholarPy.
 	actionImportPdf := LiReImportPdf cermine: cermine.
 	actionLinkPdf := LiReLinkPdf repository: repository pdfLinker: pdfLinker.
-	actionLoadPdf := LiReLoadPdf repository: repository pdfdbscrap: pdfdbscrap scholarPy: scholarPy.
 	actionOpenPdf := LiReOpenPdf pdfOpen: pdfOpen.
+	actionLoadImportLinkOpenPdf := LiReLoadImportLinkOpenPdf
+		load: actionLoadPdf
+		import: actionImportPdf
+		link: actionLinkPdf
+		open: actionOpenPdf.
 	actionLoadReferencedByFromCsv := LiReLoadReferencedByFromCsv scholarPy: scholarPy.
 	actionLoadWrittenByFromCsv := LiReLoadWrittenByFromCsv scholarPy: scholarPy

@@ -20,7 +20,8 @@
 		"scheduledLayout",
 		"pdfdbscrap",
 		"actionLoadReferencedByFromCsv",
-		"actionLoadWrittenByFromCsv"
+		"actionLoadWrittenByFromCsv",
+		"actionLoadImportLinkOpenPdf"
 	],
 	"name" : "LiReController",
 	"type" : "normal"
