@@ -14,7 +14,6 @@ import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 
 import com.google.gson.Gson;
 
-import ch.unibe.scg.pdflinker.clickable.Affiliation;
 import ch.unibe.scg.pdflinker.clickable.Author;
 import ch.unibe.scg.pdflinker.clickable.Reference;
 import ch.unibe.scg.pdflinker.clickable.Title;
@@ -24,8 +23,7 @@ public class App {
 	public static void main(String[] args) throws InvalidPasswordException, IOException {
 		String id = args[0];
 		(new Linker(id)).link(new File(args[1]), new File(args[2]), parse(Title.class, args[3]),
-				parseAll(Author.class, args[4]), parseAll(Affiliation.class, args[5]),
-				parseAll(Reference.class, args[6]));
+				parseAll(Author.class, args[4]), parseAll(Reference.class, args[5]));
 	}
 
 	private static <E> E parse(Class<E> cls, String s) {

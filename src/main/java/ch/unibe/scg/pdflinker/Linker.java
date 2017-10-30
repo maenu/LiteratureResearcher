@@ -6,10 +6,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -27,7 +27,6 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 
 import ch.unibe.scg.pdflinker.clickable.AbstractClickable;
-import ch.unibe.scg.pdflinker.clickable.Affiliation;
 import ch.unibe.scg.pdflinker.clickable.Author;
 import ch.unibe.scg.pdflinker.clickable.Reference;
 import ch.unibe.scg.pdflinker.clickable.Title;
@@ -35,22 +34,20 @@ import ch.unibe.scg.pdflinker.clickable.Title;
 public class Linker {
 
 	private static final float COLOR_ALPHA = 0.4f;
-	private static final byte[] START = { 66, 84, 10, 47, 70, 53, 32, 48, 32, 84, 102, 10, 40, 60, 112, 100, 102, 45,
-			108, 105, 110, 107, 101, 114, 62, 41, 32, 84, 106, 10, 69, 84, 10 };
-	private static final byte[] END = { 66, 84, 10, 47, 70, 53, 32, 48, 32, 84, 102, 10, 40, 60, 47, 112, 100, 102, 45,
-			108, 105, 110, 107, 101, 114, 62, 41, 32, 84, 106, 10, 69, 84, 10 };
+	private static final Pattern START = Pattern.compile("^BT\n/F\\d+ 0 Tf\n\\(<pdf-linker>\\) Tj\nET");
 	private static final String CONTENTS = "pdf-linker";
+
 	private String id;
 
 	public Linker(String id) {
 		this.id = id;
 	}
 
-	public void link(File in, File out, Title title, List<Author> authors, List<Affiliation> affiliations,
-			List<Reference> references) throws InvalidPasswordException, IOException {
+	public void link(File in, File out, Title title, List<Author> authors, List<Reference> references)
+			throws InvalidPasswordException, IOException {
 		try (PDDocument document = PDDocument.load(in)) {
 			this.removeHyperLinks(document);
-			this.addHyperLinks(document, title, authors, affiliations, references);
+			this.addHyperLinks(document, title, authors, references);
 			document.save(out);
 		}
 	}
@@ -61,15 +58,11 @@ public class Linker {
 			List<PDStream> contents = new ArrayList<>();
 			Iterator<PDStream> iterator = page.getContentStreams();
 			while (iterator.hasNext()) {
-				PDStream stream = iterator.next();
-				byte[] bytes = stream.toByteArray();
-				boolean started = Arrays.equals(START,
-						Arrays.copyOfRange(bytes, 0, Math.min(START.length, bytes.length)));
-				boolean ended = Arrays.equals(END,
-						Arrays.copyOfRange(bytes, Math.max(0, bytes.length - END.length), bytes.length));
-				if (!(started && ended)) {
-					contents.add(stream);
+				PDStream content = iterator.next();
+				if (START.matcher(new String(content.toByteArray())).find()) {
+					continue;
 				}
+				contents.add(content);
 			}
 			page.setContents(contents);
 			List<PDAnnotation> annotations = page.getAnnotations();
@@ -79,12 +72,11 @@ public class Linker {
 		}
 	}
 
-	private void addHyperLinks(PDDocument document, Title title, List<Author> authors, List<Affiliation> affiliations,
-			List<Reference> references) throws IOException {
+	private void addHyperLinks(PDDocument document, Title title, List<Author> authors, List<Reference> references)
+			throws IOException {
 		List<AbstractClickable> clickables = new ArrayList<>();
 		clickables.add(title);
 		clickables.addAll(authors);
-		clickables.addAll(affiliations);
 		clickables.addAll(references);
 		this.addHyperLinks(document, clickables);
 	}
@@ -107,13 +99,13 @@ public class Linker {
 		Paragraph paragraph = clickable.getParagraph();
 		try (PDPageContentStream content = new PDPageContentStream(document, paragraph.getPage(), AppendMode.PREPEND,
 				true)) {
-			PDRectangle rectangle = paragraph.getRectangle();
-			PDExtendedGraphicsState graphicsState = new PDExtendedGraphicsState();
-			graphicsState.setNonStrokingAlphaConstant(COLOR_ALPHA);
 			content.beginText();
 			content.setFont(PDType1Font.TIMES_ROMAN, 0);
 			content.showText("<pdf-linker>");
 			content.endText();
+			PDRectangle rectangle = paragraph.getRectangle();
+			PDExtendedGraphicsState graphicsState = new PDExtendedGraphicsState();
+			graphicsState.setNonStrokingAlphaConstant(COLOR_ALPHA);
 			content.saveGraphicsState();
 			content.setGraphicsStateParameters(graphicsState);
 			content.setNonStrokingColor(clickable.getColor());
@@ -121,10 +113,6 @@ public class Linker {
 					rectangle.getHeight());
 			content.fill();
 			content.restoreGraphicsState();
-			content.beginText();
-			content.setFont(PDType1Font.TIMES_ROMAN, 0);
-			content.showText("</pdf-linker>");
-			content.endText();
 		} catch (IOException exception) {
 			// TODO Auto-generated catch block
 			exception.printStackTrace();
@@ -148,8 +136,8 @@ public class Linker {
 
 	private String asUri(AbstractClickable clickable) {
 		return String.format("pharo://LiRePdfLinkerUriHandler/click%sWithId.in.?args=%s&args=%s",
-				clickable.getClass().getSimpleName(), clickable.getId(),
-				this.asUrlComponent(this.asUrlComponent(this.id)));
+				clickable.getClass().getSimpleName(), this.asUrlComponent(clickable.getId()),
+				this.asUrlComponent(this.id));
 	}
 
 	private String asUrlComponent(String s) {
