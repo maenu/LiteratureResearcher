@@ -1,3 +1,3 @@
 accessing
 abstract
-	^ ((XPath for: '//abstract') in: document) first contentString trimmed
+	^ ((XPath for: '//abstract') in: document) first ifNotNil: [ :e | e contentString trimmed ]

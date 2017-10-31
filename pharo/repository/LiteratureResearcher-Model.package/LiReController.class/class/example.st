@@ -7,11 +7,15 @@ example
 		bibtex:
 			(LiReBibParser
 				parse:
-					(Character lf asString
-						join:
-							{'@inproceedings{nguyen2010recurring,' . '  title={Recurring bug fixes in object-oriented programs},' . '  author={Nguyen, Tung Thanh and Nguyen, Hoan Anh and Pham, Nam H and Al-Kofahi, Jafar and Nguyen, Tien N},'.
-							'  booktitle={Proceedings of the 32Nd ACM/IEEE International Conference on Software Engineering-Volume 1},' . '  pages={315--324},' . '  year={2010},' . '  organization={ACM},' . '  url={http://dl.acm.org/citation.cfm?id=1806847}'.
-							'}'})) entries first
+					'@inproceedings{osman2016tracking,
+  title={Tracking null checks in open-source Java systems},
+  author={Osman, Haidar and Leuenberger, Manuel and Lungu, Mircea and Nierstrasz, Oscar},
+  booktitle={Software Analysis, Evolution, and Reengineering (SANER), 2016 IEEE 23rd International Conference on},
+  volume={1},
+  pages={304--313},
+  year={2016},
+  organization={IEEE}
+}') entries first
 		document: nil.
 	controller := LiReController graph: graph.
 	graph nodes add: article.

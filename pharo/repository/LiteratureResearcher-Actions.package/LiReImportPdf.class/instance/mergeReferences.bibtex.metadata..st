@@ -20,7 +20,7 @@ mergeReferences: anArticle bibtex: aBibtexList metadata: aMetadata
 			node := (graph nodesOfClass: LiReArticle)
 				detect: [ :n | n matches: key ]
 				ifNone: [ | newNode |
-					newNode := LiReArticle graph: graph bibtex: r value key document: aMetadata document.
+					newNode := LiReArticle graph: graph bibtex: r value key document: nil.
 					graph nodes add: newNode ].
 			edge := LiReReferences
 				graph: graph

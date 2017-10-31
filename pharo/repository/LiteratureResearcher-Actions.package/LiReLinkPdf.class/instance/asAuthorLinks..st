@@ -4,4 +4,4 @@ asAuthorLinks: anArticle
 		collect: [ :e | 
 			{(#id -> e key).
 			(#key -> e key).
-			(#color -> e source state color rgbTriplet)} asDictionary ]
+			(#color -> (e source state color rgbTriplet * 255))} asDictionary ]

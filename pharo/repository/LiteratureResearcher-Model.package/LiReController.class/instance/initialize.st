@@ -13,7 +13,13 @@ initialize
 	actionLinkPdf := LiReLinkPdf repository: repository pdfLinker: pdfLinker.
 	actionOpenPdf := LiReOpenPdf pdfOpen: pdfOpen.
 	actionMovePdf := LiReMovePdf repository: repository.
+	actionLinkOpenPdf := LiReLinkOpenPdf link: actionLinkPdf open: actionOpenPdf.
 	actionLoadImportLinkOpenPdf := LiReLoadImportLinkOpenPdf
+		load: actionLoadPdf
+		import: actionImportPdf
+		link: actionLinkPdf
+		open: actionOpenPdf.
+	actionOpenWithAllOtherThingsNecessaryDoneBeforePdf := LiReOpenWithAllOtherThingsNecessaryDoneBeforePdf
 		load: actionLoadPdf
 		import: actionImportPdf
 		link: actionLinkPdf

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "LiRePdfAction",
+	"category" : "LiteratureResearcher-Actions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"link",
+		"open"
+	],
+	"name" : "LiReLinkOpenPdf",
+	"type" : "normal"
+}

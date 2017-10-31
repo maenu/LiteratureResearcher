@@ -22,7 +22,9 @@
 		"actionLoadReferencedByFromCsv",
 		"actionLoadWrittenByFromCsv",
 		"actionLoadImportLinkOpenPdf",
-		"actionMovePdf"
+		"actionMovePdf",
+		"actionLinkOpenPdf",
+		"actionOpenWithAllOtherThingsNecessaryDoneBeforePdf"
 	],
 	"name" : "LiReController",
 	"type" : "normal"

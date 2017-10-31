@@ -1,5 +1,5 @@
 as yet unclassified
 schedule: aBlock title: aString
-	[ :j | 
+	[ [ :j | 
 	j title: aString.
-	aBlock value ] asJob run
+	aBlock value ] asJob run ] fork
