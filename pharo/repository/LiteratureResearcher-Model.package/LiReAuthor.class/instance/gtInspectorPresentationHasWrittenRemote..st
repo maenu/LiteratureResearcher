@@ -3,7 +3,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 	<gtInspectorPresentationOrder: 3>
 	| model |
 	model := (LiReSpecScholarPy node: self)
-		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ];
+		selectBlock: [ :n | n announcer announce: (LiReRequestSelectNode entity: n) ];
 		loadBlock: [ :d | announcer announce: (LiReRequestLoadWrittenByFromCsv node: self csv: d) ];
 		searchBlock: [ | value lock |
 			lock := Semaphore new.
@@ -16,6 +16,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 			lock wait.
 			value ];
 		yourself.
+	model searchText disable.
 	aComposite spec
 		title: [ 'Has written (remote)' ];
 		display: [ model

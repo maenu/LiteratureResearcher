@@ -1,7 +1,7 @@
 as yet unclassified
 loadFromUrl: anArticle
 	| url |
-	url := anArticle bibtex at: #url.
+	url := (anArticle bibtex at: #url) value.
 	(url asUrl path endsWith: '.pdf')
 		ifTrue: [ | file |
 			file := FileReference newTempFilePrefix: 'LiReGet' suffix: '.pdf'.

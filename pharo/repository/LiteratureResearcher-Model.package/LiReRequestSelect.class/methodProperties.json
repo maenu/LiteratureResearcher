@@ -1,4 +1,9 @@
 {
-	"instance" : { },
-	"class" : { }
+	"instance" : {
+		"entity:" : "ManuelLeuenberger 10/31/2017 21:42",
+		"entity" : "ManuelLeuenberger 10/31/2017 21:42"
+	},
+	"class" : {
+		"entity:" : "ManuelLeuenberger 10/31/2017 21:43"
+	}
 }

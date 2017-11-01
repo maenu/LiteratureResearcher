@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReLoadArticleFromCsv",
+	"category" : "LiteratureResearcher-Actions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReLoadArticleWithEdgeFromCsv",
+	"type" : "normal"
+}

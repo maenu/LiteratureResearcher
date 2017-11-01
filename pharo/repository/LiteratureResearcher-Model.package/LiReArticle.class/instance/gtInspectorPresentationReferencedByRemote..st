@@ -3,7 +3,7 @@ gtInspectorPresentationReferencedByRemote: aComposite
 	<gtInspectorPresentationOrder: 5>
 	| model |
 	model := (LiReSpecScholarPy node: self)
-		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ];
+		selectBlock: [ :n | n announcer announce: (LiReRequestSelectNode entity: n) ];
 		loadBlock: [ :d | announcer announce: (LiReRequestLoadReferencedByFromCsv node: self csv: d) ];
 		searchBlock: [ | value lock |
 			lock := Semaphore new.
@@ -20,6 +20,7 @@ gtInspectorPresentationReferencedByRemote: aComposite
 			lock wait.
 			value ];
 		yourself.
+	model searchText disable.
 	aComposite spec
 		title: [ 'Referenced by (remote)' ];
 		display: [ model

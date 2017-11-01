@@ -1,14 +1,15 @@
 {
 	"instance" : {
 		"findByAuthors:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"find:" : "ManuelLeuenberger 10/31/2017 21:50",
 		"subprocess:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"parseCsv:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"findByTitle:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"findClusterId:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"parseIntegerOrNil:" : "ManuelLeuenberger 10/27/2017 14:01",
-		"subprocess" : "ManuelLeuenberger 10/27/2017 14:01",
-		"parseStringOrNil:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"findCitations:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"parseStringOrNil:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"subprocess" : "ManuelLeuenberger 10/27/2017 14:01",
 		"getBibtex:" : "ManuelLeuenberger 10/29/2017 00:25"
 	},
 	"class" : {

@@ -9,6 +9,7 @@
 		"node",
 		"list",
 		"item",
+		"searchText",
 		"searchButton",
 		"searchBlock",
 		"selectBlock",

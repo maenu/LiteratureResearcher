@@ -12,7 +12,7 @@ initializePresenter
 						yourself ] ].
 	search
 		resultListDisplayBlock: [ :n | n label ];
-		resultListSelectBlock: selectBlock;
+		resultListSelectBlock: selectNodeBlock;
 		searchBlock: [ :t | node graph nodes select: [ :n | n class = (edgeClass perform: edgeEndClassSelector) and: [ n matches: t ] ] ];
 		createFromResultBlock: [ :n | createEdgeBlock cull: n cull: edgeClass ];
 		createFromSearchTextBlock: [ :s | 

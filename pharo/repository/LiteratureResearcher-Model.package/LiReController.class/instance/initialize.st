@@ -25,4 +25,5 @@ initialize
 		link: actionLinkPdf
 		open: actionOpenPdf.
 	actionLoadReferencedByFromCsv := LiReLoadReferencedByFromCsv scholarPy: scholarPy.
-	actionLoadWrittenByFromCsv := LiReLoadWrittenByFromCsv scholarPy: scholarPy
+	actionLoadWrittenByFromCsv := LiReLoadWrittenByFromCsv scholarPy: scholarPy.
+	actionLoadArticleFromCsv := LiReLoadArticleFromCsv scholarPy: scholarPy

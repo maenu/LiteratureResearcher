@@ -8,5 +8,5 @@ newMenu: anItem
 				addItem: [ :mi | 
 					mi
 						name: 'Select in graph';
-						action: [ selectBlock cull: anItem ] ] ].
+						action: [ selectEdgeBlock cull: anItem ] ] ].
 	^ menu

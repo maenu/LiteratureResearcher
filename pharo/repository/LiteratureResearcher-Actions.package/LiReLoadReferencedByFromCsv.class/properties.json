@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReLoadArticleFromCsvAction",
+	"super" : "LiReLoadArticleWithEdgeFromCsv",
 	"category" : "LiteratureResearcher-Actions",
 	"classinstvars" : [ ],
 	"pools" : [ ],

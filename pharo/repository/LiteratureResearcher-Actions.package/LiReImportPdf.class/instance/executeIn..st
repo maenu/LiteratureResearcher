@@ -9,7 +9,12 @@ executeIn: anArticle
 			{LiReCermine outputJats.
 			LiReCermine outputBibtex}.
 	metadata := LiReCermineMetadata fromJatsFile: (cermineResult at: LiReCermine outputJats).
-	bibtex := LiReBibParser parse: (cermineResult at: LiReCermine outputBibtex) contents.
+	bibtex := cermineResult at: LiReCermine outputBibtex.
+	bibtex := LiReBibParser
+		parse:
+			(bibtex exists
+				ifTrue: [ bibtex contents ]
+				ifFalse: [ '' ]).
 	generatedBibtex := self generateBibtex: metadata.
 	self mergeBibtex: anArticle bibtex: generatedBibtex metadata: metadata.
 	self mergeAuthors: anArticle metadata: metadata.

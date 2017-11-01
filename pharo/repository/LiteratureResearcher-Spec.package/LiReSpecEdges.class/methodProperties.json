@@ -1,31 +1,33 @@
 {
 	"instance" : {
 		"edgeEndClassSelector:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"selectEdgeBlock:" : "ManuelLeuenberger 10/31/2017 23:15",
 		"edgeClass" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgeDisplayBlock" : "ManuelLeuenberger 10/27/2017 14:01",
 		"list" : "ManuelLeuenberger 10/27/2017 14:01",
 		"list:" : "ManuelLeuenberger 10/27/2017 14:01",
+		"selectNodeBlock" : "ManuelLeuenberger 10/31/2017 23:15",
 		"search:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgeClass:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"createEdgeBlock:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgeEndClassSelector" : "ManuelLeuenberger 10/27/2017 14:01",
-		"selectBlock" : "ManuelLeuenberger 10/29/2017 01:09",
 		"edgesSelector:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgeOtherEndClassSelector" : "ManuelLeuenberger 10/27/2017 14:01",
-		"newMenu:" : "ManuelLeuenberger 10/29/2017 01:09",
+		"newMenu:" : "ManuelLeuenberger 10/31/2017 23:14",
 		"createEdgeBlock" : "ManuelLeuenberger 10/27/2017 14:01",
 		"node" : "ManuelLeuenberger 10/27/2017 14:01",
-		"initializePresenter" : "ManuelLeuenberger 10/29/2017 01:10",
+		"initializePresenter" : "ManuelLeuenberger 10/31/2017 23:15",
+		"selectEdgeBlock" : "ManuelLeuenberger 10/31/2017 23:15",
 		"node:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"edgesSelector" : "ManuelLeuenberger 10/27/2017 14:01",
-		"selectBlock:" : "ManuelLeuenberger 10/29/2017 01:09",
 		"edgeDisplayBlock:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"search" : "ManuelLeuenberger 10/27/2017 14:01",
+		"selectNodeBlock:" : "ManuelLeuenberger 10/31/2017 23:15",
 		"edgeOtherEndClassSelector:" : "ManuelLeuenberger 10/27/2017 14:01",
 		"initializeWidgets" : "ManuelLeuenberger 10/27/2017 14:01"
 	},
 	"class" : {
-		"defaultSpec" : "ManuelLeuenberger 10/27/2017 14:01",
-		"node:edgeClass:edgesSelector:edgeDisplayBlock:edgeEndClassSelector:edgeOtherEndClassSelector:createEdgeBlock:selectBlock:" : "ManuelLeuenberger 10/29/2017 01:14"
+		"node:edgeClass:edgesSelector:edgeDisplayBlock:edgeEndClassSelector:edgeOtherEndClassSelector:createEdgeBlock:selectNodeBlock:selectEdgeBlock:" : "ManuelLeuenberger 10/31/2017 23:19",
+		"defaultSpec" : "ManuelLeuenberger 10/27/2017 14:01"
 	}
 }

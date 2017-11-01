@@ -20,7 +20,8 @@ gtInspectorPresentationReferences: aComposite
 				key: 'GENERATED'
 				order: order.
 			graph edges add: edge ]
-		selectBlock: [ :n | n announcer announce: LiReRequestSelect new ].
+		selectNodeBlock: [ :n | graph announcer announce: (LiReRequestSelectNode entity: n) ]
+		selectEdgeBlock: [ :n | graph announcer announce: (LiReRequestSelectEdge entity: n) ].
 	presentation := aComposite spec
 		title: [ 'References' ];
 		display: [ model

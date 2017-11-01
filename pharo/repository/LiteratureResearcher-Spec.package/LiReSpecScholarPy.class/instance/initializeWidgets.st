@@ -1,5 +1,6 @@
 initialization
 initializeWidgets
+	searchText := self newTextInput.
 	searchButton := self newButton
 		label: 'Search';
 		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);

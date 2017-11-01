@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReRequestLoadFromCsv",
+	"super" : "LiReRequestLoadArticleFromCsv",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],

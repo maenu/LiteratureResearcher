@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReAction",
+	"category" : "LiteratureResearcher-Actions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"scholarPy"
+	],
+	"name" : "LiReLoadArticleFromCsv",
+	"type" : "normal"
+}

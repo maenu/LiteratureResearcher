@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReRequest",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"node",
+		"csv"
+	],
+	"name" : "LiReRequestLoadArticleFromCsv",
+	"type" : "normal"
+}
