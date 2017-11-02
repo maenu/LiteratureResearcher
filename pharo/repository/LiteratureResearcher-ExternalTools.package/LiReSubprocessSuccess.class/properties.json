@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-ExternalTools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"out",
+		"err"
+	],
+	"name" : "LiReSubprocessSuccess",
+	"type" : "normal"
+}

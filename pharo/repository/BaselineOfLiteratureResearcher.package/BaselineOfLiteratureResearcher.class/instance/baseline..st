@@ -27,5 +27,18 @@ baseline: spec
 				configuration: 'Roassal2'
 					with: [ spec
 						versionString: #stable;
-						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ].
-			spec group: 'default' with: #('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2') ]
+						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
+				configuration: 'PharoUriScheme'
+					with: [ spec
+						versionString: #'0.1.0-pre';
+						repository: 'github://maenu/PharoUriScheme:master/pharo/repository' ];
+				package: 'LiteratureResearcher-Actions';
+				package: 'LiteratureResearcher-Announcements';
+				package: 'LiteratureResearcher-ExternalTools';
+				package: 'LiteratureResearcher-ExternalTools-Tests';
+				package: 'LiteratureResearcher-Model';
+				package: 'LiteratureResearcher-UI'.
+			spec
+				group: 'default'
+				with:
+					#('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2' 'PharoUriScheme' 'LiteratureResearcher-Actions' 'LiteratureResearcher-Announcements' 'LiteratureResearcher-ExternalTools' 'LiteratureResearcher-ExternalTools-Tests' 'LiteratureResearcher-Model' 'LiteratureResearcher-UI') ]

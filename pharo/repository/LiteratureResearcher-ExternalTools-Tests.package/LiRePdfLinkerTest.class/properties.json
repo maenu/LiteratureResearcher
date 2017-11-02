@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "LiteratureResearcher-ExternalTools-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"pdfLinker",
+		"pdf",
+		"id",
+		"references",
+		"title",
+		"authors",
+		"affiliations"
+	],
+	"name" : "LiRePdfLinkerTest",
+	"type" : "normal"
+}

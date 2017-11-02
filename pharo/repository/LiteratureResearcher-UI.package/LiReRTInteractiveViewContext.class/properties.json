@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "RTInteractiveViewContext",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"selectableInteraction"
+	],
+	"name" : "LiReRTInteractiveViewContext",
+	"type" : "normal"
+}

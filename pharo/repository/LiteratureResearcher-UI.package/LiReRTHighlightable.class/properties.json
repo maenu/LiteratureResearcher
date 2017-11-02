@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "RTAbstractHighlightable",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labelledInteraction",
+		"color",
+		"fromColor",
+		"toColor"
+	],
+	"name" : "LiReRTHighlightable",
+	"type" : "normal"
+}

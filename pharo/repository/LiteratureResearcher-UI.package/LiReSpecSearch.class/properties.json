@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"searchText",
+		"searchButton",
+		"createButton",
+		"resultList",
+		"searchBlock",
+		"createFromSearchTextBlock",
+		"createFromResultBlock",
+		"resultListDisplayBlock",
+		"resultListSelectBlock"
+	],
+	"name" : "LiReSpecSearch",
+	"type" : "normal"
+}

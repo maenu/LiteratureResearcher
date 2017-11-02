@@ -1,0 +1,23 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"list",
+		"search",
+		"node",
+		"edgeClass",
+		"edgeDisplayBlock",
+		"edgeEndClassSelector",
+		"edgeOtherEndClassSelector",
+		"createEdgeBlock",
+		"edgesSelector",
+		"selectEdgeBlock",
+		"selectNodeBlock"
+	],
+	"name" : "LiReSpecEdges",
+	"type" : "normal"
+}

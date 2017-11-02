@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"node",
+		"list",
+		"item",
+		"searchText",
+		"searchButton",
+		"searchBlock",
+		"selectBlock",
+		"loadBlock"
+	],
+	"name" : "LiReSpecScholarPy",
+	"type" : "normal"
+}

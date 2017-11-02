@@ -4,5 +4,5 @@ v0_1_0_pre: spec
 	spec
 		for: #common
 		do: [ spec
-				baseline: 'LiteratureResearcher' with: [ spec repository: 'github://maenu/LiteratureResearcher:master/src/pharo' ];
-				import: 'LiteratureResearcher' ]
+				baseline: 'LiteratureResearcher' with: [ spec repository: 'github://maenu/LiteratureResearcher:master/pharo/repository' ];
+				import: 'default' ]

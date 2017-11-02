@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "LiteratureResearcher-ExternalTools-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"scholarPy",
+		"clusterId"
+	],
+	"name" : "LiReScholarPyTest",
+	"type" : "normal"
+}

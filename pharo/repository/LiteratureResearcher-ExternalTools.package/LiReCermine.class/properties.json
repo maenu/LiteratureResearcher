@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "LiteratureResearcher-ExternalTools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"OutputBibtex",
+		"OutputImages",
+		"OutputJats",
+		"OutputText",
+		"OutputTrueviz",
+		"OutputZones",
+		"Subject"
+	],
+	"instvars" : [
+		"subprocess"
+	],
+	"name" : "LiReCermine",
+	"type" : "normal"
+}
