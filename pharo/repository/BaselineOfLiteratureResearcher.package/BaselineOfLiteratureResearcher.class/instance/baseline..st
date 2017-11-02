@@ -37,8 +37,8 @@ baseline: spec
 				package: 'LiteratureResearcher-ExternalTools';
 				package: 'LiteratureResearcher-ExternalTools-Tests';
 				package: 'LiteratureResearcher-Model';
-				package: 'LiteratureResearcher-UI'.
-			spec
+				package: 'LiteratureResearcher-UI';
 				group: 'default'
-				with:
-					#('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2' 'PharoUriScheme' 'LiteratureResearcher-Actions' 'LiteratureResearcher-Announcements' 'LiteratureResearcher-ExternalTools' 'LiteratureResearcher-ExternalTools-Tests' 'LiteratureResearcher-Model' 'LiteratureResearcher-UI') ]
+					with:
+					#('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2' 'PharoUriScheme' 'LiteratureResearcher-Actions' 'LiteratureResearcher-Announcements' 'LiteratureResearcher-ExternalTools' 'LiteratureResearcher-ExternalTools-Tests' 'LiteratureResearcher-Model' 'LiteratureResearcher-UI');
+				postLoadDoIt: #postLoadActions ]

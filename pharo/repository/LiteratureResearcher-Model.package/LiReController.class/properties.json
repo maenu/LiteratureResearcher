@@ -4,7 +4,10 @@
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
+	"classvars" : [
+		"Bin",
+		"CachedGithubRepository"
+	],
 	"instvars" : [
 		"graph",
 		"view",

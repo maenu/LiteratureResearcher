@@ -1,41 +1,30 @@
-
-all: prepare CERMINE pdfdbscrap scholar.py pdf-linker PharoUriScheme
-
-prepare :
-	mkdir -p build
+all: CERMINE pdfdbscrap scholar.py pdf-linker
 
 clean :
 	rm -rf build
 
-CERMINE :
+build : clean
+	mkdir -p build
+
+CERMINE : build
 	git clone git@github.com:CeON/CERMINE.git build/CERMINE
-	cd build/CERMINE/cermine-impl
-	mvn compile assembly:single
-	cd ../../..
+	cd build/CERMINE/cermine-impl && \
+		mvn compile assembly:single
 
-pdfdbscrap:
+pdfdbscrap : build
 	git clone git@github.com:limstepf/pdfdbscrap.git build/pdfdbscrap
-	cd build/pdfdbscrap
-	mvn clean package
-	cd ../..
+	cd build/pdfdbscrap && \
+		mvn clean package
 
-scholar.py:
+scholar.py : build
 	git clone git@github.com:maenu/scholar.py.git build/scholar.py
-	cd build/scholar.py
-	virtualenv .venv
-	source .venv/bin/activate
-	python setup.py develop
-	deactivate
-	cd ../..
+	cd build/scholar.py && \
+		virtualenv .venv && \
+		source .venv/bin/activate && \
+		python setup.py develop && \
+		deactivate
 
-pdf-linker:
+pdf-linker : build
 	git clone git@github.com:maenu/pdf-linker.git build/pdf-linker
-	cd build/pdf-linker
-	mvn clean package
-	cd ../..
-
-PharoUriScheme:
-	git clone git@github.com:maenu/PharoUriScheme.git build/PharoUriScheme
-	cd build/PharoUriScheme
-	xcodebuild -scheme PharoUriScheme clean archive
-	cd ../..
+	cd build/pdf-linker && \
+		mvn clean package
