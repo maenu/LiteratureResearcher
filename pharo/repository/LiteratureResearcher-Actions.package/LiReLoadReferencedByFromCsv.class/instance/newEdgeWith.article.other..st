@@ -1,5 +1,5 @@
 instance creation
-newEdgeWith: aDictionary source: aNode target: anotherNode
+newEdgeWith: aDictionary article: aNode other: anotherNode
 	^ LiReReferences
 		graph: aNode graph
 		source: aNode

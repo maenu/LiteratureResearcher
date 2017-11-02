@@ -1,9 +1,9 @@
 instance creation
-newEdgeWith: aDictionary source: aNode target: anotherNode
+newEdgeWith: aDictionary article: aNode other: anotherNode
 	^ LiReHasWritten
 		graph: aNode graph
-		source: aNode
-		target: anotherNode
+		source: anotherNode
+		target: aNode
 		key: ''
 		order: -1
 		email: ''
