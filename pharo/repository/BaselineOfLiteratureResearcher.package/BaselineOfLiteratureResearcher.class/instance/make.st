@@ -5,7 +5,7 @@ make
 	pipeableOSProcessClass := Smalltalk
 		at: #PipeableOSProcess
 		ifAbsent: [ self signal: 'Could not find PipeableOSProcess, loading failed.' ].
-	process := pipeableOSProcessClass command: 'cd ''' , controllerClass cachedGithubRepository , ''' && make'.
+	process := pipeableOSProcessClass command: 'cd ''' , controllerClass cachedGithubRepository pathString , ''' && make'.
 	[ out := process upToEndOfFile ] fork.
 	[ err := process errorUpToEndOfFile ] fork.
 	delay := Delay forMilliseconds: 50.
