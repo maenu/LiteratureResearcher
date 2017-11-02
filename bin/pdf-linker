@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+java -Djava.awt.headless=true -jar "$DIR/../build/pdf-linker/target/pdf-linker-0.0.1-SNAPSHOT-jar-with-dependencies.jar" "$@"

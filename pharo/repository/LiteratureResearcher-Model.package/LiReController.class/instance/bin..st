@@ -1,13 +1,11 @@
-initialization
-initialize
-	self flag: 'use properties instead'.
-	super initialize.
-	repository := '../test/repository' asFileReference.
-	pdfLinker := LiRePdfLinker subprocess: (LiReSubprocess command: '../pdf-linker.sh').
-	cermine := LiReCermine subprocess: (LiReSubprocess command: '../cermine.sh').
-	pdfdbscrap := LiRePdfdbscrap subprocess: (LiReSubprocess command: '../pdfdbscrap.sh').
-	scholarPy := LiReScholarPy subprocess: (LiReSubprocess command: '../scholar.sh').
-	pdfOpen := LiRePdfOpen subprocess: (LiReSubprocess command: '../pdf-open.sh').
+accessing
+bin: aFileReference
+	bin := aFileReference.
+	pdfLinker := LiRePdfLinker subprocess: (LiReSubprocess command: bin / 'pdf-linker').
+	cermine := LiReCermine subprocess: (LiReSubprocess command: bin / 'cermine').
+	pdfdbscrap := LiRePdfdbscrap subprocess: (LiReSubprocess command: bin / 'pdfdbscrap').
+	scholarPy := LiReScholarPy subprocess: (LiReSubprocess command: bin / 'scholar').
+	pdfOpen := LiRePdfOpen subprocess: (LiReSubprocess command: bin / 'pdf-open').
 	actionLoadPdf := LiReLoadPdf repository: repository pdfdbscrap: pdfdbscrap scholarPy: scholarPy.
 	actionImportPdf := LiReImportPdf cermine: cermine.
 	actionLinkPdf := LiReLinkPdf repository: repository pdfLinker: pdfLinker.

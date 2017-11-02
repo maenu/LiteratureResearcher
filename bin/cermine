@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+java -cp "$DIR/../build/CERMINE/cermine-impl/target/cermine-impl-1.14-SNAPSHOT-jar-with-dependencies.jar" "$@"

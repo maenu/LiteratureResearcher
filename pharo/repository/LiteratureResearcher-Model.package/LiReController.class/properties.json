@@ -25,7 +25,8 @@
 		"actionMovePdf",
 		"actionLinkOpenPdf",
 		"actionOpenWithAllOtherThingsNecessaryDoneBeforePdf",
-		"actionLoadArticleFromCsv"
+		"actionLoadArticleFromCsv",
+		"bin"
 	],
 	"name" : "LiReController",
 	"type" : "normal"
