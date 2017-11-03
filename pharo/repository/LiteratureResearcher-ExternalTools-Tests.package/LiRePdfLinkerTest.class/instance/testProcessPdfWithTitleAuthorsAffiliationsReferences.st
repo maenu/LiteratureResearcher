@@ -6,6 +6,5 @@ testProcessPdfWithTitleAuthorsAffiliationsReferences
 		with: pdf
 		title: title
 		authors: authors
-		affiliations: affiliations
 		references: references.
 	self assert: out exists
