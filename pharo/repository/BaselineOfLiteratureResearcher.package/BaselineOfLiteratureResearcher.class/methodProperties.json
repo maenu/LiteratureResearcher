@@ -1,9 +1,9 @@
 {
 	"instance" : {
-		"make" : "ManuelLeuenberger 11/2/2017 18:15",
+		"make" : "ManuelLeuenberger 11/5/2017 17:35",
 		"postLoadActions" : "ManuelLeuenberger 11/2/2017 16:54",
-		"baseline:" : "ManuelLeuenberger 11/2/2017 18:07",
-		"initializeControllerClass" : "ManuelLeuenberger 11/2/2017 16:53"
+		"baseline:" : "ManuelLeuenberger 11/5/2017 17:36",
+		"initializeControllerClass" : "ManuelLeuenberger 11/5/2017 17:30"
 	},
 	"class" : { }
 }
