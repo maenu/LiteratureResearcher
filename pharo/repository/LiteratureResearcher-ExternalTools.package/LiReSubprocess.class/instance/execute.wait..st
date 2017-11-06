@@ -1,7 +1,7 @@
 running
 execute: anOrderedCollection wait: aDuration
 	| process out err |
-	process := PipeableOSProcess command: command , ' ' , (' ' join: anOrderedCollection).
+	process := PipeableOSProcess command: command pathString , ' ' , (' ' join: anOrderedCollection).
 	[ out := process upToEndOfFile ] fork.
 	[ err := process errorUpToEndOfFile ] fork.
 	self complete: process wait: aDuration.
