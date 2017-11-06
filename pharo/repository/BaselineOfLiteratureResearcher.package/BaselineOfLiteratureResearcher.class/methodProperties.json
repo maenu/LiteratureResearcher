@@ -1,7 +1,7 @@
 {
 	"instance" : {
 		"postLoadActions" : "ManuelLeuenberger 11/6/2017 14:38",
-		"makeBinExecutable" : "ManuelLeuenberger 11/6/2017 14:38",
+		"makeBinExecutable" : "ManuelLeuenberger 11/6/2017 14:46",
 		"baseline:" : "ManuelLeuenberger 11/5/2017 17:36",
 		"make" : "ManuelLeuenberger 11/5/2017 17:35",
 		"initializeControllerClass" : "ManuelLeuenberger 11/6/2017 14:03"

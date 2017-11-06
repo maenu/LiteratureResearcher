@@ -5,7 +5,7 @@ makeBinExecutable
 	pipeableOSProcessClass := Smalltalk
 		at: #PipeableOSProcess
 		ifAbsent: [ self signal: 'Could not find PipeableOSProcess, loading failed.' ].
-	process := pipeableOSProcessClass command: 'chmod +x "' , (controllerClass cachedGithubRepository / 'bin' / '*') pathString , '"'.
+	process := pipeableOSProcessClass command: 'cd ''' , (controllerClass cachedGithubRepository / 'bin') pathString , ''' && chmod +x *'.
 	[ out := process upToEndOfFile ] fork.
 	[ err := process errorUpToEndOfFile ] fork.
 	delay := Delay forMilliseconds: 50.
