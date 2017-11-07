@@ -25,6 +25,5 @@ scholar.py : build
 		deactivate
 
 pdf-linker : build
-	git clone git@github.com:maenu/pdf-linker.git build/pdf-linker
-	cd build/pdf-linker && \
+	cd pdf-linker && \
 		mvn clean package
