@@ -26,7 +26,7 @@ dependency-scholar.py : prepare
 		python setup.py develop && \
 		deactivate && \
 		virtualenv --relocatable .venv && \
-		sed -i -e 's|^VIRTUAL_ENV=".*$|VIRTUAL_ENV=".venv"|' .venv/bin/activate
+		sed -i '' -e 's|^VIRTUAL_ENV=".*$|VIRTUAL_ENV=".venv"|' .venv/bin/activate
 
 dependency-pdf-linker :
 	cd pdf-linker && \
