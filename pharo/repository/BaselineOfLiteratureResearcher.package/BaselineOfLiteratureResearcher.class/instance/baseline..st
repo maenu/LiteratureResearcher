@@ -41,4 +41,5 @@ baseline: spec
 				group: 'default'
 					with:
 					#('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2' 'PharoUriScheme' 'LiteratureResearcher-Actions' 'LiteratureResearcher-Announcements' 'LiteratureResearcher-ExternalTools' 'LiteratureResearcher-ExternalTools-Tests' 'LiteratureResearcher-Model' 'LiteratureResearcher-UI');
-				postLoadDoIt: #postLoadActions ]
+				postLoadDoIt: #postLoadActions;
+				yourself ]
