@@ -1,3 +1,3 @@
 accessing
-graph: aGraph repository: aFileReference
-	^ self graph: aGraph repository: aFileReference bin: self gitRepository / 'bin'
+graph: aGraph repository: aRelativePath
+	^ self graph: aGraph repository: aRelativePath bin: self gitRepository / 'bin'

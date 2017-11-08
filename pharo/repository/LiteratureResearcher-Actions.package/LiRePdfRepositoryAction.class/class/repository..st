@@ -1,5 +1,5 @@
 accessing
-repository: aFileReference
+repository: aRelativePath
 	^ self new
-		repository: aFileReference;
+		repository: aRelativePath;
 		yourself

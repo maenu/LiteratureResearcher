@@ -1,8 +1,7 @@
 accessing
-graph: aGraph repository: aFileReference bin: anotherFileReference
-	aFileReference ensureCreateDirectory.
+graph: aGraph repository: aRelativePath bin: anotherFileReference
 	^ self new
 		graph: aGraph;
-		repository: aFileReference;
+		repository: aRelativePath;
 		bin: anotherFileReference;
 		yourself
