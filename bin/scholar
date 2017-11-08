@@ -3,5 +3,6 @@
 #https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-source "$DIR/../build/scholar.py/.venv/bin/activate"
-python "$DIR/../build/scholar.py/scholar/scholar.py" "$@"
+cd "$DIR/../build/scholar.py"
+source .venv/bin/activate
+python "scholar/scholar.py" "$@"
