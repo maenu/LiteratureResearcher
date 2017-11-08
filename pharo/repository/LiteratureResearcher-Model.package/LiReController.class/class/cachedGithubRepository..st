@@ -1,3 +1,0 @@
-accessing
-cachedGithubRepository: aFileReference
-	CachedGithubRepository := aFileReference

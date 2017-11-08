@@ -1,5 +1,4 @@
 doits
 postLoadActions
-	self initializeControllerClass.
-	self makeBinExecutable.
-	self make
+	self class makeBinExecutable.
+	self class make
