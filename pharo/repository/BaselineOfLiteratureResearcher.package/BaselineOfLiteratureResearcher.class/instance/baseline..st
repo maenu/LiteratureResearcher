@@ -30,7 +30,7 @@ baseline: spec
 						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
 				configuration: 'PharoUriScheme'
 					with: [ spec
-						versionString: #development;
+						versionString: '0.1.0-pre';
 						repository: 'github://maenu/PharoUriScheme:master/pharo/repository' ];
 				package: 'LiteratureResearcher-Actions';
 				package: 'LiteratureResearcher-Announcements';
