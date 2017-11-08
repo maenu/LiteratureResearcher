@@ -1,10 +1,10 @@
-default: dependencies
+default: clean dependencies
 
 clean :
 	rm -rf build
 
-prepare : clean
-	mkdir build
+prepare :
+	mkdir -p build
 
 dependencies:  dependency-CERMINE dependency-pdfdbscrap dependency-scholar.py dependency-pdf-linker
 
@@ -26,7 +26,7 @@ dependency-scholar.py : prepare
 		python setup.py develop && \
 		deactivate && \
 		virtualenv --relocatable .venv && \
-		sed -i '' -e 's|^VIRTUAL_ENV=".*$|VIRTUAL_ENV=".venv"|' .venv/bin/activate
+		perl -pi -e 's/VIRTUAL_ENV=".*"/VIRTUAL_ENV=".venv"/' .venv/bin/activate
 
 dependency-pdf-linker :
 	cd pdf-linker && \
