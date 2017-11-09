@@ -10,7 +10,7 @@ Hyperlinks title, authors, and references in PDFs with the graph in Pharo.
 ## Demo
 
 [See a short video here](https://youtu.be/EcK3Pt_WnEw)
-
+[Prepared macOS Pharo](https://figshare.com/articles/LiteratureResearcher_All-in-one/5584837)
 
 ## Installation
 
