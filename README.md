@@ -14,7 +14,7 @@ Hyperlinks title, authors, and references in PDFs with the graph in Pharo.
 
 ## Installation
 
-Make sure you have `make`, the `Xcode command line tools`, `Java 8`, and `Maven` installed.
+Make sure you have `make`, the `Xcode command line tools`, `Java 8`, `Maven`, `python`, `virtualenv`, and `perl` installed.
 Then run the following script in a playground:
 
 ```
