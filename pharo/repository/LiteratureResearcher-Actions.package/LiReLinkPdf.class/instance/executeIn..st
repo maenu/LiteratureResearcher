@@ -6,7 +6,7 @@ executeIn: anArticle
 		ifFalse: [ LiReActionError signal: 'No PDF provided, abort action.' ].
 	pdf := pdfLinker
 		processPdf: anArticle bibtex key
-		with: pdf
+		with: repository / pdf
 		title: (self asTitleLink: anArticle)
 		authors: (self asAuthorLinks: anArticle)
 		references: (self asReferenceLinks: anArticle).

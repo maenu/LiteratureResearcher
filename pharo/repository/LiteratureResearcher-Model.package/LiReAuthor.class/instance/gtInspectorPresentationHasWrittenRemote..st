@@ -11,7 +11,8 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 				announce:
 					(LiReRequestScholarPy
 						block: [ :s | 
-							[ value := s findByAuthors: {name} ]
+							[ self flag: 'pagination'.
+							value := s findByAuthors: {name} start: 0 count: 10 ]
 								ensure: [ lock signal ] ]).
 			lock wait.
 			value ];

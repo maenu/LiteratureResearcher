@@ -15,7 +15,8 @@ gtInspectorPresentationReferencedByRemote: aComposite
 								ifFalse: [ | clusterId |
 									clusterId := s findClusterId: (bibtex at: #title) value.
 									bibtex at: #clusterid put: clusterId ].
-							value := s findCitations: (bibtex at: #clusterid) value ]
+							self flag: 'pagination'.
+							value := s findCitations: (bibtex at: #clusterid) value start: 0 count: 10 ]
 								ensure: [ lock signal ] ]).
 			lock wait.
 			value ];

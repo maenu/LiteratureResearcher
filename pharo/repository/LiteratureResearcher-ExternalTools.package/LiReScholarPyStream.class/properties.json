@@ -1,15 +1,17 @@
 {
 	"commentStamp" : "",
-	"super" : "Object",
+	"super" : "Stream",
 	"category" : "LiteratureResearcher-ExternalTools",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"subprocess",
-		"cookies",
-		"userAgent"
+		"cache",
+		"position",
+		"atEnd",
+		"pageSize",
+		"block"
 	],
-	"name" : "LiReScholarPy",
+	"name" : "LiReScholarPyStream",
 	"type" : "normal"
 }

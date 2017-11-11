@@ -3,7 +3,11 @@ getBibtex: anId
 	| result |
 	result := subprocess
 		execute:
-			{'--citation'.
+			{'--cookies-file'.
+			(LiReSubprocess escape: cookies pathString).
+			'--user-agent'.
+			(LiReSubprocess escape: userAgent).
+			'--citation'.
 			'bt'.
 			'--count'.
 			'1'.

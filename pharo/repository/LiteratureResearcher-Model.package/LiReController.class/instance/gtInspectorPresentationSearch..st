@@ -13,7 +13,8 @@ gtInspectorPresentationSearch: aComposite
 				announce:
 					(LiReRequestScholarPy
 						block: [ :s | 
-							[ value := s find: t asString ]
+							[ self flag: 'pagination'.
+							value := s find: t asString start: 0 count: 10 ]
 								ensure: [ lock signal ] ]).
 			lock wait.
 			value ];

@@ -1,7 +1,8 @@
 as yet unclassified
 loadFromTitle: anArticle
 	| rows rowWithUrl |
-	rows := [ scholarPy findByTitle: (anArticle bibtex at: #title) value ]
+	self flag: 'search more than 10?'.
+	rows := [ scholarPy findByTitle: (anArticle bibtex at: #title) value start: 0 count: 10 ]
 		on: LiReScholarPyProcessError
 		do: [ :e | 
 			Transcript

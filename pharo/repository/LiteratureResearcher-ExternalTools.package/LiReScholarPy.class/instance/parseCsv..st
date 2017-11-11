@@ -4,6 +4,7 @@ parseCsv: aString
 		separator: $|;
 		recordClass: Dictionary;
 		addFieldAt: #title converter: [ :s | self parseStringOrNil: s ];
+		addFieldAt: #author converter: [ :s | self parseStringOrNil: s ];
 		addFieldAt: #url converter: [ :s | self parseStringOrNil: s ];
 		addFieldAt: #year converter: [ :s | self parseIntegerOrNil: s ];
 		addFieldAt: #numCitations converter: [ :s | self parseIntegerOrNil: s ];
