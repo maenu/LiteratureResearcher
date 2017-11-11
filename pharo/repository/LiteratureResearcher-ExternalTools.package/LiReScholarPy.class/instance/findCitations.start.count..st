@@ -3,8 +3,8 @@ findCitations: anId start: anInteger count: anotherInteger
 	| result |
 	result := subprocess
 		execute:
-			{'--cookies-file'.
-			(LiReSubprocess escape: cookies pathString).
+			{'--cookie-file'.
+			(LiReSubprocess escape: cookie pathString).
 			'--user-agent'.
 			(LiReSubprocess escape: userAgent).
 			'--csv'.

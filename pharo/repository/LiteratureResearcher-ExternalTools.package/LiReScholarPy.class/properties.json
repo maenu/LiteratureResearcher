@@ -7,7 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"subprocess",
-		"cookies",
+		"cookie",
 		"userAgent"
 	],
 	"name" : "LiReScholarPy",
