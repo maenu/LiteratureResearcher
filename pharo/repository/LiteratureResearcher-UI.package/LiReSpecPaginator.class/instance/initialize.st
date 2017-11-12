@@ -1,4 +1,4 @@
 initialization
 initialize
 	super initialize.
-	size := 20
+	size := 1

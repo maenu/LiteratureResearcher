@@ -1,8 +1,6 @@
 accessing
 invalidate
-	| number page |
-	Halt now.
-	number := (start / size) asInteger.
+	| page |
 	stream position: start.
 	page := OrderedCollection new.
 	[ stream atEnd not and: [ stream position < (start + size) ] ] whileTrue: [ page add: stream next ].

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "Stream",
-	"category" : "LiteratureResearcher-ExternalTools",
+	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -12,6 +12,6 @@
 		"complete",
 		"block"
 	],
-	"name" : "LiReScholarPyStream",
+	"name" : "LiRePaginatedStream",
 	"type" : "normal"
 }

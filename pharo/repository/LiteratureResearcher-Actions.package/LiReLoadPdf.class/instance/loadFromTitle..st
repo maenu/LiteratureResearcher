@@ -10,5 +10,5 @@ loadFromTitle: anArticle
 				cr.
 			^ nil ].
 	rowWithUrl := rows detect: [ :r | (r at: #urlPdf) isNotNil or: [ (r at: #url) isNotNil ] ] ifNone: [ ^ nil ].
-	anArticle mergeBibtexWithCsv: rowWithUrl.
+	anArticle mergeCsv: rowWithUrl.
 	^ self loadFromUrl: anArticle

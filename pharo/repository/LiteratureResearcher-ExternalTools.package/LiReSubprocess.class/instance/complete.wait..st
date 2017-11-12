@@ -4,7 +4,9 @@ complete: aProcess wait: aDuration
 	delay := Delay forMilliseconds: 50.
 	timeout := [ aDuration asDelay wait.
 	aProcess isComplete
-		ifFalse: [ aProcess
+		ifFalse: [ self flag: 'make platform agnostic, move kill to platform specific protocol'.
+			aProcess processProxy sigkill.
+			aProcess
 				close;
 				closePipes ] ] fork.
 	[ aProcess isComplete ] whileFalse: [ delay wait ].

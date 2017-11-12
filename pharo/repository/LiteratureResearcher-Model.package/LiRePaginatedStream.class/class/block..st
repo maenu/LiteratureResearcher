@@ -1,6 +1,5 @@
 accessing
 block: aBlock
-	^ self basicNew
-		initialize;
+	^ self new
 		block: aBlock;
 		yourself
