@@ -1,36 +1,23 @@
 converting
 gtInspectorPresentationReferencedByRemoteStream: aComposite
 	<gtInspectorPresentationOrder: 6>
-	| model presentation |
-	model := LiReSpecPaginator
-		stream: LiRePaginatedStream new
-		menuModelBlock: [ :e | 
-			| menu |
-			menu := MenuModel new.
-			menu
-				addGroup: [ :group | 
-					group
-						addItem: [ :mi | 
-							mi
-								name: 'Select in graph';
-								action: [ announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
-			menu ]
-		displayBlock: [ :e | e sourceLabel ]
-		iconBlock: [ :e | e source state icon ].
-	presentation := aComposite spec
+	| presentation |
+	presentation := aComposite spec.
+	presentation
 		title: 'Referenced by (remote)';
-		display: [ | lock |
+		display: [ | lock stream model |
+			stream := LiRePaginatedStream block: [ {} ].
 			lock := Semaphore new.
 			announcer
 				announce:
 					(LiReRequestScholarPy
 						block: [ :s | 
-							[ (bibtex hasField: #clusterid)
+							(bibtex hasField: #clusterid)
 								ifFalse: [ | clusterId |
 									clusterId := s findClusterId: (bibtex at: #title) value.
 									bibtex at: #clusterid put: clusterId.
 									self propertyChanged: #bibtex ].
-							model stream
+							stream := LiRePaginatedStream
 								block: [ :ss :c | 
 									(s findCitations: (bibtex at: #clusterid) value start: ss count: c)
 										collect: [ :d | 
@@ -38,10 +25,13 @@ gtInspectorPresentationReferencedByRemoteStream: aComposite
 											node := graph nodes
 												detect: [ :n | n matches: (d at: #title) ]
 												ifFound: [ :n | n mergeCsv: d ]
-												ifNone: [ | n |
+												ifNone: [ | n b |
+													b := CZEntry type: CZEntry article.
+													b key: 'GENERATED'.
+													d keysAndValuesDo: [ :k :v | b at: k put: v ].
 													n := self class
 														graph: graph
-														bibtex: nil
+														bibtex: b
 														csv: d
 														document: nil.
 													graph nodes add: n.
@@ -51,18 +41,33 @@ gtInspectorPresentationReferencedByRemoteStream: aComposite
 												ifNone: [ | e |
 													e := LiReReferences
 														graph: graph
-														source: self
-														target: node
-														key: nil
+														source: node
+														target: self
+														key: ''
 														order: -1
 														bibtex: nil
 														text: ''.
 													graph edges add: e.
 													e ].
-											edge ] ] ]
-								ensure: [ lock signal ] ]).
+											edge ] ].
+							lock signal ]).
 			lock wait.
+			model := LiReSpecEdgesPaginator
+				stream: stream
+				menuModelBlock: [ :e | 
+					| menu |
+					menu := MenuModel new.
+					menu
+						addGroup: [ :group | 
+							group
+								addItem: [ :mi | 
+									mi
+										name: 'Select in graph';
+										action: [ announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
+					menu ]
+				displayBlock: [ :e | e sourceLabel ]
+				iconBlock: [ :e | e source state icon ].
+			model listModel whenSelectedItemChanged: [ :e | presentation selection: e ].
 			model
 				buildWithSpec;
-				yourself ].
-	model list whenSelectedItemChanged: [ :e | presentation selection: e ]
+				yourself ]
