@@ -2,13 +2,13 @@ initialization
 initializePresenter
 	super initializePresenter.
 	listModel
-		displayBlock: [ :i | i asString ];
-		icons: [ :i | i graph ifNil: [ Smalltalk ui icons iconNamed: #testNotRun ] ifNotNil: [ Smalltalk ui icons iconNamed: #testGreen ] ];
+		displayBlock: [ :e | displayBlock cull: e ];
+		icons: [ :e | iconBlock cull: e ];
 		menu: [ :m | 
 			listModel selectedItem
 				ifNil: [ m ]
-				ifNotNil: [ :i | 
-					(menuModelBlock cull: i)
+				ifNotNil: [ :e | 
+					(menuModelBlock cull: e)
 						ifNotNil: [ :mm | 
 							m
 								addAllMorphs: (mm buildWithSpec: #popup) items;

@@ -6,8 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"menuModelBlock"
+		"menuModelBlock",
+		"displayBlock",
+		"iconBlock"
 	],
-	"name" : "LiReSpecNodesPaginator",
+	"name" : "LiReSpecEdgesPaginator",
 	"type" : "normal"
 }
