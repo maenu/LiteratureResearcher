@@ -1,3 +1,3 @@
 accessing
 atEnd
-	^ atEnd
+	^ complete and: [ position = cache size ]

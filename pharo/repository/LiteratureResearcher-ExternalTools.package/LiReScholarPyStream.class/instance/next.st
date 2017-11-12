@@ -1,8 +1,8 @@
 accessing
 next
 	self assert: [ self atEnd not ].
-	position + 1 <= cache size
+	"needs to peek at the next page, as it might be the last one"
+	position + 2 <= cache size
 		ifFalse: [ self loadNextPage ].
-	self assert: [ self atEnd not ].
 	position := position + 1.
 	^ cache at: position

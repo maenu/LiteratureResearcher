@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"start",
+		"size",
+		"stream",
+		"listModel",
+		"backModel",
+		"numberModel",
+		"forwardModel"
+	],
+	"name" : "LiReSpecPaginator",
+	"type" : "normal"
+}

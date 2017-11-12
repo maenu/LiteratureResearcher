@@ -8,8 +8,8 @@
 	"instvars" : [
 		"cache",
 		"position",
-		"atEnd",
 		"pageSize",
+		"complete",
 		"block"
 	],
 	"name" : "LiReScholarPyStream",

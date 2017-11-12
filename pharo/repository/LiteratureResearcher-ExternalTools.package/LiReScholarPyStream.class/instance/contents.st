@@ -1,4 +1,4 @@
 filter streaming
 contents
-	[ self atEnd ] whileFalse: [ self loadNextPage ].
+	[ complete ] whileFalse: [ self loadNextPage ].
 	^ cache
