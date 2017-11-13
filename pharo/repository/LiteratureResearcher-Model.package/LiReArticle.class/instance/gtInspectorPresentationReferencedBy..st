@@ -28,4 +28,4 @@ gtInspectorPresentationReferencedBy: aComposite
 				buildWithSpec;
 				yourself ];
 		yourself.
-	model list whenSelectedItemChanged: [ :r | presentation selection: r ]
+	model list whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ]

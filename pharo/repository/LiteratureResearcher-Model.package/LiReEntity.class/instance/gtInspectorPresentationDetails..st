@@ -1,5 +1,5 @@
 as yet unclassified
-gtInspectorPresentation: aComposite
+gtInspectorPresentationDetails: aComposite
 	<gtInspectorPresentationOrder: 1>
 	aComposite spec
 		title: [ 'Details' ];
