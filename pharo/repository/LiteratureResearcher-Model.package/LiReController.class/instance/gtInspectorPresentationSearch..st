@@ -1,26 +1,59 @@
 as yet unclassified
 gtInspectorPresentationSearch: aComposite
 	<gtInspectorPresentationOrder: 2>
-	| model |
-	model := (LiReSpecScholarPy node: self)
-		selectBlock: [ :n | n announcer announce: (LiReRequestSelectNode entity: n) ];
-		loadBlock: [ :d | graph announcer announce: (LiReRequestLoadArticleFromCsv node: self csv: d) ];
-		searchBlock: [ :t | 
-			| value lock |
-			t ifEmpty: [ self signal: 'Search text cannot be empty' ].
-			lock := Semaphore new.
-			graph announcer
-				announce:
-					(LiReRequestScholarPy
-						block: [ :s | 
-							[ self flag: 'pagination'.
-							value := s find: t asString start: 0 count: 10 ]
-								ensure: [ lock signal ] ]).
-			lock wait.
-			value ];
-		yourself.
-	aComposite spec
+	| presentation |
+	presentation := aComposite spec.
+	presentation
 		title: [ 'Search' ];
-		display: [ model
+		display: [ | model |
+			model := LiReSpecScholarPy new.
+			model
+				searchBlock: [ :t | 
+					LiRePaginatedStream
+						block: [ :ss :c | 
+							| lock stream |
+							lock := Semaphore new.
+							stream := LiRePaginatedStream block: [ {} ].
+							graph announcer
+								announce:
+									(LiReRequestScholarPy
+										block: [ :s | 
+											stream := (s find: t asString start: ss count: c)
+												collect: [ :d | 
+													| node |
+													node := graph nodes
+														detect: [ :n | n matches: (d at: #title) ]
+														ifFound: [ :n | n mergeCsv: d ]
+														ifNone: [ | n b |
+															b := CZEntry type: CZEntry article.
+															b key: 'GENERATED'.
+															d keysAndValuesDo: [ :k :v | b at: k put: v ].
+															n := LiReArticle
+																graph: graph
+																bibtex: b
+																csv: d
+																document: nil.
+															graph nodes add: n.
+															n ] ].
+											lock signal ]).
+							lock wait.
+							stream ] ].
+			model paginatorModel
+				menuModelBlock: [ :n | 
+					| menu |
+					menu := MenuModel new.
+					menu
+						addGroup: [ :group | 
+							group
+								addItem: [ :mi | 
+									mi
+										name: 'Select in graph';
+										action: [ graph announcer announce: (LiReRequestSelectNode entity: n) ] ] ].
+					menu ].
+			model paginatorModel listModel
+				displayBlock: [ :n | n label ];
+				icons: [ :n | n state icon ];
+				whenSelectedItemChanged: [ :n | n ifNotNil: [ presentation selection: n ] ].
+			model
 				buildWithSpec;
 				yourself ]

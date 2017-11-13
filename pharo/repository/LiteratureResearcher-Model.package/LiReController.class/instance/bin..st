@@ -21,7 +21,4 @@ bin: aFileReference
 		load: actionLoadPdf
 		import: actionImportPdf
 		link: actionLinkPdf
-		open: actionOpenPdf.
-	actionLoadReferencedByFromCsv := LiReLoadReferencedByFromCsv scholarPy: scholarPy.
-	actionLoadWrittenByFromCsv := LiReLoadWrittenByFromCsv scholarPy: scholarPy.
-	actionLoadArticleFromCsv := LiReLoadArticleFromCsv scholarPy: scholarPy
+		open: actionOpenPdf

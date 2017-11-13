@@ -1,3 +1,0 @@
-accessing
-excerptLabel
-	^ excerptLabel

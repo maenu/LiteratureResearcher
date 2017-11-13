@@ -7,9 +7,7 @@ graph: anObject
 	graph announcer
 		when: LiReRequestScholarPy do: [ :r | self schedule: [ r block cull: scholarPy ] title: 'Searching on Scholar' ];
 		when: LiReRequestSelectNode do: [ :r | self selectNode: r entity ];
-		when: LiReRequestSelectEdge do: [ :r | self selectEdge: r entity ];
-		when: LiReRequestLoadArticleFromCsv
-			do: [ :r | self schedule: [ actionLoadArticleFromCsv executeIn: r csv with: r node ] title: 'Load article by from CSV' ].
+		when: LiReRequestSelectEdge do: [ :r | self selectEdge: r entity ].
 	graph announcer
 		when: LiReNodeAdded
 			do: [ :e | 

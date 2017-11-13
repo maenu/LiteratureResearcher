@@ -1,9 +1,12 @@
 initialization
 initializeWidgets
-	searchText := self newTextInput.
-	searchButton := self newButton
+	textModel := self newTextInput
+		autoAccept: true;
+		yourself.
+	buttonModel := self newButton
 		label: 'Search';
 		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);
 		yourself.
-	list := self instantiate: FastTableModel.
-	item := LiReSpecScholarPyItem item: Dictionary new
+	paginatorModel := (self instantiate: LiReSpecPaginator)
+		stream: (LiRePaginatedStream block: [ {} ]);
+		yourself

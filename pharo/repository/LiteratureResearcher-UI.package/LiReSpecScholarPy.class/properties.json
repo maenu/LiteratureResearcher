@@ -6,14 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"node",
-		"list",
-		"item",
-		"searchText",
-		"searchButton",
-		"searchBlock",
-		"selectBlock",
-		"loadBlock"
+		"textModel",
+		"buttonModel",
+		"paginatorModel",
+		"searchBlock"
 	],
 	"name" : "LiReSpecScholarPy",
 	"type" : "normal"

@@ -1,7 +1,7 @@
 accessing
 addedArticle: anArticle
 	self normalizeArticle: anArticle.
-	^ anArticle announcer
+	anArticle announcer
 		when: LiRePropertyChanged
 			do: [ :e | 
 			e property = #bibtex
@@ -17,6 +17,4 @@ addedArticle: anArticle
 			do: [ :r | 
 			self
 				schedule: [ actionOpenWithAllOtherThingsNecessaryDoneBeforePdf executeIn: r article ]
-				title: 'Open PDF with all the other things necessary done before' ];
-		when: LiReRequestLoadReferencedByFromCsv
-			do: [ :r | self schedule: [ actionLoadReferencedByFromCsv executeIn: r csv with: r node ] title: 'Load referenced by from CSV' ]
+				title: 'Open PDF with all the other things necessary done before' ]

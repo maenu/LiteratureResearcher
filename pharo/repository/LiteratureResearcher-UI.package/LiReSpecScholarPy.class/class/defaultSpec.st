@@ -3,11 +3,8 @@ defaultSpec
 	^ SpecColumnLayout composed
 		newRow: [ :row | 
 			row
-				add: #searchText;
-				add: #searchButton ]
+				add: #textModel;
+				add: #buttonModel ]
 			height: self toolbarHeight;
-		newRow: [ :row | 
-			row
-				add: #list;
-				add: #item ];
+		newRow: [ :row | row add: #paginatorModel ];
 		yourself

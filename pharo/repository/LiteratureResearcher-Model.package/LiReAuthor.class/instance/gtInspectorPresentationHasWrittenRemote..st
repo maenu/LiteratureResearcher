@@ -6,8 +6,8 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 	presentation
 		title: 'Has written (remote)';
 		display: [ | model |
-			model := LiReSpecEdgesPaginator
-				stream: (LiRePaginatedStream block: [ {} ])
+			model := LiReSpecPaginator new
+				stream: (LiRePaginatedStream block: [ {} ]);
 				menuModelBlock: [ :e | 
 					| menu |
 					menu := MenuModel new.
@@ -18,10 +18,12 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 									mi
 										name: 'Select in graph';
 										action: [ announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
-					menu ]
-				displayBlock: [ :e | e targetLabel ]
-				iconBlock: [ :e | e target state icon ].
-			model listModel whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
+					menu ];
+				yourself.
+			model listModel
+				displayBlock: [ :e | e targetLabel ];
+				icons: [ :e | e target state icon ];
+				whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
 			announcer
 				announce:
 					(LiReRequestScholarPy
@@ -40,7 +42,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 															b := CZEntry type: CZEntry article.
 															b key: 'GENERATED'.
 															d keysAndValuesDo: [ :k :v | b at: k put: v ].
-															n := self class
+															n := LiReArticle
 																graph: graph
 																bibtex: b
 																csv: d
@@ -56,8 +58,9 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 																target: node
 																key: ''
 																order: -1
-																bibtex: nil
-																text: ''.
+																email: ''
+																institution: ''
+																country: ''.
 															graph edges add: e.
 															e ].
 													edge ] ]) ]).

@@ -6,8 +6,7 @@ gtInspectorPresentationReferencedByRemote: aComposite
 	presentation
 		title: 'Referenced by (remote)';
 		display: [ | model |
-			model := LiReSpecEdgesPaginator
-				stream: (LiRePaginatedStream block: [ {} ])
+			model := LiReSpecPaginator new
 				menuModelBlock: [ :e | 
 					| menu |
 					menu := MenuModel new.
@@ -18,10 +17,12 @@ gtInspectorPresentationReferencedByRemote: aComposite
 									mi
 										name: 'Select in graph';
 										action: [ announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
-					menu ]
-				displayBlock: [ :e | e sourceLabel ]
-				iconBlock: [ :e | e source state icon ].
-			model listModel whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
+					menu ];
+				yourself.
+			model listModel
+				displayBlock: [ :e | e sourceLabel ];
+				icons: [ :e | e source state icon ];
+				whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
 			announcer
 				announce:
 					(LiReRequestScholarPy
@@ -45,7 +46,7 @@ gtInspectorPresentationReferencedByRemote: aComposite
 															b := CZEntry type: CZEntry article.
 															b key: 'GENERATED'.
 															d keysAndValuesDo: [ :k :v | b at: k put: v ].
-															n := self class
+															n := LiReArticle
 																graph: graph
 																bibtex: b
 																csv: d

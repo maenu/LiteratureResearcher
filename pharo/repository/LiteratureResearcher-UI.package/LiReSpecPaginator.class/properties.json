@@ -12,7 +12,8 @@
 		"listModel",
 		"backModel",
 		"numberModel",
-		"forwardModel"
+		"forwardModel",
+		"menuModelBlock"
 	],
 	"name" : "LiReSpecPaginator",
 	"type" : "normal"

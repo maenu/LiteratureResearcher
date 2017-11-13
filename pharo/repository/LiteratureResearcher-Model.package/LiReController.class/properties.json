@@ -19,13 +19,10 @@
 		"actionOpenPdf",
 		"scheduledLayout",
 		"pdfdbscrap",
-		"actionLoadReferencedByFromCsv",
-		"actionLoadWrittenByFromCsv",
 		"actionLoadImportLinkOpenPdf",
 		"actionMovePdf",
 		"actionLinkOpenPdf",
 		"actionOpenWithAllOtherThingsNecessaryDoneBeforePdf",
-		"actionLoadArticleFromCsv",
 		"bin",
 		"scholarPyCookie",
 		"scholarPyUserAgent"
