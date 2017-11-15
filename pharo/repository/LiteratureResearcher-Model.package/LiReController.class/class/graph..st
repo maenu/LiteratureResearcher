@@ -1,9 +1,24 @@
 accessing
 graph: aGraph
+	| repository bin pdfLinker cermine pdfdbscrap scholarPy pdfOpen actionLoadPdf actionImportPdf actionLinkPdf actionOpenPdf actionMovePdf |
+	repository := FileSystem workingDirectory / 'literature-researcher-repository'.
+	bin := self gitRepository / 'bin'.
+	pdfLinker := LiRePdfLinker subprocess: (LiReSubprocess command: bin / 'pdf-linker').
+	cermine := LiReCermine subprocess: (LiReSubprocess command: bin / 'cermine').
+	pdfdbscrap := LiRePdfdbscrap subprocess: (LiReSubprocess command: bin / 'pdfdbscrap').
+	scholarPy := LiReScholarPy subprocess: (LiReSubprocess command: bin / 'scholar').
+	pdfOpen := LiRePdfOpen subprocess: (LiReSubprocess command: bin / 'pdf-open').
+	actionLoadPdf := LiReLoadPdf repository: repository pdfdbscrap: pdfdbscrap scholarPy: scholarPy.
+	actionImportPdf := LiReImportPdf repository: repository cermine: cermine.
+	actionLinkPdf := LiReLinkPdf repository: repository pdfLinker: pdfLinker.
+	actionOpenPdf := LiReOpenPdf repository: repository pdfOpen: pdfOpen.
+	actionMovePdf := LiReMovePdf repository: repository.
 	^ self new
 		graph: aGraph;
-		repository: FileSystem workingDirectory / 'literature-researcher-repository';
-		scholarPyCookie: '/Users/maenu/Documents/phd/projects/LiteratureResearcher/scholar.py/cookies.txt' asFileReference;
-		scholarPyUserAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36';
-		bin: self gitRepository / 'bin';
+		scholarPy: scholarPy;
+		actionLoadPdf: actionLoadPdf;
+		actionImportPdf: actionImportPdf;
+		actionLinkPdf: actionLinkPdf;
+		actionOpenPdf: actionOpenPdf;
+		actionMovePdf: actionMovePdf;
 		yourself

@@ -1,13 +1,10 @@
 as yet unclassified
 findByAuthors: aCollection start: anInteger count: anotherInteger
-	| result |
-	result := subprocess
-		execute:
-			{'--cookie-file'.
-			(LiReSubprocess escape: cookie pathString).
-			'--user-agent'.
-			(LiReSubprocess escape: userAgent).
-			'--csv'.
+	| arguments result |
+	arguments := self newDefaultArguments.
+	arguments
+		addAll:
+			{'--csv'.
 			'--no-citations'.
 			'--title-only'.
 			'--start'.
@@ -15,6 +12,6 @@ findByAuthors: aCollection start: anInteger count: anotherInteger
 			'--count'.
 			(LiReSubprocess escape: anotherInteger asString).
 			'--author'.
-			(LiReSubprocess escape: (', ' join: aCollection))}
-		wait: 30 seconds.
+			(LiReSubprocess escape: (', ' join: aCollection))}.
+	result := subprocess execute: arguments wait: 30 seconds.
 	^ self parseCsv: result out

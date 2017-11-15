@@ -4,4 +4,9 @@ gtInspectorActionRequestLoadImportLinkOpenPdf
 	^ GLMGenericAction new
 		title: 'Load, import, link & open PDF';
 		position: 5;
-		action: [ :p | announcer announce: (LiReRequestLoadImportLinkOpenPdf article: self) ]
+		action: [ :p | 
+			announcer
+				announce: (LiReRequestLoadPdf article: self);
+				announce: (LiReRequestImportPdf article: self);
+				announce: (LiReRequestLinkPdf article: self);
+				announce: (LiReRequestOpenPdf article: self) ]

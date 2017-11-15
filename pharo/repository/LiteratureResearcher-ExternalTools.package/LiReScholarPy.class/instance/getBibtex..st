@@ -1,17 +1,14 @@
 as yet unclassified
 getBibtex: anId
-	| result |
-	result := subprocess
-		execute:
-			{'--cookie-file'.
-			(LiReSubprocess escape: cookie pathString).
-			'--user-agent'.
-			(LiReSubprocess escape: userAgent).
-			'--citation'.
+	| arguments result |
+	arguments := self newDefaultArguments.
+	arguments
+		addAll:
+			{'--citation'.
 			'bt'.
 			'--count'.
 			'1'.
 			'--cluster-id'.
-			(LiReSubprocess escape: anId)}
-		wait: 30 seconds.
+			(LiReSubprocess escape: anId)}.
+	result := subprocess execute: arguments wait: 30 seconds.
 	^ LiReBibParser parse: result out

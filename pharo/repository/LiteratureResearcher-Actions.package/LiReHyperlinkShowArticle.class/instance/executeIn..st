@@ -6,5 +6,4 @@ executeIn: aController
 			aController selectNode: node ]
 		ifFalse: [ | edge |
 			edge := aController graph edges detect: [ :e | (e isKindOf: LiReReferences) and: [ e key = id and: [ e source bibtex key = referencingId ] ] ].
-			aController selectEdge: edge.
-			"edge target announcer announce: (LiReRequestOpenWithAllOtherThingsNecessaryDoneBeforePdf article: edge target)" ]
+			aController selectEdge: edge ]

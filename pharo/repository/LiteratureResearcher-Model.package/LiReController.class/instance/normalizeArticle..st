@@ -1,4 +1,4 @@
-accessing
+as yet unclassified
 normalizeArticle: anArticle
 	| oldKey keyBaseName keyBaseYear keyBase keyCount |
 	oldKey := anArticle bibtex key.

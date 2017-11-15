@@ -1,13 +1,10 @@
 as yet unclassified
 findByTitle: aString start: anInteger count: anotherInteger
-	| result |
-	result := subprocess
-		execute:
-			{'--cookie-file'.
-			(LiReSubprocess escape: cookie pathString).
-			'--user-agent'.
-			(LiReSubprocess escape: userAgent).
-			'--csv'.
+	| arguments result |
+	arguments := self newDefaultArguments.
+	arguments
+		addAll:
+			{'--csv'.
 			'--no-citations'.
 			'--title-only'.
 			'--start'.
@@ -15,6 +12,6 @@ findByTitle: aString start: anInteger count: anotherInteger
 			'--count'.
 			(LiReSubprocess escape: anotherInteger asString).
 			'--all'.
-			(LiReSubprocess escape: aString)}
-		wait: 30 seconds.
+			(LiReSubprocess escape: aString)}.
+	result := subprocess execute: arguments wait: 30 seconds.
 	^ self parseCsv: result out

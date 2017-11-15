@@ -8,24 +8,13 @@
 	"instvars" : [
 		"graph",
 		"view",
-		"repository",
-		"pdfLinker",
-		"cermine",
 		"scholarPy",
-		"pdfOpen",
+		"scheduledLayout",
 		"actionImportPdf",
 		"actionLinkPdf",
 		"actionLoadPdf",
 		"actionOpenPdf",
-		"scheduledLayout",
-		"pdfdbscrap",
-		"actionLoadImportLinkOpenPdf",
-		"actionMovePdf",
-		"actionLinkOpenPdf",
-		"actionOpenWithAllOtherThingsNecessaryDoneBeforePdf",
-		"bin",
-		"scholarPyCookie",
-		"scholarPyUserAgent"
+		"actionMovePdf"
 	],
 	"name" : "LiReController",
 	"type" : "normal"

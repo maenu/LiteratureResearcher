@@ -5,9 +5,13 @@ graph: anObject
 	graph nodes do: [ :n | self addedNode: n ].
 	graph edges do: [ :e | self addedEdge: e ].
 	graph announcer
-		when: LiReRequestScholarPy do: [ :r | self schedule: [ r block cull: scholarPy ] title: 'Searching on Scholar' ];
 		when: LiReRequestSelectNode do: [ :r | self selectNode: r entity ];
-		when: LiReRequestSelectEdge do: [ :r | self selectEdge: r entity ].
+		when: LiReRequestSelectEdge do: [ :r | self selectEdge: r entity ];
+		when: LiReRequestScholarPy do: [ :r | self schedule: [ r block cull: scholarPy ] title: 'Searching on Scholar' ];
+		when: LiReRequestLoadPdf do: [ :r | self schedule: [ actionLoadPdf executeIn: r article ] title: 'Load PDF' ];
+		when: LiReRequestImportPdf do: [ :r | self schedule: [ actionImportPdf executeIn: r article ] title: 'Import PDF' ];
+		when: LiReRequestLinkPdf do: [ :r | self schedule: [ actionLinkPdf executeIn: r article ] title: 'Link PDF' ];
+		when: LiReRequestOpenPdf do: [ :r | self schedule: [ actionOpenPdf executeIn: r article ] title: 'Open PDF' ].
 	graph announcer
 		when: LiReNodeAdded
 			do: [ :e | 

@@ -1,3 +1,0 @@
-accessing
-scholarPyCookie
-	^ scholarPyCookie

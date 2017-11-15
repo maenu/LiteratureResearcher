@@ -1,3 +1,5 @@
-as yet unclassified
+target resize
 executeIn: anArticle
-	pdfOpen processPdf: (anArticle bibtex at: #pdf) value asFileReference
+	| pdf |
+	pdf := self repositoryPdfOf: anArticle.
+	pdfOpen processPdf: pdf

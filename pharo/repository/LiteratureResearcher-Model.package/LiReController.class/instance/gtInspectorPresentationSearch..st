@@ -6,7 +6,7 @@ gtInspectorPresentationSearch: aComposite
 	presentation
 		title: [ 'Search' ];
 		display: [ | model |
-			model := LiReSpecScholarPy new.
+			model := LiReSpecSearchRemote new.
 			model
 				searchBlock: [ :t | 
 					LiRePaginatedStream

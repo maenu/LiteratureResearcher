@@ -1,7 +1,7 @@
-as yet unclassified
+target resize
 executeIn: anArticle
 	| pdf cermineResult metadata bibtex generatedBibtex |
-	pdf := (anArticle bibtex at: #pdf) value asFileReference.
+	pdf := self repositoryPdfOf: anArticle.
 	cermineResult := cermine
 		processPdf: anArticle bibtex key
 		with: pdf
