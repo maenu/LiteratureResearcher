@@ -5,4 +5,4 @@ gtInspectorActionRequestImportPdf
 		title: 'Import PDF';
 		position: 2;
 		enabledCondition: [ bibtex hasField: #pdf ];
-		action: [ :p | announcer announce: (LiReRequestImportPdf article: self) ]
+		action: [ :p | graph announcer announce: (LiReRequestImportPdf article: self) ]

@@ -5,4 +5,4 @@ gtInspectorActionRequestOpenPdf
 		title: 'Open PDF';
 		position: 4;
 		enabledCondition: [ bibtex hasField: #pdf ];
-		action: [ :p | announcer announce: (LiReRequestOpenPdf article: self) ]
+		action: [ :p | graph announcer announce: (LiReRequestOpenPdf article: self) ]

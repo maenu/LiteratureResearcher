@@ -17,14 +17,14 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 								addItem: [ :mi | 
 									mi
 										name: 'Select in graph';
-										action: [ announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
+										action: [ graph announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
 					menu ];
 				yourself.
 			model listModel
 				displayBlock: [ :e | e targetLabel ];
 				icons: [ :e | e target state icon ];
 				whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
-			announcer
+			graph announcer
 				announce:
 					(LiReRequestScholarPy
 						block: [ :s | 

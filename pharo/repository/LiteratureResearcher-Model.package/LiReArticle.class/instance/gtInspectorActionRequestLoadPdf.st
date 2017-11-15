@@ -4,4 +4,4 @@ gtInspectorActionRequestLoadPdf
 	^ GLMGenericAction new
 		title: 'Load PDF';
 		position: 1;
-		action: [ :p | announcer announce: (LiReRequestLoadPdf article: self) ]
+		action: [ :p | graph announcer announce: (LiReRequestLoadPdf article: self) ]

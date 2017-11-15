@@ -6,6 +6,8 @@ gtInspectorActionRequestLinkOpenPdf
 		position: 6;
 		enabledCondition: [ bibtex hasField: #pdf ];
 		action: [ :p | 
-			announcer
-				announce: (LiReRequestLinkPdf article: self);
-				announce: (LiReRequestOpenPdf article: self) ]
+			graph announcer
+				announce:
+					((LiReRequestLinkPdf article: self)
+						then: [ graph announcer announce: (LiReRequestOpenPdf article: self) ];
+						yourself) ]
