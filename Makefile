@@ -6,7 +6,7 @@ clean :
 prepare :
 	mkdir -p build
 
-dependencies:  dependency-CERMINE dependency-pdfdbscrap dependency-scholar.py dependency-pdf-linker
+dependencies: dependency-CERMINE dependency-pdfdbscrap dependency-scholar.py dependency-pdf-linker
 
 dependency-CERMINE : prepare
 	git clone git@github.com:CeON/CERMINE.git build/CERMINE
@@ -21,7 +21,7 @@ dependency-pdfdbscrap : prepare
 dependency-scholar.py : prepare
 	git clone git@github.com:maenu/scholar.py.git build/scholar.py
 	cd build/scholar.py && \
-		virtualenv .venv && \
+		virtualenv --python=python2.7 .venv && \
 		source .venv/bin/activate && \
 		python setup.py develop && \
 		deactivate && \
@@ -31,5 +31,3 @@ dependency-scholar.py : prepare
 dependency-pdf-linker :
 	cd pdf-linker && \
 		mvn clean package
-
-
