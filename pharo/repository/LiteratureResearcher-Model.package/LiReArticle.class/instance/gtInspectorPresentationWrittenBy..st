@@ -11,7 +11,7 @@ gtInspectorPresentationWrittenBy: aComposite
 				edgeClass: LiReHasWritten;
 				edgeCreateBlock: [ :n | 
 					| order existingEdges edge |
-					existingEdges := (self incomingEdgesOfClass: LiReHasWritten) collect: #order.
+					existingEdges := (self incomingEdgesOfClass: LiReHasWritten) asOrderedCollection collect: #order.
 					order := existingEdges ifEmpty: [ 1 ] ifNotEmpty: [ existingEdges max ].
 					edge := LiReHasWritten
 						graph: graph

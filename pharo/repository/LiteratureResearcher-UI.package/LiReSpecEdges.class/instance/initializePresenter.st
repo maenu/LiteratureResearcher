@@ -40,4 +40,4 @@ initializePresenter
 			n := (edgeOtherEndClassBlock cull: edgeClass) fromText: s graph: node graph.
 			node graph nodes add: n.
 			edgeCreateBlock cull: n cull: edgeClass ];
-		searchBlock: [ :s | ReadStream on: (node graph nodes select: [ :n | n class = (edgeClass perform: edgeEndClassBlock) and: [ n matches: s ] ]) ]
+		searchBlock: [ :s | ReadStream on: (node graph nodes select: [ :n | n class = (edgeEndClassBlock cull: edgeClass) and: [ n matches: s ] ]) asOrderedCollection ]

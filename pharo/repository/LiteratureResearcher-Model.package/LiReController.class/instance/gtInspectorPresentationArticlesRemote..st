@@ -4,7 +4,7 @@ gtInspectorPresentationArticlesRemote: aComposite
 	| presentation |
 	presentation := aComposite spec.
 	presentation
-		title: [ 'Search' ];
+		title: [ 'Articles (remote)' ];
 		display: [ | model |
 			model := LiReSpecSearchRemote new.
 			model

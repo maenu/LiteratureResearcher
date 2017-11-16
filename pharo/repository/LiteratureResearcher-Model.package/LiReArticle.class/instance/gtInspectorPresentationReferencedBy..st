@@ -11,7 +11,7 @@ gtInspectorPresentationReferencedBy: aComposite
 				edgeClass: LiReReferences;
 				edgeCreateBlock: [ :n | 
 					| order existingEdges edge |
-					existingEdges := (self incomingEdgesOfClass: LiReReferences) collect: #order.
+					existingEdges := (self incomingEdgesOfClass: LiReReferences) asOrderedCollection collect: #order.
 					order := existingEdges ifEmpty: [ 1 ] ifNotEmpty: [ existingEdges max ].
 					edge := LiReReferences
 						graph: graph

@@ -2,7 +2,7 @@ initialization
 initialize
 	edgeDisplayBlock := [ :e | e targetLabel ].
 	edgeIconBlock := [ :e | e target state icon ].
-	edgeEndClassBlock := [ :e | e target ].
-	edgeOtherEndClassBlock := [ :e | e source ].
+	edgeEndClassBlock := [ :c | c targetClass ].
+	edgeOtherEndClassBlock := [ :c | c sourceClass ].
 	edgesSelector := #outgoingEdgesOfClass:.
 	super initialize
