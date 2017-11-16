@@ -7,6 +7,4 @@ initializeWidgets
 		label: 'Search';
 		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);
 		yourself.
-	paginatorModel := (self instantiate: LiReSpecPaginator)
-		stream: (LiRePaginatedStream block: [ {} ]);
-		yourself
+	paginatorModel := self instantiate: LiReSpecPaginator

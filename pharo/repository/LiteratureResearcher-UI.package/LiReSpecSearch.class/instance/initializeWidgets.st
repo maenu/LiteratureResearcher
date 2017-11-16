@@ -1,14 +1,14 @@
 initialization
 initializeWidgets
-	searchText := self newTextInput
+	searchTextModel := self newTextInput
 		autoAccept: true;
 		yourself.
-	searchButton := self newButton
+	searchButtonModel := self newButton
 		help: 'Search';
 		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);
 		yourself.
-	createButton := self newButton
+	createButtonModel := self newButton
 		help: 'Create';
 		icon: (Smalltalk ui icons iconNamed: #add);
 		yourself.
-	resultList := self instantiate: FastTableModel
+	paginatorModel := self instantiate: LiReSpecPaginator

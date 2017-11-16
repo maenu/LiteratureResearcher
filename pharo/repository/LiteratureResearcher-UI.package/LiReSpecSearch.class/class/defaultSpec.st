@@ -5,9 +5,9 @@ defaultSpec
 			c
 				newRow: [ :r | 
 					r
-						add: #searchText;
-						add: #searchButton width: self toolbarHeight;
-						add: #createButton width: self toolbarHeight ]
+						add: #searchTextModel;
+						add: #searchButtonModel width: self toolbarHeight;
+						add: #createButtonModel width: self toolbarHeight ]
 					height: self toolbarHeight;
-				newRow: [ :r | r add: #resultList ] ];
+				newRow: [ :r | r add: #paginatorModel ] ];
 		yourself

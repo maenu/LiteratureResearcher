@@ -6,17 +6,16 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"list",
-		"search",
+		"paginatorModel",
+		"searchModel",
+		"edgeDisplayBlock",
+		"edgeIconBlock",
+		"edgeEndClassBlock",
+		"edgeOtherEndClassBlock",
 		"node",
 		"edgeClass",
-		"edgeDisplayBlock",
-		"edgeEndClassSelector",
-		"edgeOtherEndClassSelector",
-		"createEdgeBlock",
 		"edgesSelector",
-		"selectEdgeBlock",
-		"selectNodeBlock"
+		"edgeCreateBlock"
 	],
 	"name" : "LiReSpecEdges",
 	"type" : "normal"

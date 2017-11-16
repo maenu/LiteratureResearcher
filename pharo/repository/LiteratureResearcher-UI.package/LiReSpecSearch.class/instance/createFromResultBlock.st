@@ -1,3 +1,0 @@
-accessing
-createFromResultBlock
-	^ createFromResultBlock

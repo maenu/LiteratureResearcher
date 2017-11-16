@@ -1,6 +1,5 @@
 accessing
 dropBlock: aBlock
-	^ self basicNew
+	^ self new
 		dropBlock: aBlock;
-		initialize;
 		yourself

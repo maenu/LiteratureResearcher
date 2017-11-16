@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReSpecEdges",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReSpecOutgoingEdges",
+	"type" : "normal"
+}

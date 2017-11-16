@@ -1,3 +1,0 @@
-accessing
-edgeOtherEndClassSelector
-	^ edgeOtherEndClassSelector

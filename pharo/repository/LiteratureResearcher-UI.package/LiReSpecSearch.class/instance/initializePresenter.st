@@ -1,13 +1,20 @@
 initialization
 initializePresenter
-	searchButton action: [ resultList items: (searchBlock value: searchText text) ].
-	createButton action: [ createFromSearchTextBlock value: searchText pendingText asString ].
-	resultList displayBlock: [ :e | resultListDisplayBlock cull: e ].
-	resultList
-		menu: [ :m | 
-			resultList selectedItem
-				ifNil: [ m ]
-				ifNotNil: [ :i | 
-					m
-						addAllMorphs: ((self newMenu: i) buildWithSpec: #popup) items;
-						yourself ] ]
+	searchButtonModel
+		disable;
+		action: [ searchButtonModel
+				label: 'Searching...';
+				disable.
+			[ [ paginatorModel stream: (searchBlock cull: searchTextModel text asString) ]
+				ensure: [ searchButtonModel
+						label: 'Search';
+						enable ] ] fork ].
+	createButtonModel
+		disable;
+		action: [ createBlock cull: searchTextModel text asString ].
+	searchTextModel
+		whenTextChanged: [ :t | 
+			| enabled |
+			enabled := t asString trimmed isEmpty not.
+			searchButtonModel enabled: enabled.
+			createButtonModel enabled: enabled ]

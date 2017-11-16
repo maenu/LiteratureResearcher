@@ -3,6 +3,6 @@ defaultSpec
 	^ SpecLayout composed
 		newRow: [ :row | 
 			row
-				add: #list;
-				add: #search ];
+				add: #paginatorModel;
+				add: #searchModel ];
 		yourself
