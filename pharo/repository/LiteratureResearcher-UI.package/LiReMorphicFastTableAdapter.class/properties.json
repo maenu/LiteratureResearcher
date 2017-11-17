@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MorphicFastTableAdapter",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReMorphicFastTableAdapter",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MorphicAdapterBindings",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReMorphicAdapterBindings",
+	"type" : "normal"
+}

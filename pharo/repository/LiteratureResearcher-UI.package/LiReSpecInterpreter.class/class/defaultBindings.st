@@ -1,0 +1,3 @@
+private
+defaultBindings
+	^ LiReMorphicAdapterBindings new

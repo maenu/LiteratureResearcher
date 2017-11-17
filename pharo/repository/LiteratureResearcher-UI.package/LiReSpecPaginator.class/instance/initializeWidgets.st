@@ -1,6 +1,6 @@
 initialization
 initializeWidgets
-	listModel := self instantiate: FastTableModel.
+	listModel := self instantiate: LiReFastTableModel.
 	backModel := self newButton
 		icon: (Smalltalk ui theme icons iconNamed: #back);
 		yourself.

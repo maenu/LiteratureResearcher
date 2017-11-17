@@ -1,0 +1,3 @@
+specs
+adapterName
+	^ #LiReFastTableAdapter

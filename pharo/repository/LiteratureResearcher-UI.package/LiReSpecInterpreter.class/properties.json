@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SpecInterpreter",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReSpecInterpreter",
+	"type" : "normal"
+}
