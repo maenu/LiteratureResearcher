@@ -1,0 +1,3 @@
+removing
+removeAll
+	^ dictionary removeAll

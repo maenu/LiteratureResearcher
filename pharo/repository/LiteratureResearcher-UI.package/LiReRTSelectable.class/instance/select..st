@@ -1,10 +1,11 @@
 actions
 select: anElement
-	| subscription |
-	subscription := anElement view announcer
+	| view subscription |
+	view := anElement view.
+	subscription := view announcer
 		when: TRMouseClick
-		do: [ anElement view announcer removeSubscription: subscription.
-			self unselectAllIn: anElement view ].
+		do: [ view announcer removeSubscription: subscription.
+			self unselectAllIn: view ].
 	self unselectAllIn: anElement view.
 	anElement attributeAt: #selected put: true.
 	anElement attributeAt: #originalColor ifAbsentPut: anElement trachelShape color.
