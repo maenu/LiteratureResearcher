@@ -1,6 +1,6 @@
 as yet unclassified
 gtInspectorPresentationHasWrittenRemote: aComposite
-	<gtInspectorPresentationOrder: 3>
+	<gtInspectorPresentationOrder: 4>
 	| presentation |
 	presentation := aComposite spec.
 	presentation
@@ -22,7 +22,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 				yourself.
 			model listModel
 				displayBlock: [ :e | e targetLabel ];
-				icons: [ :e | e target state icon ];
+				icons: [ :e | e target asIcon ];
 				whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
 			graph announcer
 				announce:

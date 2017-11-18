@@ -1,4 +1,4 @@
 initialization
 initialize
 	super initialize.
-	state := LiReState default
+	labels := LiReSortedSet sortBlock: LiReLabel sortBlock

@@ -32,8 +32,8 @@ initializePresenter
 								action: [ edgeCreateBlock cull: n cull: edgeClass ] ] ].
 			menu ].
 	searchModel paginatorModel listModel
-		displayBlock: [ :n | n label ];
-		icons: [ :n | n state icon ].
+		displayBlock: [ :n | n asString ];
+		icons: [ :n | n asIcon ].
 	searchModel
 		createBlock: [ :s | 
 			| n |

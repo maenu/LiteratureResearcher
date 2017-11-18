@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "AbstractMorphicAdapter",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReMorphicColorChooserAdapter",
+	"type" : "normal"
+}

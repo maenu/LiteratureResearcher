@@ -1,11 +1,13 @@
 {
-	"commentStamp" : "",
-	"super" : "FastTableModel",
-	"category" : "LiteratureResearcher-UI",
-	"classinstvars" : [ ],
-	"pools" : [ ],
+	"classtraitcomposition" : "TLiReSpecInterpretable classTrait",
 	"classvars" : [ ],
 	"instvars" : [ ],
 	"name" : "LiReFastTableModel",
-	"type" : "normal"
+	"commentStamp" : "",
+	"super" : "FastTableModel",
+	"traitcomposition" : "TLiReSpecInterpretable",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "LiteratureResearcher-UI"
 }

@@ -6,7 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"state"
+		"labels"
 	],
 	"name" : "LiReNode",
 	"type" : "normal"

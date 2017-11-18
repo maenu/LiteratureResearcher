@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "LiteratureResearcher-UI",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labels",
+		"paginatorModel",
+		"addDropListModel",
+		"addButtonModel",
+		"createButtonModel",
+		"createTextModel",
+		"createColorModel"
+	],
+	"name" : "LiReSpecLabels",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+accessing
+selectedColor
+	^ selectedColor value

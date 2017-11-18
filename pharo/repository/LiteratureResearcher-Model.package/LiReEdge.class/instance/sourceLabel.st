@@ -1,3 +1,3 @@
 accessing
 sourceLabel
-	^ key , ' < ' , source label
+	^ key , ' < ' , source asString

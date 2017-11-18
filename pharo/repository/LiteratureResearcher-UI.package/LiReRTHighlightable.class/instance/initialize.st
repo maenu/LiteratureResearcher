@@ -2,8 +2,8 @@ initialization
 initialize
 	super initialize.
 	labelledInteraction := RTLabeled new
-		color: (LiReState colorFromCss: '#4c4b1b');
+		color: (Color fromString: '#4c4b1b');
 		yourself.
-	fromColor := LiReState colorFromCss: '#cecc65'.
-	color := LiReState colorFromCss: '#c0be3f'.
-	toColor := LiReState colorFromCss: '#999833'
+	fromColor := Color fromString: '#cecc65'.
+	color := Color fromString: '#c0be3f'.
+	toColor := Color fromString: '#999833'

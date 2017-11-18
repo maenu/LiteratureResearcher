@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SortedCollection",
+	"category" : "LiteratureResearcher-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReSortedSet",
+	"type" : "normal"
+}

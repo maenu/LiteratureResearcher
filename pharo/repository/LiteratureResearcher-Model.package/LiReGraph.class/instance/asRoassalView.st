@@ -10,7 +10,7 @@ asRoassalView
 		view: view;
 		addText: 'Node colors represent the state, i.e. how deep they have been investigated';
 		yourself.
-	LiReState states do: [ :s | legendBuilder addColor: s color text: s label ].
+	LiReLabel allInstancesSorted do: [ :l | legendBuilder addColor: l asColor text: l asString ].
 	legendBuilder build.
 	view @ RTZoomableView.
 	view @ RTDraggableView.

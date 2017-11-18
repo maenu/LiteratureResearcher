@@ -1,6 +1,6 @@
 as yet unclassified
 gtInspectorPresentationReferencedBy: aComposite
-	<gtInspectorPresentationOrder: 4>
+	<gtInspectorPresentationOrder: 5>
 	| presentation |
 	presentation := aComposite spec.
 	presentation

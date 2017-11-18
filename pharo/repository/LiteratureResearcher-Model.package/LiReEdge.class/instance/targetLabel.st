@@ -1,3 +1,3 @@
 accessing
 targetLabel
-	^ key , ' > ' , target label
+	^ key , ' > ' , target asString

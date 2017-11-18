@@ -1,6 +1,6 @@
 converting
 gtInspectorPresentationReferencedByRemote: aComposite
-	<gtInspectorPresentationOrder: 5>
+	<gtInspectorPresentationOrder: 6>
 	| presentation |
 	presentation := aComposite spec.
 	presentation
@@ -21,7 +21,7 @@ gtInspectorPresentationReferencedByRemote: aComposite
 				yourself.
 			model listModel
 				displayBlock: [ :e | e sourceLabel ];
-				icons: [ :e | e source state icon ];
+				icons: [ :e | e source asIcon ];
 				whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
 			graph announcer
 				announce:

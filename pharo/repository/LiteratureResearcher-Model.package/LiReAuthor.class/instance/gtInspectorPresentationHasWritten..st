@@ -1,6 +1,6 @@
 as yet unclassified
 gtInspectorPresentationHasWritten: aComposite
-	<gtInspectorPresentationOrder: 2>
+	<gtInspectorPresentationOrder: 3>
 	| presentation |
 	presentation := aComposite spec.
 	presentation

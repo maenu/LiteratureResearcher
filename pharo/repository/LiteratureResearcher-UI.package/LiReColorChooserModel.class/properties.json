@@ -1,0 +1,15 @@
+{
+	"classtraitcomposition" : "TLiReSpecInterpretable classTrait",
+	"classvars" : [ ],
+	"instvars" : [
+		"selectedColor"
+	],
+	"name" : "LiReColorChooserModel",
+	"commentStamp" : "",
+	"super" : "AbstractWidgetModel",
+	"traitcomposition" : "TLiReSpecInterpretable",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "LiteratureResearcher-UI"
+}
