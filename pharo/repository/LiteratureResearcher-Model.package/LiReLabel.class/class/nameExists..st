@@ -1,3 +1,3 @@
 as yet unclassified
-instanceWithNameExists: aString
+nameExists: aString
 	^ self allInstances anySatisfy: [ :l | l asString = aString ]

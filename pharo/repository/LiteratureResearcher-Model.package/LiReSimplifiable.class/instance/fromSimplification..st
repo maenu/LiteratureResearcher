@@ -1,0 +1,3 @@
+converting
+fromSimplification: aSimplification
+	self subclassResponsibility

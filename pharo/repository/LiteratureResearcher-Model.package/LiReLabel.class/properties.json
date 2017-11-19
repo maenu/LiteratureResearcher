@@ -1,12 +1,10 @@
 {
 	"commentStamp" : "",
-	"super" : "Object",
+	"super" : "LiReSimplifiable",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"Default"
-	],
+	"classvars" : [ ],
 	"instvars" : [
 		"name",
 		"color"

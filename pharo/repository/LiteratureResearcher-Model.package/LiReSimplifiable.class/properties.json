@@ -1,15 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReSimplifiable",
+	"super" : "Object",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"nodes",
-		"edges",
-		"announcer"
-	],
-	"name" : "LiReGraph",
+	"instvars" : [ ],
+	"name" : "LiReSimplifiable",
 	"type" : "normal"
 }
