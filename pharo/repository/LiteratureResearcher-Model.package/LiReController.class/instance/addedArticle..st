@@ -1,4 +1,4 @@
-as yet unclassified
+adding
 addedArticle: anArticle
 	self normalizeArticle: anArticle.
 	anArticle announcer

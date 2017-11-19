@@ -42,24 +42,33 @@ graph: anObject
 			self
 				schedule: [ actionOpenPdf executeIn: a article.
 					a then value ]
-				title: 'Open PDF' ].
-	graph announcer
+				title: 'Open PDF' ];
 		when: LiReNodeAdded
 			do: [ :a | 
-			self addedNode: a node.
-			self scheduleLayout.
-			a then value ];
-		when: LiReEdgeRemoved
-			do: [ :a | 
-			self scheduleLayout.
-			a then value ];
-		when: LiReEdgeAdded
-			do: [ :a | 
-			self addedEdge: a edge.
+			a node isCollection
+				ifTrue: [ a node do: [ :e | self addNode: e ] ]
+				ifFalse: [ self addNode: a node ].
 			self scheduleLayout.
 			a then value ];
 		when: LiReNodeRemoved
 			do: [ :a | 
+			a node isCollection
+				ifTrue: [ a node do: [ :e | self removeNode: e ] ]
+				ifFalse: [ self removeNode: a node ].
+			self scheduleLayout.
+			a then value ];
+		when: LiReEdgeAdded
+			do: [ :a | 
+			a edge isCollection
+				ifTrue: [ a edge do: [ :e | self addEdge: e ] ]
+				ifFalse: [ self addEdge: a edge ].
+			self scheduleLayout.
+			a then value ];
+		when: LiReEdgeRemoved
+			do: [ :a | 
+			a edge isCollection
+				ifTrue: [ a edge do: [ :e | self removeEdge: e ] ]
+				ifFalse: [ self removeEdge: a edge ].
 			self scheduleLayout.
 			a then value ].
 	self scheduleLayout

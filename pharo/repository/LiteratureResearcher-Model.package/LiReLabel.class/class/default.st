@@ -1,3 +1,3 @@
 accessing
 default
-	^ self name: 'default' color: Color white
+	^ self name: 'default' color: Color veryLightGray

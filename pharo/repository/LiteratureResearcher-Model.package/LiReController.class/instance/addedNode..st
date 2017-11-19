@@ -1,4 +1,4 @@
-notifying
+adding
 addedNode: aNode
 	(aNode isKindOf: LiReArticle)
 		ifTrue: [ self addedArticle: aNode ].
