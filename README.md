@@ -11,10 +11,11 @@ Hyperlinks title, authors, and references in PDFs with the graph in Pharo.
 
 [See a short video here](https://youtu.be/EcK3Pt_WnEw)
 
+[Prepared macOS Pharo](https://figshare.com/articles/LiteratureResearcher_All-in-one/5584837)
 
 ## Installation
 
-Make sure you have `make`, the `Xcode command line tools`, `Java 8`, and `Maven` installed.
+Make sure you have `make`, the `Xcode command line tools`, `Java 8`, `Maven`, `python`, `virtualenv`, and `perl` installed.
 Then run the following script in a playground:
 
 ```
