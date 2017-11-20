@@ -13,5 +13,5 @@ processPdf: anId with: aFileReference outputs: anOrderedCollection
 			(LiReSubprocess escape: (',' join: anOrderedCollection)).
 			'-exts'.
 			(LiReSubprocess escape: (',' join: anOrderedCollection))}
-		wait: 10 seconds.
+		wait: 30 seconds.
 	^ self processResultIn: directory outputs: anOrderedCollection
