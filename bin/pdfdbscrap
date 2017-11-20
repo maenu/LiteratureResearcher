@@ -6,4 +6,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 FILE=$(mktemp)
 trap 'rm -f -- "$FILE"' INT TERM HUP EXIT
 echo "$1" > "$FILE"
-java -jar "$DIR/../build/pdfdbscrap/target/pdfdbscrap-1.0.0-SNAPSHOT.jar" --file "$FILE" --out "$2" --range '1-1'
+java -Djava.awt.headless=true -jar "$DIR/../build/pdfdbscrap/target/pdfdbscrap-1.0.0-SNAPSHOT.jar" --file "$FILE" --out "$2" --range '1-1'
