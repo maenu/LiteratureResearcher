@@ -29,14 +29,14 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 
-import ch.unibe.scg.pdflinker.clickable.AbstractClickable;
-import ch.unibe.scg.pdflinker.clickable.Author;
-import ch.unibe.scg.pdflinker.clickable.Reference;
-import ch.unibe.scg.pdflinker.clickable.Title;
 import ch.unibe.scg.pdflinker.dom.DomParser;
 import ch.unibe.scg.pdflinker.dom.Element;
 import ch.unibe.scg.pdflinker.dom.Line;
 import ch.unibe.scg.pdflinker.dom.Page;
+import ch.unibe.scg.pdflinker.link.Author;
+import ch.unibe.scg.pdflinker.link.Link;
+import ch.unibe.scg.pdflinker.link.Reference;
+import ch.unibe.scg.pdflinker.link.Title;
 
 public class Linker {
 
@@ -55,13 +55,13 @@ public class Linker {
 			throws InvalidPasswordException, IOException {
 		try (PDDocument document = PDDocument.load(in)) {
 			document.setAllSecurityToBeRemoved(true);
-			this.removeHyperLinks(document);
-			this.addHyperLinks(document, title, authors, references);
+			this.removeLinks(document);
+			this.addLinks(document, title, authors, references);
 			document.save(out);
 		}
 	}
 
-	private void removeHyperLinks(PDDocument document) throws IOException {
+	private void removeLinks(PDDocument document) throws IOException {
 		for (int i = 0; i < document.getNumberOfPages(); i = i + 1) {
 			PDPage page = document.getPage(i);
 			List<PDStream> contents = new ArrayList<>();
@@ -81,27 +81,27 @@ public class Linker {
 		}
 	}
 
-	private void addHyperLinks(PDDocument document, Title title, List<Author> authors, List<Reference> references)
+	private void addLinks(PDDocument document, Title title, List<Author> authors, List<Reference> references)
 			throws IOException {
 		(new DomParser()).parse(document).entrySet().stream().forEach(entry -> {
-			this.addHyperLinksTitle(document, entry.getKey(), entry.getValue(), title);
-			this.addHyperLinksAuthors(document, entry.getKey(), entry.getValue(), authors);
-			this.addHyperLinksReferences(document, entry.getKey(), entry.getValue(), references);
+			this.addLinksTitle(document, entry.getKey(), entry.getValue(), title);
+			this.addLinksAuthors(document, entry.getKey(), entry.getValue(), authors);
+			this.addLinksReferences(document, entry.getKey(), entry.getValue(), references);
 		});
 	}
 
-	private void addHyperLinksTitle(PDDocument document, PDPage page, Page page0, Title title) {
+	private void addLinksTitle(PDDocument document, PDPage page, Page page0, Title title) {
 		String titleNormalized = title.getKey().trim().toLowerCase();
 		if (titleNormalized.isEmpty()) {
 			return;
 		}
 		page0.getChildren().stream()
 				.filter(p -> p.getText().replaceAll("\\s+", " ").trim().toLowerCase().contains(titleNormalized))
-				.forEach(p -> this.addHyperLink(document, page, p.getRectangle(), title));
+				.forEach(p -> this.addLink(document, page, p.getRectangle(), title));
 
 	}
 
-	private void addHyperLinksAuthors(PDDocument document, PDPage page, Page page0, List<Author> authors) {
+	private void addLinksAuthors(PDDocument document, PDPage page, Page page0, List<Author> authors) {
 		Map<Author, List<String>> authorsNormalized = authors.stream()
 				.collect(Collectors.toMap(a -> a,
 						a -> Arrays.asList(a.getKey().trim().toLowerCase().replaceAll("[^a-z\\s]", "").split("\\s+"))))
@@ -122,12 +122,12 @@ public class Linker {
 				}
 				PDRectangle rectangle = l.getChildren().subList(i, i + words.size()).stream().map(Element::getRectangle)
 						.reduce(Element::union).get();
-				this.addHyperLink(document, page, rectangle, a);
+				this.addLink(document, page, rectangle, a);
 			});
 		});
 	}
 
-	private void addHyperLinksReferences(PDDocument document, PDPage page, Page page0, List<Reference> references) {
+	private void addLinksReferences(PDDocument document, PDPage page, Page page0, List<Reference> references) {
 		Map<Reference, List<String>> referencesNormalized = references.stream()
 				.collect(Collectors.toMap(r -> r, r -> Arrays.asList(r.getKey().trim().toLowerCase().split("\\s+"))))
 				.entrySet().stream().filter(e -> !e.getValue().isEmpty())
@@ -151,7 +151,7 @@ public class Linker {
 						// finish current
 						PDRectangle rectangle = currentLines.stream().map(Element::getRectangle).reduce(Element::union)
 								.get();
-						this.addHyperLink(document, page, rectangle, current.get());
+						this.addLink(document, page, rectangle, current.get());
 					}
 					current = next;
 					currentLines = new ArrayList<>();
@@ -161,12 +161,12 @@ public class Linker {
 			if (current.isPresent()) {
 				// finish last
 				PDRectangle rectangle = currentLines.stream().map(Element::getRectangle).reduce(Element::union).get();
-				this.addHyperLink(document, page, rectangle, current.get());
+				this.addLink(document, page, rectangle, current.get());
 			}
 		});
 	}
 
-	private void addHyperLink(PDDocument document, PDPage page, PDRectangle rectangle, AbstractClickable clickable) {
+	private void addLink(PDDocument document, PDPage page, PDRectangle rectangle, Link link) {
 		rectangle = this.normalizeRectangle(rectangle);
 		try (PDPageContentStream content = new PDPageContentStream(document, page, AppendMode.PREPEND, true)) {
 			content.beginText();
@@ -177,7 +177,7 @@ public class Linker {
 			graphicsState.setNonStrokingAlphaConstant(COLOR_ALPHA);
 			content.saveGraphicsState();
 			content.setGraphicsStateParameters(graphicsState);
-			content.setNonStrokingColor(clickable.getColor());
+			content.setNonStrokingColor(link.getColor());
 			content.addRect(rectangle.getLowerLeftX(), rectangle.getLowerLeftY(), rectangle.getWidth(),
 					rectangle.getHeight());
 			content.fill();
@@ -190,22 +190,22 @@ public class Linker {
 			PDBorderStyleDictionary borderStyle = new PDBorderStyleDictionary();
 			borderStyle.setWidth(0);
 			PDActionURI action = new PDActionURI();
-			action.setURI(this.asUri(clickable));
-			PDAnnotationLink link = new PDAnnotationLink();
-			link.setContents(CONTENTS);
-			link.setBorderStyle(borderStyle);
-			link.setAction(action);
-			link.setRectangle(rectangle);
-			page.getAnnotations().add(0, link);
+			action.setURI(this.asUri(link));
+			PDAnnotationLink annotation = new PDAnnotationLink();
+			annotation.setContents(CONTENTS);
+			annotation.setBorderStyle(borderStyle);
+			annotation.setAction(action);
+			annotation.setRectangle(rectangle);
+			page.getAnnotations().add(0, annotation);
 		} catch (IOException exception) {
 			// TODO Auto-generated catch block
 			exception.printStackTrace();
 		}
 	}
 
-	private String asUri(AbstractClickable clickable) {
-		return String.format("pharo://handle/click%sWithId.in.?args=%s&args=%s", clickable.getClass().getSimpleName(),
-				this.asUrlComponent(clickable.getId()), this.asUrlComponent(this.id));
+	private String asUri(Link link) {
+		return String.format("pharo://handle/click%sWithId.in.?args=%s&args=%s", link.getClass().getSimpleName(),
+				this.asUrlComponent(link.getId()), this.asUrlComponent(this.id));
 	}
 
 	private String asUrlComponent(String s) {

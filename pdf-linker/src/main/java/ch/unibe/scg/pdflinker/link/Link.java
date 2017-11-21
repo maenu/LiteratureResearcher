@@ -1,14 +1,14 @@
-package ch.unibe.scg.pdflinker.clickable;
+package ch.unibe.scg.pdflinker.link;
 
 import java.awt.Color;
 
-public abstract class AbstractClickable {
+public abstract class Link {
 
 	protected String id;
 	protected String key;
 	protected Color color;
 
-	public AbstractClickable(String id, String key, Color color) {
+	public Link(String id, String key, Color color) {
 		this.id = id;
 		this.key = key;
 		this.color = color;

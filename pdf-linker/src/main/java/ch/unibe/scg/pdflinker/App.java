@@ -20,9 +20,9 @@ import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 
 import com.google.gson.Gson;
 
-import ch.unibe.scg.pdflinker.clickable.Author;
-import ch.unibe.scg.pdflinker.clickable.Reference;
-import ch.unibe.scg.pdflinker.clickable.Title;
+import ch.unibe.scg.pdflinker.link.Author;
+import ch.unibe.scg.pdflinker.link.Reference;
+import ch.unibe.scg.pdflinker.link.Title;
 
 public class App {
 
