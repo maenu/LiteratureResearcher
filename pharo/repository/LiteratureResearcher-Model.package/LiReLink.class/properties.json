@@ -1,16 +1,17 @@
 {
 	"commentStamp" : "",
-	"super" : "LiReNode",
+	"super" : "LiReSimplifiable",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"bibtex",
-		"csv",
-		"document",
-		"titleLink"
+		"key",
+		"id",
+		"text",
+		"rectangle",
+		"color"
 	],
-	"name" : "LiReArticle",
+	"name" : "LiReLink",
 	"type" : "normal"
 }

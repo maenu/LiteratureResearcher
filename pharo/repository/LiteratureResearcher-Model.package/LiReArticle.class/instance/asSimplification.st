@@ -10,5 +10,6 @@ asSimplification
 								render: b;
 								contents) trimmed ])).
 			(#csv -> csv).
-			(#document -> (document ifNotNil: [ :d | d fullPrintString ]))} asDictionary;
+			(#document -> (document ifNotNil: [ :d | d fullPrintString ])).
+			(#titleLink -> (titleLink ifNotNil: [ titleLink asSimplification ]))} asDictionary;
 		yourself

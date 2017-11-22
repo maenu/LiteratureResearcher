@@ -21,7 +21,7 @@ gtInspectorPresentationAuthors: aComposite
 										action: [ graph announcer announce: (LiReRequestSelectNode entity: n) ] ] ].
 					menu ].
 			model paginatorModel listModel
-				displayBlock: [ :n | n asColor ];
+				displayBlock: [ :n | n asString ];
 				icons: [ :n | n asIcon ];
 				whenSelectedItemChanged: [ :n | n ifNotNil: [ presentation selection: n ] ].
 			model

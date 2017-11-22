@@ -9,7 +9,8 @@
 		"source",
 		"target",
 		"key",
-		"order"
+		"order",
+		"link"
 	],
 	"name" : "LiReEdge",
 	"type" : "normal"

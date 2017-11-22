@@ -16,5 +16,6 @@ mergeCsv: aDictionary
 	((csv includesKey: #clusterId) and: [ (bibtex hasField: #clusterid) not ])
 		ifTrue: [ bibtex at: #clusterid put: (csv at: #clusterId).
 			bibtexChanged := true ].
+	self invalidateTitleLink.
 	bibtexChanged
 		ifTrue: [ self propertyChanged: #bibtex ]

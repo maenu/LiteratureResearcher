@@ -3,6 +3,7 @@ key: anObject
 	| oldValue |
 	oldValue := key.
 	key := anObject.
+	self invalidateLink.
 	oldValue == key
 		ifFalse: [ announcer
 				announce:

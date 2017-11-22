@@ -28,6 +28,10 @@ baseline: spec
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ];
+				configuration: 'Phonetix'
+					with: [ spec
+						versionString: #stable;
+						repository: 'http://www.smalltalkhub.com/mc/olivierauverlot/Phonetix/main' ];
 				configuration: 'PharoUriScheme'
 					with: [ spec
 						versionString: #stable;
@@ -40,6 +44,6 @@ baseline: spec
 				package: 'LiteratureResearcher-UI';
 				group: 'default'
 					with:
-					#('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2' 'PharoUriScheme' 'LiteratureResearcher-Actions' 'LiteratureResearcher-Announcements' 'LiteratureResearcher-ExternalTools' 'LiteratureResearcher-ExternalTools-Tests' 'LiteratureResearcher-Model' 'LiteratureResearcher-UI');
+					#('XPath' 'NeoJSON' 'NeoCSV' 'OSProcess' 'Citezen' 'Roassal2' 'Phonetix' 'PharoUriScheme' 'LiteratureResearcher-Actions' 'LiteratureResearcher-Announcements' 'LiteratureResearcher-ExternalTools' 'LiteratureResearcher-ExternalTools-Tests' 'LiteratureResearcher-Model' 'LiteratureResearcher-UI');
 				postLoadDoIt: #postLoadActions;
 				yourself ]
