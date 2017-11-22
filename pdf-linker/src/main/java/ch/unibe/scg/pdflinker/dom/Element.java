@@ -1,6 +1,10 @@
 package ch.unibe.scg.pdflinker.dom;
 
+import java.util.Collection;
+import java.util.Optional;
+
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.text.TextPosition;
 
 public abstract class Element {
 
@@ -12,6 +16,14 @@ public abstract class Element {
 		rectangle.setUpperRightY(Math.max(a.getUpperRightY(), b.getUpperRightY()));
 		return rectangle;
 	}
+
+	public abstract Optional<Word> getWordContaining(TextPosition textPosition);
+
+	public abstract Optional<Element> getElementContainingAll(Collection<TextPosition> textPositions);
+
+	public abstract boolean contains(TextPosition textPosition);
+
+	public abstract boolean containsAll(Collection<TextPosition> textPositions);
 
 	public abstract PDRectangle getRectangle();
 

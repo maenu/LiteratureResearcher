@@ -1,7 +1,9 @@
 package ch.unibe.scg.pdflinker.dom;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.text.TextPosition;
@@ -19,7 +21,43 @@ public class Word extends Element {
 
 	public void append(String string, List<TextPosition> textPositions) {
 		this.builder.append(string);
+		// normalize dir to make equals work
+		textPositions.forEach(TextPosition::getDir);
 		this.textPositions.addAll(textPositions);
+	}
+
+	@Override
+	public Optional<Word> getWordContaining(TextPosition textPosition) {
+		// normalize dir to make equals work
+		textPosition.getDir();
+		if (this.contains(textPosition)) {
+			return Optional.of(this);
+		} else {
+			return Optional.empty();
+		}
+	}
+
+	@Override
+	public Optional<Element> getElementContainingAll(Collection<TextPosition> textPositions) {
+		// normalize dir to make equals work
+		textPositions.forEach(TextPosition::getDir);
+		if (this.containsAll(textPositions)) {
+			return Optional.of(this);
+		} else {
+			return Optional.empty();
+		}
+	}
+
+	@Override
+	public boolean contains(TextPosition textPosition) {
+		// normalize dir to make equals work
+		textPosition.getDir();
+		return this.textPositions.contains(textPosition);
+	}
+
+	@Override
+	public boolean containsAll(Collection<TextPosition> textPositions) {
+		return this.textPositions.containsAll(textPositions);
 	}
 
 	@Override
