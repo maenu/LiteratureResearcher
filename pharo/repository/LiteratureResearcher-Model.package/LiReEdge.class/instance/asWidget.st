@@ -11,7 +11,7 @@ asWidget
 	model orderLabel label: 'Order'.
 	model order
 		text: order;
-		acceptBlock: [ :s | self order: s ].
+		acceptBlock: [ :s | self order: s asInteger ].
 	self whenPropertyChangedDo: [ model order text: order ].
 	model
 		layout:

@@ -1,6 +1,6 @@
 as yet unclassified
 processPdf: anId with: aFileReference links: aSimplification
-	| output result |
+	| output result links |
 	output := FileReference newTempFilePrefix: 'LiRePdfLinker' suffix: '.pdf'.
 	result := subprocess
 		execute:
@@ -13,5 +13,7 @@ processPdf: anId with: aFileReference links: aSimplification
 		wait: 30 seconds.
 	output exists
 		ifFalse: [ LiRePdfLinkerProcessError signal: 'Expected "' , output pathString , '" to exist, but it does not' ].
+	self flag: 'why do i need to replace whitespace characters?'.
+	links := NeoJSONReader fromString: (result out copyReplaceAll: '\\' with: '\').
 	^ {(#output -> output).
-	(#links -> (NeoJSONReader fromString: result out))} asDictionary
+	(#links -> links)} asDictionary

@@ -1,10 +1,12 @@
 target resize
 executeIn: anArticle
-	| result links |
-	result := pdfLinker processPdf: anArticle bibtex key with: (self repositoryPdfOf: anArticle) links: (self asLinksSimplification: anArticle).
+	| result old new |
+	old := self normalizeLinksSimplification: (self asLinksSimplification: anArticle).
+	result := pdfLinker processPdf: anArticle bibtex key with: (self repositoryPdfOf: anArticle) links: old.
 	self movePdf: (result at: #output) toRepositoryFor: anArticle.
-	links := self fromLinksSimplification: (result at: #links).
-	(self isLinksEmpty: links)
+	new := self normalizeLinksSimplification: (result at: #links).
+	new = old
 		ifTrue: [ ^ self ].
-	self mergeLinks: links in: anArticle.
+	Halt now.
+	self mergeLinks: (self fromLinksSimplification: new) in: anArticle.
 	self executeIn: anArticle

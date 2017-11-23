@@ -28,14 +28,17 @@ mergeLinks: aDictionary in: anArticle
 	(aDictionary at: #references)
 		do: [ :l | 
 			| text edge |
-			text := l text copyWithRegex: '\s+' matchesReplacedWith: ' '.
+			text := l text ifNotNil: [ :s | s copyWithRegex: '\s+' matchesReplacedWith: ' ' ].
 			edge := existingReferences
 				detect: [ :e | e matches: l key ]
 				ifNone: [ | node |
 					node := (anArticle graph nodesOfClass: LiReArticle)
-						detect: [ :n | ((n key asLowercase levenshteinDistanceTo: text asLowercase) - (n key size - text size) abs) / (n key size min: text size) < 0.1 ]
+						detect: [ :n | 
+							n key size > 0
+								and: [ ((n key asLowercase levenshteinDistanceTo: text asLowercase) - (n key size - text size) abs) / (n key size min: text size) < 0.1 ] ]
 						ifNone: [ | bibtex |
 							bibtex := CZEntry type: CZEntry article.
+							bibtex key: 'GENERATED'.
 							bibtex at: #title put: text.
 							anArticle graph nodes
 								add:
@@ -46,13 +49,12 @@ mergeLinks: aDictionary in: anArticle
 										document: nil) ].
 					anArticle graph edges
 						add:
-							(LiReHasWritten
+							(LiReReferences
 								graph: anArticle graph
-								source: node
-								target: anArticle
+								source: anArticle
+								target: node
 								key: l key
 								order: -1
-								email: nil
-								institution: nil
-								country: nil) ].
+								bibtex: nil
+								text: l text) ].
 			edge link: l ]

@@ -9,6 +9,7 @@
 		"key",
 		"id",
 		"text",
+		"page",
 		"rectangle",
 		"color"
 	],
