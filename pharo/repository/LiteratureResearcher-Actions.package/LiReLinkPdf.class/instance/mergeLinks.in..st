@@ -9,9 +9,7 @@ mergeLinks: aDictionary in: anArticle
 			edge := existingHasWritten
 				detect: [ :e | e matches: l key ]
 				ifNone: [ | node |
-					node := (anArticle graph nodesOfClass: LiReAuthor)
-						detect: [ :n | n matches: l key ]
-						ifNone: [ anArticle graph nodes add: (LiReAuthor graph: anArticle graph name: l text) ].
+					node := (anArticle graph nodesOfClass: LiReAuthor) detect: [ :n | n matches: l key ] ifNone: [ anArticle graph nodes add: (LiReAuthor graph: anArticle graph name: l text) ].
 					anArticle graph edges
 						add:
 							(LiReHasWritten
@@ -28,14 +26,12 @@ mergeLinks: aDictionary in: anArticle
 	(aDictionary at: #references)
 		do: [ :l | 
 			| text edge |
-			text := l text ifNotNil: [ :s | s copyWithRegex: '\s+' matchesReplacedWith: ' ' ].
+			text := l text ifNotNil: [ :s | (s copyWithRegex: '\s+' matchesReplacedWith: ' ') copyReplaceAll: '- ' with: '' ].
 			edge := existingReferences
 				detect: [ :e | e matches: l key ]
 				ifNone: [ | node |
 					node := (anArticle graph nodesOfClass: LiReArticle)
-						detect: [ :n | 
-							n key size > 0
-								and: [ ((n key asLowercase levenshteinDistanceTo: text asLowercase) - (n key size - text size) abs) / (n key size min: text size) < 0.1 ] ]
+						detect: [ :n | (n key size > 0 and: [ text isNotNil ]) and: [ ((n key asLowercase levenshteinDistanceTo: text asLowercase) - (n key size - text size) abs) / (n key size min: text size) < 0.1 ] ]
 						ifNone: [ | bibtex |
 							bibtex := CZEntry type: CZEntry article.
 							bibtex key: 'GENERATED'.

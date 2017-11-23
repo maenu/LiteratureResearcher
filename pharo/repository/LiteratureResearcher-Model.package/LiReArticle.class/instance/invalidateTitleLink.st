@@ -2,6 +2,6 @@ as yet unclassified
 invalidateTitleLink
 	titleLink ifNil: [ titleLink := LiReLink new ].
 	titleLink
-		key: bibtex key;
-		id: bibtex title value;
+		key: bibtex title value;
+		id: bibtex key;
 		color: self asColor
