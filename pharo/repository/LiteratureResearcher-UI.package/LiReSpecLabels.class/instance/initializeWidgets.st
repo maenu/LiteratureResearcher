@@ -17,5 +17,5 @@ initializeWidgets
 	createColorModel := self newColorChooser.
 	createButtonModel := self newButton
 		help: 'Create';
-		icon: (Smalltalk ui icons iconNamed: #add);
+		icon: #add asIcon;
 		yourself

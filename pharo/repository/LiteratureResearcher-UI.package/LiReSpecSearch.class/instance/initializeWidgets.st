@@ -9,6 +9,6 @@ initializeWidgets
 		yourself.
 	createButtonModel := self newButton
 		help: 'Create';
-		icon: (Smalltalk ui icons iconNamed: #add);
+		icon: #add asIcon;
 		yourself.
 	paginatorModel := self instantiate: LiReSpecPaginator

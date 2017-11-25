@@ -19,9 +19,14 @@ initializePresenter
 	createTextModel
 		whenTextChanged: [ :t | 
 			| exists |
-			exists := LiReLabel instanceWithNameExists: t asString.
+			exists := LiReLabel nameExists: t asString.
 			createTextModel hasEditingConflicts: exists.
-			createButtonModel enabled: (exists not and: t asString trimmed isEmpty not) ].
+			createButtonModel
+				enabled: (exists not and: t asString trimmed isNotEmpty) ].
 	createButtonModel
 		disable;
-		action: [ labels add: (LiReLabel name: createTextModel text asString color: createColorModel selectedColor) ]
+		action: [ labels
+				add:
+					(LiReLabel
+						name: createTextModel text asString
+						color: createColorModel selectedColor) ]

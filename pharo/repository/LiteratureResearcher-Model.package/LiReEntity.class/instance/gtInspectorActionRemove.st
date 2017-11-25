@@ -1,0 +1,3 @@
+accessing
+gtInspectorActionRemove
+	self subclassResponsibility

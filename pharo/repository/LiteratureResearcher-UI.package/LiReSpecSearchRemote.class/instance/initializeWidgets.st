@@ -5,6 +5,6 @@ initializeWidgets
 		yourself.
 	buttonModel := self newButton
 		label: 'Search';
-		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);
+		icon: #glamorousSearch asIcon;
 		yourself.
 	paginatorModel := self instantiate: LiReSpecPaginator

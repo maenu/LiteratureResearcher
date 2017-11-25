@@ -5,7 +5,8 @@ initializePresenter
 		action: [ searchButtonModel
 				label: 'Searching...';
 				disable.
-			[ [ paginatorModel stream: (searchBlock cull: searchTextModel text asString) ]
+			[ [ paginatorModel
+				stream: (searchBlock cull: searchTextModel text asString) ]
 				ensure: [ searchButtonModel
 						label: 'Search';
 						enable ] ] fork ].
@@ -15,6 +16,6 @@ initializePresenter
 	searchTextModel
 		whenTextChanged: [ :t | 
 			| enabled |
-			enabled := t asString trimmed isEmpty not.
+			enabled := t asString trimmed isNotEmpty.
 			searchButtonModel enabled: enabled.
 			createButtonModel enabled: enabled ]

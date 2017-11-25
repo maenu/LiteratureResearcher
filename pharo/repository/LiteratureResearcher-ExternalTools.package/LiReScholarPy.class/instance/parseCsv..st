@@ -1,3 +1,4 @@
 parsing
 parseCsv: aString
-	^ ((Character lf split: aString) select: [ :s | s isEmpty not ]) collect: [ :s | self parseCsvRow: s ]
+	^ ((Character lf split: aString) reject: [ :s | s isEmpty ])
+		collect: [ :s | self parseCsvRow: s ]

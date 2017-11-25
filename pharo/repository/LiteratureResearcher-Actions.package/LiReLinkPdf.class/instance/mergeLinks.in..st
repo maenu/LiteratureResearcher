@@ -31,7 +31,7 @@ mergeLinks: aDictionary in: anArticle
 				detect: [ :e | e matches: l key ]
 				ifNone: [ | node |
 					node := (anArticle graph nodesOfClass: LiReArticle)
-						detect: [ :n | (n key size > 0 and: [ text isNotNil ]) and: [ ((n key asLowercase levenshteinDistanceTo: text asLowercase) - (n key size - text size) abs) / (n key size min: text size) < 0.1 ] ]
+						detect: [ :n | n key isNotEmpty and: [ [ text isNotNil ] and: [ ((n key asLowercase levenshteinDistanceTo: text asLowercase) - (n key size - text size) abs) / (n key size min: text size) < 0.1 ] ] ]
 						ifNone: [ | bibtex |
 							bibtex := CZEntry type: CZEntry article.
 							bibtex key: 'GENERATED'.
