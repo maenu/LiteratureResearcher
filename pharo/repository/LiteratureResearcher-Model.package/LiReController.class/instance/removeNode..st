@@ -1,3 +1,6 @@
 removing
 removeNode: aNode
-	(view elementFromModel: aNode) remove
+	| node |
+	node := view elementFromModel: aNode.
+	node outgoingEdges , node incomingEdges do: [ :e | self removeEdge: e ].
+	node remove
