@@ -1,4 +1,4 @@
-accessing
+instance creation
 name: aString
 	^ self allInstances
 		detect: [ :l | l name = aString ]

@@ -1,4 +1,4 @@
-as yet unclassified
+inspector extensions
 gtInspectorPresentationHasWritten: aComposite
 	<gtInspectorPresentationOrder: 3>
 	| presentation |

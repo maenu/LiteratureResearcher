@@ -1,4 +1,4 @@
-converting
+inspector extensions
 gtInspectorPresentationReferencedByRemote: aComposite
 	<gtInspectorPresentationOrder: 6>
 	| presentation |
@@ -20,7 +20,7 @@ gtInspectorPresentationReferencedByRemote: aComposite
 					menu ];
 				yourself.
 			model listModel
-				displayBlock: [ :e | e sourceLabel ];
+				displayBlock: [ :e | e asSourceString ];
 				icons: [ :e | e source asIcon ];
 				whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
 			graph announcer

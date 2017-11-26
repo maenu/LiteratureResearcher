@@ -1,4 +1,4 @@
-rendering
+key generation
 renderKeyCount: anInteger
 	| remainder characters |
 	remainder := anInteger.

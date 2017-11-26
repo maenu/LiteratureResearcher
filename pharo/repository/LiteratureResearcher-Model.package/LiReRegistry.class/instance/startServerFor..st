@@ -1,4 +1,4 @@
-as yet unclassified
+server handling
 startServerFor: aController
 	| server |
 	server := LiRePdfLinkerUriSchemeServer controller: aController.

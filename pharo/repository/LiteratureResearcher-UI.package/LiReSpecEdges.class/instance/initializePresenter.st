@@ -37,7 +37,15 @@ initializePresenter
 	searchModel
 		createBlock: [ :s | 
 			| n |
-			n := (edgeOtherEndClassBlock cull: edgeClass) fromText: s graph: node graph.
+			n := (edgeOtherEndClassBlock cull: edgeClass)
+				graph: node graph
+				string: s.
 			node graph nodes add: n.
 			edgeCreateBlock cull: n cull: edgeClass ];
-		searchBlock: [ :s | ReadStream on: (node graph nodes select: [ :n | n class = (edgeEndClassBlock cull: edgeClass) and: [ n matches: s ] ]) asOrderedCollection ]
+		searchBlock: [ :s | 
+			ReadStream
+				on:
+					(node graph nodes
+						select:
+							[ :n | n class = (edgeEndClassBlock cull: edgeClass) and: [ n matches: s ] ])
+						asOrderedCollection ]

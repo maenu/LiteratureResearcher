@@ -1,4 +1,4 @@
-as yet unclassified
+inspector extensions
 gtInspectorPresentationArticlesRemote: aComposite
 	<gtInspectorPresentationOrder: 2>
 	| presentation |

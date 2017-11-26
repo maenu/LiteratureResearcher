@@ -1,4 +1,4 @@
-instance creation
+converting
 fromSimplification: aSimplification
 	super fromSimplification: aSimplification.
 	email := aSimplification at: #email.

@@ -1,3 +1,3 @@
-accessing
-targetLabel
+converting
+asTargetString
 	^ key , ' > ' , target asString

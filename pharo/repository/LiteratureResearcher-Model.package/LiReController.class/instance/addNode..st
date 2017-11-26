@@ -1,3 +1,3 @@
 adding
 addNode: aNode
-	aNode addRoassalElementTo: view
+	aNode addRoassalEntityTo: view

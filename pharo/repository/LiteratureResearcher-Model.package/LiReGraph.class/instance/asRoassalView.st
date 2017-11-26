@@ -3,8 +3,8 @@ asRoassalView
 	| view legendBuilder |
 	view := RTView new.
 	view attributeAt: #GlamourContext put: LiReRTInteractiveViewContext new.
-	nodes do: [ :n | n addRoassalElementTo: view ].
-	edges do: [ :e | e addRoassalElementTo: view ].
+	nodes do: [ :n | n addRoassalEntityTo: view ].
+	edges do: [ :e | e addRoassalEntityTo: view ].
 	legendBuilder := RTLegendBuilder new
 		onDemand;
 		view: view;
@@ -14,4 +14,5 @@ asRoassalView
 	legendBuilder build.
 	view @ RTZoomableView.
 	view @ RTDraggableView.
+	view @ RTSelectableView.
 	^ view

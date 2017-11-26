@@ -1,4 +1,4 @@
-as yet unclassified
+inspector extensions
 gtInspectorActionRequestLoadImportLinkOpenPdf
 	<gtInspectorAction>
 	^ GLMGenericAction new

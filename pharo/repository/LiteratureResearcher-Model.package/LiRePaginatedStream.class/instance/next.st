@@ -1,4 +1,4 @@
-accessing
+filter streaming
 next
 	self assert: [ self atEnd not ].
 	"needs to peek at the next page, as it might be the last one"

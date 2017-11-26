@@ -1,4 +1,4 @@
-as yet unclassified
+instance creation
 graph: aGraph source: aNode target: anotherNode key: aString order: anInteger email: anotherString institution: yetAnotherString country: yetYetAnotherString
 	^ (self
 		graph: aGraph

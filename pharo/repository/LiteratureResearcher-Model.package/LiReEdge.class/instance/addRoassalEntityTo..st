@@ -1,5 +1,5 @@
-converting
-addRoassalElementTo: aView
+roassal extensions
+addRoassalEntityTo: aView
 	| element sourceElement targetElement |
 	sourceElement := aView elements detect: [ :e | e model == source ].
 	targetElement := aView elements detect: [ :e | e model == target ].

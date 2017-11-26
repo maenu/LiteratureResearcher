@@ -1,3 +1,3 @@
 instance creation
-fromText: aString graph: aGraph
+graph: aGraph string: aString
 	^ self graph: aGraph

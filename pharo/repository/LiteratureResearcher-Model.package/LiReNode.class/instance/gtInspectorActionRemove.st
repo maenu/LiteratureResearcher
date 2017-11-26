@@ -1,4 +1,4 @@
-as yet unclassified
+inspector extensions
 gtInspectorActionRemove
 	<gtInspectorAction>
 	^ GLMGenericAction new

@@ -1,5 +1,5 @@
-adding
-addRoassalElementTo: aView
+roassal extensions
+addRoassalEntityTo: aView
 	| element menu |
 	element := self asRoassalElement.
 	aView add: element.

@@ -1,4 +1,4 @@
-as yet unclassified
+inspector extensions
 gtInspectorPresentationTarget: aComposite
 	<gtInspectorPresentationOrder: 3>
 	aComposite spec

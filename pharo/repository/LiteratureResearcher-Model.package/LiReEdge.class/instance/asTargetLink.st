@@ -1,5 +1,5 @@
 converting
-targetLink
+asTargetLink
 	| targetLink |
 	self invalidateLink.
 	targetLink := link copy.

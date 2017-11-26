@@ -1,3 +1,3 @@
 roassal extensions
-lineStyleSelector
+addRoassalEntityTo: aView
 	self subclassResponsibility

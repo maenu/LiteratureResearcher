@@ -1,3 +1,3 @@
-testing
-key
+matching
+matchKey
 	^ bibtex ifNil: [ '' ] ifNotNil: [ (bibtex at: #title) value ]

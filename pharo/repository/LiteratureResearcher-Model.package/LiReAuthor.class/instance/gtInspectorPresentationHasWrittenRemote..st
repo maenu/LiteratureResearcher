@@ -1,4 +1,4 @@
-as yet unclassified
+inspector extensions
 gtInspectorPresentationHasWrittenRemote: aComposite
 	<gtInspectorPresentationOrder: 4>
 	| presentation |
@@ -21,7 +21,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 					menu ];
 				yourself.
 			model listModel
-				displayBlock: [ :e | e targetLabel ];
+				displayBlock: [ :e | e asTargetString ];
 				icons: [ :e | e target asIcon ];
 				whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
 			graph announcer

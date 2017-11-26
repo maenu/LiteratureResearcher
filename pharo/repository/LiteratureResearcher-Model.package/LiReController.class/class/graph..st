@@ -1,4 +1,4 @@
-accessing
+instance creation
 graph: aGraph
 	| repository bin pdfLinker cermine pdfdbscrap scholarPy pdfOpen actionLoadPdf actionImportPdf actionLinkPdf actionOpenPdf actionMovePdf |
 	repository := FileSystem workingDirectory / 'literature-researcher-repository'.

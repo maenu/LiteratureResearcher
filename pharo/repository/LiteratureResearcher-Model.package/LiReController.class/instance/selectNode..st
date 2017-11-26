@@ -1,4 +1,4 @@
-as yet unclassified
+selecting
 selectNode: aNode
 	| element |
 	element := view elementFromModel: aNode.

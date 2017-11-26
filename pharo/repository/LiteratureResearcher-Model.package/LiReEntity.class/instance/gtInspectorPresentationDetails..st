@@ -1,4 +1,4 @@
-as yet unclassified
+inspector extensions
 gtInspectorPresentationDetails: aComposite
 	<gtInspectorPresentationOrder: 1>
 	aComposite spec

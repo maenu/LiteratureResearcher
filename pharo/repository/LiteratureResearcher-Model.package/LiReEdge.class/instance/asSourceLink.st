@@ -1,5 +1,5 @@
 converting
-sourceLink
+asSourceLink
 	| sourceLink |
 	self invalidateLink.
 	sourceLink := link copy.

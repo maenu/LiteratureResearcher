@@ -1,4 +1,4 @@
-as yet unclassified
+selecting
 schedule: aBlock title: aString
 	[ [ :j | 
 	j title: aString.

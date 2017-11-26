@@ -1,3 +1,3 @@
 adding
 addEdge: anEdge
-	anEdge addRoassalElementTo: view
+	anEdge addRoassalEntityTo: view

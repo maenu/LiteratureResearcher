@@ -1,4 +1,4 @@
-accessing
+announcements
 propertyChanged: aSymbol
 	| value |
 	value := self instVarNamed: aSymbol.

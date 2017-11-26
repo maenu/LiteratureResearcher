@@ -1,4 +1,4 @@
-private
+sanitizing
 sanitize: aString
 	| sanitized |
 	sanitized := aString copyReplaceAll: '\{' with: ''.

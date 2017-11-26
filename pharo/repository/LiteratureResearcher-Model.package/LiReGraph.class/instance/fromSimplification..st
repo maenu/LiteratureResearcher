@@ -1,4 +1,4 @@
-instance creation
+converting
 fromSimplification: aSimplification
 	| nodesOrdered |
 	nodesOrdered := (aSimplification at: #nodes)

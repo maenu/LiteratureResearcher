@@ -1,4 +1,4 @@
-as yet unclassified
+filter streaming
 loadNextPage
 	| page |
 	page := block cull: cache size cull: pageSize.

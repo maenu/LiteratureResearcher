@@ -1,3 +1,3 @@
-accessing
+roassal extensions
 lineStyleSelector
 	^ #solidLine

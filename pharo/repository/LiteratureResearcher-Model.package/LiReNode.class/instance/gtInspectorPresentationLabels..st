@@ -1,4 +1,4 @@
-converting
+inspector extensions
 gtInspectorPresentationLabels: aComposite
 	<gtInspectorPresentationOrder: 2>
 	aComposite spec

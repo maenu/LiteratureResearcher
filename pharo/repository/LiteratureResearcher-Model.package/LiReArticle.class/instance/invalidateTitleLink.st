@@ -1,4 +1,4 @@
-as yet unclassified
+invalidation
 invalidateTitleLink
 	titleLink ifNil: [ titleLink := LiReLink new ].
 	titleLink

@@ -1,4 +1,4 @@
-as yet unclassified
+invalidation
 invalidateBibtex
 	| oldKey keyBaseName keyBaseYear keyBase keyCount |
 	oldKey := bibtex key.

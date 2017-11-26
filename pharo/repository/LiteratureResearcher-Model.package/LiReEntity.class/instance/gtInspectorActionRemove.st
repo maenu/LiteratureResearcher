@@ -1,3 +1,3 @@
-accessing
+inspector extensions
 gtInspectorActionRemove
 	self subclassResponsibility

@@ -1,4 +1,4 @@
-as yet unclassified
+selecting
 selectEdge: anEdge
 	| edge |
 	edge := view edgeFromModel: anEdge.
