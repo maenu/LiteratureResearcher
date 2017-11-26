@@ -1,4 +1,4 @@
-target resize
+execution
 executeIn: aController
 	id = referencingId
 		ifTrue: [ | node |

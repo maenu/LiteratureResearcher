@@ -1,4 +1,4 @@
-target resize
+converting
 fromLinksSimplification: aSimplification
 	^ {(#id -> (aSimplification at: #id)).
 	(#title -> (aSimplification at: #title ifPresent: [ :s | LiReLink fromSimplification: s ])).

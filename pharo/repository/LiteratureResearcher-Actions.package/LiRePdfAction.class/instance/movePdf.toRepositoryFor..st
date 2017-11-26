@@ -1,4 +1,4 @@
-copying
+execution
 movePdf: aFileReference toRepositoryFor: anArticle
 	| target |
 	repository asFileReference ensureCreateDirectory.

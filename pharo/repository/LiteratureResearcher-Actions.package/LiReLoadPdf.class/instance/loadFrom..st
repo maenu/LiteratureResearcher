@@ -1,4 +1,4 @@
-private
+execution
 loadFrom: anArticle
 	((anArticle bibtex hasField: #url) and: [ (anArticle bibtex at: #url) rawValue isNotNil ])
 		ifTrue: [ (self loadFromUrl: anArticle) ifNotNil: [ :pdf | ^ pdf ] ].

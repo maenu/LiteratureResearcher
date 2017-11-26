@@ -1,4 +1,4 @@
-as yet unclassified
+execution
 loadFromTitle: anArticle
 	| rows rowWithUrl |
 	self flag: 'search more than 10?'.

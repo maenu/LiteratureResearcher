@@ -1,4 +1,4 @@
-accessing
+instance creation
 edge: anEdge
 	^ self new
 		edge: anEdge;

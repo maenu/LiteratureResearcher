@@ -1,4 +1,4 @@
-target resize
+converting
 asLinkSimplification: aLink
 	| sortedSimplification simplification |
 	sortedSimplification := OrderedDictionary new.

@@ -1,4 +1,4 @@
-as yet unclassified
+instance creation
 repository: aFileReference pdfLinker: aPdfLinker
 	^ (self repository: aFileReference)
 		repository: aFileReference;

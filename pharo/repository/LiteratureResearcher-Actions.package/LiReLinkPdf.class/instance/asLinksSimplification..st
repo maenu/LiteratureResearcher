@@ -1,4 +1,4 @@
-target resize
+converting
 asLinksSimplification: anArticle
 	^ {('id' -> anArticle bibtex key asString).
 	('title' -> (self asLinkSimplification: anArticle titleLink)).

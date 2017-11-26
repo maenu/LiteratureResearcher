@@ -1,4 +1,4 @@
-target resize
+execution
 executeIn: anArticle
 	| pdf cermineResult metadata bibtex generatedBibtex |
 	pdf := self repositoryPdfOf: anArticle.

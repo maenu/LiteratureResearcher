@@ -1,4 +1,4 @@
-target resize
+execution
 executeIn: anArticle
 	| pdf |
 	self flag: 'that test is a little cheap, maybe there are better approaches'.

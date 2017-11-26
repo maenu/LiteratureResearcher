@@ -1,4 +1,4 @@
-target resize
+execution
 executeOnceIn: anArticle
 	| result old new |
 	old := self normalizeLinksSimplification: (self asLinksSimplification: anArticle).

@@ -1,4 +1,4 @@
-target resize
+as yet unclassified
 mergeLinks: aDictionary in: anArticle
 	| existingHasWritten existingReferences |
 	aDictionary at: #title ifPresent: [ :l | anArticle titleLink: l ].

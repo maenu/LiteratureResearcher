@@ -1,4 +1,4 @@
-private
+execution
 loadFromDragNDrop: anArticle
 	| pdf drop |
 	drop := LiReSpecFileDrop

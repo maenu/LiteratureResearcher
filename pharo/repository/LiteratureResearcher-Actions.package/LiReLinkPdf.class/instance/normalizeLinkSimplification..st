@@ -1,4 +1,4 @@
-target resize
+as yet unclassified
 normalizeLinkSimplification: aSimplification
 	| sortedSimplification |
 	sortedSimplification := OrderedDictionary new.

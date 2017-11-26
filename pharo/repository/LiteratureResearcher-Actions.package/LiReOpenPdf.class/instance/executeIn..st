@@ -1,4 +1,4 @@
-target resize
+execution
 executeIn: anArticle
 	| pdf |
 	pdf := self repositoryPdfOf: anArticle.

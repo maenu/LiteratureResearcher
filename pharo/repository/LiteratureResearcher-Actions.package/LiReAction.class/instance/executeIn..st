@@ -1,3 +1,3 @@
-target resize
+execution
 executeIn: anObject
 	self subclassResponsibility

@@ -1,4 +1,4 @@
-as yet unclassified
+execution
 loadFromUrl: anArticle
 	| url |
 	url := (anArticle bibtex at: #url) value.
