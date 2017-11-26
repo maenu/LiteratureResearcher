@@ -2,8 +2,6 @@ accessing
 graph: anObject
 	graph := anObject.
 	view := graph asRoassalView.
-	graph nodes do: [ :n | self addedNode: n ].
-	graph edges do: [ :e | self addedEdge: e ].
 	graph announcer
 		when: LiReRequestSelectNode
 			do: [ :a | 
@@ -37,6 +35,12 @@ graph: anObject
 				schedule: [ actionLinkPdf executeIn: a article.
 					a then value ]
 				title: 'Link PDF' ];
+		when: LiReRequestMovePdf
+			do: [ :a | 
+			self
+				schedule: [ actionMovePdf executeIn: a article.
+					a then value ]
+				title: 'Move PDF' ];
 		when: LiReRequestOpenPdf
 			do: [ :a | 
 			self

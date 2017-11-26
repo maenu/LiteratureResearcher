@@ -1,4 +1,3 @@
 adding
 addEdge: anEdge
-	anEdge addRoassalElementTo: view.
-	self addedEdge: anEdge
+	anEdge addRoassalElementTo: view

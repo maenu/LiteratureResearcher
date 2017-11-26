@@ -2,8 +2,8 @@ target resize
 executeIn: aController
 	id = referencingId
 		ifTrue: [ | node |
-			node := aController graph nodes detect: [ :n | (n isKindOf: LiReAuthor) and: [ n name = id ] ].
+			node := (aController graph nodesOfClass: LiReAuthor) detect: [ :n | n name = id ].
 			aController selectNode: node ]
 		ifFalse: [ | edge |
-			edge := aController graph edges detect: [ :e | (e isKindOf: LiReHasWritten) and: [ e key = id and: [ e target bibtex key = referencingId ] ] ].
+			edge := (aController graph edgesOfClass: LiReHasWritten) detect: [ :e | e key = id and: [ e target bibtex key = referencingId ] ].
 			aController selectEdge: edge ]

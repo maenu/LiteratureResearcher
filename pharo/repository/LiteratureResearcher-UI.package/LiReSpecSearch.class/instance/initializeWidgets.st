@@ -5,7 +5,7 @@ initializeWidgets
 		yourself.
 	searchButtonModel := self newButton
 		help: 'Search';
-		icon: (Smalltalk ui icons iconNamed: #glamorousSearch);
+		icon: #glamorousSearch asIcon;
 		yourself.
 	createButtonModel := self newButton
 		help: 'Create';

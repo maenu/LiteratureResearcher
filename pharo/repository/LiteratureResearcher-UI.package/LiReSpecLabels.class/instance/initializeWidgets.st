@@ -9,7 +9,7 @@ initializeWidgets
 		yourself.
 	addButtonModel := self newButton
 		help: 'Add';
-		icon: (Smalltalk ui icons iconNamed: #add);
+		icon: #add asIcon;
 		yourself.
 	createTextModel := self newTextInput
 		autoAccept: true;
