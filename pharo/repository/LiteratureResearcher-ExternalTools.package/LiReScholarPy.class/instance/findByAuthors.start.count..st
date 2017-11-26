@@ -1,4 +1,4 @@
-as yet unclassified
+execution
 findByAuthors: aCollection start: anInteger count: anotherInteger
 	| arguments result |
 	arguments := self newDefaultArguments.

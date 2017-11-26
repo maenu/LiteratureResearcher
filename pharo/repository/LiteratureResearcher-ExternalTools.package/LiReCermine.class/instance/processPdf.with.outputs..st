@@ -1,4 +1,4 @@
-processing
+execution
 processPdf: anId with: aFileReference outputs: anOrderedCollection
 	| directory |
 	directory := FileReference newTempFilePrefix: 'LiReCermine' suffix: ''.

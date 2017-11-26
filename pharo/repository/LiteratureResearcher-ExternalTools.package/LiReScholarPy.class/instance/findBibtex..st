@@ -1,5 +1,5 @@
-as yet unclassified
-getBibtex: anId
+execution
+findBibtex: anId
 	| arguments result |
 	arguments := self newDefaultArguments.
 	arguments

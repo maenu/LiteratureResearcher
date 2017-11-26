@@ -1,4 +1,4 @@
-running
+execution
 execute: anOrderedCollection wait: aDuration
 	| process out err |
 	process := PipeableOSProcess command: command pathString , ' ' , (' ' join: anOrderedCollection).

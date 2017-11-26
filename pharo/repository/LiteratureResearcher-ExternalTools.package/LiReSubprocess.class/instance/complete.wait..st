@@ -1,4 +1,4 @@
-as yet unclassified
+execution
 complete: aProcess wait: aDuration
 	| delay timeout |
 	delay := Delay forMilliseconds: 50.

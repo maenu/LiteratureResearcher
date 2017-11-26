@@ -1,4 +1,4 @@
-processing
+execution
 processResultIn: aDirectory outputs: anOrderedCollection
 	| result |
 	result := (anOrderedCollection

@@ -1,4 +1,4 @@
-typing/selecting keys
+execution
 find: aString start: anInteger count: anotherInteger
 	| arguments result |
 	arguments := self newDefaultArguments.

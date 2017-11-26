@@ -1,4 +1,4 @@
-as yet unclassified
+execution
 findClusterId: aString
 	| result |
 	result := self findByTitle: aString start: 0 count: 1.

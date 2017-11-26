@@ -1,4 +1,4 @@
-as yet unclassified
+execution
 processPdf: anId with: aFileReference links: aSimplification
 	| output result links |
 	output := FileReference newTempFilePrefix: 'LiRePdfLinker' suffix: '.pdf'.

@@ -1,3 +1,3 @@
-as yet unclassified
+linking
 clickAuthorWithId: aString in: anotherString
 	(LiReHyperlinkShowAuthor id: aString referencingId: anotherString) executeIn: controller

@@ -1,4 +1,4 @@
-public
+execution
 processBibtex: aBibtexEntry
 	| directory result pdf |
 	directory := FileReference newTempFilePrefix: 'LiRePdfdbscrap' suffix: ''.

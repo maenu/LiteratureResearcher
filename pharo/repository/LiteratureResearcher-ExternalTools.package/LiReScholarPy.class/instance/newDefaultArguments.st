@@ -1,4 +1,4 @@
-typing/selecting keys
+instance creation
 newDefaultArguments
 	| arguments |
 	arguments := OrderedCollection new.

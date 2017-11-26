@@ -1,5 +1,5 @@
 tests
 testGetBibtex
 	| out |
-	out := scholarPy getBibtex: clusterId.
+	out := scholarPy findBibtex: clusterId.
 	self assert: out isNotEmpty
