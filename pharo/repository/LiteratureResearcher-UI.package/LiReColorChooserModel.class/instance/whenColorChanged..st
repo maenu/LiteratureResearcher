@@ -1,3 +1,3 @@
-as yet unclassified
+announcements
 whenColorChanged: aBlock
 	selectedColor whenChangedDo: aBlock
