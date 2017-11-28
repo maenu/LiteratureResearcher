@@ -40,6 +40,7 @@ public class App {
 	private static final String KEY = "key";
 	private static final String ID = "id";
 	private static final String TEXT = "text";
+	private static final String PAGE = "page";
 	private static final String RECTANGLE = "rectangle";
 	private static final String COLOR = "color";
 	private static final String HEADER = "JSON links must have id, key, and color properties. They look like this:\n"
@@ -58,7 +59,7 @@ public class App {
 			Links links = parse(line.getOptionValue(LINKS));
 			try (PDDocument document = PDDocument.load(input)) {
 				document.setAllSecurityToBeRemoved(true);
-				links = new Linker(document, links).link();
+				new Linker(document, links).link();
 				document.save(output);
 				System.out.println(render(links));
 			}
@@ -105,6 +106,7 @@ public class App {
 			String key = (String) simplification.get(KEY);
 			Optional<String> id = Optional.empty();
 			Optional<String> text = Optional.empty();
+			Optional<Integer> page = Optional.empty();
 			Optional<PDRectangle> rectangle = Optional.empty();
 			Optional<Color> color = Optional.empty();
 			if (simplification.containsKey(ID)) {
@@ -112,6 +114,9 @@ public class App {
 			}
 			if (simplification.containsKey(TEXT)) {
 				text = Optional.of((String) simplification.get(TEXT));
+			}
+			if (simplification.containsKey(PAGE)) {
+				page = Optional.of(((Double) simplification.get(PAGE)).intValue());
 			}
 			if (simplification.containsKey(RECTANGLE)) {
 				List<Double> data = (List<Double>) simplification.get(RECTANGLE);
@@ -122,7 +127,7 @@ public class App {
 				List<Double> data = (List<Double>) simplification.get(COLOR);
 				color = Optional.of(new Color(data.get(0).intValue(), data.get(1).intValue(), data.get(2).intValue()));
 			}
-			return (E) cls.getConstructors()[0].newInstance(key, id, text, rectangle, color);
+			return (E) cls.getConstructors()[0].newInstance(key, id, text, page, rectangle, color);
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| SecurityException exception) {
 			throw new RuntimeException(exception);
@@ -145,6 +150,7 @@ public class App {
 		simplification.put(KEY, link.getKey());
 		link.getId().ifPresent(o -> simplification.put(ID, o));
 		link.getText().ifPresent(o -> simplification.put(TEXT, o));
+		link.getPage().ifPresent(o -> simplification.put(PAGE, o));
 		link.getRectangle().ifPresent(o -> {
 			float[] rectangle = new float[4];
 			rectangle[0] = o.getLowerLeftX();

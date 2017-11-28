@@ -61,15 +61,13 @@ public class Linker {
 		this.links = links;
 	}
 
-	public Links link() throws IOException {
-		Links links = this.getLinksToAdd();
+	public void link() throws IOException {
 		this.removeLinks();
 		this.addLinks();
-		return links;
+		this.processLinkAnnotations();
 	}
 
-	private Links getLinksToAdd() throws IOException {
-		Links links = new Links(this.links.getId());
+	private Links processLinkAnnotations() throws IOException {
 		for (int i = 0; i < this.pdf.getNumberOfPages(); i = i + 1) {
 			PDPage page = this.pdf.getPage(i);
 			Page pageParse = this.parse.get(page);
@@ -92,24 +90,24 @@ public class Linker {
 					System.err.println("Could not find text for link to add: " + text);
 					continue;
 				}
-				PDRectangle rectangle = words.stream().map(Element::getRectangle).reduce(Element::union)
-						.map(this::asNormalizedRectangle).get();
+				PDRectangle rectangle = words.stream().map(Element::getRectangle).reduce(Element::union).get();
 				// TODO cheap heuristic for deciding on link type
 				String key = words.get(0).getText().trim();
-				if (i == 0 && !this.links.getTitle().isPresent() && !links.getTitle().isPresent()) {
-					links.setTitle(Optional.of(new Title(key, Optional.empty(), Optional.of(text),
+				if (i == 0 && (!this.links.getTitle().isPresent()
+						|| !this.links.getTitle().get().getRectangle().isPresent())) {
+					this.links.setTitle(Optional.of(new Title(key, Optional.empty(), Optional.of(text), Optional.of(i),
 							Optional.of(rectangle), Optional.empty())));
 				} else if (i == 0) {
-					links.getAuthors().add(new Author(key, Optional.empty(), Optional.of(text), Optional.of(rectangle),
-							Optional.empty()));
-				} else {
-					links.getReferences().add(new Reference(key, Optional.empty(), Optional.of(text),
+					this.links.getAuthors().add(new Author(key, Optional.empty(), Optional.of(text), Optional.of(i),
 							Optional.of(rectangle), Optional.empty()));
+				} else {
+					this.links.getReferences().add(new Reference(key, Optional.empty(), Optional.of(text),
+							Optional.of(i), Optional.of(rectangle), Optional.empty()));
 				}
 				annotations.remove(modifierAnnotation);
 			} while (!modifierAnnotations.isEmpty());
 		}
-		return links;
+		return this.links;
 	}
 
 	private List<PDAnnotation> getModifierAnnotations(List<PDAnnotation> annotations) throws IOException {
@@ -163,90 +161,124 @@ public class Linker {
 	}
 
 	private void addLinks() throws IOException {
-		this.parse.entrySet().stream().forEach(entry -> {
-			this.addLinksTitle(entry.getKey(), entry.getValue());
-			this.addLinksAuthors(entry.getKey(), entry.getValue());
-			this.addLinksReferences(entry.getKey(), entry.getValue());
-		});
+		for (int i = 0; i < this.pdf.getNumberOfPages(); i = i + 1) {
+			PDPage page = this.pdf.getPage(i);
+			Page pageParse = this.parse.get(page);
+			this.addLinksTitle(i, page, pageParse);
+			this.addLinksAuthors(i, page, pageParse);
+			this.addLinksReferences(i, page, pageParse);
+		}
 	}
 
-	private void addLinksTitle(PDPage page, Page page0) {
+	private void addLinksTitle(int i, PDPage page, Page page0) {
 		if (!this.links.getTitle().isPresent()) {
 			return;
 		}
 		Title title = this.links.getTitle().get();
-		page0.getChildren().stream()
-				.filter(p -> p.getText().replaceAll("\\s+", " ").trim().toLowerCase().contains(title.getKey()))
-				.forEach(p -> this.addLink(page, p.getRectangle(), title));
+		if (title.getRectangle().isPresent() && title.getPage().isPresent() && title.getPage().get() == i) {
+			this.addLink(page, title);
+		} else {
+			page0.getChildren().stream()
+					.filter(p -> p.getText().replaceAll("\\s+", " ").trim().toLowerCase().contains(title.getKey()))
+					.forEach(p -> {
+						title.setRectangle(Optional.of(p.getRectangle()));
+						title.setPage(Optional.of(i));
+						this.addLink(page, title);
+					});
+		}
 	}
 
-	private void addLinksAuthors(PDPage page, Page page0) {
-		Map<Author, List<String>> authorsNormalized = this.links.getAuthors().stream()
-				.collect(Collectors.toMap(a -> a,
-						a -> Arrays.asList(a.getKey().trim().toLowerCase().replaceAll("[^a-z\\s]", "").split("\\s+"))))
-				.entrySet().stream().filter(e -> !e.getValue().isEmpty())
-				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-		if (authorsNormalized.isEmpty()) {
-			return;
+	private void addLinksAuthors(int i, PDPage page, Page page0) {
+		Map<Boolean, List<Author>> authors = this.links.getAuthors().stream()
+				.collect(Collectors.partitioningBy(l -> l.getRectangle().isPresent()));
+		if (authors.containsKey(true)) {
+			authors.get(true).stream().filter(l -> l.getPage().isPresent() && l.getPage().get() == i)
+					.forEach(l -> this.addLink(page, l));
 		}
-		page0.getChildren().stream().flatMap(p -> p.getChildren().stream()).forEach(l -> {
-			this.links.getAuthors().stream().forEach(a -> {
-				List<String> words = authorsNormalized.get(a);
-				List<String> line = l.getChildren().stream()
-						.map(w -> w.getText().trim().toLowerCase().replaceAll("[^a-z\\s]", ""))
-						.collect(Collectors.toList());
-				int i = Collections.indexOfSubList(line, words);
-				if (i == -1) {
-					return;
-				}
-				PDRectangle rectangle = l.getChildren().subList(i, i + words.size()).stream().map(Element::getRectangle)
-						.reduce(Element::union).get();
-				this.addLink(page, rectangle, a);
-			});
-		});
-	}
-
-	private void addLinksReferences(PDPage page, Page page0) {
-		Map<Reference, List<String>> referencesNormalized = this.links.getReferences().stream()
-				.collect(Collectors.toMap(r -> r, r -> Arrays.asList(r.getKey().trim().toLowerCase().split("\\s+"))))
-				.entrySet().stream().filter(e -> !e.getValue().isEmpty())
-				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-		if (referencesNormalized.isEmpty()) {
-			return;
-		}
-		page0.getChildren().stream().forEach(p -> {
-			Optional<Reference> current = Optional.empty();
-			List<Line> currentLines = new ArrayList<>();
-			for (Line l : p.getChildren()) {
-				Optional<Reference> next = this.links.getReferences().stream().filter(r -> {
-					List<String> words = referencesNormalized.get(r);
-					List<String> line = l.getChildren().stream().map(w -> w.getText().trim().toLowerCase())
+		if (authors.containsKey(false)) {
+			Map<Author, List<String>> authorsNormalized = authors.get(false).stream().collect(Collectors.toMap(a -> a,
+					a -> Arrays.asList(a.getKey().trim().toLowerCase().replaceAll("[^a-z\\s]", "").split("\\s+"))))
+					.entrySet().stream().filter(e -> !e.getValue().isEmpty())
+					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+			if (authorsNormalized.isEmpty()) {
+				return;
+			}
+			page0.getChildren().stream().flatMap(p -> p.getChildren().stream()).forEach(l -> {
+				authors.get(false).stream().forEach(a -> {
+					List<String> words = authorsNormalized.get(a);
+					List<String> line = l.getChildren().stream()
+							.map(w -> w.getText().trim().toLowerCase().replaceAll("[^a-z\\s]", ""))
 							.collect(Collectors.toList());
-					int i = Collections.indexOfSubList(line, words);
-					return i == 0;
-				}).findFirst();
-				if (next.isPresent()) {
-					if (current.isPresent() && next.get() != current.get()) {
-						// finish current
-						PDRectangle rectangle = currentLines.stream().map(Element::getRectangle).reduce(Element::union)
-								.get();
-						this.addLink(page, rectangle, current.get());
+					int j = Collections.indexOfSubList(line, words);
+					if (j == -1) {
+						return;
 					}
-					current = next;
-					currentLines = new ArrayList<>();
-				}
-				currentLines.add(l);
-			}
-			if (current.isPresent()) {
-				// finish last
-				PDRectangle rectangle = currentLines.stream().map(Element::getRectangle).reduce(Element::union).get();
-				this.addLink(page, rectangle, current.get());
-			}
-		});
+					PDRectangle rectangle = l.getChildren().subList(j, j + words.size()).stream()
+							.map(Element::getRectangle).reduce(Element::union).get();
+					a.setRectangle(Optional.of(rectangle));
+					a.setPage(Optional.of(i));
+					this.addLink(page, a);
+				});
+			});
+		}
 	}
 
-	private void addLink(PDPage page, PDRectangle rectangle, Link link) {
-		rectangle = this.asNormalizedRectangle(rectangle);
+	private void addLinksReferences(int i, PDPage page, Page page0) {
+		Map<Boolean, List<Reference>> references = this.links.getReferences().stream()
+				.collect(Collectors.partitioningBy(l -> l.getRectangle().isPresent()));
+		if (references.containsKey(true)) {
+			references.get(true).stream().filter(l -> l.getPage().isPresent() && l.getPage().get() == i)
+					.forEach(l -> this.addLink(page, l));
+		}
+		if (references.containsKey(false)) {
+			Map<Reference, List<String>> referencesNormalized = references.get(false).stream()
+					.collect(
+							Collectors.toMap(r -> r, r -> Arrays.asList(r.getKey().trim().toLowerCase().split("\\s+"))))
+					.entrySet().stream().filter(e -> !e.getValue().isEmpty())
+					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+			if (referencesNormalized.isEmpty()) {
+				return;
+			}
+			page0.getChildren().stream().forEach(p -> {
+				Optional<Reference> current = Optional.empty();
+				List<Line> currentLines = new ArrayList<>();
+				for (Line l : p.getChildren()) {
+					Optional<Reference> next = references.get(false).stream().filter(r -> {
+						List<String> words = referencesNormalized.get(r);
+						List<String> line = l.getChildren().stream().map(w -> w.getText().trim().toLowerCase())
+								.collect(Collectors.toList());
+						int j = Collections.indexOfSubList(line, words);
+						return j == 0;
+					}).findFirst();
+					if (next.isPresent()) {
+						if (current.isPresent() && next.get() != current.get()) {
+							// finish current
+							PDRectangle rectangle = currentLines.stream().map(Element::getRectangle)
+									.reduce(Element::union).get();
+							current.get().setRectangle(Optional.of(rectangle));
+							current.get().setPage(Optional.of(i));
+							this.addLink(page, current.get());
+						}
+						current = next;
+						currentLines = new ArrayList<>();
+					}
+					currentLines.add(l);
+				}
+				if (current.isPresent()) {
+					// finish last
+					PDRectangle rectangle = currentLines.stream().map(Element::getRectangle).reduce(Element::union)
+							.get();
+					current.get().setRectangle(Optional.of(rectangle));
+					current.get().setPage(Optional.of(i));
+					this.addLink(page, current.get());
+				}
+			});
+		}
+	}
+
+	private void addLink(PDPage page, Link link) {
+		assert link.getRectangle().isPresent();
+		PDRectangle rectangle = this.asNormalizedRectangle(link.getRectangle().get());
 		try (PDPageContentStream content = new PDPageContentStream(this.pdf, page, AppendMode.PREPEND, true)) {
 			content.beginText();
 			content.setFont(PDType1Font.TIMES_ROMAN, 0);
