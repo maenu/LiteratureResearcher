@@ -7,8 +7,6 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"bibtex",
-		"csv",
-		"document",
 		"titleLink"
 	],
 	"name" : "LiReArticle",

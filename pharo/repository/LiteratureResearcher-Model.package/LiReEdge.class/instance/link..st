@@ -1,4 +1,4 @@
 accessing
 link: anObject
-	link := anObject.
+	link value: anObject.
 	self invalidateLink

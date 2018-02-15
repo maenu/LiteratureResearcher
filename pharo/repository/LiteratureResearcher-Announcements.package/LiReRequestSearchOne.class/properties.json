@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReRequestSearch",
+	"category" : "LiteratureResearcher-Announcements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReRequestSearchOne",
+	"type" : "normal"
+}

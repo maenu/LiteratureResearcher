@@ -2,7 +2,7 @@ converting
 asSimplification
 	^ super asSimplification
 		addAll:
-			{(#key -> key).
-			(#order -> order).
-			(#link -> (link ifNotNil: [ link asSimplification ]))} asDictionary;
+			{(#key -> self key).
+			(#order -> self order).
+			(#link -> (self link ifNotNil: [ :e | e asSimplification ]))} asDictionary;
 		yourself

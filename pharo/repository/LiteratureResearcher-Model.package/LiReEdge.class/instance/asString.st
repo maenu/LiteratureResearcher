@@ -1,3 +1,3 @@
 converting
 asString
-	^ key
+	^ self key

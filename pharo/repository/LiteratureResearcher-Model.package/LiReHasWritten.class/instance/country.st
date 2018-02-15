@@ -1,3 +1,3 @@
 accessing
 country
-	^ country
+	^ country value

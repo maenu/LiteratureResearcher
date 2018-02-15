@@ -1,8 +1,8 @@
 roassal extensions
 addRoassalEntityTo: aView
 	| element sourceElement targetElement |
-	sourceElement := aView elements detect: [ :e | e model == source ].
-	targetElement := aView elements detect: [ :e | e model == target ].
+	sourceElement := aView elements detect: [ :e | e model == self source ].
+	targetElement := aView elements detect: [ :e | e model == self target ].
 	element := RTEdge on: self from: sourceElement to: targetElement.
 	element
 		+

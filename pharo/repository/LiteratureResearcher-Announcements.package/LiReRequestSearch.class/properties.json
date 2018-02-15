@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "ManuelLeuenberger 2/14/2018 17:15",
+	"super" : "LiReRequest",
+	"category" : "LiteratureResearcher-Announcements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"object"
+	],
+	"name" : "LiReRequestSearch",
+	"type" : "normal"
+}

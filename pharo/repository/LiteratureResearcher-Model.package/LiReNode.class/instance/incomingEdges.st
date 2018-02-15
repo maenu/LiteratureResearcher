@@ -1,3 +1,3 @@
 accessing
 incomingEdges
-	^ graph incomingEdges: self
+	^ self graph incomingEdges: self

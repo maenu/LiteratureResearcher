@@ -2,8 +2,8 @@ converting
 asWidget
 	| model |
 	model := TextInputFieldModel new
-		text: name;
+		text: self name;
 		acceptBlock: [ :s | self name: s ];
 		yourself.
-	self whenPropertyChangedDo: [ model text: name ].
+	self whenPropertyChangedDo: [ model text: self name ].
 	^ model

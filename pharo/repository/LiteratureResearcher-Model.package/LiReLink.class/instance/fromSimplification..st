@@ -1,6 +1,5 @@
 converting
 fromSimplification: aSimplification
-	super fromSimplification: aSimplification.
 	key := aSimplification at: #key.
 	aSimplification at: #id ifPresent: [ :v | id := v ].
 	aSimplification at: #text ifPresent: [ :v | text := v ].

@@ -1,7 +1,7 @@
 announcements
 propertyChanged: aSymbol
 	| value |
-	value := self instVarNamed: aSymbol.
+	value := (self instVarNamed: aSymbol) value.
 	announcer
 		announce:
 			(LiRePropertyChanged

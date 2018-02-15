@@ -1,3 +1,3 @@
 accessing
 outgoingEdgesOfClass: anEdgeClass
-	^ graph outgoingEdges: self class: anEdgeClass
+	^ self graph outgoingEdges: self class: anEdgeClass

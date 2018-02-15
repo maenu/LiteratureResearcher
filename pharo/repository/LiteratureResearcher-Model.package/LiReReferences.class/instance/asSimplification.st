@@ -4,10 +4,9 @@ asSimplification
 		addAll:
 			{(#bibtex
 				->
-					(bibtex
+					(self bibtex
 						ifNotNil: [ :b | 
 							(LiReBibRenderer new
 								render: b;
-								contents) trimmed ])).
-			(#text -> text)} asDictionary;
+								contents) trimmed ]))} asDictionary;
 		yourself

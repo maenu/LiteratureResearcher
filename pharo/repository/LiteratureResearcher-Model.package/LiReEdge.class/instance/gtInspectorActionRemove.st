@@ -4,4 +4,4 @@ gtInspectorActionRemove
 	^ GLMGenericAction new
 		title: 'Remove';
 		position: 1;
-		action: [ :p | graph edges remove: self ]
+		action: [ :p | self graph edges remove: self ]

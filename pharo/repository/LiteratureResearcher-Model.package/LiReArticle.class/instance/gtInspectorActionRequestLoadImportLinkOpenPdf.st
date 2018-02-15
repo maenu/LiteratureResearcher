@@ -5,16 +5,16 @@ gtInspectorActionRequestLoadImportLinkOpenPdf
 		title: 'Load, import, link & open PDF';
 		position: 5;
 		action: [ :p | 
-			graph announcer
+			self graph announcer
 				announce:
-					((LiReRequestLoadPdf article: self)
-						then: [ graph announcer
+					((LiReRequestPdfLoad article: self)
+						then: [ self graph announcer
 								announce:
-									((LiReRequestImportPdf article: self)
-										then: [ graph announcer
+									((LiReRequestPdfImport article: self)
+										then: [ self graph announcer
 												announce:
-													((LiReRequestLinkPdf article: self)
-														then: [ graph announcer announce: (LiReRequestOpenPdf article: self) ];
+													((LiReRequestPdfLink article: self)
+														then: [ self graph announcer announce: (LiReRequestPdfOpen article: self) ];
 														yourself) ];
 										yourself) ];
 						yourself) ]

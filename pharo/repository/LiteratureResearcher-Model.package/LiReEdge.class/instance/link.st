@@ -1,3 +1,3 @@
 accessing
 link
-	^ link
+	^ link value

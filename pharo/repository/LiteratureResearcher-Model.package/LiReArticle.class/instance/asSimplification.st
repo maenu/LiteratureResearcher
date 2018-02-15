@@ -4,12 +4,10 @@ asSimplification
 		addAll:
 			{(#bibtex
 				->
-					(bibtex
+					(self bibtex
 						ifNotNil: [ :b | 
 							(LiReBibRenderer new
 								render: b;
 								contents) trimmed ])).
-			(#csv -> csv).
-			(#document -> (document ifNotNil: [ :d | d fullPrintString ])).
-			(#titleLink -> (titleLink ifNotNil: [ titleLink asSimplification ]))} asDictionary;
+			(#titleLink -> (self titleLink ifNotNil: [ :e | e asSimplification ]))} asDictionary;
 		yourself

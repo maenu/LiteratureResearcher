@@ -1,3 +1,3 @@
 converting
 asSourceString
-	^ key , ' < ' , source asString
+	^ self key , ' < ' , self source asString

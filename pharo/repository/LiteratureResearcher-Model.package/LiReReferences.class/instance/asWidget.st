@@ -4,27 +4,22 @@ asWidget
 	superModel := super asWidget.
 	model := DynamicComposableModel new.
 	model title: 'Details'.
-	model instantiateModels: #(superModel DynamicComposableModel bibtexLabel LabelModel bibtex TextModel textLabel LabelModel text TextModel).
+	model instantiateModels: #(superModel DynamicComposableModel bibtexLabel LabelModel bibtex).
 	model bibtexLabel label: 'Bibtex'.
-	model textLabel label: 'Text'.
 	model bibtex
 		text:
-			(bibtex
+			(self bibtex
 				ifNotNil: [ (LiReBibRenderer new
-						render: bibtex;
+						render: self bibtex;
 						contents) trimmed ]);
 		acceptBlock: [ :s | self bibtex: (LiReBibParser parse: s) entries first ].
-	model text
-		text: text;
-		acceptBlock: [ :s | self text: s ].
 	model assign: superModel to: #superModel.
 	self
 		whenPropertyChangedDo: [ model bibtex
 				text:
 					(LiReBibRenderer new
-						render: bibtex;
-						contents) trimmed.
-			model text text: text ].
+						render: self bibtex;
+						contents) trimmed ].
 	model
 		layout:
 			(SpecLayout composed
@@ -34,10 +29,6 @@ asWidget
 						newRow: [ :row | 
 							row
 								add: #bibtexLabel;
-								add: #bibtex ];
-						newRow: [ :row | 
-							row
-								add: #textLabel;
-								add: #text ] ];
+								add: #bibtex ] ];
 				yourself).
 	^ model

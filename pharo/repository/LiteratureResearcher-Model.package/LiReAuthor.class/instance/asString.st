@@ -1,3 +1,3 @@
 converting
 asString
-	^ name
+	^ self name

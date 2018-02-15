@@ -1,3 +1,3 @@
 converting
 asString
-	^ bibtex key asString , ', ' , (bibtex at: #title) value
+	^ self bibtex key asString , ', ' , (self bibtex at: #title) value

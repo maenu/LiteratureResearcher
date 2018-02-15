@@ -2,6 +2,6 @@ converting
 asSourceLink
 	| sourceLink |
 	self invalidateLink.
-	sourceLink := link copy.
-	sourceLink color: source asColor.
+	sourceLink := self link copy.
+	sourceLink color: self source asColor.
 	^ sourceLink

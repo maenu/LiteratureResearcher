@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReSearchAction",
+	"category" : "LiteratureResearcher-Actions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LiReSearchManyAction",
+	"type" : "normal"
+}

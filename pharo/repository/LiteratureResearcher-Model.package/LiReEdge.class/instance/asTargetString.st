@@ -1,3 +1,3 @@
 converting
 asTargetString
-	^ key , ' > ' , target asString
+	^ self key , ' > ' , self target asString

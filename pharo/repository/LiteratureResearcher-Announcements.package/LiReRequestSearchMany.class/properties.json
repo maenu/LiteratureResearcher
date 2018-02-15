@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "LiReRequestSearch",
+	"category" : "LiteratureResearcher-Announcements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"start",
+		"count"
+	],
+	"name" : "LiReRequestSearchMany",
+	"type" : "normal"
+}

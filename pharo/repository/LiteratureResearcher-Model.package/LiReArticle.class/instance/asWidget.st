@@ -4,7 +4,7 @@ asWidget
 	model := TextModel new
 		text:
 			(LiReBibRenderer new
-				render: bibtex;
+				render: self bibtex;
 				contents) trimmed;
 		acceptBlock: [ :s | self bibtex: (LiReBibParser parse: s) entries first ];
 		yourself.
@@ -12,6 +12,6 @@ asWidget
 		whenPropertyChangedDo: [ model
 				text:
 					(LiReBibRenderer new
-						render: bibtex;
+						render: self bibtex;
 						contents) trimmed ].
 	^ model

@@ -1,5 +1,5 @@
 converting
 fromSimplification: aSimplification
-	key := aSimplification at: #key.
-	order := aSimplification at: #order.
-	link := (aSimplification at: #link) ifNotNil: [ :d | LiReLink fromSimplification: d ]
+	self key: (aSimplification at: #key).
+	self order: (aSimplification at: #order).
+	self link: ((aSimplification at: #link) ifNotNil: [ :d | LiReLink fromSimplification: d ])

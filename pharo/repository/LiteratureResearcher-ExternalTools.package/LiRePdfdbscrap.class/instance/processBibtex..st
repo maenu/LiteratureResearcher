@@ -3,6 +3,7 @@ processBibtex: aBibtexEntry
 	| directory result pdf |
 	directory := FileReference newTempFilePrefix: 'LiRePdfdbscrap' suffix: ''.
 	directory ensureCreateDirectory.
+	Halt now.
 	result := subprocess
 		execute:
 			{(LiReSubprocess

@@ -1,3 +1,3 @@
 matching
 matchKey
-	^ bibtex ifNil: [ '' ] ifNotNil: [ (bibtex at: #title) value ]
+	^ self bibtex ifNil: [ '' ] ifNotNil: [ :e | (e at: #title) value ]

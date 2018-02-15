@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "LiRePdfAction",
+	"category" : "LiteratureResearcher-Actions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"cermine"
+	],
+	"name" : "LiRePdfImportAction",
+	"type" : "normal"
+}

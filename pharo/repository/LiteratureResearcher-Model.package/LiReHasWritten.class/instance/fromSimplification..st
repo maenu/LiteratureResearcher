@@ -1,6 +1,6 @@
-converting
+instance creation
 fromSimplification: aSimplification
 	super fromSimplification: aSimplification.
-	email := aSimplification at: #email.
-	institution := aSimplification at: #institution.
-	country := aSimplification at: #country
+	self email: (aSimplification at: #email).
+	self institution: (aSimplification at: #institution).
+	self country: (aSimplification at: #country)

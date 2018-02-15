@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "ManuelLeuenberger 2/15/2018 14:37",
 	"super" : "Object",
 	"category" : "LiteratureResearcher-Model",
 	"classinstvars" : [ ],
@@ -8,13 +8,8 @@
 	"instvars" : [
 		"graph",
 		"view",
-		"scholarPy",
-		"scheduledLayout",
-		"actionImportPdf",
-		"actionLinkPdf",
-		"actionLoadPdf",
-		"actionOpenPdf",
-		"actionMovePdf"
+		"actions",
+		"scheduledLayout"
 	],
 	"name" : "LiReController",
 	"type" : "normal"

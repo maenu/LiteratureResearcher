@@ -2,7 +2,7 @@ converting
 asSimplification
 	^ super asSimplification
 		addAll:
-			{(#email -> email).
-			(#institution -> institution).
-			(#country -> country)} asDictionary;
+			{(#email -> self email).
+			(#institution -> self institution).
+			(#country -> self country)} asDictionary;
 		yourself

@@ -1,4 +1,3 @@
 accessing
 titleLink: anObject
-	titleLink := anObject.
-	self invalidateTitleLink
+	titleLink value: anObject

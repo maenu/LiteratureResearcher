@@ -1,3 +1,3 @@
 accessing
 outgoingEdges
-	^ graph outgoingEdges: self
+	^ self graph outgoingEdges: self

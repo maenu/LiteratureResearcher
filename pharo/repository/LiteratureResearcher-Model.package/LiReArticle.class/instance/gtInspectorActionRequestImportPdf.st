@@ -4,5 +4,5 @@ gtInspectorActionRequestImportPdf
 	^ GLMGenericAction new
 		title: 'Import PDF';
 		position: 2;
-		enabledCondition: [ bibtex hasField: #pdf ];
-		action: [ :p | graph announcer announce: (LiReRequestImportPdf article: self) ]
+		enabledCondition: [ self bibtex hasField: #pdf ];
+		action: [ :p | self graph announcer announce: (LiReRequestPdfImport article: self) ]

@@ -5,5 +5,5 @@ gtInspectorActionRemove
 		title: 'Remove';
 		position: 1;
 		action: [ :p | 
-			graph edges removeAll: self incomingEdges , self outgoingEdges.
-			graph nodes remove: self ]
+			self graph edges removeAll: self incomingEdges , self outgoingEdges.
+			self graph nodes remove: self ]

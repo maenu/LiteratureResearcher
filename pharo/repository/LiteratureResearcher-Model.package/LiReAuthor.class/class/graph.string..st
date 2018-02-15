@@ -1,5 +1,3 @@
 instance creation
 graph: aGraph string: aString
-	^ (super graph: aGraph string: aString)
-		name: aString;
-		yourself
+	^ (self graph: aGraph name: aString) yourself

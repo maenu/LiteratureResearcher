@@ -1,3 +1,3 @@
 accessing
 email
-	^ email
+	^ email value

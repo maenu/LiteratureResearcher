@@ -10,34 +10,20 @@ gtInspectorPresentationArticlesRemote: aComposite
 			model
 				searchBlock: [ :t | 
 					LiRePaginatedStream
-						block: [ :ss :c | 
-							| lock stream |
+						block: [ :s :c | 
+							| lock elements |
 							lock := Semaphore new.
-							stream := LiRePaginatedStream block: [ {} ].
+							elements := {}.
 							graph announcer
 								announce:
-									(LiReRequestScholarPy
-										block: [ :s | 
-											stream := (s find: t asString start: ss count: c)
-												collect: [ :d | 
-													| node |
-													node := graph nodes
-														detect: [ :n | n matches: (d at: #title) ]
-														ifFound: [ :n | n mergeCsv: d ]
-														ifNone: [ | n b |
-															b := CZEntry type: CZEntry article.
-															b key: 'GENERATED'.
-															d keysAndValuesDo: [ :k :v | b at: k put: v ].
-															n := LiReArticle
-																graph: graph
-																bibtex: b
-																csv: d
-																document: nil.
-															graph nodes add: n.
-															n ] ].
-											lock signal ]).
+									((LiReRequestSearchManyByAny object: t asString start: s count: c)
+										then: [ :e | 
+											elements := e.
+											lock signal ];
+										yourself).
+							self flag: 'TODO timeout'.
 							lock wait.
-							stream ] ].
+							elements ] ].
 			model paginatorModel
 				menuModelBlock: [ :n | 
 					| menu |

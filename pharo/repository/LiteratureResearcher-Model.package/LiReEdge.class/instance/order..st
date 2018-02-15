@@ -1,3 +1,3 @@
 accessing
 order: anObject
-	order := anObject
+	order value: anObject

@@ -1,13 +1,16 @@
 invalidation
 invalidateBibtex
 	| oldKey keyBaseName keyBaseYear keyBase keyCount |
-	oldKey := bibtex key.
+	(self graph isNil or: [ self bibtex isNil ])
+		ifTrue: [ self flag: 'TODO ugly'.
+			^ self ].
+	oldKey := self bibtex key.
 	keyBaseName := 'Xxxx'.
 	keyBaseYear := 'YY'.
 	keyCount := 'a'.
-	(bibtex hasField: #author)
+	(self bibtex hasField: #author)
 		ifTrue: [ [ | firstAuthor lastName |
-			firstAuthor := (bibtex at: #author) rawValueObject people at: 1.
+			firstAuthor := (self bibtex at: #author) rawValueObject people at: 1.
 			lastName := (' ' join: firstAuthor lastNames) asCamelCase.
 			lastName ifNotEmpty: [ keyBaseName := lastName copyFrom: 1 to: (4 min: lastName size) ] ]
 				on: SmaCCParserError
@@ -15,20 +18,20 @@ invalidateBibtex
 					Transcript
 						show: e;
 						cr ] ].
-	(bibtex hasField: #year)
+	(self bibtex hasField: #year)
 		ifTrue: [ | year |
-			year := (bibtex at: #year) value asString.
+			year := (self bibtex at: #year) value asString.
 			year size = 4
 				ifTrue: [ keyBaseYear := year copyFrom: 3 to: 4 ] ].
 	keyBase := keyBaseName , keyBaseYear.
 	(oldKey beginsWith: keyBase)
 		ifTrue: [ ^ self ].
-	(((graph nodesOfClass: LiReArticle) select: [ :n | n bibtex key beginsWith: keyBase ])
+	(((self graph nodesOfClass: LiReArticle) select: [ :n | n bibtex key beginsWith: keyBase ])
 		collect: [ :n | 
 			| key |
 			key := n bibtex key.
 			key copyFrom: keyBase size to: key size ]) ifNotEmpty: [ :c | keyCount := self class nextKeyCount: c ].
-	bibtex key: keyBase , keyCount.
-	(bibtex hasField: #pdf)
-		ifTrue: [ announcer announce: (LiReRequestMovePdf article: self) ].
+	self bibtex key: keyBase , keyCount.
+	(self bibtex hasField: #pdf)
+		ifTrue: [ self graph announcer announce: (LiReRequestPdfMove article: self) ].
 	self propertyChanged: #bibtex

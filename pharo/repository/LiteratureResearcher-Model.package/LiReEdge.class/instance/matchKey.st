@@ -1,3 +1,3 @@
 matching
 matchKey
-	^ key
+	^ self key

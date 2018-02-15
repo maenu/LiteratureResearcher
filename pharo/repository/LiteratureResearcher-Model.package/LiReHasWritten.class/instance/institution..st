@@ -1,3 +1,3 @@
 accessing
 institution: anObject
-	institution := anObject
+	institution value: anObject

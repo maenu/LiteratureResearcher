@@ -11,19 +11,19 @@ asWidget
 	model institutionLabel label: 'Institution'.
 	model countryLabel label: 'Country'.
 	model email
-		text: email;
+		text: self email;
 		acceptBlock: [ :s | self email: s ].
 	model institution
-		text: institution;
+		text: self institution;
 		acceptBlock: [ :s | self institution: s ].
 	model country
-		text: country;
+		text: self country;
 		acceptBlock: [ :s | self country: s ].
 	model assign: superModel to: #superModel.
 	self
-		whenPropertyChangedDo: [ model email text: email.
-			model institution text: institution.
-			model country text: country ].
+		whenPropertyChangedDo: [ model email text: self email.
+			model institution text: self institution.
+			model country text: self country ].
 	model
 		layout:
 			(SpecLayout composed

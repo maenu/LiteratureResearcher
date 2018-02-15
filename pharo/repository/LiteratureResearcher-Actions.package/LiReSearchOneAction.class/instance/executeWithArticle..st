@@ -1,0 +1,3 @@
+execution
+executeWithArticle: anArticle
+	self subclassResponsibility

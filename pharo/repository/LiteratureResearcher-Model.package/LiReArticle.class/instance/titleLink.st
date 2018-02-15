@@ -1,3 +1,3 @@
 accessing
 titleLink
-	^ titleLink
+	^ titleLink value

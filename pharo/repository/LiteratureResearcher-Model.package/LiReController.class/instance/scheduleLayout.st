@@ -1,4 +1,4 @@
-selecting
+scheduling
 scheduleLayout
 	scheduledLayout ifNotNil: [ scheduledLayout terminate ].
 	scheduledLayout := [ [ 300 milliSeconds asDelay wait.

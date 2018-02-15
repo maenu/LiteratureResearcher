@@ -1,4 +1,4 @@
-selecting
+scheduling
 schedule: aBlock title: aString
 	[ [ :j | 
 	j title: aString.

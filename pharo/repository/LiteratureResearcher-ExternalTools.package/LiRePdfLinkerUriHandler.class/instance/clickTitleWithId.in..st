@@ -1,3 +1,3 @@
 linking
 clickTitleWithId: aString in: anotherString
-	(LiReHyperlinkShowArticle id: aString referencingId: anotherString) executeIn: controller
+	(LiReHyperlinkShowArticleAction id: aString referencingId: anotherString) executeWith: controller

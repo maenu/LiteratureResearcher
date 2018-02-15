@@ -5,10 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"id",
-		"referencingId"
-	],
+	"instvars" : [ ],
 	"name" : "LiReHyperlinkAction",
 	"type" : "normal"
 }

@@ -4,10 +4,10 @@ gtInspectorActionRequestLinkOpenPdf
 	^ GLMGenericAction new
 		title: 'Link & open PDF';
 		position: 6;
-		enabledCondition: [ bibtex hasField: #pdf ];
+		enabledCondition: [ self bibtex hasField: #pdf ];
 		action: [ :p | 
-			graph announcer
+			self graph announcer
 				announce:
-					((LiReRequestLinkPdf article: self)
-						then: [ graph announcer announce: (LiReRequestOpenPdf article: self) ];
+					((LiReRequestPdfLink article: self)
+						then: [ self graph announcer announce: (LiReRequestPdfOpen article: self) ];
 						yourself) ]

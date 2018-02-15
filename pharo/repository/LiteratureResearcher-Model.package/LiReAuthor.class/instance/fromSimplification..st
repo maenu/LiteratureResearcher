@@ -1,4 +1,4 @@
 converting
 fromSimplification: aSimplification
 	super fromSimplification: aSimplification.
-	name := aSimplification at: #name
+	self name: (aSimplification at: #name)

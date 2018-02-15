@@ -1,3 +1,3 @@
 accessing
 target
-	^ target
+	^ target value

@@ -1,5 +1,5 @@
-matching
+as yet unclassified
 invalidateLink
-	link ifNil: [ link := LiReLink new ].
-	link key: key.
-	link id: key
+	self link ifNil: [ self link: LiReLink new ].
+	self link key: self key.
+	self link id: self key

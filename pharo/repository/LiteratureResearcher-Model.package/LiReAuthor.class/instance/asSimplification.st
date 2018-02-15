@@ -1,5 +1,5 @@
 converting
 asSimplification
 	^ super asSimplification
-		addAll: {(#name -> name)} asDictionary;
+		addAll: {(#name -> self name)} asDictionary;
 		yourself

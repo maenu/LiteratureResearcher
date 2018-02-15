@@ -1,3 +1,3 @@
 accessing
 key
-	^ key
+	^ key value

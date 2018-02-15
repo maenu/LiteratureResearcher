@@ -5,12 +5,12 @@ asWidget
 	model instantiateModels: #(keyLabel LabelModel key TextInputFieldModel orderLabel LabelModel order TextInputFieldModel).
 	model keyLabel label: 'Key'.
 	model key
-		text: key;
+		text: self key;
 		acceptBlock: [ :s | self key: s ].
 	self whenPropertyChangedDo: [ model key text: key ].
 	model orderLabel label: 'Order'.
 	model order
-		text: order;
+		text: self order;
 		acceptBlock: [ :s | self order: s asInteger ].
 	self whenPropertyChangedDo: [ model order text: order ].
 	model

@@ -1,3 +1,3 @@
 accessing
 bibtex
-	^ bibtex
+	^ bibtex value

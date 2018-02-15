@@ -1,3 +1,0 @@
-accessing
-actionMovePdf
-	^ actionMovePdf

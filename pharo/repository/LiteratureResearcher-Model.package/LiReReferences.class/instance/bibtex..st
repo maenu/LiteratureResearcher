@@ -1,3 +1,3 @@
 accessing
 bibtex: anObject
-	bibtex := anObject
+	bibtex value: anObject

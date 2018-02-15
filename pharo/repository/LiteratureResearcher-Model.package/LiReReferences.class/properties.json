@@ -6,8 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"bibtex",
-		"text"
+		"bibtex"
 	],
 	"name" : "LiReReferences",
 	"type" : "normal"

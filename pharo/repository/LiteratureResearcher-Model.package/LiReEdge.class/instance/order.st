@@ -1,3 +1,3 @@
 accessing
 order
-	^ order
+	^ order value

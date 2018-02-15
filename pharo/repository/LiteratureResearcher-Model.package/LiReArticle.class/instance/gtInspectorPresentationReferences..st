@@ -14,12 +14,12 @@ gtInspectorPresentationReferences: aComposite
 					existingEdges := (self outgoingEdgesOfClass: LiReReferences) asOrderedCollection collect: #order.
 					order := existingEdges ifEmpty: [ 1 ] ifNotEmpty: [ existingEdges max ].
 					edge := LiReReferences
-						graph: graph
+						graph: self graph
 						source: self
 						target: n
 						key: 'GENERATED'
 						order: order.
-					graph edges add: edge ];
+					self graph edges add: edge ];
 				node: self.
 			model paginatorModel listModel whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
 			model searchModel paginatorModel listModel whenSelectedItemChanged: [ :e | e ifNotNil: [ presentation selection: e ] ].
