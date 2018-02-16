@@ -4,7 +4,7 @@ asWidget
 	superModel := super asWidget.
 	model := DynamicComposableModel new.
 	model title: 'Details'.
-	model instantiateModels: #(superModel DynamicComposableModel bibtexLabel LabelModel bibtex).
+	model instantiateModels: #(superModel DynamicComposableModel bibtexLabel LabelModel bibtex TextModel).
 	model bibtexLabel label: 'Bibtex'.
 	model bibtex
 		text:

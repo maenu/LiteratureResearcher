@@ -7,22 +7,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 		title: 'Has written (remote)';
 		display: [ | model |
 			model := LiReSpecPaginator new
-				stream:
-					(LiRePaginatedStream
-						block: [ :s :c | 
-							| lock elements |
-							lock := Semaphore new.
-							elements := {}.
-							graph announcer
-								announce:
-									((LiReRequestSearchManyByAuthors object: {self name} asString start: s count: c)
-										then: [ :e | 
-											elements := e.
-											lock signal ];
-										yourself).
-							self flag: 'TODO timeout'.
-							lock wait.
-							elements ]);
+				stream: (LiRePaginatedStream block: [ {} ]);
 				menuModelBlock: [ :e | 
 					| menu |
 					menu := MenuModel new.
@@ -35,6 +20,14 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 										action: [ graph announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
 					menu ];
 				yourself.
+			self flag: 'TODO make somebody care about this fork'.
+			[ model
+				stream:
+					(LiRePaginatedStream
+						block: [ :s :c | 
+							| nodes |
+							nodes := self graph announcer announce: (LiReRequestSearchManyByAuthors object: {self name} start: s count: c) wait: 1 minute.
+							nodes flatCollect: [ :n | (n incomingEdgesOfClass: LiReHasWritten) select: [ :e | e source = self ] ] ]) ] fork.
 			model listModel
 				displayBlock: [ :e | e asTargetString ];
 				icons: [ :e | e target asIcon ];

@@ -7,4 +7,3 @@ newReferenceAt: anInteger withBibtex: aBibtex dictionary: aDictionary
 		key: (aDictionary at: #key ifAbsent: nil)
 		order: anInteger
 		bibtex: aBibtex
-		text: (aDictionary at: #text ifAbsent: nil)

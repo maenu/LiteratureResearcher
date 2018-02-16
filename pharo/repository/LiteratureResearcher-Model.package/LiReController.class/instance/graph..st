@@ -3,93 +3,122 @@ graph: anObject
 	graph := anObject.
 	view := graph asRoassalView.
 	graph announcer
-		when: LiReRequestSelectNode do: [ :a | a then cull: (self selectNode: a entity) ];
-		when: LiReRequestSelectEdge do: [ :a | a then cull: (self selectEdge: a entity) ];
+		when: LiReRequestSelectNode
+			do: [ :a | a resolve: [ self selectNode: a entity ] ];
+		when: LiReRequestSelectEdge
+			do: [ :a | a resolve: [ self selectEdge: a entity ] ];
 		when: LiReRequestSearchOneBibtex
-			do: [ :a | self schedule: [ a then cull: ((actions at: LiReSearchOneBibtexAction) executeWith: {a object}) ] title: 'Search one BibTex' ];
+			do: [ :a | 
+			self
+				schedule: [ a
+						resolve: [ (actions at: LiReSearchOneBibtexAction) executeWith: {a object} ] ]
+				title: 'Search one BibTex' ];
 		when: LiReRequestSearchOneClusterId
-			do:
-				[ :a | self schedule: [ a then cull: ((actions at: LiReSearchOneClusterIdAction) executeWith: {a object}) ] title: 'Search one cluster ID' ];
+			do: [ :a | 
+			self
+				schedule: [ a
+						resolve: [ (actions at: LiReSearchOneClusterIdAction) executeWith: {a object} ] ]
+				title: 'Search one cluster ID' ];
 		when: LiReRequestSearchManyByAny
 			do: [ :a | 
 			self
-				schedule: [ a then
-						cull:
-							((actions at: LiReSearchManyByAnyAction)
+				schedule: [ a
+						resolve: [ (actions at: LiReSearchManyByAnyAction)
 								executeWith:
 									{a object.
 									a start.
-									a count}) ]
+									a count} ] ]
 				title: 'Search many by any' ];
 		when: LiReRequestSearchManyByAuthors
 			do: [ :a | 
 			self
-				schedule: [ a then
-						cull:
-							((actions at: LiReSearchManyByAuthorsAction)
+				schedule: [ a
+						resolve: [ (actions at: LiReSearchManyByAuthorsAction)
 								executeWith:
 									{a object.
 									a start.
-									a count}) ]
+									a count} ] ]
 				title: 'Search many by authors' ];
 		when: LiReRequestSearchManyByTitle
 			do: [ :a | 
 			self
-				schedule: [ a then
-						cull:
-							((actions at: LiReSearchManyByTitleAction)
+				schedule: [ a
+						resolve: [ (actions at: LiReSearchManyByTitleAction)
 								executeWith:
 									{a object.
 									a start.
-									a count}) ]
+									a count} ] ]
 				title: 'Search many by title' ];
 		when: LiReRequestSearchManyCitations
 			do: [ :a | 
 			self
-				schedule: [ a then
-						cull:
-							((actions at: LiReSearchManyCitationsAction)
+				schedule: [ a
+						resolve: [ (actions at: LiReSearchManyCitationsAction)
 								executeWith:
 									{a object.
 									a start.
-									a count}) ]
+									a count} ] ]
 				title: 'Search many citations' ];
 		when: LiReRequestPdfLoad
-			do: [ :a | self schedule: [ a then cull: ((actions at: LiRePdfLoadAction) executeWith: {a article}) ] title: 'Load PDF' ];
+			do: [ :a | 
+			self
+				schedule: [ a
+						resolve: [ (actions at: LiRePdfLoadAction) executeWith: {a article} ] ]
+				title: 'Load PDF' ];
 		when: LiReRequestPdfImport
-			do: [ :a | self schedule: [ a then cull: ((actions at: LiRePdfImportAction) executeWith: {a article}) ] title: 'Import PDF' ];
+			do: [ :a | 
+			self
+				schedule: [ a
+						resolve: [ (actions at: LiRePdfImportAction) executeWith: {a article} ] ]
+				title: 'Import PDF' ];
 		when: LiReRequestPdfLink
-			do: [ :a | self schedule: [ a then cull: ((actions at: LiRePdfLinkAction) executeWith: {a article}) ] title: 'Link PDF' ];
+			do: [ :a | 
+			self
+				schedule: [ a
+						resolve: [ (actions at: LiRePdfLinkAction) executeWith: {a article} ] ]
+				title: 'Link PDF' ];
 		when: LiReRequestPdfMove
-			do: [ :a | self schedule: [ a then cull: ((actions at: LiRePdfMoveAction) executeWith: {a article}) ] title: 'Move PDF' ];
+			do: [ :a | 
+			self
+				schedule: [ a
+						resolve: [ (actions at: LiRePdfMoveAction) executeWith: {a article} ] ]
+				title: 'Move PDF' ];
 		when: LiReRequestPdfOpen
-			do: [ :a | self schedule: [ a then cull: ((actions at: LiRePdfOpenAction) executeWith: {a article}) ] title: 'Open PDF' ];
+			do: [ :a | 
+			self
+				schedule: [ a
+						resolve: [ (actions at: LiRePdfOpenAction) executeWith: {a article} ] ]
+				title: 'Open PDF' ];
 		when: LiReNodeAdded
 			do: [ :a | 
-			a node isCollection
-				ifTrue: [ a node do: [ :e | self addNode: e ] ]
-				ifFalse: [ self addNode: a node ].
-			self scheduleLayout.
-			a then cull: a node ];
+			a
+				resolve: [ a node isCollection
+						ifTrue: [ a node do: [ :e | self addNode: e ] ]
+						ifFalse: [ self addNode: a node ].
+					self scheduleLayout.
+					a node ] ];
 		when: LiReNodeRemoved
 			do: [ :a | 
-			a node isCollection
-				ifTrue: [ a node do: [ :e | self removeNode: e ] ]
-				ifFalse: [ self removeNode: a node ].
-			self scheduleLayout.
-			a then cull: a node ];
+			a
+				resolve: [ a node isCollection
+						ifTrue: [ a node do: [ :e | self removeNode: e ] ]
+						ifFalse: [ self removeNode: a node ].
+					self scheduleLayout.
+					a node ] ];
 		when: LiReEdgeAdded
 			do: [ :a | 
-			a edge isCollection
-				ifTrue: [ a edge do: [ :e | self addEdge: e ] ]
-				ifFalse: [ self addEdge: a edge ].
-			self scheduleLayout.
-			a then cull: a edge ];
+			a
+				resolve: [ a edge isCollection
+						ifTrue: [ a edge do: [ :e | self addEdge: e ] ]
+						ifFalse: [ self addEdge: a edge ].
+					self scheduleLayout.
+					a edge ] ];
 		when: LiReEdgeRemoved
 			do: [ :a | 
-			a edge isCollection
-				ifTrue: [ a edge do: [ :e | self removeEdge: e ] ]
-				ifFalse: [ self removeEdge: a edge ].
-			self scheduleLayout.
-			a then cull: a edge ].
+			a
+				resolve: [ a edge isCollection
+						ifTrue: [ a edge do: [ :e | self removeEdge: e ] ]
+						ifFalse: [ self removeEdge: a edge ].
+					self scheduleLayout.
+					a edge ] ].
 	self scheduleLayout

@@ -1,4 +1,6 @@
 initialization
 initialize
 	super initialize.
-	then := [  ]
+	then := [  ].
+	except := [ :e | e signal ].
+	finally := [  ]

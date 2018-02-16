@@ -13,6 +13,6 @@ asRoassalView
 	LiReLabel allInstancesSorted do: [ :l | legendBuilder addColor: l asColor text: l asString ].
 	legendBuilder build.
 	view @ RTZoomableView.
+	"view @ RTSelectableView."
 	view @ RTDraggableView.
-	view @ RTSelectableView.
 	^ view

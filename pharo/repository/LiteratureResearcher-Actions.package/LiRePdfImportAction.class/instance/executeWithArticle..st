@@ -15,6 +15,6 @@ executeWithArticle: anArticle
 			(bibtex exists
 				ifTrue: [ bibtex contents ]
 				ifFalse: [ '' ]).
-	anArticle merge: (self newArticleWith: metadata).
+	anArticle mergeWith: (self newArticleWith: metadata).
 	self mergeHasWritten: anArticle metadata: metadata.
 	self mergeReferences: anArticle bibtex: bibtex metadata: metadata

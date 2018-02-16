@@ -10,20 +10,7 @@ gtInspectorPresentationArticlesRemote: aComposite
 			model
 				searchBlock: [ :t | 
 					LiRePaginatedStream
-						block: [ :s :c | 
-							| lock elements |
-							lock := Semaphore new.
-							elements := {}.
-							graph announcer
-								announce:
-									((LiReRequestSearchManyByAny object: t asString start: s count: c)
-										then: [ :e | 
-											elements := e.
-											lock signal ];
-										yourself).
-							self flag: 'TODO timeout'.
-							lock wait.
-							elements ] ].
+						block: [ :s :c | graph announcer announce: (LiReRequestSearchManyByAny object: t asString start: s count: c) wait: 1 minute ] ].
 			model paginatorModel
 				menuModelBlock: [ :n | 
 					| menu |

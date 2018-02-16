@@ -7,21 +7,7 @@ gtInspectorPresentationReferencedByRemote: aComposite
 		title: 'Referenced by (remote)';
 		display: [ | model |
 			model := LiReSpecPaginator new
-				stream:
-					(LiRePaginatedStream
-						block: [ :s :c | 
-							| lock elements |
-							elements := {}.
-							lock := Semaphore new.
-							graph announcer
-								announce:
-									((LiReRequestSearchManyCitations object: self start: s count: c)
-										then: [ :e | 
-											elements := e.
-											lock signal ];
-										yourself).
-							self flag: 'TODO timeout'.
-							lock wait elements ]);
+				stream: (LiRePaginatedStream block: [ {} ]);
 				menuModelBlock: [ :e | 
 					| menu |
 					menu := MenuModel new.
@@ -34,6 +20,14 @@ gtInspectorPresentationReferencedByRemote: aComposite
 										action: [ self graph announcer announce: (LiReRequestSelectEdge entity: e) ] ] ].
 					menu ];
 				yourself.
+			self flag: 'TODO make somebody care about this fork'.
+			[ model
+				stream:
+					(LiRePaginatedStream
+						block: [ :s :c | 
+							| nodes |
+							nodes := self graph announcer announce: (LiReRequestSearchManyCitations object: self start: s count: c) wait: 1 minute.
+							nodes flatCollect: [ :n | (n outgoingEdgesOfClass: LiReReferences) select: [ :e | e target = self ] ] ]) ] fork.
 			model listModel
 				displayBlock: [ :e | e asSourceString ];
 				icons: [ :e | e source asIcon ];

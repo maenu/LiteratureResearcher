@@ -6,7 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"then"
+		"then",
+		"except",
+		"finally"
 	],
 	"name" : "LiReAnnouncement",
 	"type" : "normal"

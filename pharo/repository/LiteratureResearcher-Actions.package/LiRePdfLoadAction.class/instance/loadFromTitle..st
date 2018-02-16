@@ -1,7 +1,7 @@
 execution
 loadFromTitle: anArticle
 	self flag: 'search more than 10?'.
-	^ (searchByTitle
+	^ (searchManyByTitle
 		executeWith:
 			{(anArticle bibtex at: #title) value.
 			0.
