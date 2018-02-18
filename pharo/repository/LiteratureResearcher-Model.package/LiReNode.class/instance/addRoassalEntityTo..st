@@ -12,4 +12,5 @@ addRoassalEntityTo: aView
 		@ menu.
 	self
 		whenPropertyChangedDo: [ element update.
-			aView signalUpdate ]
+			aView signalUpdate ].
+	^ element

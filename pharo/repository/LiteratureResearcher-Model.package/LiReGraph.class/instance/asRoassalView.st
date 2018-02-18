@@ -1,10 +1,10 @@
 converting
 asRoassalView
-	| view legendBuilder |
+	| view nodesVisible legendBuilder |
 	view := RTView new.
 	view attributeAt: #GlamourContext put: LiReRTInteractiveViewContext new.
-	nodes do: [ :n | n addRoassalEntityTo: view ].
-	edges do: [ :e | e addRoassalEntityTo: view ].
+	(nodes reject: [ :n | n hidden ]) do: [ :n | n addRoassalEntityTo: view ].
+	(edges reject: [ :e | e hidden ]) do: [ :e | e addRoassalEntityTo: view ].
 	legendBuilder := RTLegendBuilder new
 		onDemand;
 		view: view;
@@ -13,6 +13,5 @@ asRoassalView
 	LiReLabel allInstancesSorted do: [ :l | legendBuilder addColor: l asColor text: l asString ].
 	legendBuilder build.
 	view @ RTZoomableView.
-	"view @ RTSelectableView."
 	view @ RTDraggableView.
 	^ view

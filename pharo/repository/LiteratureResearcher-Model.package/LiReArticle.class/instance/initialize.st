@@ -5,6 +5,6 @@ initialize
 	self observeProperty: #bibtex.
 	titleLink := NewValueHolder new.
 	self observeProperty: #titleLink.
-	announcer when: LiRePropertyChanged do: [ :a | self invalidate ].
-	labels whenAddedDo: [ :l | self invalidate ].
-	labels whenRemovedDo: [ :l | self invalidate ]
+	self whenPropertyChangedDo: [ self invalidate ].
+	labels whenAddedDo: [ self invalidate ].
+	labels whenRemovedDo: [ self invalidate ]

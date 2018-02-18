@@ -1,6 +1,6 @@
 removing
 removeEdge: anEdge
-	| edge |
-	edge := view edgeFromModel: anEdge.
-	RTLabeled removeLabelFrom: edge.
-	edge remove
+	(view edgeFromModel: anEdge)
+		ifNotNil: [ :e | 
+			RTLabeled removeLabelFrom: e.
+			e remove ]

@@ -32,6 +32,4 @@ invalidateBibtex
 			key := n bibtex key.
 			key copyFrom: keyBase size to: key size ]) ifNotEmpty: [ :c | keyCount := self class nextKeyCount: c ].
 	self bibtex key: keyBase , keyCount.
-	(self bibtex hasField: #pdf)
-		ifTrue: [ self graph announcer announce: (LiReRequestPdfMove article: self) ].
 	self propertyChanged: #bibtex

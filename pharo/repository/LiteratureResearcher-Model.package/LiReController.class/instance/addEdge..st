@@ -1,3 +1,4 @@
 adding
 addEdge: anEdge
-	anEdge addRoassalEntityTo: view
+	anEdge hidden
+		ifFalse: [ anEdge addRoassalEntityTo: view ]

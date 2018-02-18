@@ -1,6 +1,6 @@
 removing
 removeNode: aNode
-	| node |
-	node := view elementFromModel: aNode.
-	node outgoingEdges , node incomingEdges do: [ :e | self removeEdge: e ].
-	node remove
+	(view elementFromModel: aNode)
+		ifNotNil: [ :n | 
+			n outgoingEdges , n incomingEdges do: [ :e | self removeEdge: e ].
+			n remove ]

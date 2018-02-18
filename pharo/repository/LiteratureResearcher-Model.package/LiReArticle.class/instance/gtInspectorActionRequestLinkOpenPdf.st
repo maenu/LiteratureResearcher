@@ -3,7 +3,7 @@ gtInspectorActionRequestLinkOpenPdf
 	<gtInspectorAction>
 	^ GLMGenericAction new
 		title: 'Link & open PDF';
-		position: 6;
+		position: 7;
 		enabledCondition: [ self bibtex hasField: #pdf ];
 		action: [ :p | 
 			self graph announcer

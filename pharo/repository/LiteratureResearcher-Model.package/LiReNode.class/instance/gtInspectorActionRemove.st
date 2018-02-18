@@ -3,7 +3,7 @@ gtInspectorActionRemove
 	<gtInspectorAction>
 	^ GLMGenericAction new
 		title: 'Remove';
-		position: 1;
+		position: 2;
 		action: [ :p | 
 			self graph edges removeAll: self incomingEdges , self outgoingEdges.
 			self graph nodes remove: self ]

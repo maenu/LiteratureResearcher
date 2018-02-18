@@ -3,7 +3,7 @@ gtInspectorActionRequestLoadImportLinkOpenPdf
 	<gtInspectorAction>
 	^ GLMGenericAction new
 		title: 'Load, import, link & open PDF';
-		position: 5;
+		position: 8;
 		action: [ :p | 
 			self graph announcer
 				announce:

@@ -1,8 +1,8 @@
 roassal extensions
 addRoassalEntityTo: aView
 	| element sourceElement targetElement |
-	sourceElement := aView elements detect: [ :e | e model == self source ].
-	targetElement := aView elements detect: [ :e | e model == self target ].
+	sourceElement := aView elementFromModel: self source.
+	targetElement := aView elementFromModel: self target.
 	element := RTEdge on: self from: sourceElement to: targetElement.
 	element
 		+
@@ -17,4 +17,5 @@ addRoassalEntityTo: aView
 	aView add: element.
 	self
 		whenPropertyChangedDo: [ element update.
-			aView signalUpdate ]
+			aView signalUpdate ].
+	^ element
