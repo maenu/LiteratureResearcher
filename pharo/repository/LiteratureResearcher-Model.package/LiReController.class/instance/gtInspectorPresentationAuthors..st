@@ -7,6 +7,11 @@ gtInspectorPresentationAuthors: aComposite
 		title: [ 'Authors' ];
 		display: [ | model |
 			model := LiReSpecSearch new.
+			model
+				createBlock: [ :s | 
+					| n |
+					n := LiReAuthor graph: self graph string: s.
+					self graph nodes add: n ].
 			model searchBlock: [ :s | ReadStream on: ((graph nodesOfClass: LiReAuthor) asOrderedCollection select: [ :n | n matches: s ]) ].
 			model paginatorModel
 				menuModelBlock: [ :n | 

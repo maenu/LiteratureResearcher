@@ -7,6 +7,11 @@ gtInspectorPresentationArticles: aComposite
 		title: [ 'Articles' ];
 		display: [ | model |
 			model := LiReSpecSearch new.
+			model
+				createBlock: [ :s | 
+					| n |
+					n := LiReArticle graph: self graph string: s.
+					self graph nodes add: n ].
 			model searchBlock: [ :s | ReadStream on: ((graph nodesOfClass: LiReArticle) asOrderedCollection select: [ :n | n matches: s ]) ].
 			model paginatorModel
 				menuModelBlock: [ :n | 

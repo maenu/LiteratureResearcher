@@ -6,8 +6,8 @@ movePdf: aFileReference toRepositoryFor: anArticle
 	target absolutePath = aFileReference absolutePath
 		ifTrue: [ ^ aFileReference ].
 	anArticle bibtex at: #pdf put: target basename.
-	anArticle propertyChanged: #bibtex.
 	self flag: 'delete may not always be desired'.
 	target ensureDelete.
 	aFileReference moveTo: target.
+	anArticle propertyChanged: #bibtex.
 	^ target
