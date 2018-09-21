@@ -1,9 +1,11 @@
 package ch.unibe.scg.pdflinker.dom;
 
-public class Line extends Node<Word> {
+import java.util.Optional;
 
-	public Line() {
-		super(" ");
+public class Line extends Node<Paragraph, Word> {
+
+	public Line(Paragraph parent) {
+		super(Optional.of(parent), " ");
 	}
 
 }

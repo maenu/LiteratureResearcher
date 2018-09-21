@@ -8,13 +8,13 @@ import java.util.Optional;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.text.TextPosition;
 
-public class Word extends Element {
+public class Word extends Node<Line, Node<?, ?>> {
 
 	private StringBuilder builder;
 	private List<TextPosition> textPositions;
 
-	public Word() {
-		super();
+	public Word(Line parent) {
+		super(Optional.of(parent), "");
 		this.builder = new StringBuilder();
 		this.textPositions = new ArrayList<>();
 	}
@@ -27,7 +27,7 @@ public class Word extends Element {
 	}
 
 	@Override
-	public Optional<Word> getWordContaining(TextPosition textPosition) {
+	public Optional<Node<?, ?>> getNodeContaining(TextPosition textPosition) {
 		// normalize dir to make equals work
 		textPosition.getDir();
 		if (this.contains(textPosition)) {
@@ -38,7 +38,7 @@ public class Word extends Element {
 	}
 
 	@Override
-	public Optional<Element> getElementContainingAll(Collection<TextPosition> textPositions) {
+	public Optional<Node<?, ?>> getNodeContainingAll(Collection<TextPosition> textPositions) {
 		// normalize dir to make equals work
 		textPositions.forEach(TextPosition::getDir);
 		if (this.containsAll(textPositions)) {

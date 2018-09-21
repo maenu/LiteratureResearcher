@@ -33,10 +33,9 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.apache.pdfbox.text.TextPosition;
 
 import ch.unibe.scg.pdflinker.dom.DomParser;
-import ch.unibe.scg.pdflinker.dom.Element;
 import ch.unibe.scg.pdflinker.dom.Line;
+import ch.unibe.scg.pdflinker.dom.Node;
 import ch.unibe.scg.pdflinker.dom.Page;
-import ch.unibe.scg.pdflinker.dom.Word;
 import ch.unibe.scg.pdflinker.link.Author;
 import ch.unibe.scg.pdflinker.link.Link;
 import ch.unibe.scg.pdflinker.link.Links;
@@ -84,15 +83,15 @@ public class Linker {
 						.getTextPositions(page, Collections.singletonList(modifierAnnotation.getRectangle())).iterator()
 						.next();
 				String text = textPosition.getV1();
-				List<Word> words = textPosition.getV2().stream().map(pageParse::getWordContaining)
+				List<Node<?, ?>> words = textPosition.getV2().stream().map(pageParse::getNodeContaining)
 						.filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
 				if (words.isEmpty()) {
 					System.err.println("Could not find text for link to add: " + text);
 					continue;
 				}
-				PDRectangle rectangle = words.stream().map(Element::getRectangle).reduce(Element::union).get();
+				PDRectangle rectangle = words.stream().map(Node::getRectangle).reduce(Node::union).get();
 				// TODO cheap heuristic for deciding on link type
-				String key = String.join(" ", words.stream().map(Word::getText).collect(Collectors.toList()));
+				String key = String.join(" ", words.stream().map(Node::getText).collect(Collectors.toList()));
 				if (i == 0 && (!this.links.getTitle().isPresent()
 						|| !this.links.getTitle().get().getRectangle().isPresent())) {
 					this.links.setTitle(Optional.of(new Title(key, Optional.empty(), Optional.of(text), Optional.of(i),
@@ -223,7 +222,7 @@ public class Linker {
 						return;
 					}
 					PDRectangle rectangle = l.getChildren().subList(j, j + words.size()).stream()
-							.map(Element::getRectangle).reduce(Element::union).get();
+							.map(Node::getRectangle).reduce(Node::union).get();
 					a.setRectangle(Optional.of(rectangle));
 					a.setPage(Optional.of(i));
 					this.addLink(page, a);
@@ -259,8 +258,8 @@ public class Linker {
 					if (next.isPresent()) {
 						if (current.isPresent() && next.get() != current.get()) {
 							// finish current
-							PDRectangle rectangle = currentLines.stream().map(Element::getRectangle)
-									.reduce(Element::union).get();
+							PDRectangle rectangle = currentLines.stream().map(Node::getRectangle).reduce(Node::union)
+									.get();
 							current.get().setRectangle(Optional.of(rectangle));
 							current.get().setPage(Optional.of(i));
 							this.addLink(page, current.get());
@@ -272,8 +271,7 @@ public class Linker {
 				}
 				if (current.isPresent()) {
 					// finish last
-					PDRectangle rectangle = currentLines.stream().map(Element::getRectangle).reduce(Element::union)
-							.get();
+					PDRectangle rectangle = currentLines.stream().map(Node::getRectangle).reduce(Node::union).get();
 					current.get().setRectangle(Optional.of(rectangle));
 					current.get().setPage(Optional.of(i));
 					this.addLink(page, current.get());

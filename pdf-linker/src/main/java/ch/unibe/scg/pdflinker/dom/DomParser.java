@@ -25,9 +25,9 @@ public class DomParser extends PDFTextStripper {
 
 	public Map<PDPage, Page> parse(PDDocument document) throws IOException {
 		this.currentPage = new Page();
-		this.currentParagraph = new Paragraph();
-		this.currentLine = new Line();
-		this.currentWord = new Word();
+		this.currentParagraph = new Paragraph(this.currentPage);
+		this.currentLine = new Line(this.currentParagraph);
+		this.currentWord = new Word(this.currentLine);
 		this.pages = new HashMap<>();
 		this.writeText(document, new NullWriter());
 		return this.pages;
@@ -69,7 +69,7 @@ public class DomParser extends PDFTextStripper {
 		if (!this.currentParagraph.getChildren().isEmpty()) {
 			this.currentPage.add(this.currentParagraph);
 		}
-		this.currentParagraph = new Paragraph();
+		this.currentParagraph = new Paragraph(this.currentPage);
 	}
 
 	private void nextLine() {
@@ -77,14 +77,14 @@ public class DomParser extends PDFTextStripper {
 		if (!this.currentLine.getChildren().isEmpty()) {
 			this.currentParagraph.add(this.currentLine);
 		}
-		this.currentLine = new Line();
+		this.currentLine = new Line(this.currentParagraph);
 	}
 
 	private void nextWord() {
 		if (this.currentWord.getText().length() > 0) {
 			this.currentLine.add(this.currentWord);
 		}
-		this.currentWord = new Word();
+		this.currentWord = new Word(this.currentLine);
 	}
 
 }

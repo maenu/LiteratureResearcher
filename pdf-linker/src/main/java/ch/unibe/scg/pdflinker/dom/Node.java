@@ -9,39 +9,53 @@ import java.util.Optional;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.text.TextPosition;
 
-public abstract class Node<T extends Element> extends Element {
+public abstract class Node<P extends Node<?, ?>, C extends Node<?, ?>> {
 
 	public static String union(String a, String seperator, String b) {
 		return a + seperator + b;
 	}
 
-	private List<T> children;
+	public static PDRectangle union(PDRectangle a, PDRectangle b) {
+		PDRectangle rectangle = new PDRectangle();
+		rectangle.setLowerLeftX(Math.min(a.getLowerLeftX(), b.getLowerLeftX()));
+		rectangle.setLowerLeftY(Math.min(a.getLowerLeftY(), b.getLowerLeftY()));
+		rectangle.setUpperRightX(Math.max(a.getUpperRightX(), b.getUpperRightX()));
+		rectangle.setUpperRightY(Math.max(a.getUpperRightY(), b.getUpperRightY()));
+		return rectangle;
+	}
+
+	private Optional<P> parent;
+	private List<C> children;
 	private String seperator;
 
-	public Node(String seperator) {
+	public Node(Optional<P> parent, String seperator) {
 		super();
+		this.parent = parent;
 		this.seperator = seperator;
 		this.children = new ArrayList<>();
 	}
 
-	public void add(T child) {
+	public void add(C child) {
 		this.children.add(child);
 	}
 
-	public List<T> getChildren() {
+	public Optional<P> getParent() {
+		return this.parent;
+	}
+
+	public List<C> getChildren() {
 		return this.children;
 	}
 
-	@Override
-	public Optional<Word> getWordContaining(TextPosition textPosition) {
-		return this.children.stream().map(c -> c.getWordContaining(textPosition)).filter(Optional::isPresent)
-				.map(Optional::get).findFirst();
+	public Optional<Node<?, ?>> getNodeContaining(TextPosition textPosition) {
+		return (Optional<Node<?, ?>>) (Optional<?>) this.children.stream().map(c -> c.getNodeContaining(textPosition))
+				.filter(Optional::isPresent).map(Optional::get).findFirst();
 	}
 
-	@Override
-	public Optional<Element> getElementContainingAll(Collection<TextPosition> textPositions) {
-		Optional<Element> child = this.children.stream().map(c -> c.getElementContainingAll(textPositions))
-				.filter(Optional::isPresent).map(Optional::get).findFirst();
+	public Optional<Node<?, ?>> getNodeContainingAll(Collection<TextPosition> textPositions) {
+		Optional<Node<?, ?>> child = (Optional<Node<?, ?>>) (Optional<?>) this.children.stream()
+				.map(c -> c.getNodeContainingAll(textPositions)).filter(Optional::isPresent).map(Optional::get)
+				.findFirst();
 		if (child.isPresent()) {
 			return child;
 		}
@@ -51,24 +65,25 @@ public abstract class Node<T extends Element> extends Element {
 		return Optional.empty();
 	}
 
-	@Override
 	public boolean contains(TextPosition textPosition) {
 		return this.containsAll(Collections.singleton(textPosition));
 	}
 
-	@Override
 	public boolean containsAll(Collection<TextPosition> textPositions) {
 		return textPositions.stream().allMatch(p -> this.children.stream().anyMatch(c -> c.contains(p)));
 	}
 
-	@Override
 	public PDRectangle getRectangle() {
-		return this.children.stream().map(Element::getRectangle).reduce((a, b) -> union(a, b)).get();
+		return this.children.stream().map(Node::getRectangle).reduce((a, b) -> union(a, b)).get();
+	}
+
+	public String getText() {
+		return this.children.stream().map(Node::getText).reduce((a, b) -> union(a, this.seperator, b)).get();
 	}
 
 	@Override
-	public String getText() {
-		return this.children.stream().map(Element::getText).reduce((a, b) -> union(a, this.seperator, b)).get();
+	public String toString() {
+		return this.getText();
 	}
 
 }
