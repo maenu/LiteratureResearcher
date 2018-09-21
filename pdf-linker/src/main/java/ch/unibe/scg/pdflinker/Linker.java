@@ -92,7 +92,7 @@ public class Linker {
 				}
 				PDRectangle rectangle = words.stream().map(Element::getRectangle).reduce(Element::union).get();
 				// TODO cheap heuristic for deciding on link type
-				String key = words.get(0).getText().trim();
+				String key = String.join(" ", words.stream().map(Word::getText).collect(Collectors.toList()));
 				if (i == 0 && (!this.links.getTitle().isPresent()
 						|| !this.links.getTitle().get().getRectangle().isPresent())) {
 					this.links.setTitle(Optional.of(new Title(key, Optional.empty(), Optional.of(text), Optional.of(i),
@@ -178,13 +178,15 @@ public class Linker {
 		if (title.getRectangle().isPresent() && title.getPage().isPresent() && title.getPage().get() == i) {
 			this.addLink(page, title);
 		} else {
-			page0.getChildren().stream()
-					.filter(p -> p.getText().replaceAll("\\s+", " ").trim().toLowerCase().contains(title.getKey()))
-					.forEach(p -> {
-						title.setRectangle(Optional.of(p.getRectangle()));
-						title.setPage(Optional.of(i));
-						this.addLink(page, title);
-					});
+			String normalizedKey = this.normalize(title.getKey());
+			if (normalizedKey.isEmpty()) {
+				return;
+			}
+			page0.getChildren().stream().filter(p -> this.normalize(p.getText()).equals(normalizedKey)).forEach(p -> {
+				title.setRectangle(Optional.of(p.getRectangle()));
+				title.setPage(Optional.of(i));
+				this.addLink(page, title);
+			});
 		}
 	}
 
@@ -196,18 +198,25 @@ public class Linker {
 					.forEach(l -> this.addLink(page, l));
 		}
 		if (authors.containsKey(false)) {
-			Map<Author, List<String>> authorsNormalized = authors.get(false).stream().collect(Collectors.toMap(a -> a,
-					a -> Arrays.asList(a.getKey().trim().toLowerCase().replaceAll("[^a-z\\s]", "").split("\\s+"))))
-					.entrySet().stream().filter(e -> !e.getValue().isEmpty())
-					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+			Map<Author, List<String>> authorsNormalized = authors.get(false).stream().map(a -> {
+				String normalizedKey = this.normalize(a.getKey());
+				if (normalizedKey.isEmpty()) {
+					return new Pair<>(a, Collections.<String>emptyList());
+				}
+				return new Pair<>(a, Arrays.asList(normalizedKey.split("\\s+")));
+			}).filter(p -> {
+				return !p.getV2().isEmpty();
+			}).collect(Collectors.toMap(Pair::getV1, Pair::getV2));
 			if (authorsNormalized.isEmpty()) {
 				return;
 			}
 			page0.getChildren().stream().flatMap(p -> p.getChildren().stream()).forEach(l -> {
 				authors.get(false).stream().forEach(a -> {
 					List<String> words = authorsNormalized.get(a);
-					List<String> line = l.getChildren().stream()
-							.map(w -> w.getText().trim().toLowerCase().replaceAll("[^a-z\\s]", ""))
+					if (words.isEmpty()) {
+						return;
+					}
+					List<String> line = l.getChildren().stream().map(w -> this.normalize(w.getText()))
 							.collect(Collectors.toList());
 					int j = Collections.indexOfSubList(line, words);
 					if (j == -1) {
@@ -231,11 +240,11 @@ public class Linker {
 					.forEach(l -> this.addLink(page, l));
 		}
 		if (references.containsKey(false)) {
-			Map<Reference, List<String>> referencesNormalized = references.get(false).stream()
-					.collect(
-							Collectors.toMap(r -> r, r -> Arrays.asList(r.getKey().trim().toLowerCase().split("\\s+"))))
-					.entrySet().stream().filter(e -> !e.getValue().isEmpty())
-					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+			Map<Reference, String> referencesNormalized = references.get(false).stream().map(a -> {
+				return new Pair<>(a, this.normalize(a.getKey()).replaceAll(" ", ""));
+			}).filter(p -> {
+				return !p.getV2().isEmpty();
+			}).collect(Collectors.toMap(Pair::getV1, Pair::getV2));
 			if (referencesNormalized.isEmpty()) {
 				return;
 			}
@@ -243,13 +252,10 @@ public class Linker {
 				Optional<Reference> current = Optional.empty();
 				List<Line> currentLines = new ArrayList<>();
 				for (Line l : p.getChildren()) {
-					Optional<Reference> next = references.get(false).stream().filter(r -> {
-						List<String> words = referencesNormalized.get(r);
-						List<String> line = l.getChildren().stream().map(w -> w.getText().trim().toLowerCase())
-								.collect(Collectors.toList());
-						int j = Collections.indexOfSubList(line, words);
-						return j == 0;
-					}).findFirst();
+					Optional<Reference> next = referencesNormalized.entrySet().stream().filter(e -> {
+						return this.normalize(l.getText()).replaceAll(" ", "")
+								.startsWith(this.normalize(e.getValue()).replaceAll(" ", ""));
+					}).map(Map.Entry::getKey).findFirst();
 					if (next.isPresent()) {
 						if (current.isPresent() && next.get() != current.get()) {
 							// finish current
@@ -293,11 +299,6 @@ public class Linker {
 					rectangle.getHeight());
 			content.fill();
 			content.restoreGraphicsState();
-		} catch (IOException exception) {
-			// TODO Auto-generated catch block
-			exception.printStackTrace();
-		}
-		try {
 			PDBorderStyleDictionary borderStyle = new PDBorderStyleDictionary();
 			borderStyle.setWidth(0);
 			PDActionURI action = new PDActionURI();
@@ -308,9 +309,8 @@ public class Linker {
 			annotation.setAction(action);
 			annotation.setRectangle(rectangle);
 			page.getAnnotations().add(0, annotation);
-		} catch (IOException exception) {
-			// TODO Auto-generated catch block
-			exception.printStackTrace();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -339,6 +339,10 @@ public class Linker {
 		return new Rectangle2D.Float(rectangle.getLowerLeftX(),
 				page.getMediaBox().getHeight() - rectangle.getUpperRightY(), rectangle.getWidth(),
 				rectangle.getHeight());
+	}
+
+	private String normalize(String s) {
+		return s.trim().toLowerCase().replaceAll("[^a-z0-9\\[\\]]", "").replaceAll("\\s+", " ");
 	}
 
 }
