@@ -1,4 +1,4 @@
 initialization
 initialize
 	super initialize.
-	pageSize := 20
+	pageSize := 26

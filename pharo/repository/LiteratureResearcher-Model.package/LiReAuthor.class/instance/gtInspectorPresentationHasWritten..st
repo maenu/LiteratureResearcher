@@ -8,7 +8,7 @@ gtInspectorPresentationHasWritten: aComposite
 		display: [ | model |
 			model := LiReSpecOutgoingEdges new.
 			model
-				edgeClass: LiReReferences;
+				edgeClass: LiReHasWritten;
 				edgeCreateBlock: [ :n | 
 					| order existingEdges edge |
 					existingEdges := (self outgoingEdgesOfClass: LiReHasWritten) asOrderedCollection collect: #order.

@@ -1,7 +1,7 @@
 initialization
 initialize
 	super initialize.
-	hidden := NewValueHolder value: true.
+	hidden := NewValueHolder value: false.
 	labels := (LiReSortedSet sortBlock: LiReLabel sortBlock) asValueHolder.
 	self observeProperty: #hidden.
 	labels

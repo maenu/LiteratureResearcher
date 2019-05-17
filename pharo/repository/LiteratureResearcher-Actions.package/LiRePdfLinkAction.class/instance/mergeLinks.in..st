@@ -26,12 +26,12 @@ mergeLinks: aDictionary in: anArticle
 	(aDictionary at: #references)
 		do: [ :l | 
 			| text edge |
-			text := l text ifNotNil: [ :s | (s copyWithRegex: '\s+' matchesReplacedWith: ' ') copyReplaceAll: '- ' with: '' ].
+			text := l text ifNil: [ '' ] ifNotNil: [ :s | (s copyWithRegex: '\s+' matchesReplacedWith: ' ') copyReplaceAll: '- ' with: '' ].
 			edge := existingReferences
 				detect: [ :e | e matches: l key ]
 				ifNone: [ | node |
 					node := (anArticle graph nodesOfClass: LiReArticle)
-						detect: [ :n | n key isNotEmpty and: [ [ text isNotNil ] and: [ ((n key asLowercase levenshteinDistanceTo: text asLowercase) - (n key size - text size) abs) / (n key size min: text size) < 0.1 ] ] ]
+						detect: [ :n | n matches: text ]
 						ifNone: [ | bibtex |
 							bibtex := CZEntry type: CZEntry article.
 							bibtex key: 'GENERATED'.
@@ -49,6 +49,5 @@ mergeLinks: aDictionary in: anArticle
 								target: node
 								key: l key
 								order: -1
-								bibtex: nil
-								text: l text) ].
+								bibtex: nil) ].
 			edge link: l ]

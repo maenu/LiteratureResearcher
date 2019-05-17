@@ -26,7 +26,7 @@ gtInspectorPresentationHasWrittenRemote: aComposite
 					(LiRePaginatedStream
 						block: [ :s :c | 
 							| nodes |
-							nodes := self graph announcer announce: (LiReRequestSearchManyByAuthors object: {self name} start: s count: c) wait: 1 minute.
+							nodes := self graph announcer announce: (LiReRequestSearchManyByAuthors object: {self} start: s count: c) wait: 1 minute.
 							nodes flatCollect: [ :n | (n incomingEdgesOfClass: LiReHasWritten) select: [ :e | e source = self ] ] ]) ] fork.
 			model listModel
 				displayBlock: [ :e | e asTargetString ];
